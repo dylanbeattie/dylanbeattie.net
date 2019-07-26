@@ -1,0 +1,54 @@
+---
+layout: post
+title: PostgreSQL, Heroku, .NET Core and npgsql
+date: '2018-11-20T16:17:00.002Z'
+author: Dylan Beattie
+tags:
+modified_time: '2018-11-20T16:17:22.321Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7124392101425625315
+blogger_orig_url: http://www.dylanbeattie.net/2018/11/postgresql-heroku-net-core-and-npgsql.html
+redirect_from: '/2018/11/postgresql-heroku-net-core-and-npgsql.html'
+---
+
+I've been having fun this week building data visualisation dashboards that pull information straight out of our <a
+  href="https://www.postgresql.org/">PostgreSQL</a> databases and use <a
+  href="https://www.asp.net/core/overview/aspnet-vnext">ASP.NET Core</a> to do some LINQ transformations and aggregation
+on the data. All our data is hosted on <a href="https://www.heroku.com/">Heroku</a>, I'm using <a
+  href="https://www.npgsql.org/">Npgsql</a> as an ADO.NET Data Provider, and it works beautifully - once you've worked
+out the exact connection string syntax needed to connect to a Heroku PostgreSQL database using ASP.NET Core.<br />
+<br />
+So here it is. You'll need to get the host, port, username, password and database from your Heroku dashboard - and don't
+forget that if you're connecting from apps that aren't attached to Heroku directly, you'll need to manually update the
+configuration if you rotate your Heroku database credentials.<br />
+<br />
+<table class="highlight tab-size js-file-line-container" data-tab-size="8"
+  style="background-color: white; border-collapse: collapse; border-spacing: 0px; box-sizing: border-box; color: #24292e; font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; tab-size: 8;">
+  <tbody style="box-sizing: border-box;">
+    <tr style="box-sizing: border-box;"></tr>
+    <tr style="box-sizing: border-box;">
+      <td class="blob-code blob-code-inner js-file-line" id="LC9"
+        style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; line-height: 20px; overflow-wrap: normal; overflow: visible; padding: 0px 10px; position: relative; vertical-align: top; white-space: pre;">
+        <span class="pl-k" style="box-sizing: border-box; color: #d73a49;">const</span> <span class="pl-k"
+          style="box-sizing: border-box; color: #d73a49;">string</span> herokuConnectionString <span class="pl-k"
+          style="box-sizing: border-box; color: #d73a49;">=</span> @<span class="pl-s"
+          style="box-sizing: border-box; color: #032f62;"><span class="pl-pds" style="box-sizing: border-box;">"
+          </span> Host=&lt;host.domain.com&gt;;
+          Port=&lt;port&gt;;
+          Username=&lt;user&gt;;
+          Password=&lt;password&gt;;
+          Database=&lt;database&gt;;
+          Pooling=true;
+          Use SSL Stream=True;
+          SSL Mode=Require;
+          TrustServerCertificate=True;
+          <span class="pl-pds" style="box-sizing: border-box;">"</span></span>;</td>
+    </tr>
+    <tr style="box-sizing: border-box;">
+      <td class="blob-num js-line-number" data-line-number="10" id="L10"
+        style="box-sizing: border-box; color: rgba(27, 31, 35, 0.3); cursor: pointer; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; line-height: 20px; min-width: 50px; padding: 0px 10px; text-align: right; user-select: none; vertical-align: top; white-space: nowrap; width: 50px;">
+        <br /></td>
+    </tr>
+  </tbody>
+</table>
+Happy querying!<br />
+<br />
