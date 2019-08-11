@@ -1,0 +1,15 @@
+---
+layout: post
+title: NHibernate / Castle ByteCode provider – are you running the right number of
+  bits?
+date: '2009-06-05T17:16:00.001+01:00'
+author: Dylan Beattie
+tags:
+- dotnet
+- c#
+modified_time: '2017-03-18T15:03:45.214Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-6986757930169199681
+blogger_orig_url: http://www.dylanbeattie.net/2009/06/nhibernate-castle-bytecode-provider-are.html
+---
+
+<p>Just had one of those head-scratching moments… checked out a known working project including NHibernate and ActiveRecord DLLs, built the whole thing – which built without errors - and then got this lovely message:</p>  <blockquote>   <p>Unable to load type 'NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle' during configuration of proxy factory class.     <br />Possible causes are:      <br />- The NHibernate.Bytecode provider assembly was not deployed.      <br />- The typeName used to initialize the 'proxyfactory.factory_class' property of the session-factory section is not well formed. </p>    <p>Solution:     <br />Confirm that your deployment folder contains one of the following assemblies:      <br />NHibernate.ByteCode.LinFu.dll      <br />NHibernate.ByteCode.Castle.dll</p> </blockquote>  <p>I’ve seen that message quite a lot recently, but thought we’d well and truly sorted it… well, it turns out there’s another possible cause – you’re building for “Any CPU” on a 64-bit machine and your copy of NHibernate.ByteCode.Castle.dll was built on a colleague’s 32-bit machine. Because this DLL is loaded at runtime there’s no compile-time checking that it’s the right bitness – so it’ll build fine, and then blow up.</p>  <p>Setting VS2008’s platform target to “x86” has solved it in this case – I guess doing a 64-bit build of the relevant DLL would also work.</p>  

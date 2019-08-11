@@ -1,0 +1,19 @@
+---
+layout: post
+title: Updated VS2008 / Castle / NHibernate solution bundle
+date: '2008-10-16T01:26:00.001+01:00'
+author: Dylan Beattie
+tags:
+- nhibernate
+- castle
+- tools
+- dotnet
+- altnet
+- c#
+modified_time: '2017-03-18T15:03:45.140Z'
+thumbnail: http://lh6.ggpht.com/dmb197/SPaKdK7LyBI/AAAAAAAAAEc/uGfX75hqXy4/s72-c/image%5B6%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2426847472989117003
+blogger_orig_url: http://www.dylanbeattie.net/2008/10/updated-vs2008-castle-nhibernate.html
+---
+
+<p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; margin: 0px 20px 20px 0px; border-right-width: 0px" height="279" alt="image" src="http://lh6.ggpht.com/dmb197/SPaKdK7LyBI/AAAAAAAAAEc/uGfX75hqXy4/image%5B6%5D.png?imgmax=800" width="256" align="left" border="0" /> I've just uploaded a new version of my <a href="http://dylanbeattie.blogspot.com/2008/09/ready-to-hack-visual-studio-2008.html">quick'n'dirty VS2008 solution</a>, which now includes the log4net and Iesi.Collections projects (these were formerly being referenced from Program Files\Castle Project\ and so wouldn't build on a box without Castle installed).&#160; The whole thing is now completely self-referential, so it should build &amp; run without any dependencies other than the .NET framework itself, and everything's done using relative project references so you should be able to get step-debugging right down to the SQL command calls. But it's late and I haven't tried that yet.</p>  <p>As I've said before, this is aimed at getting something up and running with the Castle ActiveRecord stack as easily as possible, so I can play with it and see what it does. </p>  <p>Having seen <a href="http://ayende.com/Blog/archive/2007/08/06/Running-on-the-trunk-Building-Rhino-Commons.aspx">Ayende's post about building Rhino-Tools</a> from the various libraries' SVN trunks, I'm now convinced there might be a way of using SVN externals and NAnt to create a single project that automatically builds against latest trunk revisions of the various libraries - I guess this is one of those areas where only experience will tell you whether you're better off running against nightly trunk commits or just picking a stable revision and building against that, but I'm sure it'll be educational finding out.</p>  <p>You can <a href="http://www.dylanbeattie.net/misc/metafink.zip">get the ZIP here</a> if you're interested. Again, I must restate that I didn't write any of this; log4net is distributed by <a href="http://logging.apache.org/log4net/index.html">Apache</a>, NHibernate is from <a href="http://www.nhibernate.org">www.nhibernate.org</a>,&#160; Castle is from <a href="http://www.castleproject.org">www.castleproject.org</a>, and all I've done is package them together for convenience.</p>  

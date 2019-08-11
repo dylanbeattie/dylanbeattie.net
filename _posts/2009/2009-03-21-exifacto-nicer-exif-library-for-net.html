@@ -1,0 +1,32 @@
+---
+layout: post
+title: Exifacto – a Nicer EXIF Library for .NET
+date: '2009-03-21T23:37:00.002Z'
+author: Dylan Beattie
+tags:
+- dotnet
+- c#
+modified_time: '2017-03-18T15:03:45.151Z'
+thumbnail: http://lh6.ggpht.com/_LV_l8kYLOwo/ScV6Liu62II/AAAAAAAAALA/PNqjKiF1Q2E/s72-c/exifacto_thumb%5B3%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-3328595337274262077
+blogger_orig_url: http://www.dylanbeattie.net/2009/03/exifacto-nicer-exif-library-for-net.html
+---
+
+<p>I’ve been looking at reading and parsing <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF data</a> for a project I’m working on; the project itself is still a long way off, but – as is so often the case in software - the EXIF code I’m working on is starting to show some real promise, so I’ve cleaned up the (very basic!) implementation I’ve currently got and put it up on <a href="http://code.google.com/p/exifacto/source/checkout">Google Code</a> for the world to play with.</p>  <p>The System.Drawing classes in .NET expose  EXIF data as key/value pairs, but it’s about as unfriendly an API as I’ve ever seen. Each EXIF tag is exposed as a numeric ID (which is one of about a hundred magic numbers defined in the EXIF spec), and an array of bytes – it’s up to you to work out which item is which, extract, parse and decode the byte arrays, and make sense of the result. Just to make things interesting, most numeric data in EXIF is stored as ratios – pairs of signed or unsigned ints representing the numerator/denominator of a rational number. Which makes perfect sense if you’re a photographer - always talking in F-stops and hundredths of a second and fractions of an inch – but makes things just a bit harder if you’re trying to get this stuff out into your .NET application.</p>  <p>For example - to get the date a photograph was taken, using  .NET code, you need to do this:</p>  <pre class="c#" name="code">DateTime myImageTaken = DateTime.MinValue;
+
+Bitmap bitmap = new Bitmap(@"image001.jpg");
+foreach(PropertyItem item in bitmap.PropertyItems) {
+   if (item.Id == 0x9003) {
+       string exifDate = Encoding.ASCII.GetString(item.Value);
+       if (DateTime.TryParseExact(exifDate,
+           exifDateFormats,
+           CultureInfo.InvariantCulture,
+           DateTimeStyles.AllowInnerWhite,
+           out myImageTaken)
+       ) {
+           break;
+       }
+   }
+}
+Console.WriteLine("Image taken at: " + myImageTaken.ToString());</pre><p><a href="http://lh4.ggpht.com/_LV_l8kYLOwo/ScV6LSL5TGI/AAAAAAAAAK8/fEuH_JYLoLs/s1600-h/exifacto%5B5%5D.png"><img title="exifacto" style="border-right: 0px; border-top: 0px; display: inline; margin: 0px 0px 0px 20px; border-left: 0px; border-bottom: 0px" height="215" alt="exifacto" src="http://lh6.ggpht.com/_LV_l8kYLOwo/ScV6Liu62II/AAAAAAAAALA/PNqjKiF1Q2E/exifacto_thumb%5B3%5D.png?imgmax=800" width="385" align="right" border="0" /></a>With Exifacto, you do this:</p><pre class="c#" name="code">ExifData exifData = new ExifData(“image001.jpg”);
+Console.WriteLine(“Image taken at: “ + exifData.DateTimePhotoCreated)</pre><p>Right now, it’s got support for the basic string and DateTime information, and a couple of the lookup properties wrapped in .NET enumerations; next thing is parsing and arithmetic for signed and unsigned rational numbers. The actual implementation isn’t really the point, though - the idea is to get as much descriptive documentation into the Intellisense comments as possible, ending up with a discoverable API that takes a lot of the confusion out of working with EXIF data.</p><p>It’s being hosted at <a href="http://code.google.com/p/exifacto/">http://code.google.com/p/exifacto/</a> – Subversion only for now, but source code &amp; DLLs to follow once I’ve tied up a few loose ends.</p>

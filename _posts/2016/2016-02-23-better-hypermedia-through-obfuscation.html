@@ -1,0 +1,48 @@
+---
+layout: post
+title: Better Hypermedia Through Obfuscation
+date: '2016-02-23T12:59:00.003Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2016-02-23T13:03:23.011Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-5494178771946390429
+blogger_orig_url: http://www.dylanbeattie.net/2016/02/better-hypermedia-through-obfuscation.html
+---
+
+Here’s a fun and completely twisted idea that came to me on the train this morning. One of the constraints of ReSTful architectures is that they use hypermedia as the engine of application state – in other words, clients shouldn’t maintain their own information about where they “are” and what resources and actions are available to them right now; they should rely on hypermedia embedded in the current resource representation they’ve retrieved from the server. A common example of this is pagination – navigating big lists of resources, using a representation something like this example:<br />
+<blockquote>
+<pre><code>
+
+  GET /people
+
+  "_embedded": {
+    "people": [ <span style="color: #9bbb59;">/* array of 10 people */</span> ]
+  },
+  "_links": {
+    "first": { "href": "/people?page=0" },
+    "last": { "href": "/people?page=12" },
+    "next": { "href": "/people?page=1" },
+    "self": { "href": "/people?page=0" }
+  },
+  "count": 10,
+  "total": 115
+}</code></pre>
+</blockquote>
+Now, with an API like this, it’s all too easy for the client – or rather, the person building the client – to go “ok, page number is a zero-based integer; let’s cut a few corners here” and just program something like<br />
+<br />
+<blockquote>
+<pre><code>for(var i = 0; i &lt; 12; i++) {
+    http.get(“https://api.foo.com/people?page=”+page);
+}</code></pre>
+</blockquote>
+Now, I’m a big fan of something we call the "<a href="http://blogs.msdn.com/b/brada/archive/2003/10/02/50420.aspx">pit of success</a>" – the idea being that we "build platforms such that […] developers just fall into doing the 'right thing'", and more generally, the idea that the easiest way to achieve something is also the ‘correct’ way to achieve that thing. So what if we intentionally obfuscate our APIs so that hypermedia navigation becomes easier than building a for() loop? By, for example, requiring that our page number is written out longform, instead of numerically? And, just for fun, we’ll require that it’s in a language that isn’t in the regular ASCII character set. Like Ukrainian:<br />
+<blockquote>
+<pre><code>{
+    "first": { "href": "/people?page=один" },
+    "last": { "href": "/people?page=дванадцять" },
+    "prev": { "href": "/people?page=два" },
+    "next": { "href": "/people?page=чотири" },
+    "self": { "href": "/people?page=три" }
+}</code></pre>
+</blockquote>
+Suddenly, your ‘shortcut’ isn’t a short cut any more. For starters, you’ll probably need to install a special keyboard in order to type those characters – not to mention suddenly your source code files will need to be in UTF8, and I’ll wager that somewhere in your build pipeline there’s a tool that can’t handle UTF8 source code. And you’ll need a routine which can translate integers into Ukrainian string representations… No, the easiest thing to do now is to retrieve the first resource, parse the <strong>next.href </strong>property, retrieve that resource, and so on until you hit a resource with no <strong>next</strong> link. Which, of course, is exactly how hypermedia is <em>supposed</em> to work in the first place.

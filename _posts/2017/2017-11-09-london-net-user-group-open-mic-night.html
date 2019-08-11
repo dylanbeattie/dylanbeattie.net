@@ -1,0 +1,39 @@
+---
+layout: post
+title: London .NET User Group Open Mic Night
+date: '2017-11-09T18:10:00.003Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2017-11-09T18:12:42.303Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2922188360188635200
+blogger_orig_url: http://www.dylanbeattie.net/2017/11/london-net-user-group-open-mic-night.html
+---
+
+<div style="-en-clipboard: true;">
+Last night’s <a href="https://www.meetup.com/London-NET-User-Group/">London .NET meetup</a> was an ‘open mic’ session. Rather than inviting speakers to talk for an hour or so as we normally do, we invited members of the group to come along and talk for 10-15 minutes about their own projects, things they’re working on, or just stuff they think is cool. It’s the first open mic session we’ve had in a long while, but based on the success of last night’s event I think we’ll try to make these more of a regular thing in 2018. Quite a few of the speakers who came along were talking about their own .NET open source projects, and showing off some very, very cool things; here’s a quick rundown.<br />
+<br />
+First up was <a href="https://twitter.com/philpursglove?lang=en">Phil Pursglove</a>, giving us a whistle stop tour of <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/introduction">Cosmos DB</a>, a new database platform that Microsoft are now offering on Azure. I’ve seen a couple of talks this year about Cosmos, and it looks really rather nice. It’s got protocol-level compatibility with MongoDB (what Microsoft call ‘bug compatible’), plus support for SQL and a couple of other language bindings. One of the coolest features of Cosmos is native support for <a href="https://docs.microsoft.com/en-gb/azure/cosmos-db/consistency-levels">multiple consistency models</a>, allowing you to optimise your own application for your particular requirements - with the ability to override the global consistency model on a per-request basis. There’s a <a href="https://azure.microsoft.com/en-gb/try/cosmosdb/">time-limited free trial available here</a> - check it out.<br />
+<br />
+Next up, <a href="https://twitter.com/robinem">Robin Minto</a> gave us a run-through of <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP ZAP</a>, a proxy-based web security tool created by the Open Web Application Security Project (OWASP). ZAP is beautifully simple; you install it (or fire up the Docker image), it acts as a web proxy whilst you navigate through some of the primary user journeys on your web application, but in the background it’s probing your server and scanning your HTML for a whole range of common security vulnerabilities - and when you’re done, it’ll generate a security report you can share with the rest of your team.<br />
+<br />
+<a href="https://unop.uk/about/">James Singleton</a> - author of <a href="https://unop.uk/book/">ASP.NET&nbsp;Core 2 High Performance </a>- gave us a very cool live demo of some of the cross-platform capabilities of .NET Core 2.0, including using his Windows laptop to cross-compile a web app for ARM Linux and running it live on a Raspberry Pi. What I found really impressive about this is that it didn’t require any .NET framework or runtime install on the Pi - it’s just vanilla (well, raspberry!) Raspbian Linux with a couple of things like libssl, and everything else is included in the deployment package created by the dot net tooling.<br />
+<br />
+<a href="https://twitter.com/ethomson?lang=en">Ed Thomson</a>, the Git program manager for Visual Studio Team System, did a great walkthrough of his open source project <a href="https://github.com/libgit2/libgit2sharp">libgit2sharp</a> - a set of C# language bindings for working with local and remote git repositories. If you’ve ever had to parse the output from the Windows git command line tools, you’ll know how painful it can be - but with libgit2sharp, you can use C# or Powershell to create automated build tools, manipulate your git repositories and do all sorts of cool stuff.<br />
+<br />
+<a href="https://twitter.com/jasond_s">Jason Dryhurst-Smith</a> gave us a demo of his <a href="https://github.com/CorrelatorSharp/CorrelatorSharp">CorrelatorSharp</a> project - “your one-stop shop for context-aware logging and diagnostics” - a library that allows you to track the context of operations across multiple services and operations, including support for frameworks like NLog and RestSharp and a client-side JavaScript library.<br />
+<br />
+<a href="https://twitter.com/xivk?lang=en">Ben Abelshausen</a> came along to show us <a href="http://www.itinero.tech/">Itinero</a>, an open-source route planning library for .NET which you can use within your own applications to calculate routes and analyse map data.<br />
+<br />
+Finally, we had <a href="https://twitter.com/citizenmatt">Matt Ellis</a> from Jetbrains giving us ’Ten <a href="https://www.jetbrains.com/rider/">Jetbrains Rider</a> Debugging Tips in Ten Minutes’ - including some really neat stuff like cross-platform support for DebuggerDisplay attributes and the ability to define interdependent breakpoints in your code.</div>
+<div>
+<br /></div>
+<div>
+Huge thanks to all our speakers and to everyone who came along - it’s great to see so much enthusiasm and activity going in with .NET open source, and with .NET Core 2.0 going fully cross-platform and tools like Rider and Visual Studio Code, it’s only going to get more interesting.
+</div>
+<div>
+<br /></div>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<br />
+<div>
+See you all at the next one!&nbsp;</div>

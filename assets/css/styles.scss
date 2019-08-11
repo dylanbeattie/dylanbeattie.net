@@ -1,91 +1,138 @@
 ---
 ---
 
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/vendor';
-@import 'libs/breakpoints';
-@import 'libs/html-grid';
+@import "libs/vars";
+@import "libs/functions";
+@import "libs/mixins";
+@import "libs/vendor";
+@import "libs/breakpoints";
+@import "libs/html-grid";
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
-@import 'flags';
+@import "flags";
 
 article {
-	h1 {
-		font-size: 120%;
-	}
-	text-align: justify;
-	cite {
-		font-size: 85%;
-		font-style: italic;
-	}
-	hr {
-		border-width: 1px 0 0 0;
-		border-style: solid;
-		border-color: _palette(accent, bg);
-		margin: 20px 0;
-
-	}
-	img {
-		max-width: 100%;
-	}
+  h1 {
+    font-size: 120%;
+    margin-bottom: 0.5em;
+  }
+  text-align: justify;
+  cite {
+    font-size: 0.8em;
+    font-style: italic;
+    &.byline {
+      display: block;
+      margin: 0.5em 0;
+    }
+  }
+  hr {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: _palette(accent, bg);
+    margin: 20px 0;
+  }
+  img {
+    max-width: 100%;
+  }
 }
 
-
-
 div#sidebar {
-	a {
-	  border: 0;
-	}
-	div.schedule {
-	  p {
-		text-align: left;
-		background-size: 48px 48px;
-		background-repeat: no-repeat;
-		background-position: left center;
-		border-top: 1px solid #999;
-		padding: 8px 0 8px 54px;
-		margin: 4px 0;
-		line-height: 1.4em;
-		a {
-		  font-weight: bold;
-		}
-	  }
-	}
-	p {
-	  line-height: 1.6em;
-	  font-size: 0.8em;
-	  text-align: justify;
-	}
-	p#social-media-icons {  
-	  a {
-		font-size: 0px;
-		box-sizing: border-box;
-		display: inline-block;
-		width: 32px;
-		height: 32px;
-		background: url(images/social_media_icons_strip.png) top left no-repeat;
-		background-size: 320px 32px;
-		margin-right: 10px;
-		&.facebook { background-position: 0px 0px; }
-		&.twitter { background-position: -32px 0px; }
-		&.github { background-position: -64px 0px; }
-		&.google { background-position: -96px 0px; }
-		&.soundcloud { background-position: -128px 0px; }
-		&.linkedin { background-position: -160px 0px; }
-		&.stackoverflow { background-position: -192px 0px; }
-		&.rss { background-position: -256px 0px; }
-		&.youtube { background-position: -256px 0px; margin-right: 0px !important; }
-	  }
-	}
-	  a.stack-overflow-profile {
-		display: block; 
-		width: 100%; 
-		height: 58px; 
-		background: #ffffff url(//stackoverflow.com/users/flair/5017.png) no-repeat right center;
-		box-sizing: border-box;
-	  }
+  a {
+    border: 0;
   }
-  
-			 
+  div.schedule {
+    p {
+      text-align: left;
+      background-size: 48px 48px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding: 2px 0 2px 54px;
+      margin: 4px 0;
+      line-height: 1.4em;
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+  p {
+    line-height: 1.6em;
+    font-size: 0.8em;
+    text-align: justify;
+  }
+  p#social-media-icons {
+    a {
+      font-size: 0px;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: url(images/social_media_icons_strip.png) top left no-repeat;
+      background-size: 320px 32px;
+      margin-right: 10px;
+      &.facebook {
+        background-position: 0px 0px;
+      }
+      &.twitter {
+        background-position: -32px 0px;
+      }
+      &.github {
+        background-position: -64px 0px;
+      }
+      &.google {
+        background-position: -96px 0px;
+      }
+      &.soundcloud {
+        background-position: -128px 0px;
+      }
+      &.linkedin {
+        background-position: -160px 0px;
+      }
+      &.stackoverflow {
+        background-position: -192px 0px;
+      }
+      &.rss {
+        background-position: -256px 0px;
+      }
+      &.youtube {
+        background-position: -256px 0px;
+        margin-right: 0px !important;
+      }
+    }
+  }
+  a.stack-overflow-profile {
+    display: block;
+    width: 100%;
+    height: 58px;
+    background: #ffffff url(//stackoverflow.com/users/flair/5017.png) no-repeat right center;
+    box-sizing: border-box;
+  }
+}
+
+ul.archives {
+  list-style-type: none;
+  margin: 0;
+	padding: 0;
+	
+  h2 {
+    font-size: 1.2em;
+    border-bottom: 1px solid _palette(accent, bg);
+    margin-bottom: 0;
+  }
+
+  & > li > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    h3 {
+      font-size: 1em;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    & > li > ul {
+      list-style-position: inside;
+      list-style-type: disc;
+      margin-bottom: 0;
+    }
+  }
+}

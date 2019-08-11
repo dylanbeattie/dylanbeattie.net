@@ -9,8 +9,9 @@ layout: default
 				<div id="content">
 					<article>
 						<h1>{{ page.title }} </h1>
-						<p>Posted by <strong>{{ page.author }}</strong> on {{ page.date | date_to_long_string }}
-						</p>
+						<cite class="byline">Posted by <strong>{{ page.author }}</strong> on {{ page.date | date_to_long_string }}
+							&bull;
+							<a href="{{ BASE_PATH }}{{ page.url }}">permalink</a></cite>
 						{{ content }}
 					</article>
 				</div>

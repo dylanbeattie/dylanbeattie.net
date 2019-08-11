@@ -1,0 +1,34 @@
+---
+layout: post
+title: Running IIS and Apache on the same Windows 2008 R2 Server
+date: '2011-02-07T19:18:00.001Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2016-05-23T09:58:42.642+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-4678687183662531070
+blogger_orig_url: http://www.dylanbeattie.net/2011/02/running-iis-and-apache-on-same-windows.html
+---
+
+I’m trying to get a Composite C1 site and the Apache WebDAV front-end to Subversion running on the same Windows 2008 R2 server, and doing so requires a bit of trickery with IP address bindings and such, and I thought I’d share it – partly ‘cos it’s useful, and partly because I’m bound to have to do this again in three months time and there’s no way I’ll remember how I did it. First off, make sure your box has (at least) two IP addresses – I’ve bound mine to 192.168.0.13 and 192.168.0.14<br />
+To get IIS to listen on ONLY 192.168.0.13, you’ll need to run the netsh.exe utility. <br />
+<blockquote>
+C:\Users\dylan.beattie&gt;netsh<br />
+netsh&gt;http add iplisten ipaddress=192.168.0.13<br />
+IP address successfully added<br />
+netsh&gt;http show iplisten<br />
+IP addresses present in the IP listen list: <br />-------------------------------------------<br />
+&nbsp;&nbsp;&nbsp; 192.168.0.13<br />
+netsh&gt;exit</blockquote>
+(note that netsh.exe is a Windows 2008 utility – if you’re running Windows 2003 or earlier, look up the docs on using httpcfg.exe to achieve the same thing)<br />
+If you now fire up a web browser and go to <a href="http://192.168.0.13/">http://192.168.0.13/</a>, you should get the default IIS7 “Welcome” screen, and <a href="http://192.168.0.14/">http://192.168.0.14/</a> shouldn’t return anything at all. Now to get Apache listening on 192.168.0.14. Find your httpd.conf file – if you’ve just installed CollabNet Subversion (like I have) it’ll be in the \data\conf folder of wherever you put your SVN install.<br />
+You’ll need to find the Listen directive in httpd.conf, and modify it to say:<br />
+<blockquote>
+Listen 192.168.0.14:80</blockquote>
+That’s all. Next time – to get Git running on the same Apache installation… until then, happy hacking.<br />
+<hr />
+UPDATE: After running this for several years, I've found that occasionally, following an unscheduled shutdown or power outage, IIS won't come back up properly after the box is restarted. Sites will respond on <a href="http://localhost/">http://localhost/</a> but trying to access them via hostname gives an ERR_CONNECTION_RESET message. <br />
+This can be fixed by removing and re-adding the HTTP binding:<br />
+<blockquote>
+<span style="font-family: Consolas;">C:\&gt;<strong>netsh</strong> </span><br />
+<span style="font-family: Consolas;">netsh&gt; <strong>http</strong><br />netsh http&gt; <strong>delete iplisten 192.168.0.13</strong>netsh http&gt; <strong>add iplisten 192.168.0.13</strong>netsh http&gt; <strong>exit</strong></span><br />
+<span style="font-family: Consolas;">C:\&gt;<strong>iisreset</strong></span></blockquote>

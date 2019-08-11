@@ -1,0 +1,14 @@
+---
+layout: post
+title: ASP.NET MVC Preview 3 and Linq-to-SQL - One Month On
+date: '2008-10-02T14:52:00.000+01:00'
+author: Dylan Beattie
+tags:
+- dotnet
+- c#
+modified_time: '2017-03-18T15:03:45.262Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-8894980025198619090
+blogger_orig_url: http://www.dylanbeattie.net/2008/10/aspnet-mvc-preview-3-and-linq-to-sql.html
+---
+
+<p>At the start of September, we launched a web app based on ASP.NET MVC preview 3 and Linq-to-SQL, and I'm happy to say that it's generally gone really, really well.</p>  <p>Our primary codebase is legacy ASP in JScript, but for this latest project - an online proof and payment system for actors renewing their Spotlight membership - we needed something faster, more robust and generally <em>better</em>. I'd been playing with the ASP.NET MVC previews since version 1, and while the framework's obviously still very much in development, I figured my ASP.NET background would mean a much easier learning curve than trying to pick up MVC at the same time as learning a new view engine like Brail or NVelocity. I used a Linq-to-SQL implementation of IRepository&lt;T&gt; based on code from <a href="http://mikehadlow.blogspot.com/">Mike Hadlow's</a> <a href="http://code.google.com/p/sutekishop/">Suteki Shop</a> project -the original intent was just to try it out for a couple of hours to see how it worked, but it performed so well for what we needed that I just went ahead and built the rest of the app on top of it.</p>  <p>Linq-to-SQL clearly has some interesting potential, but it's also clearly showing right now the biggest problems with it are the slightly clunky tools (having to hack the XML to create cascade delete relationships, no way to refresh a table in the LINQ designer if the schema's changed, for example) and the big question mark hanging over its future. Between Entity Framework and the various open-source OR mappers competing for mindshare, not to mention talk of a Linq-to-NHibernate implementation, it's really not clear whether Linq-to-SQL will ever see another release which fixes the problems with the current release, or whether it's just going to be quietly retired as a historical curiosity.</p>  <p>ASP.NET MVC, on the other hand, looks like it's really going to go places - especially with the news that <a href="http://weblogs.asp.net/scottgu/archive/2008/09/28/jquery-and-microsoft.aspx">Microsoft are going to be shipping - and supporting - jQuery with ASP.NET MVC and Visual Studio</a>. The day I get my hands on Intellisense for jQuery will be a good day indeed. I can't wait.</p>  

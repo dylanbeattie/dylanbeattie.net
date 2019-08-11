@@ -1,0 +1,60 @@
+---
+layout: post
+title: Firing Static Events from Instance Methods in C#
+date: '2008-05-01T18:20:00.001+01:00'
+author: Dylan Beattie
+tags:
+- dotnet
+- titanium
+- c#
+modified_time: '2017-03-18T15:03:45.207Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-6578554341100820733
+blogger_orig_url: http://www.dylanbeattie.net/2008/05/firing-static-events-from-instance.html
+---
+
+<p>In a current project, I have a UserDocument class, which inherits from EditableBase&lt;T&gt;, and stores metadata about the contents of a file that's stored somewhere on my app server. What I needed to do was to add an event to the business object that would fire just after deleting the UserDocument's record, so that I could delete the corresponding file from the server's filesystem. The solution is <em>almost</em> what I expected, with one slightly odd workaround.</p>  <p>OK, the original code looked (very roughly) like this. We're using generics throughout so T denotes &quot;whatever kind of business object this is&quot; - Customer, Invoice, whatever.</p>  <pre class="code"><span style="color: green">// Our event handler methods have to match the following delegate<br /></span><span style="color: blue">public delegate void </span><span style="color: #2b91af">DataEventHandler</span>&lt;T&gt;(T t);<br /><br /><span style="color: green">// The base class for our editable business object.<br /></span><span style="color: blue">public class </span><span style="color: #2b91af">EditableBase</span>&lt;T&gt; {<br /><br />    <span style="color: green">// The event we want to fire immediately after deleting a database record.<br />    </span><span style="color: blue">public static event </span><span style="color: #2b91af">DataEventHandler</span>&lt;T&gt; DeletingRecord;<br /><br />    <span style="color: green">// The event we want to fire immediately after deleting a database record.<br />    </span><span style="color: blue">public static event </span><span style="color: #2b91af">DataEventHandler</span>&lt;T&gt; DeletedRecord;<br /><br />}<br /><br /><span style="color: green">// A class representing a document or file that's been uploaded to our <br />// application by a user.<br /></span><span style="color: blue">public class </span><span style="color: #2b91af">UserDocument </span>: <span style="color: #2b91af">EditableBase</span>&lt;<span style="color: #2b91af">UserDocument</span>&gt; {<br /><br />    <span style="color: blue">private string </span>filename;<br /><span style="color: blue">    public string </span>Filename {<br />        <span style="color: blue">get </span>{ <span style="color: blue">return </span>filename; }<br />        <span style="color: blue">set </span>{ filename = <span style="color: blue">value</span>; }<br />    }<br /><br />    <span style="color: blue">public void </span>Delete() {<br />        <span style="color: green">// this is the call to the DAL to actually remove the record <br />        // from the UserDocument table.<br />        </span>DataContext.Current.DeleteUserDocument(filename);<br />    }<br />}</pre>
+
+<p>First approach - let's just fire the event in the usual way:</p>
+
+<div>
+  <div style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none">
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: white; border-bottom-style: none"><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Delete() {</pre>
+
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none">    <span style="color: #008000">// this is the call to the DAL to actually remove the record </span></pre>
+
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: white; border-bottom-style: none">    <span style="color: #008000">// from the UserDocument table.</span></pre>
+
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none">    DataContext.Current.DeleteUserDocument(filename);</pre>
+
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: white; border-bottom-style: none">    <span style="color: #0000ff">if</span> (DeletedRecord != <span style="color: #0000ff">null</span>) DeletedRecord(<span style="color: #0000ff">this</span>);</pre>
+
+    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none">}</pre>
+  </div>
+</div>
+
+<p>Erk. Compiler doesn't like that... </p>
+
+<blockquote>
+  <p><em>The event 'EditableBase&lt;UserDocument&gt;.DeletedRecord' can only appear on the left hand side of += or -= (except when used from within the type 'EditableBase&lt;T&gt;')</em></p>
+</blockquote>
+
+<p>It would appear that you can't fire static events from instance methods. No idea why this is the case - I can't see any reason for it - but the workaround is pretty straightforward. First, we provide a <strong>static</strong> wrapper method for each of our EditableBase&lt;T&gt; events:</p>
+
+<pre class="code"><span style="color: green">// A wrapper method that can 'see' the static event, but can be called    <br />// from instance methods.     <br /></span><span style="color: blue">public static void</span>NotifyDeletedRecord(T t) {   <br />&#160;&#160;&#160; <span style="color: blue">if</span>(DeletedRecord != <span style="color: blue">null</span>) DeletedRecord(t);   <br />}</pre>
+
+<p>What's cool about this method is that it provides an adapter between instance methods and static events. Instance methods can call static methods; static methods can fire static events. Our instance method can now quite happily do this:</p>
+
+<pre class="code"><span style="color: blue">public void </span>Delete() {<br />    <span style="color: green">// this is the call to the DAL to actually remove the record<br />    // from the UserDocument table.<br />    </span>DataContext.Current.DeleteUserDocument(filename);<br />    NotifyDeletedRecord(<span style="color: blue">this</span>);<br />}</pre>
+
+<p>and then the NotifyDeletedRecord method will raise the static event, and any handlers are attached to it will fire as expected.</p>
+
+<p>What's cool about this particular example is the ability to do this sort of thing - this code is from global.asax, and shows clearly how we can bind a very simple event handler to the static event on the UserDocument class that will clean up the underlying files whenever a record is removed: 
+  <br /></p>
+
+<pre class="code"><span style="color: blue">namespace </span>MyProject.Website {<br />    <span style="color: blue">public class </span><span style="color: #2b91af">Global </span>: System.Web.HttpApplication {<br /><br />        <span style="color: blue">protected void </span>Application_Start(<span style="color: blue">object </span>sender, <span style="color: #2b91af">EventArgs </span>e) {<br />            <span style="color: green">// Attach event handler that cleans up files on disk <br />            // after DB records are deleted.<br />            </span><span style="color: #2b91af">UserDocument</span>.DeletedRecord += <br />                <span style="color: blue">new </span><span style="color: #2b91af">DataEventHandler</span>&lt;<span style="color: #2b91af">UserDocument</span>&gt;(DeleteUserDocumentFile);<br />        }<br /><br />        <span style="color: green">// This method removes the file associated with the specified UserDocument<br />        // from the application servers' filesystem.</span><span style="color: green"> <br />        </span><span style="color: blue">void </span>DeleteUserDocumentFile(<span style="color: #2b91af">UserDocument </span>t) {<br />            string userPath = HttpContext.Current.Server.MapPath(<span style="background: #f2d7fd; color: #a31515">&quot;~/UserDocuments/&quot;</span>);<br />            <span style="color: blue">string </span>filePath = <span style="color: #2b91af">Path</span>.Combine(userPath, t.Filename);<br />            <span style="color: blue">if </span>(<span style="color: #2b91af">File</span>.Exists(filePath)) {<br />                <span style="color: blue">try </span>{<br />                    <span style="color: #2b91af">File</span>.Delete(filePath);<br />                } <span style="color: blue">catch </span>(<span style="color: #2b91af">Exception </span>ex) {<br />                    <span style="color: green">// Something went wrong - maybe log the error, or add<br />                    // to a queue of files to be manually cleaned up later?<br />                    // In the meantime, just throw the exception again.<br />                    </span><span style="color: blue">throw </span>(ex);<br />                }<br />            }<br />        }<br />    }<br />}<br /></pre>
+
+<h4>But why not just put the File.Delete() inside the UserDocument class?</h4>
+
+<p>Because, depending on the context in which our business objects are running, we could be deleting from the local filesystem (via Server.MapPath() because we're a website), or via a WebDAV call to a remote file server, or by calling some web service that deletes the remote file for us. Separating the requirement and the implementation in this way means our business objects implement deletion consistently and our application itself is free to run cleanup code.</p>
+
+<p>I think it's quite a nice approach - we're now using it with NotifyCreating, NotifyInserting / NotifyInserted, and all sorts of other hooks around CRUD data access methods, and it seems to be working really rather nicely.</p>  

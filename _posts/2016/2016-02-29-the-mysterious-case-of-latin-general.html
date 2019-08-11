@@ -1,0 +1,350 @@
+---
+layout: post
+title: 'The Mysterious Case of the Latin General: Collations in SQL Server'
+date: '2016-02-29T15:08:00.001Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2016-02-29T16:00:29.036Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-973969488311964042
+blogger_orig_url: http://www.dylanbeattie.net/2016/02/the-mysterious-case-of-latin-general.html
+---
+
+<p>Computers deal in absolutes. True, false, yes, no. So when you ask a computer if two things are the same, it can’t get away with “well, sort of… it depends, really; why are you asking?”. </p> <p>But we use computers to model reality, and reality is a horrible mess of edge cases, quirks and idiosyncracies. Today is Leap Year Day – February 29th. Which means you can do this:</p><pre><code>var today = DateTime.Now.AddYears(1).AddYears(-1);
+var yesterday = DateTime.Now.AddDays(-1);<br>if (today == yesterday) {
+    Console.WriteLine("In your face, Einstein!");
+}</code></pre>
+<p>And if you think that's messy, wait until you start looking at string comparisons. Which, by happy coincidence, was the thing on the top of my stack when I got into work this morning.</p>
+<p>OK, pop quiz time! Are these statements true or false?</p>
+<ol>
+<li>"foo" == "foo" 
+<li>"FOO" == "foo" 
+<li>"café" == "cafe" 
+<li>"œnophile" == "oenophile" 
+<li>"strasse" = "straße" 
+<li>"SIGURÐAR" == "SIGURDAR"</li></ol>
+<p>Well? How did you do? See, the answer in almost every case is that lovely old chestnut "it depends". And when you're dealing with text columns in Microsoft SQL Server, the thing it depends on is called a <strong>collation. </strong>A collation is a set of rules that defines whether or not two strings should be considered to be equal, and what 'alphabetical order' means for ordering a given set of strings. For years, my team has run most of our databases systems with a collation called <strong>SQL_Latin1_General_CP1_CI_AI </strong>– and the important part there is the CI_AI at the end, which indicates that this is a case-insensitive (CI), accent-insensitive (AI) collation, which means that if you search our database for 'CAFE', you'll find records containing 'café', because the case-insensitive rule says that "C" and "c" are the same, and the accent-insensitive part says "ignore the accent – pretend that é is the same as e"</p>
+<p>Now, in recent versions of SQL Server, Microsoft has introduced a new set of collations to choose from – which means that even though we've already decided we want a Latin alphabet, with case-insensitive and accent-insensitive string comparisons, we still have a choice of six:</p>
+<p><code>SELECT * FROM fn_helpcollations() WHERE name LIKE '%Latin1_General%CI_AI'</code></p>
+<table cellspacing="0" cellpadding="8" width="550" border="1">
+<tbody>
+<tr>
+<td valign="top" width="214">
+<p>Latin1_General_CI_AI</p></td>
+<td valign="top" width="334">
+<p>Latin1-General, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive</p></td></tr>
+<tr>
+<td valign="top" width="214">
+<p>Latin1_General_100_CI_AI</p></td>
+<td valign="top" width="334">
+<p>Latin1-General-100, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive</p></td></tr>
+<tr>
+<td valign="top" width="214">
+<p>SQL_Latin1_General_CP1_CI_AI</p></td>
+<td valign="top" width="334">
+<p>Latin1-General, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive for Unicode Data, SQL Server Sort Order 54 on Code Page 1252 for non-Unicode Data</p></td></tr>
+<tr>
+<td valign="top" width="214">
+<p>SQL_Latin1_General_CP1253_CI_AI</p></td>
+<td valign="top" width="334">
+<p>Latin1-General, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive for Unicode Data, SQL Server Sort Order 124 on Code Page 1253 for non-Unicode Data</p></td></tr>
+<tr>
+<td valign="top" width="214">
+<p>SQL_Latin1_General_CP437_CI_AI</p></td>
+<td valign="bottom" width="334">
+<p>Latin1-General, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive for Unicode Data, SQL Server Sort Order 34 on Code Page 437 for non-Unicode Data</p></td></tr>
+<tr>
+<td valign="top" width="214">
+<p>SQL_Latin1_General_CP850_CI_AI</p></td>
+<td valign="top&lt;strike&gt;&lt;/strike&gt;" width="334">
+<p>Latin1-General, case-insensitive, accent-insensitive, kanatype-insensitive, width-insensitive for Unicode Data, SQL Server Sort Order 44 on Code Page 850 for non-Unicode Data</p></td></tr></tbody></table>
+<p>What I'm specifically interested in here – because it's my job as architect to decide this kind of thing - is why we might choose to use the new <strong>Latin1_General_CI_AI</strong> collation instead of the tried'n'tested <strong>SQL_Latin1_General_CP1_CI_AI</strong> collation. So I did a little Googling, and dug up <a href="http://www.olcot.co.uk/sql-blogs/revised-difference-between-collation-sql_latin1_general_cp1_ci_as-and-latin1_general_ci_as">this excellent article</a>, which explains a bit about how these collations differ when it comes to Unicode character expansions. See, there are quite a lot of 'letters' which can be written as either one or two characters, depending on your cultural conventions (and what kind of keyboard you've got). Typesetting purists will refer to archæologists and œnophiles, whilst the rest of us have to settle for archaeologists and oenophiles because we don't know how to type "æ" and "œ". And then there's the German "sharp S", which is written as either 'ß' or 'ss' depending on who's writing it.</p>
+<p>Now here's the real-world scenario where this matters. Let's say we've got a database of rock music clubs, and someone's added Roadrunner's Paradise in Berlin, and – because they're German, typing in German on a German keyboard – they're put the address in as "Saarbrücker Straße 24, 10405 Berlin". Now one of our British users is on holiday, and they're in Berlin, and they're trying to find out if there are any rock clubs on Saarbrücker Straße. Except because they've got an English guidebook and an English keyboard, they search for "saarbrucker strasse", because they don't know how to type the umlaut or the sharp-S 'ß' character.</p>
+<p>Whether their search works or not can potentially depend on several things</p>
+<ul>
+<li>The character type (varchar or nvarchar) of our StreetAddress column 
+<li>The collation of our StreetAddress column 
+<li>The character type specified in the query – SQL will assume string literals are ANSI strings unless you prefix them with N, so <strong>LIKE 'saarbrucker strasse' </strong>is different to <strong>LIKE N'saarbrucker strasse'</strong> 
+<li>Whether or not we explicitly specify a collation in our WHERE clause.</li></ul>
+<p>OK, so we have two different column types (varchar vs nvarchar), we have two different collations (Latin1 vs SQL_Latin1), we have two different ways of specifying our search text (N'foo' vs 'foo'), and we have three different ways to specify collation in the query (explicit Latin1, explicit SQL_Latin1, or implicit) - meaning there are 2*2*2*3 = 24 different ways to store and query the data supporting this particular scenario.</p>
+<p>So let's try them all. For SCIENCE. Code to create and run these examples is at <a title="https://gist.github.com/dylanbeattie/c9705dc5c4efd82f60b8" href="https://gist.github.com/dylanbeattie/c9705dc5c4efd82f60b8">https://gist.github.com/dylanbeattie/c9705dc5c4efd82f60b8</a>, and when you run it, it works like this:</p>
+<table cellspacing="0" cellpadding="4" width="546" border="1">
+<tbody>
+<tr>
+<td valign="top" width="83">
+<p><b>Column Type</b></p></td>
+<td valign="top" width="82">
+<p><b>Colum collation</b></p></td>
+<td valign="top" width="179">
+<p><b>Search text</b></p></td>
+<td valign="top" width="83">
+<p><b>Query collation</b></p></td>
+<td valign="top" width="117">
+<p><b>Did it work?</b></p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>nvarchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr style="background-color: #ff9999">
+<td valign="top" width="83">
+<p><strong>varchar</strong></p></td>
+<td valign="top" width="82">
+<p><strong>Latin1</strong></p></td>
+<td valign="top" width="179">
+<p><strong>'%saarbrucker strasse%'</strong></p></td>
+<td valign="top" width="83">
+<p><strong>SQL_Latin1</strong></p></td>
+<td valign="top" width="117">
+<p><strong>No</strong></p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr style="background-color: #ff9999">
+<td valign="top" width="83">
+<p><strong>varchar</strong></p></td>
+<td valign="top" width="82">
+<p><strong>SQL_Latin1</strong></p></td>
+<td valign="top" width="179">
+<p><strong>'%saarbrucker strasse%'</strong></p></td>
+<td valign="top" width="83">
+<p><strong>(implicit)</strong></p></td>
+<td valign="top" width="117">
+<p><strong>No</strong></p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr style="background-color: #ff9999">
+<td valign="top" width="83">
+<p><strong>varchar</strong></p></td>
+<td valign="top" width="82">
+<p><strong>SQL_Latin1</strong></p></td>
+<td valign="top" width="179">
+<p><strong>'%saarbrucker strasse%'</strong></p></td>
+<td valign="top" width="83">
+<p><strong>SQL_Latin1</strong></p></td>
+<td valign="top" width="117">
+<p><strong>No</strong></p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>(implicit)</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr>
+<tr>
+<td valign="top" width="83">
+<p>varchar</p></td>
+<td valign="top" width="82">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="179">
+<p>N'%saarbrucker strasse%'</p></td>
+<td valign="top" width="83">
+<p>SQL_Latin1</p></td>
+<td valign="top" width="117">
+<p>Yes</p></td></tr></tbody></table>
+<p>So there's the difference. If you're dealing with varchar columns (as opposed to nvarchars), and you specify your query text as an ANSI string (as opposed to a Unicode string), then you need to use the Latin1_General_CI_AI collation if you want "strasse" to match "straße"; in all other scenarios, 'ss' is equal to 'ß' (and apparently this is applies to all Latin collations regardless of accent sensitivity).</p>
+<p>Of course, this works both ways – by using Latin1_General_CI_AI, you create a scenario where somebody searching for '%aße%' will find English words like 'assessment' and 'molasses', because as far as SQL Server is concerned, 'aße' and 'asse' are the same string. If that's a problem for your particular scenario, you'll need to do something like restrict your search inputs to the basic ASCII character set. </p>
+<p>As with almost everything in software development, modelling the real world involves making compromises. It's our job to make sure we're aware of those compromises, and that we understand how they translate back into real-world behaviour, and it's up to us to explain them to users who think our software sucks because it doesn't know what day it is and it says there's no rock bars in Saarbrucker Strasse.</p>
+<p>Happy Leap Year Day!</p>

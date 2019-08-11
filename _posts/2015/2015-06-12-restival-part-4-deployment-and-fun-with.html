@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Restival Part 4: Deployment and Fun with Case Sensitivity'
+date: '2015-06-12T17:12:00.001+01:00'
+author: Dylan Beattie
+tags:
+- rest
+- architecture
+- restival
+modified_time: '2015-06-12T17:12:54.705+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-6603654391721053607
+blogger_orig_url: http://www.dylanbeattie.net/2015/06/restival-part-4-deployment-and-fun-with.html
+---
+
+<p>Before we dive into the next phase of API development, I wanted to make it a little easier to install and run the Restival app on your own machine, so I've added a Powershell Deploy.ps1 script to the project which will:</p>  <ul>   <li>Create a new local IIS website called Restival, bound to <a href="http://restival.local/">http://restival.local/</a> </li>    <li>Create applications for each of our API implementations</li>    <li>Configure the whole thing to run under the ASP.NET v4.0 application pool.</li> </ul>  <p>One interesting quirk I discovered whilst doing this is that OpenRasta appears to be case-sensitive when it comes to request URLs. I'd initially created the applications like this:</p>  <ul>   <li><a href="http://restival.local/Api.Nancy/">http://restival.local/Api.Nancy/</a></li>    <li><a href="http://restival.local/Api.ServiceStack/">http://restival.local/Api.ServiceStack/</a></li>    <li><a href="http://restival.local/Api.WebApi/">http://restival.local/Api.WebApi/</a></li>    <li><a href="http://restival.local/Api.OpenRasta/">http://restival.local/Api.OpenRasta/</a></li> </ul>  <p>The test project uses lowercase URLs - so <a href="http://restival.local/api.nancy/">http://restival.local/api.nancy/</a> - and for some strange reason, the OpenRasta implementation just doesn't work if the IIS application name differs in case from the URL in the unit test. I'll dig into this a little further but for now, I've just modified the deploy script to do a .ToLower() on the application name and everything's working. Code for this instalment is in <a title="https://github.com/dylanbeattie/Restival/tree/v0.0.4" href="https://github.com/dylanbeattie/Restival/tree/v0.0.4">https://github.com/dylanbeattie/Restival/tree/v0.0.4</a></p>  

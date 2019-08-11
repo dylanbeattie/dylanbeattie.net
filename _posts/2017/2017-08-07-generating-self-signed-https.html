@@ -1,0 +1,25 @@
+---
+layout: post
+title: Generating self-signed HTTPS certificates with subjectAltNames
+date: '2017-08-07T16:55:00.001+01:00'
+author: Dylan Beattie
+tags: 
+modified_time: '2017-08-07T16:56:55.028+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-8506475743874606946
+blogger_orig_url: http://www.dylanbeattie.net/2017/08/generating-self-signed-https.html
+---
+
+<p>We provide online services via a bunch of different websites, using federated authentication so that if you sign in to our authentication server, you get a *.mydomain.com cookie that’s sent to any other server on our domain.</p><p>We use local wildcard DNS, so there’s a <strong>*.mydomain.com.local</strong> record that resolves everything to 127.0.0.1, and for each developer machine we create a&nbsp; <strong>*.mydomain.com.hostname</strong> record that’s an alias for <strong>hostname</strong>, so you can browse to <strong>www.mydomain.com.&lt;machine&gt; </strong>to see code running on another developer’s workstation, or <strong>www.mydomain.com.local</strong><strong> </strong>to view your own local development code.</p><p>This works pretty well, but getting a local development system set up involves running local versions of several different apps – and since Google Chrome <a href="https://support.google.com/chrome/a/answer/7391219?hl=en">now throws a security error</a> for any HTTPS site whose certificate doesn’t include a “subject alternative name” field, getting a bunch of local sites all happily sharing the same cookies over HTTPS proved a bit fiddly.</p><p>So… here’s a batch file that will spit out a bunch of very useful certificates, adapted from <a href="https://serverfault.com/questions/845766/generating-a-self-signed-cert-with-openssl-that-works-in-chrome-58">this post on serverfault.com</a>. </p>
+<script src="https://gist.github.com/dylanbeattie/63e2230db6c1033e5efaf9d442246aea.js"></script>
+<h4>How it works</h4>
+<ol>
+<li>Get openssl.exe working - I use the version that's shipped with Cygwin, installed into C:\Windows\Cygwin64\bin\ and added to my system path.</li>
+<li>Run makecert.bat. If you don't want to specify a password, just provide a blank one (press Enter). This will spit out three files:<ul>
+<li>local_and_hostname.crt</li>
+<li>local_and_hostname.key</li>
+<li>local_and_hostname.pfx</li>
+</ul></li>
+<li>Double-click the local_and_hostname.crt file, click "Install Certificate", and use the Certificate Import Wizard to import it. Choose "Local Machine" as the Store Location, and "Trusted Root Certification Authorities" as the Certificate Store.</li>
+<li>Open IIS, select your machine, open "Server Certificates" from the IIS snapin, click "Import..." in the Actions panel</li>
+<li>Select the local_and_hostname.pfx certificate created by the batch file. If you used a password when exporting your PKCS12 (.pfx) file, you'll need to provide it here</li>
+<li>Finally, set up your IIS HTTPS bindings to use your new certificate.</li></ol><p>Yay! Security!&nbsp; </p>

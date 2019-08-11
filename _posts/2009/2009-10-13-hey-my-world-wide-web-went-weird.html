@@ -1,0 +1,20 @@
+---
+layout: post
+title: Hey… My World Wide Web Went Weird!
+date: '2009-10-13T13:52:00.003+01:00'
+author: Dylan Beattie
+tags:
+- css
+- typography
+- random
+modified_time: '2016-07-06T12:36:24.349+01:00'
+thumbnail: https://lh3.googleusercontent.com/-FyrrsRHfuxo/V3ztN-zTXDI/AAAAAAAAEAI/B2qVzekLZ-c/s72-c/image_thumb%25255B10%25255D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-5719374483034537775
+blogger_orig_url: http://www.dylanbeattie.net/2009/10/hey-my-world-wide-web-went-weird.html
+---
+
+<p>About a week ago, my world wide web went weird. There’s no other way to describe it. Well, OK, there’s probably lots of ways to describe it, but I like the alliteration. Anyway – what happened was, lots of websites just suddenly started looking horrible, for no readily apparent reason. Like the “spot the difference” screenshot below. <br>&nbsp;<a href="https://lh3.googleusercontent.com/-Kkt69USKgz8/V3ztNnEjaVI/AAAAAAAAEAE/MornjqvZGbM/s1600-h/image%25255B4%25255D.png"><img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; border-left: 0px; display: block; padding-right: 0px; margin-right: auto" border="0" alt="image" src="https://lh3.googleusercontent.com/-FyrrsRHfuxo/V3ztN-zTXDI/AAAAAAAAEAI/B2qVzekLZ-c/image_thumb%25255B10%25255D.png?imgmax=800" width="546" height="258"></a><br>See how the snapshot on the left looks really rather unpleasant, while the one on the right is nice and crisp and readable?</p> <p>First time I saw it, I assumed it was some ill-inspired redesign of a single site. Second time, I thought it must be some new design trend. Then I noticed it happening on some of our own sites - including our wiki and our FogBugz install – and since I definitely hadn’t messed around with them, that ruled out the possibility of it being something happening server-side. <em>Some</em> sites were still working and looking just fine, so it probably wasn’t a browser issue… but, thanks to a bit of lucky exploration and the awesome power of <a href="http://getfirebug.com/">Firebug</a>, I just worked out what’s going on.</p> <p>All the affected sites use the same CSS font specification:</p> <blockquote><pre>body { font-family: Helvetica, Arial, sans-serif; }</pre></blockquote>
+<p>Of course, Helvetica isn’t a standard Windows typeface, so on most Windows PCs, the browser will skip over Helvetica and render the document using Arial instead. Last week, whilst working on something for our editorial team, I installed some additional fonts on my workstation, which includes – you guessed it – the Helvetica typeface shown above. </p>
+<p>Arial, and most other Windows fonts like Calibri, Verdana, Trebuchet, use a neat trick called <a href="http://en.wikipedia.org/wiki/Font_hinting">font hinting</a> which ensures that when they’re rendered at small sizes, the shape of the individual glyphs lines up nicely with the pixels of your display – so you get nice, crispy fonts. The particular Helvetica flavour I’d installed obviously doesn’t do this – hence the spidery nastiness in the left-hand screenshot.</p>
+<p>I’m guessing either the designers who built most of these sites had a hinted version of Helvetica (possibly ‘cos they’re Mac-based?), or that they just never tested that particular CSS rule on a Windows system with a print-optimised Helvetica typeface installed.</p>
+<p>I guess the moral of the story is that if you want to annoy somebody in a <em>really</em> subtle way, install the nastiest Helvetica font you can find on their Windows PC. I’m pretty sure that if I hadn’t stumbled across the solution, sooner or later I’d actually have reinstalled in despair just to get things looking crispy again.</p>

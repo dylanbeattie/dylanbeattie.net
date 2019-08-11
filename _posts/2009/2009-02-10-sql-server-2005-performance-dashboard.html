@@ -1,0 +1,28 @@
+---
+layout: post
+title: SQL Server 2005 Performance Dashboard
+date: '2009-02-10T18:10:00.001Z'
+author: Dylan Beattie
+tags:
+- howto
+- tools
+- sql
+modified_time: '2009-02-10T18:10:02.725Z'
+thumbnail: http://lh4.ggpht.com/_LV_l8kYLOwo/SZHC-ObaklI/AAAAAAAAAJg/hVLAyGy7HKA/s72-c/image_thumb%5B8%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7667047759310908569
+blogger_orig_url: http://www.dylanbeattie.net/2009/02/sql-server-2005-performance-dashboard.html
+---
+
+<p>One of those quick &quot;this helped me, it might help you&quot; posts. I've been trying to run <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=1d3a4a0d-7e0c-4730-8204-e419218c1efc&amp;displaylang=en">SQL Server 2005 Performance Dashboard</a> on one of our live servers, and hit a couple of snags along the way.&#160; </p>  <p>Having installed the dashboard reports and run the setup.sql script included with the download, I tried to view the report on one of our databases and got the following error:</p>  <blockquote>   <p><strong>Error: </strong>Index (zero based) must be greater than or equal to zero and less than the size of the argument list</p> </blockquote>  <p>Whoa. Bizarre - and rather unhelpful - error message. Clearly this Performance Dashboard thing hasn't been tested at <em>all</em>... and then it occurred to me that I was using SQL2008 client tools to talk to a SQL2005 server, but that the actual catalog (database) was still running in SQL2000 compatibility mode. </p>  <p><a href="http://lh4.ggpht.com/_LV_l8kYLOwo/SZHC9wDzUmI/AAAAAAAAAJc/aYY_ObEwlCc/s1600-h/image%5B16%5D.png"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="480" alt="image" src="http://lh4.ggpht.com/_LV_l8kYLOwo/SZHC-ObaklI/AAAAAAAAAJg/hVLAyGy7HKA/image_thumb%5B8%5D.png?imgmax=800" width="535" border="0" /></a> </p>  <p>Trying <em>exactly the same thing </em>(right-click the database, Reports, performance_dashboard_main) using SQL Server 2005 Management Studio (instead of 2008 - same server, different version of the client tools) produces a far more helpful error message:</p>  <blockquote>   <p><strong>Error: </strong>Unable to display report because the database has a compatibility level of 80. To view this report, you need to use the Database Properties dialog to change the compatibility level to SQL Server 2005 (90).</p> </blockquote>  <p>So - over to the test server, bring up a test instance of the database, and change the compatibility level to 90. Database and apps still appear to be running fine, but trying to run the performance dashboard now produced the following error:</p>  <blockquote>   <p><strong>Error: </strong>Difference of two datetime columns caused overflow at runtime.</p> </blockquote>  <p>This time <a href="http://blogs.msdn.com/sqlrem/archive/2007/03/07/Performance-Dashboard-Reports-Now-Available.aspx">Google had the answer</a> (thanks David) although it's not immediately clear what the solution is referring to. What you need to do is open the Setup.SQL script (which is installed along with the performance dashboard - you'll find it at C:\Program Files\Microsoft SQL Server\90\Tools\PerformanceDashboard\). Find line 276, which says:</p>  <pre>sum(convert(bigint, datediff(ms, login_time, getdate()))) - sum(convert(bigint, s.total_elapsed_time)) as idle_connection_time, </pre>
+
+<p>and <strong>replace this line</strong> with</p>
+
+<pre>sum(convert(bigint, CAST ( DATEDIFF ( minute, login_time, getdate()) AS BIGINT)*60000 + DATEDIFF ( millisecond, DATEADD ( minute, DATEDIFF ( minute, login_time, getdate() ), login_time ),getdate() ))) - sum(convert(bigint, s.total_elapsed_time)) as idle_connection_time,</pre>
+
+<p>As David explains on <a href="http://blogs.msdn.com/sqlrem/archive/2007/03/07/Performance-Dashboard-Reports-Now-Available.aspx">the linked thread</a>, DATEDIFF is returning an int (here, it's calculating the number of milliseconds between two DATETIME instances) - so any connection that's been active for longer than ~24 days will overflow an INT when you try and convert the connection time to milliseconds.</p>
+
+<p>Anyway, change that line, run setup.sql again, and it works - acres of lovely statistical goodness at my fingertips:</p>
+
+<p><img style="border-right: 0px; border-top: 0px; margin: 10px 0px; border-left: 0px; border-bottom: 0px" height="480" alt="image" src="http://lh6.ggpht.com/_LV_l8kYLOwo/SZHC-pvClzI/AAAAAAAAAJk/x4P0z-ysmgE/image%5B23%5D.png?imgmax=800" width="603" border="0" />&#160;</p>
+
+<p>Next step - make sure the SQL 2005 compatibility hasn't broken anything, then modify the compatibility level on the live server, and <em>then </em>I'll be able to get some real live performance stats based on actual web traffic, which should make for interesting reading.</p>  

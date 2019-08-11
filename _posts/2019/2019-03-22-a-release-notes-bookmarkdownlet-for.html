@@ -1,0 +1,22 @@
+---
+layout: post
+title: A release notes bookmarkdownlet for Pivotal Tracker
+date: '2019-03-22T18:58:00.002Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2019-03-22T18:58:23.727Z'
+thumbnail: https://i.ytimg.com/vi/UABvXClJI68/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7397276921158429017
+blogger_orig_url: http://www.dylanbeattie.net/2019/03/a-release-notes-bookmarkdownlet-for.html
+---
+
+<p>One of the best ways to keep the rest of your team up to speed with what your dev teams are doing is release notes - even if all you're doing is gently reassuring the rest of the organisation that yes, you are patching security vulnerabilities, fixing bugs and quietly making things better.</p><p>I love using Slack for this - set up a channel where you post a friendly summary of everything that's being released whenever you deploy to production. Now, here at Skills Matter we're not quite doing continuous deployment yet - we work off short-lived branches that merge to master several times a day, but then once master has passed regression testing on our staging environment, the actual deployment to production is a manual process - we open a master &gt; production pull request in GitHub, merge it, and Heroku does the rest.</p><p>We track work in progress using <a href="https://www.pivotaltracker.com/">Pivotal Tracker</a>, and we use the various ticket state transitions as:</p><ul><li><strong>Start</strong> &gt; a developer has created a branch and begun coding the features</li>
+<li><strong>Finish</strong> &gt; the code is done; time for code review</li>
+<li><strong>Deliver</strong> &gt; the code has been reviewed, merged to master and deployed to the staging environment</li>
+<li><strong>Accept</strong> &gt; the code has been tested on staging; stakeholders know it's ready, and&nbsp;we're good to go live.</li>
+</ul><p>Now, this definitely isn't the best branch/merge strategy in the world, but it's the one we've inherited and the one we're using until we've made enough changes to the codebase to be able to deploy PRs directly to review environments.</p><p>So when we do a production release, one of the things I do is to check which features are included in that release - that'll form a note that's part of the master &gt; production pull request, and we'll also share it with the company via Slack. And this is a bit tedious, so today I threw together a little JavaScript bookmarklet that'll automate it for you.</p><p>Select the stories you want in Pivotal Tracker, click the bookmarklet, and it'll copy them to your clipboard as Markdown-formatted bullet points with the story IDs linked to your Pivotal project.</p><p>The JS code is here - add a bookmark, paste this whole lot (including the <code>javascript:</code> into the URL field:</p><script src="https://gist.github.com/dylanbeattie/1818634309693a32fcf99960a292a441.js"></script><br />
+<p>And here's what it looks like in action:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/UABvXClJI68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
+<br />
+<br />
+<br />
+<br />

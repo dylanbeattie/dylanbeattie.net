@@ -1,0 +1,42 @@
+---
+layout: post
+title: Strongly-Typed View References with ASP.NET MVC Preview 3
+date: '2008-05-28T01:49:00.001+01:00'
+author: Dylan Beattie
+tags:
+- asp.net
+- dotnet
+- mvc
+- c#
+modified_time: '2017-03-18T15:03:45.246Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-8674511719234963957
+blogger_orig_url: http://www.dylanbeattie.net/2008/05/strongly-typed-view-references-with.html
+---
+
+<p>Two short methods that'll give you compile-time type checking for your ASP.NET MVC views:</p>  <pre class="code"><span style="color: gray">///&lt;summary&gt;</span><span style="color: green">Render the view whose implementation is defined by the supplied type.</span><span style="color: gray">&lt;/summary&gt;
+</span><span style="color: blue">protected </span><span style="color: #2b91af">ActionResult </span>View(<span style="color: #2b91af">Type </span>viewType, <span style="color: blue">object </span>viewData) {
+    <span style="color: blue">return</span>(View(viewType.Name, viewData));
+}
+
+<span style="color: gray">/// &lt;summary&gt;</span><span style="color: green">Render the view whose implementation is defined by the supplied type.</span><span style="color: gray">&lt;/summary&gt;
+</span><span style="color: blue">protected </span><span style="color: #2b91af">ActionResult </span>View(<span style="color: #2b91af">Type </span>viewType) {
+    <span style="color: blue">return</span>(View(viewType.Name));
+}</pre>
+
+<p>I've added these methods to a BaseController : Controller class, and my MVC controllers then inherit from my custom base class, but you could always add them via the extension-method syntax to the ordinary Controller supplied with ASP.NET MVC.</p>
+
+<p>This means you can call your View() methods via a type reference that's checked by the compiler when you build, so instead of:</p>
+
+<pre class="code"><span style="color: blue">public </span><span style="color: #2b91af">ActionResult </span>Info(<span style="color: blue">int </span>id) {
+    <span style="color: #2b91af">Movie </span>movie = dataContext.Movies.Single&lt;<span style="color: #2b91af">Movie</span>&gt;(m =&gt; m.Id == id);
+    <span style="color: blue">return </span>(View(&quot;Info&quot;, movie));
+}</pre>
+
+<p><a href="http://11011.net/software/vspaste"></a>you can say</p>
+
+<pre class="code"><span style="color: blue">public </span><span style="color: #2b91af">ActionResult </span>Info(<span style="color: blue">int </span>id) {
+    <span style="color: #2b91af">Movie </span>movie = dataContext.Movies.Single&lt;<span style="color: #2b91af">Movie</span>&gt;(m =&gt; m.Id == id);
+    <span style="color: blue">return </span>(View(<span style="color: blue">typeof</span>(Views.Movie.<span style="color: #2b91af">Info</span>), movie));
+}</pre>
+
+<p>and the reference to typeof(Views.Movie.Info) will be type-checked when you compile, so renaming or moving your view classes will cause a broken build until you fix the controllers that refer to them.</p>  

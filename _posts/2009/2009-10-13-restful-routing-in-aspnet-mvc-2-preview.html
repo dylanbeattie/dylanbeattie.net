@@ -1,0 +1,108 @@
+---
+layout: post
+title: RESTful Routing in ASP.NET MVC 2 Preview 2
+date: '2009-10-13T01:09:00.001+01:00'
+author: Dylan Beattie
+tags:
+- asp.net
+- dotnet
+- mvc
+- c#
+- rest
+- coding
+modified_time: '2017-03-18T15:03:45.198Z'
+thumbnail: http://lh5.ggpht.com/_LV_l8kYLOwo/StPFTj0bNhI/AAAAAAAAAP4/yTV0kbdKdf4/s72-c/3402938268_1038dbd5f7%5B6%5D.jpg?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-4716371992300878284
+blogger_orig_url: http://www.dylanbeattie.net/2009/10/restful-routing-in-aspnet-mvc-2-preview.html
+---
+
+<p>Microsoft recently <a href="http://haacked.com/archive/2009/10/01/asp.net-mvc-preview-2-released.aspx">released Preview 2</a> of the next version of their <a href="http://www.asp.net/mvc/">ASP.NET MVC framework</a>. There’s a couple of things in this release that are designed to allow your controls to expose <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful APIs</a>, and – more interestingly, I think – to let you build your own Web pages and applications on top of the same controllers and routing set-up that provides this RESTful API. In other words, you can build one RESTful API exposing your business logic and domain methods, and then your own UI layer – your views and pages – can be implemented on top of this same API that you’re exposing for developers and third parties.</p>  <p>Thing is… I think they way they’ve implemented it in preview&#160; doesn’t really work. Don’t get me wrong; there are some good ideas in there – among them an HTML helper method, <strong>Html.HttpMethodOverride,</strong> that works with the MVC routing and controller back-end to “simulate” unsupported HTTP verbs on browsers that don’t support them (which was <em>all </em>of them, last time I looked). You write your form code like this:</p>  <blockquote>   <p>&lt;form action=”/products/1234” method=”post”&gt;      <br />&#160;&#160;&#160; &lt;%= Html.HttpMethodOverride(HttpVerbs.Delete) %&gt;       <br />&#160;&#160;&#160; &lt;input type=”submit” name=”whatever” value=”Delete This Product” /&gt;       <br />&lt;/form&gt;</p> </blockquote>  <p>and then in your controller code, you implement a method something like:</p>  <blockquote>   <p>[AcceptVerbs(HttpVerbs.Delete)]      <br />public ActionResult Delete(int id) {       <br />&#160; /* delete product here */       <br />&#160;&#160; return(Index());       <br />}&#160;&#160; </p> </blockquote>  <p><a title="The London Eye and Houses of Parliament by night" href="http://www.flickr.com/photos/dylanbeattie/3402938268/in/set-72157605523122852/"><img style="border-bottom: 0px; border-left: 0px; margin: 0px 0px 20px 20px; display: inline; border-top: 0px; border-right: 0px" title="The London Eye and Houses of Parliament by night. Very restful." border="0" alt="The London Eye and Houses of Parliament by night. Very restful." align="right" src="http://lh5.ggpht.com/_LV_l8kYLOwo/StPFTj0bNhI/AAAAAAAAAP4/yTV0kbdKdf4/3402938268_1038dbd5f7%5B6%5D.jpg?imgmax=800" width="282" height="212" /></a>The HTML helper injects a hidden form element called <strong>X-HTTP-Method-Override</strong> into your POST submission, and then the framework examines that hidden field when deciding whether your request should pass the AcceptVerbs attribute filter on a particular method. </p>  <p>Now, most MVC routing examples – and the default behaviour you get from the Visual Studio MVC file helpers – will give you a bunch of URLs mapped to different controller methods using a {controller}/{action}/{id} convention – so your application will expose URLs that look like this:</p>  <ul>   <li>/products/<strong>view</strong>/1234 </li>    <li>/products/<strong>edit</strong>/1234 </li>    <li>/products/<strong>delete</strong>/1234 </li> </ul>  <p>Since web browsers only support GET and POST, we end up having to express our intentions through the URI like this, and so the URI doesn’t really identify a resource, it identifies the <strong>act of doing something to a resource</strong>. That’s all very well if you subscribe to the <a href="http://en.wikipedia.org/wiki/Nathan_Lee_Chasing_His_Horse">Nathan Lee Chasing His Horse</a> school of nomenclature, but one of the key tenets of REST is that you can apply a <strong>different verb</strong> to the <strong>same resource identifier – </strong>i.e. the same URI – in order to perform different operations. Assuming we’re using the product ID as part of our resource identification system, then:</p>  <ul>   <li><strong>PUT /products/1234 – </strong>will create a new product with ID 1234 </li>    <li><strong>POST /products/1234 </strong>– will update product #1234</li>    <li><strong>GET /products/1234 </strong>– will retrieve a representation of product #1234</li>    <li><strong>DELETE /products/1234 – </strong>will remove product #1234 </li> </ul>  <p>One approach would be to map all these URIs to the same controller method – say <strong>ProductController.DoTheRightThing(int id)</strong> – and then inspect the <strong>Request.HttpMethod</strong> inside this method to see whether we’re <strong>PUT</strong>ing, <strong>POST</strong>ing, or what. </p>  <p>This won’t work, though, because Request.HttpMethod hasn’t been through the ‘unsupported verb translator’ that’s included with MVC 2; the Request.HttpMethod will still be “POST” even if the request is a pseudo-DELETE created via the HttpMethodOverride technique shown above. </p>  <p>Now, MVC v1 supports something called <a href="http://www.asp.net/learn/mvc/tutorial-24-cs.aspx">route constraints</a>. Stephen Walther has a <a href="http://stephenwalther.com/blog/archive/2008/08/07/asp-net-mvc-tip-30-create-custom-route-constraints.aspx">great post about these</a>; basically they’ll let you say that a certain route only applies to GET requests or POST requests. </p>  <blockquote>   <p>routes.MapRoute(      <br />&#160;&#160;&#160; &quot;Product&quot;,&#160; <br />&#160;&#160;&#160; &quot;Product/Insert&quot;,       <br />&#160;&#160;&#160; new { controller = &quot;Product&quot;, action = &quot;Insert&quot;},       <br />&#160;&#160;&#160; new { httpMethod = new HttpMethodConstraint(&quot;POST&quot;) }       <br />); </p> </blockquote>  <p>That last line there? That’s the key – you can map a request for <strong>/Product/1234 </strong>to your controller’s Details() method if the request is a GET request, and map the same URL - <strong>/Product/1234</strong> – to your controller’s Update() method if the request is a POST request. Very nice, and very RESTful.</p>  <p>But – yes, you guessed it; it doesn’t work with PUT and DELETE, because it’s still inspecting the untranslated Request.HttpMethod, which will always be GET or POST with today’s browsers.</p>  <p>However, thanks to the ASP.NET MVC’s rich extensibility, it’s actually very simple to add the support we need alongside the features built in to preview 2. (So simple that this started out as a post complaining that MVC2 couldn’t do it, until I realized I could probably implement what was missing in less time than it would take to describe the problem)</p>  <p>You’ll need to brew yourself up one of these:</p>  <blockquote>   <pre>/// <summary>Allows you to define which HTTP verbs are permitted when determining 
+/// whether an HTTP request matches a route. This implementation supports both 
+/// native HTTP verbs and the X-HTTP-Method-Override hidden element
+/// submitted as part of an HTTP POST</summary>
+public class HttpVerbConstraint : IRouteConstraint {
+
+  private HttpVerbs verbs;
+
+  public HttpVerbConstraint(HttpVerbs routeVerbs) {
+    this.verbs = routeVerbs;
+  }
+
+  public bool Match(<br />    HttpContextBase httpContext, <br />    Route route, string parameterName, 
+    RouteValueDictionary values, <br />    RouteDirection routeDirection<br />  ) {
+    switch (httpContext.Request.HttpMethod) {
+      case &quot;DELETE&quot;:
+        return ((verbs &amp; HttpVerbs.Delete) == HttpVerbs.Delete);
+      case &quot;PUT&quot;:
+        return ((verbs &amp; HttpVerbs.Put) == HttpVerbs.Put);
+      case &quot;GET&quot;:
+        return ((verbs &amp; HttpVerbs.Get) == HttpVerbs.Get);
+      case &quot;HEAD&quot;:
+        return ((verbs &amp; HttpVerbs.Head) == HttpVerbs.Head);
+      case &quot;POST&quot;:
+
+        // First, check whether it's a real post.
+        if ((verbs &amp; HttpVerbs.Post) == HttpVerbs.Post) return (true);
+
+        // If not, check for special magic HttpMethodOverride hidden fields.
+        switch (httpContext.Request.Form[&quot;X-HTTP-Method-Override&quot;]) {
+          case &quot;DELETE&quot;:
+            return ((verbs &amp; HttpVerbs.Delete) == HttpVerbs.Delete);
+          case &quot;PUT&quot;:
+            return ((verbs &amp; HttpVerbs.Put) == HttpVerbs.Put);
+        }
+        break;
+    }
+    return (false);
+  }
+}</pre>
+</blockquote>
+
+<p>This just implements the IRouteConstraint interface (part of MVC) with a Match() method that will check for the hidden form field when deciding whether to treat a POST request as a pseudo-DELETE or pseudo-PUT. Once you’ve added this to your project, you can set up your MVC routes like so:</p>
+
+<blockquote>
+  <pre>routes.MapRoute(
+  // Route name - anything you like but must be unique.
+  &quot;DeleteProduct&quot;,				 
+  
+  // The URL pattern to match
+  &quot;Products/{guid}&quot;, 
+  
+  // The controller and method that should handle requests matching this route 
+  new { controller = &quot;Products&quot;, action = &quot;Delete&quot;, id = &quot;&quot; },   
+  
+  // The HTTP verbs required for a request to match this route.
+  new { httpVerbs = new HttpVerbConstraint(HttpVerbs.Delete) }
+);
+
+routes.MapRoute(
+  &quot;CreateProduct&quot;,
+  &quot;Products/{id}&quot;,
+  new { controller = &quot;Products&quot;, action = &quot;Create&quot;, id = &quot;&quot; },
+  new { httpVerbs = new HttpVerbConstraint(HttpVerbs.Put) }
+);
+
+routes.MapRoute(
+  &quot;DisplayProduct&quot;,
+  &quot;Products/{id}&quot;,
+  new { controller = &quot;Products&quot;, action = &quot;Details&quot;, id = &quot;&quot; },
+  new { httpVerbs = new HttpVerbConstraint(HttpVerbs.Get) }
+);</pre>
+</blockquote>
+
+<p>and finally, just implement your controller methods something along these lines:</p>
+
+<blockquote>
+  <p>public class ProductsController {
+    <br />&#160; public ViewResult Details(int id) { /* implementation */ }
+
+    <br />&#160; public ViewResult Create(int id) { /* implementation */ }
+
+    <br />&#160; public ViewResult Delete(int id) { /* implementation */ }
+
+    <br />}</p>
+</blockquote>
+
+<p>You don’t need the AcceptVerbs attribute at all. I think you’re better off mapping each resource/verb combination to sensibly-named method on your controller, and leaving it at that. Let proper REST clients send requests using whichever verb they like; let normal browsers submit POSTs with hidden X-HTTP-Method-Override fields, trust the routing engine and route constraints to sort that lot out before it hits your controller code, and you’ll find that you can completely decouple your resource identification strategy from your controller/action naming conventions.</p>
+
+<p><strong>BLATANT PLUG:</strong> If you’re into this kind of thing, you should come along to <a href="http://skillsmatter.com/event/open-source-dot-net/the-future-of-web-development-html-5-and-aspdot-net-httpaspdot-net-mvc-2">Skills Matter in London on November 2nd</a>, where I’ll be talking about the future of web development - HTML 5, MVC 2, REST, jQuery, semantic markup, web standards, and… well, you’ll have to come along and find out. If you’re interested, <a href="http://skillsmatter.com/event/open-source-dot-net/the-future-of-web-development-html-5-and-aspdot-net-httpaspdot-net-mvc-2">register here</a> and see you on the 2nd.)</p>  

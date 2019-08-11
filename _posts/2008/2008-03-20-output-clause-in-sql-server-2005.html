@@ -1,0 +1,24 @@
+---
+layout: post
+title: The OUTPUT clause in SQL Server 2005
+date: '2008-03-20T23:45:00.000Z'
+author: Dylan Beattie
+tags:
+- dotnet
+- titanium
+- c#
+- sql
+modified_time: '2017-03-18T15:03:45.145Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2578367028318576954
+blogger_orig_url: http://www.dylanbeattie.net/2008/02/output-clause-in-sql-server-2005.html
+---
+
+One of those things that I can't believe I've come this far without knowing - or needing. There's a little-known clause you can use in your INSERT, UPDATE and DELETE statements in SQL Server 2005 that will let you return the affected rows within a single query. <br />
+Picture this: Hotmail gets shut down, and you need to remove all Hotmail addresses from your Customer table and create a list of the affected customers so you can phone them all and ask what their new e-mail address is. And, to make it interesting, you're trying to do it in a one stored procedure call. <br />
+CREATE PROCEDURE HotmailGoByeBye AS BEGIN    <br />&nbsp;&nbsp;&nbsp; UPDATE Customer SET Email = null WHERE Email LIKE '%hotmail.com'     <br />&nbsp;&nbsp;&nbsp; SELECT Name, Phone FROM Customer where Email LIKE '%hotmail.com'     <br />END<br />
+Hands up if you can see why that's not going to work... <br />
+Now, check this out.<br />
+CREATE PROCEDURE HotmailGoByeBye AS BEGIN    <br />&nbsp;&nbsp;&nbsp; UPDATE Customer     <br />&nbsp;&nbsp;&nbsp; SET Email = null     <br />&nbsp;&nbsp;&nbsp; OUTPUT inserted.Name, inserted.Phone     <br />&nbsp;&nbsp;&nbsp; WHERE Email LIKE '%hotmail.com'     <br />END<br />
+The inserted keyword there works just like it does in triggers - i.e. it contains all the rows affected by the update <em>after</em> they've been updated. It can do a lot more besides - <a href="http://technet.microsoft.com/en-us/library/ms177564.aspx" target="_blank">Books Online</a> has the full details as usual.<br />
+I'm incorporating this into some ORM code I'm working with, because it'll let me clear down any references to, say, the Address that's about to get deleted, return the affected records, update the corresponding in-memory objects so their timestamps are accurate, delete the address itself, and proceed with the rest of the batch update without lots of nasty timestamp violations. <br />
+Interestingly, even the much-requested SQL Server 2005 support for multiple cascade paths wouldn't alleviate this problem, since I'm using timestamps for concurrency control and ON CASCADE SET NULL works like a trigger - i.e. it modifies the records but doesn't return them to the calling application. 

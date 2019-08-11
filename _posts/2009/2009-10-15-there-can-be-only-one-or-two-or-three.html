@@ -1,0 +1,42 @@
+---
+layout: post
+title: There Can Be Only One. Or Two. Or Three, but Never Four.
+date: '2009-10-15T00:32:00.001+01:00'
+author: Dylan Beattie
+tags:
+- dotnet
+- c#
+- linq
+modified_time: '2017-03-18T15:03:45.184Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-4535107606296804883
+blogger_orig_url: http://www.dylanbeattie.net/2009/10/there-can-be-only-one-or-two-or-three.html
+---
+
+<p>A quick but very simple technique to limit the number of instances of a .NET app that will execute at once:</p>  <blockquote>   <pre>using System;
+using System.Linq;
+using System.Diagnostics;
+
+namespace ConsoleApplication1 {
+  public class Program {
+    static void Main(string[] args) {
+
+      var MAX_PERMITTED_INSTANCES = 3;
+
+      var myProcessName = Process.GetCurrentProcess().ProcessName;
+      Process[] processes = Process.GetProcesses();
+      var howManyOfMe = processes.Where(p =&gt; p.ProcessName == myProcessName).Count();
+      if (howManyOfMe &gt; MAX_PERMITTED_INSTANCES) {
+        Console.WriteLine(&quot;Too many instances - exiting!&quot;);
+      } else {
+        Console.WriteLine(&quot;I'm process #{0} and I'm good to go!&quot;, howManyOfMe);
+        /* do heavy lifting here! */
+      }
+      Console.ReadKey(false);
+    }
+  }
+}</pre>
+</blockquote>
+
+<p>Very handy if – like we do – you’re firing off potentially expensive encoding jobs every few minutes via a scheduled task, and you’re happy for 3-4 of them to be running at any one time – hey, that’s what multicore CPUs are for, right? - but you’d rather not end up with 37 instances of encoder.exe all fighting for your CPU cycles like cats fighting for the last bit of bacon.</p>
+
+<p>I’m still sometimes really, really impressed at how easy stuff like this is in .NET… I thought this would end up being hours of horrible extern/Win32 API calls, but no. It’s that easy. Very nice.</p>  

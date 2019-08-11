@@ -1,0 +1,113 @@
+---
+layout: post
+title: Linking Subversion Commits to Pivotal Tracker on Windows using Powershell
+date: '2013-06-24T13:03:00.001+01:00'
+author: Dylan Beattie
+tags: 
+modified_time: '2013-06-24T13:03:01.718+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2390755771562500314
+blogger_orig_url: http://www.dylanbeattie.net/2013/06/linking-subversion-commits-to-pivotal.html
+---
+
+<p>My team at work now keep our entire lives in <a href="https://www.pivotaltracker.com/">PivotalTracker</a>, and rather like it. We recently linked it to our GitHub repository using the built-in PivotalTracker integration that’s provided by GitHub, which worked really nicely. Thing is, we’re still in the process of migrating our codebase to GitHub – there’s lots of older projects with TeamCity jobs still linked to our in-house Subversion repo – and I wanted to add a similar facility for our projects that are still in Subversion.</p>  <p>This is all based on the <a href="https://www.pivotaltracker.com/help/api?version=v3#scm_post_commit">Source Control Management Post-Commit Hook Integration</a> feature in the Pivotal Tracker API, and getting it working required two scripts.</p>  <p><strong>post-commit.bat</strong> – this is the standard batch file used by Subversion on Windows to run code after a successful commit. Subversion runs this automatically, and passes in two command-line arguments – the (local) path of the repository that accepted the commit, and the revision number created by that commit. Ours now looks like this:</p>  <blockquote>   <pre>@echo off<br />$ps = %SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe<br />$ps Set-ExecutionPolicy unrestricted
+$ps -command &quot;D:\svn\data\repositories\projects\hooks\post-commit.ps1&quot; -repopath %1 -revision %2</pre>
+</blockquote>
+
+<p>A couple of things to notice. First, we’re running the powershell Set-ExecutionPolicy as part of the script. This is brute force and there’s probably a nicer way of doing it, but since the Powershell script runs as the user who owns the Subversion server process, and that user doesn’t have interactive logon rights, I couldn’t see a quicker way of getting that script to run reliably. Ah, Powershell security, how we love you.</p>
+
+<p>Second – we’re passing the two command-line arguments into the powershell script as named parameters. Subversion will call the batch file as:</p>
+
+<blockquote>
+  <p><font face="Consolas">post-commit.bat D:\svn\data\repositories\projects 12345</font></p>
+</blockquote>
+
+<p>and we’re translating that into</p>
+
+<blockquote>
+  <p><font face="Consolas">powershell.exe –command post-commit.ps1 –repopath D:\svn\data\repositories\projects –revision 12345</font></p>
+</blockquote>
+
+<p>The bit that actually does the heavy lifting is <strong>post-commit.ps1</strong></p>
+
+<blockquote>
+  <p><font face="Consolas">param([string]$repopath, [string]$revision)&#160;&#160;&#160; </font></p>
+
+  <p><font face="Consolas">$svnlook = &quot;C:\Program Files\Subversion\bin\svnlook.exe&quot;</font></p>
+
+  <p><font face="Consolas">$message = &amp; &quot;$svnlook&quot; log $repopath -r $revision | Out-String</font></p>
+
+  <p><font face="Consolas">if ($message -match &quot;#\d\d\d\d\d\d\d\d&quot;) {
+      <br />&#160;&#160;&#160; $reponame = Split-Path $repopath –leaf
+
+      <br />&#160;&#160;&#160; $author = &amp; &quot;$svnlook&quot; author $repopath -r $revision | Out-String
+
+      <br />&#160;&#160;&#160; <br />&#160;&#160;&#160; # Grab a reference to System.Web so we can HtmlEncode things.
+
+      <br />&#160;&#160;&#160; Add-Type -AssemblyName System.Web
+
+      <br />&#160;&#160;&#160; $author = [System.Web.HttpUtility]::HtmlEncode($author)
+
+      <br />&#160;&#160;&#160; $message = [System.Web.HttpUtility]::HtmlEncode($message)
+
+      <br />
+
+      <br />&#160;&#160;&#160; # We run ViewCV on our Subversion server to browse code via the web. Tweak this to suit,
+
+      <br />&#160;&#160;&#160; # or remove the &lt;url&gt;&lt;/url&gt; element from the XML completely.</font><font face="Consolas">
+      <br />&#160;&#160;&#160; $url = &quot;</font><a href="http://subversion.mycompany.com/viewvc/"><font face="Consolas">http://subversion.mycompany.com/viewvc/</font></a><font face="Consolas">$reponame`?view=revision&amp;revision=$revision&quot;
+      <br />
+
+      <br />&#160;&#160;&#160; $headers = @{&quot;X-TrackerToken&quot; = &quot;<font style="background-color: #ffff00"><strong>put your Pivotal Tracker API Token Here</strong></font>&quot;}
+
+      <br />&#160;&#160;&#160; # This is Powershell's &quot;here-string&quot; syntax for multiline string literals.
+
+      <br />&#160;&#160;&#160; $body = @&quot;</font></p>
+
+  <p><font face="Consolas">&lt;source_commit&gt;
+      <br />&#160;&#160;&#160; &lt;message&gt;$message&lt;/message&gt;
+
+      <br />&#160;&#160;&#160; &lt;author&gt;$author&lt;/author&gt;
+
+      <br />&#160;&#160;&#160; &lt;commit_id&gt;$revision&lt;/commit_id&gt;
+
+      <br />&#160;&#160;&#160; &lt;url&gt;$url&lt;/url&gt;
+
+      <br />&lt;/source_commit&gt;
+
+      <br />&quot;@</font></p>
+
+  <p><font face="Consolas">&#160;&#160;&#160; $r = Invoke-WebRequest -Uri </font><a href="http://www.pivotaltracker.com/services/v3/source_commits"><font face="Consolas">http://www.pivotaltracker.com/services/v3/source_commits</font></a><font face="Consolas"> -ContentType &quot;application/xml&quot; -Method POST -Headers $headers -Body $body</font></p>
+
+  <p><font face="Consolas">&#160;&#160;&#160; Write-Host $r
+      <br />} else {
+
+      <br />&#160;&#160;&#160; # if nothing in the commit message matched the #12345678 syntax, then don’t bother calling the API.
+
+      <br />}</font></p>
+</blockquote>
+
+<p align="left">To test it, first run the Powershell script directly from your command line. Say you’ve just committed revision 12345 to the “projects” repository, remembering to include [#12345678] in your commit comment where 12345678 is the PivotalTracker story ID.</p>
+
+<blockquote>
+  <p align="left"><strong>PS </strong>D:\svn\data\repositories\projects\hooks&gt; <strong>./post-commit.ps1 –repopath D:\svn\data\repositories\projects –revision 12345</strong></p>
+</blockquote>
+
+<p align="left">Your commit comment should appear in the story history within a few seconds. </p>
+
+<p align="left">Now check the batch file harness can run your Powershell properly – see the note below about revisions:</p>
+
+<blockquote>
+  <p align="left">D:\svn\data\repositories\projects\hooks&gt; <strong>post-commit.bat D:\svn\data\repositories\projects 12346</strong></p>
+</blockquote>
+
+<p align="left">If that works, the whole kaboodle should work. A couple of caveats to watch out for:</p>
+
+<ol>
+  <li>
+    <div align="left">If your post-commit hook fails, your Subversion client will give you something cryptic about “Commit failed: MERGE … 200 OK” – which is not particularly transparent. Best to get things working on the command line first before testing via Subversion itself.</div>
+  </li>
+
+  <li>
+    <div align="left">I couldn’t get the same commit to produce multiple Pivotal tickets – when I was testing it, I had to create a fresh commit for each test run of the integration hook. This is possibly just Pivotal automatically de-duplicating identical stories – but worth knowing for test purposes</div>
+  </li>
+</ol>  

@@ -1,0 +1,38 @@
+---
+layout: post
+title: A URL Resolver Module for ASP.NET MVC
+date: '2009-11-04T01:42:00.001Z'
+author: Dylan Beattie
+tags:
+- dotnet
+- c#
+modified_time: '2017-03-18T15:03:45.118Z'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-1319401753049567447
+blogger_orig_url: http://www.dylanbeattie.net/2009/11/url-resolver-module-for-aspnet-mvc.html
+---
+
+<blockquote>   <p>Update: An improved version of this module, along with some performance stats, <a href="http://dylanbeattie.blogspot.com/2009/11/slightly-faster-url-resolver-module-for.html">is available here</a>. The original version posted here was very, very slow. Probably not a good idea to use it for anything. Ever.</p> </blockquote>  <p>One of the few things I actually <em>liked</em> about ASP.NET WebForms was that you could do things like </p>  <blockquote>   <p>&lt;a href=”~/my/account.aspx” runat=”server”&gt;My Account&lt;/a&gt; </p> </blockquote>  <p>and ASP.NET would magically turn the tilde character (~) into the current relative application root – so you could debug your apps on <a href="http://localhost:4567/">http://localhost:4567/</a> and then deploy them to <a href="http://www.myserver.com/some/app/">http://www.myserver.com/some/app/</a>, and your links wouldn’t break.</p>  <p>ASP.NET MVC doesn’t like things that are runat=”server” – and with good reason, I think – but this does mean you can end up with rather a lot of calls to ResolveUrl() sprinked throughout your code.</p>  <p>To get around this, I’ve hacked together an HTTP module that basically rewrites the output stream on the fly. It wraps the HTTP output stream (the thing you're writing to when you Response.Write stuff) in a 'smart' stream wrapper, and the <del>magic</del> <ins>naively optimistic</ins> part looks like this:</p>  <blockquote>   <pre>public override void Write(byte[] buffer, int offset, int count) {
+  if (HttpContext.Current.Handler is System.Web.Mvc.MvcHandler) {
+    HttpContext.Current.Trace.Warn(&quot;Resolving URLs in output stream...&quot;);
+    byte[] data = new byte[count];
+    Buffer.BlockCopy(buffer, offset, data, 0, count);
+    string html = Encoding.ASCII.GetString(data);
+
+    // Don't try and use Regex transformations on your 
+    // entire output stream. It is slow. Like, really, really slow.
+    // Take a look at <a href="http://dylanbeattie.blogspot.com/2009/11/slightly-faster-url-resolver-module-for.html">this updated version</a> instead.
+
+    var re = new Regex(&quot;(?<attr>src|href|action)=\&quot;~/&quot;, RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.ExplicitCapture);
+    html = re.Replace(html, &quot;${attr}=\&quot;&quot; + VirtualPathUtility.ToAbsolute(&quot;~/&quot;));
+    data = Encoding.ASCII.GetBytes(html);
+    sink.Write(data, 0, html.Length);
+    HttpContext.Current.Trace.Warn(&quot;Resolved URLs in output stream.&quot;);
+  } else {
+    sink.Write(buffer, offset, count);
+  }
+}</pre>
+</blockquote>
+
+<p>Basically, it looks for HTML SRC, ACTION and HREF attributes whose value begins with ~/, and replaces the ~ with the application’s virtual path on the fly. <del>I haven’t tested this code for performance, so I don’t know what kind of impact it’ll have on your page response times,</del> <em>This code is something like 200 times slower than a straight stream copy</em>, but it’s running in a couple of demo apps I’m working on and it seems to work <del>pretty nicely</del>.</p>
+
+<p>The full implementation is over on <a href="http://code.google.com/p/tagalong/source/browse/trunk/DylanHax/Web/UrlResolverModule.cs">Google Code</a> if you’re interested. </p>  

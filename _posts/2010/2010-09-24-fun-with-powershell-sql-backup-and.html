@@ -1,0 +1,164 @@
+---
+layout: post
+title: Fun with Powershell, SQL Backup and Automated Restores
+date: '2010-09-24T22:46:00.001+01:00'
+author: Dylan Beattie
+tags:
+- howto
+- tools
+- coding
+- sql
+modified_time: '2010-09-25T00:15:24.691+01:00'
+thumbnail: http://farm3.static.flickr.com/2538/4552977683_f725d7ea1e_t.jpg
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-6903535864674177568
+blogger_orig_url: http://www.dylanbeattie.net/2010/09/fun-with-powershell-sql-backup-and.html
+---
+
+<p>Our database backup system is based on taking a full backup of every database every night, and transaction log backups every 20 minutes. Backups are shipped offsite to a backup server sitting in a data-centre across town, and what I was trying to do was to automate the process of restoring the latest full backup and all subsequent transaction logs on the remote server.</p>  <p>So: ingredients. I have :</p>  <ul>   <li><a href="http://www.red-gate.com/products/SQL_Backup/">Red Gate SQL Backup</a> (and the SqlBackupC.exe command-line client) </li>    <li><a href="http://technet.microsoft.com/en-gb/scriptcenter/powershell.aspx">Windows Powershell</a> </li>    <li>A list of databases in a text file (“databases.txt”) </li>    <li>A&#160; folder full of database backups, and a folder full of transaction log backups. </li> </ul>  <p>The backup filenames look something like:</p>  <pre><blockquote><p>D:\backup\<br />&#160; data\<br />&#160;&#160;&#160; FULL_myserver_Animals_20100921_183021.sqb<br />&#160;&#160;&#160; FULL_myserver_Animals_20100922_183021.sqb<br />&#160;&#160;&#160; FULL_myserver_Animals_20100923_183021.sqb<br />&#160;&#160;&#160; FULL_myserver_Northwind_20100921_183021.sqb<br />&#160;&#160;&#160; FULL_myserver_Northwind_20100922_183021.sqb<br />&#160;&#160;&#160; FULL_myserver_Northwind_20100923_183021.sqb<br />&#160; logs\<br />&#160;&#160;&#160; LOG_myserver_Animals_20100921_190002.sqb<br />&#160;&#160;&#160; LOG_myserver_Animals_20100921_200004.sqb<br />&#160;&#160;&#160; LOG_myserver_Animals_20100921_210003.sqb<br />&#160;&#160;&#160; LOG_myserver_Animals_20100921_220002.sqb<br />&#160;&#160;&#160; LOG_myserver_Animals_20100921_230005.sqb<br />&#160;&#160;&#160; ...<br />&#160;&#160;&#160; ...</p></blockquote></pre>
+
+<p><a title="Abalone shell (c) Rojer via Flickr" href="http://www.flickr.com/photos/rojer/4552977683/sizes/m/in/photostream/"><img style="border-right-width: 0px; margin: 0px 0px 20px 20px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" align="right" src="http://farm3.static.flickr.com/2538/4552977683_f725d7ea1e.jpg" width="280" height="211" /></a>What I’m trying to do is, for each backup listed in databases.txt, I want to find the most up-to-date full backup, restore it, and then restore, in chronological order, every transaction log that’s been created since that full backup was taken.</p>
+
+<p>So. Powershell… time to see what all the fuss is about. </p>
+
+<p>Let’s start with a couple of things that threw me until I got my head around them. Powershell is a <strong><em>shell</em>.</strong> Don’t think of it like C# or Java – think of it like a batch file on steroids. With objects. If you want to run a program from a Powershell script, you <strong>just put its name in the script.</strong> For example – this is a valid Powershell script that’ll open itself in Notepad:</p>
+
+<blockquote>
+  <p>C:\Windows\System32\Notepad.exe myscript.ps1</p>
+</blockquote>
+
+<p>Copy that line into notepad, save it as as myscript.ps1, fire up Powershell.exe, navigate to the folder where you saved it, and type .\myscript.ps1 – bingo.</p>
+
+<p>Secondly, Powershell is designed so that <strong>if something has a certain meaning in DOS, it’ll mean the same thing in Powershell</strong>. &lt;, | and &gt; will redirect and pipe output – just like in DOS – which means Powershell can’t use &gt; as the greater-than operator – so they’ve used –ge instead. (Mmm. Perly.) Backslashes are path separators – just like in DOS – so Powershell uses the backtick (<strong>`</strong>) as an escape character. </p>
+
+<p>Thirdly, Powershell supports Perl-style string interpolation.</p>
+
+<blockquote>
+  <p>$foo = 10 
+    <br />echo “I have $foo fingers”</p>
+</blockquote>
+
+<p>will output <strong>“I have 10 fingers”</strong>. To avoid this behaviour, use single-quotes instead:</p>
+
+<blockquote>
+  <p>$foo = 10 
+    <br />echo 'I have $foo fingers'</p>
+</blockquote>
+
+<p>will print "<strong>I have $foo fingers” </strong>Be careful, though – underscores are valid in variable names, so </p>
+
+<blockquote>
+  <p>echo “LOG_$server_$catalog_$timestamp”</p>
+</blockquote>
+
+<p>is actually going to try and find variables called $server_ , $catalog_ and $timestamp. To work around this behaviour, enclose the variable name in braces:</p>
+
+<blockquote>
+  <p>echo “LOG_${server}_${catalog}_${timestamp}”</p>
+</blockquote>
+
+<p>Finally – Powershell supports aliases, which means most commands have more than one name. For example, there’s a built-in command <strong>Get-ChildItem – </strong>and <strong>dir</strong>, <strong>gci</strong>, and <strong>ls</strong> are all shortcuts for this command, so when you bring up a Powershell command and want to list the contents of the current directory, it doesn’t care whether you type dir, ls, gci, or Get-ChildItem – they all do exactly the same thing.</p>
+
+<p>OK. Time for scripty fun. Here’s the script – you’ll need to supply your own databases.txt and credentials, and probably tweak the </p>
+
+<blockquote>
+  <pre><span style="color: #999"># Read the contents of databases.txt into a collection called $databases</span>
+$databases= Get-Content <font color="#ff0000">&quot;databases.txt&quot;
+</font>
+<span style="color: #999"># Path to the SQL Backup command-line client.</span>
+$exe = <font color="#ff0000">&quot;C:\Program Files (x86)\Red Gate\SQL Backup 6\SqlBackupC.exe&quot;</font>
+
+<span style="color: #999"># Credentials for connection to SQL Server.</span> <br />$username = 'sa'
+$password = <a href="mailto:'p@ssw0rd'">'p@ssw0rd'</a></pre>
+
+  <pre><span style="color: #999"># Database backup encryption password (you *do* encrypt your backups, don’t you… ?)<br /></span>$dbpw = 'T0P$3CR3T'</pre>
+
+  <pre>foreach($database in $databases) {
+
+  <span style="color: #999"># Get a collection of ALL backup files in the backup folder.</span>
+  $allSqbFiles = <a href="http://technet.microsoft.com/en-us/library/ee176841.aspx">Get-ChildItem</a> D:\backup\data\*.sqb 
+  
+  <span style="color: #999"># Create a regular expression that'll match filenames</span>
+  <span style="color: #999"># against the current database name</span>
+  $regex = <font color="#ff0000">&quot;FULL_\(local\)_${database}_\d+_\d+\.sqb&quot;</font>
+  
+  <span style="color: #999"># Filter the list of backup files to find those for the current DB</span>
+  $backups = $allSqbFiles | <a href="http://technet.microsoft.com/en-us/library/ee177028.aspx">Where-Object</a> { $_.Name -match $regex }
+  
+  <span style="color: #999"># Sort the backups by LastWriteTime...</span>
+  $backups = $backups | <a href="http://technet.microsoft.com/en-us/library/ee176968.aspx">Sort-Object</a> LastWriteTime
+
+  <span style="color: #999"># and extract the most recent one</span>
+  $latestBackup = $backups | <a href="http://technet.microsoft.com/en-us/library/ee176955.aspx">Select-Object</a> -last 1
+
+  <span style="color: #999"># Capture the LastWriteTime of the most recent backup  </span>
+  $t = $latestBackup.LastWriteTime
+
+  <span style="color: #999"># Extract the full name of the database backup file  </span>
+  $backup = $latestBackup.FullName
+  
+  <span style="color: #999"># Construct the SQL statement to pass to SqlBackupC.exe - note the </span>
+  <span style="color: #999"># doubled double-quotes used to include a double-quote in the result.</span>
+  
+  $sql = <font color="#ff0000">&quot;&quot;&quot;RESTORE DATABASE [$database] FROM DISK = '$backup' WITH PASSWORD = '$dbpw', NORECOVERY, REPLACE&quot;&quot;&quot;
+</font>  
+  <span style="color: #999"># This next bit is what actually does the database restore, and </span>
+  <span style="color: #999"># it's a bit fiddly.</span>
+  <span style="color: #999"># &amp; (the ampersand) is known as the &quot;call&quot; operator, and </span>
+  <span style="color: #999"># basically says &quot;hey, run this command&quot; Note that you CAN'T just</span>
+  <span style="color: #999"># give it a big fat string containing the whole command, arguments</span>
+  <span style="color: #999"># and everything. That's not how it works.</span>
+  <span style="color: #999"># Second, the arguments beginning with a hyphen need to be</span>
+  <span style="color: #999"># backtick-escaped so Powershell knows they're not operators.</span>
+  <span style="color: #999"># Finally, note how we've included the $exe in quotes,</span>
+  <span style="color: #999"># because the path to the SqlBackupC.exe has spaces in it. </span>
+
+  &amp; &quot;$exe&quot; `-U $username `-P $password `-SQL $sql
+  
+  <span style="color: #999"># Use another regex to grab all the LOG files for the current database.</span>
+  $regex = &quot;LOG_\(local\)_${database}_\d+_\d+\.sqb&quot;;
+  $logFiles = Get-ChildItem D:\backup\logs\*.sqb
+  $logFiles = $logFiles | <a href="http://technet.microsoft.com/en-us/library/ee177028.aspx">Where-Object</a> { $_.Name -match $regex }
+  
+  <span style="color: #999"># Then we filter this list to return only those that are more</span>
+  <span style="color: #999"># recent than the full backup (which we captured earlier)</span>
+  $logFilesToRestore = $logFiles | <a href="http://technet.microsoft.com/en-us/library/ee177028.aspx">Where-Object</a> {$_.CreationTime -ge $t } | <a href="http://technet.microsoft.com/en-us/library/ee176968.aspx">Sort-Object</a> CreationTime
+  
+  $logFileCount = $logFilesToRestore.Length
+  
+  <span style="color: #999"># If there's no log files, we break out of the loop and move</span>
+  <span style="color: #999"># onto the next database.</span>
+  if ($logFileCount -le 0) { continue }
+  
+  <span style="color: #999"># Now, the LAST transaction log needs a slightly different SQL </span>
+  <span style="color: #999"># command, because we want the last restore to leave the database</span>
+  <span style="color: #999"># in a usable state, so we need to split the logs into the final</span>
+  <span style="color: #999"># one, and all the others. </span>
+  $splitAtIndex = $logFileCount - 2
+  
+  <span style="color: #999"># Powershell lets you slice arrays by saying $MyArray[x..y]</span>
+  $logFilesExceptFinaltOne = $logFilesToRestore[0..$splitAtIndex]
+  
+  $finalFogFile = $logFilesToRestore | Select-Object -last 1
+  
+  foreach($log in $logFilesToRestore) {
+    $logFileName = $log.FullName
+  
+    <span style="color: #999"># Construct the SQL statement to restore the transaction log</span>
+    <span style="color: #999"># leaving the database ready to accept further log restores:</span>
+    $sql = <font color="#ff0000">&quot;&quot;&quot; RESTORE LOG [${database}] FROM DISK = '${logFileName}' WITH PASSWORD = '${dbpw}', NORECOVERY&quot;&quot; &quot;</font>
+   
+    <span style="color: #999"># and run SqlBackupC with that SQL statement:</span>
+    &amp; &quot;$exe&quot; `-U $username `-P $password `-SQL $sql<br />  }
+   
+  $logFileName = $finalFogFile.FullName
+   
+  <span style="color: #999"># Construct the SQL statement to restore the last </span>
+  <span style="color: #999"># transaction log and leave everything ready for use</span>
+  $sql = <font color="#ff0000">&quot;&quot;&quot;RESTORE LOG [${database}] FROM DISK = '$logFileName' WITH PASSWORD = '${dbpw}',<br />            RECOVERY, ORPHAN_CHECK &quot;&quot; &quot;</font>
+   
+   <span style="color: #999"># and run it!</span>
+   &amp; &quot;$exe&quot; `-U $username `-P $password `-SQL $sql
+ }</pre>
+</blockquote>
+
+<p>Having never really used Powershell before, this whole thing took about three hours to put together – and I spent the first two hours cursing Powershell for being so damned awkward, and then it just <em>clicked </em>and suddenly everything made a lot more sense. Hopefully the tips above will save you a bit of frustration if you’re taking your first steps with it… and I’ve a feeling I’m going to be doing a lot more Powershelling before too long. For stuff like this, it’s so much more powerful than batch files, and so much more maintainable than writing little command-line utilities in C#.</p>  

@@ -1,0 +1,17 @@
+---
+layout: post
+title: Adding a work-in-progress to Subversion
+date: '2008-10-18T14:35:00.001+01:00'
+author: Dylan Beattie
+tags:
+- tools
+- dotnet
+- c#
+- subversion
+modified_time: '2017-03-18T15:03:45.136Z'
+thumbnail: http://lh3.ggpht.com/dmb197/SPnmOB2deNI/AAAAAAAAAEs/v4uY3wsW7sQ/s72-c/image_thumb%5B11%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2195123753551541284
+blogger_orig_url: http://www.dylanbeattie.net/2008/10/adding-work-in-progress-to-subversion.html
+---
+
+<p>I love Subversion, but from time to time I'll stumble across a bit of SVN behaviour that just doesn't feel quite right. Case in point - you've created 10-15 files, set up a folder structure for a new project, made rather more progress than you were expecting to, and now you want to check the whole thing into revision control. </p>  <p>The 'proper' way of adding existing code to a repository is via the <a href="http://svnbook.red-bean.com/en/1.0/re12.html">svn import</a> command, but that <strong>doesn't turn your local folder into a Subversion working copy.</strong> Having completed the import, you'll then need to move/rename/delete your work in progress, and then do an <a href="http://svnbook.red-bean.com/en/1.0/re04.html">svn checkout</a> to download the version of your project that's now under revision control. This can take a while if you're working on big files and your repository is on the far end of a slow connection... and even when that's not applicable, it's still frustrating.</p>  <p>So, here's how you can add a new project to Subversion without having to do the import-checkout shuffle.</p>  <ol>   <li>Use the repo-browser to create a new empty folder <strong>in the repository</strong> - this will form the root folder of your new project, so call this folder /myproject/trunk or whatever you'd normally use. </li>    <li><strong>Check out </strong>the empty folder into the folder containing your work-in-progress project.&#160; You'll get this warning - which is fine, because what you're doing is 'wrapping' an empty SVN folder around your existing work.       <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; margin: 20px 0px; border-right-width: 0px" height="363" alt="image" src="http://lh3.ggpht.com/dmb197/SPnmOB2deNI/AAAAAAAAAEs/v4uY3wsW7sQ/image_thumb%5B11%5D.png?imgmax=800" width="644" border="0" /></p>   </li>    <li>You'll check out a single folder, and you'll see that your project now consists of a root folder with the happy green SVN icon, containing a bunch of folders with the question-mark overlay that means &quot;Subversion doesn't know about this folder yet...&quot;      <p><a href="http://lh3.ggpht.com/dmb197/SPnmO4euz9I/AAAAAAAAAEw/XA_QUgny3H4/s1600-h/image%5B28%5D.png"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; margin: 10px 0px; border-right-width: 0px" height="390" alt="image" src="http://lh6.ggpht.com/dmb197/SPnmPf5XvcI/AAAAAAAAAE0/4rqtkWsPtvw/image_thumb%5B14%5D.png?imgmax=800" width="612" border="0" /></a></p>   </li>    <li>Now you can do an svn commit in the usual way, and it's trivial to add the 'new' files (i.e. all of them) that should be added to the repository. On the first commit, you'll need to uncheck the bin/obj folders for .NET projects, and then on the subsequent commit, you'll be able to add them to the SVN ignore list (you can only ignore a folder whose parent is already under version control) </li> </ol>  

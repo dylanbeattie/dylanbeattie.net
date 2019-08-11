@@ -1,0 +1,43 @@
+---
+layout: post
+title: Mocking the QueryString collection in ASP.NET
+date: '2008-12-17T13:47:00.001Z'
+author: Dylan Beattie
+tags:
+- asp.net
+- tools
+- dotnet
+- mvc
+- altnet
+- c#
+- webdev
+- moq
+modified_time: '2017-03-18T15:03:45.227Z'
+thumbnail: http://lh6.ggpht.com/_LV_l8kYLOwo/SUkC55y12NI/AAAAAAAAAII/Ryx3rdj21Io/s72-c/image_thumb%5B2%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-806611779290481586
+blogger_orig_url: http://www.dylanbeattie.net/2008/12/mocking-querystring-collection-in.html
+---
+
+<p>One of the hardest parts of building testable web applications using ASP.NET is the HttpContext object, which encapsulates access to the HTTP request and response, server state like the Session and Application objects, and ASP.NET's implementation of various other bits of the HTTP specification.</p>  <p>HttpContext has a God complex. It's all-seeing, all-knowing, ever-present, and most WebForms apps just call HttpContext.Current and work with whatever comes back. This approach really doesn't lend itself to test-driven designs, though, so the ASP.NET MVC team have implemented a collection of <a href="http://haacked.com/archive/2008/02/21/versioning-issues-with-abstract-base-classes-and-interfaces.aspx">virtual base classes</a> - HttpContextBase, HttpRequestBase, etc. - which gives us the ability to isolate elements of the HttpContext for testing purposes, either using a mocking framework or by writing our own test classes that inherit from those base classes. On the whole, this approach works fairly well - especially once you start explicitly passing an HttpContextBase into your controllers instead of letting them run amok with HttpContext.Current - but there's still some legacy implementation details inherited from ASP.NET that can cause a bit of confusion with your isolation tests.</p>  <p>In ASP.NET - both MVC and WebForms - the QueryString property of the HttpContext.Request claims to be a NameValueCollection. It isn't - which becomes immediately apparent if you're trying to test a controller method that handles IIS 404 errors. In classic mode, IIS will invoke a custom error handler as follows. Let's say you've mapped 404 errors to /MyMvcApp/Error/NotFound - where MyMvcApp is a virtual directory containing an ASP.NET MVC application, which contains an ErrorController with a NotFound() method.</p>  <p><a href="http://lh4.ggpht.com/_LV_l8kYLOwo/SUkC5PsO8QI/AAAAAAAAAIE/obdBbqCyXlc/s1600-h/image%5B4%5D.png"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; margin: 10px 0px; border-right-width: 0px" height="445" alt="image" src="http://lh6.ggpht.com/_LV_l8kYLOwo/SUkC55y12NI/AAAAAAAAAII/Ryx3rdj21Io/image_thumb%5B2%5D.png?imgmax=800" width="431" border="0" /></a></p>  <p>When your browser requests <strong><a href="http://myserver/page/is/not/here.aspx">http://myserver/page/is/not/here.aspx</a></strong>; IIS doesn't find anything, so it invokes your configured handler by effectively requesting the following URL:</p>  <p><strong>http://myserver/MyMvcApp/Error/NotFound?404;http://myserver:80 /page/is/not/here.aspx</strong></p>  <p>Notice that there's no key/value pairs in that query string. The code in my controller that parses it is using HttpContext.Request.QueryString.ToString() to extract the raw query string - but here's where it gets a bit weird. The framework claims that Request.QueryString is a NameValueCollection, but at runtime, it's actually a System.Web.HttpValueCollection. The difference is significant because HttpValueCollection.ToString() returns the URL-encoded raw query string, but NameValueCollection.ToString() returns the default Object.ToString() result - in this case &quot;System.Collections.Specialized.NameValueCollection&quot; - which really isn't much use to our URL parsing code.</p>  <p>So - to test our parsing code, we need our mock to return an HttpValueCollection. Problem is - this class is internal, so we can't see it or create new instances of it. The trick is to use System.Web.HttpUtility.ParseQueryString(), which will take the raw query string and return something that claims to be a NameValueCollection but is actually an HttpValueCollection. Pass in the URL you need to test, and it'll give you back a querystring object you can pass into your tests.</p>  <p>Putting it all together gives us something along these lines - this is using NUnit and Moq, but the query string technique should work with any test framework.</p>  <pre>[Test]
+public void Verify_Page_Is_Parsed_Correctly_From_IIS_Error_String() {
+
+	// Here, we inject a test query string similar to that created
+	// by the IIS custom error handling system.
+	var iisQueryString = &quot;404;http://myserver:80/i/like/chutney.html&quot;;
+	var testQueryString = HttpUtility.ParseQueryString(iisQueryString);
+
+	Mock&lt;HttpRequestBase&gt; request = new Mock&lt;HttpRequestBase&gt;();
+	request.ExpectGet(req =&gt; req.QueryString).Returns(testQueryString);
+
+	Mock&lt;HttpContextBase&gt; context = new Mock&lt;HttpContextBase&gt;();
+	context.Expect(ctx =&gt; ctx.Request).Returns(request.Object);
+
+	// Note that we're injecting an HttpContextBase into ErrorController
+	// In the real app, this dependency is resolved using Castle Windsor.
+	ErrorController controller = new ErrorController(context.Object);
+
+	ActionResult result = controller.NotFound();
+
+	// TODO: inspect ActionResult to check it's looked up the requested page
+	// or whatever other behaviour we're expecting.
+}</pre>  

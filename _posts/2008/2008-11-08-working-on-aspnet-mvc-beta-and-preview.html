@@ -1,0 +1,49 @@
+---
+layout: post
+title: Working on ASP.NET MVC Beta and Preview code side-by-side
+date: '2008-11-08T15:53:00.005Z'
+author: Dylan Beattie
+tags:
+- asp.net
+- howto
+- dotnet
+- mvc
+- altnet
+- c#
+modified_time: '2017-03-18T15:03:45.175Z'
+thumbnail: http://lh5.ggpht.com/_LV_l8kYLOwo/SRW4OTOKy2I/AAAAAAAAAHY/JBymuNqRM7U/s72-c/works-on-my-machine-starburst%5B9%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-4172264495683097280
+blogger_orig_url: http://www.dylanbeattie.net/2008/11/working-on-aspnet-mvc-beta-and-preview.html
+---
+
+<p>I have an app built against ASP.NET MVC Preview 3 that needs some tweaking, and I'm also working on a couple of projects using ASP.NET MVC Beta, so I'm in the slightly odd situation of trying to build and run preview 3 and beta projects side-by-side. (Yes, I will be updating this code to run against the beta version. I don't have time to do that this weekend, though, and I need some changes live before Monday afternoon.) </p>  <p>I've just checked-out the preview 3 project to make some changes, and although it builds absolutely fine, I'm seeing the lovely Yellow Screen of Death when I try and run it:</p><table cellspacing="0" cellpadding="2" border="1"><tbody>     <tr>       <td valign="top" width="603"><span class="Apple-style-span" style="word-spacing: 0px; font: 11px verdana; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"><span>             <h3 style="font-weight: normal; font-size: 18pt; color: red; font-family: verdana">Server Error in '/' Application.                <hr width="100%" color="#c0c0c0" size="1"></h3>              <h4 style="font-weight: normal; font-size: 14pt; color: maroon; font-family: verdana"><i>Method not found:               
+'Void System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute   (System.Web.Routing.RouteCollection, System.String)'.</i></h4>           </span><span style="font-family:arial, helvetica, geneva, sunsans-regular, sans-serif;"><b   style="margin-top: -5px; font-weight: bold;  font-family:verdana;color:black;">Description:<span class="Apple-converted-space"> </span></b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.<span class="Apple-converted-space"> </span>            
+        
+<b   style="margin-top: -5px; font-weight: bold;  font-family:verdana;color:black;">Exception Details:<span class="Apple-converted-space"> </span></b>System.MissingMethodException: Method not found: 'Void System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute(System.Web.Routing.RouteCollection, System.String)'. </span></span></td></tr></tbody></table>
+<p>This is weird, because this code is deployed and running live on a box that doesn't have any versions of MVC installed; in theory, the project is entirely self-contained and XCOPY-deployable. First thing I tried was to shut down Visual Studio, uninstall ASP.NET MVC Beta, reinstall Preview 3, reload VS2008. That worked, so it's definitely the beta doing something strange. This project has hard-wired references to copies of the MVC assemblies in the \Dependencies folder of the solution, which are copied to the \bin folder during the build. It looks like the beta is installing something that's interfering with this process. Frustratingly, the installers also set up the MVC Web Application project type in Visual Studio, so although I can <strong>run</strong> the site without any versions of MVC installed, I can't open it in VS2008 because of the "project type is not supported" error.</p><p>Ok, first thing to realize is that, according to <a href="http://weblogs.asp.net/scottgu/archive/2008/10/16/asp-net-mvc-beta-released.aspx#eleven">ScottGu's beta release blog post</a>, the beta installs System.Web.Mvc, System.Web.Routing and System.Web.Abstractions to the GAC to allow them to be automatically updated. The preview versions of MVC would only install them to C:\Program Files\Microsoft ASP.NET\.</p><p>Given this particular chunk of web.config code:</p><pre class="code"  style="padding-right: 8px; padding-left: 8px; background: black; padding-bottom: 8px; padding-top: 8px; font-family:consolas;"><span style="background: black; color:#40c4ff;">&lt;system.web&gt;
+</span><span style="background: black; color:#40c4ff;"> &lt;compilation </span><span style="background: black; color:#eddac0;">debug</span><span style="background: black; color:#40c4ff;">=</span><span style="background: black; color:#ff80ff;">"true"</span><span style="background: black; color:#40c4ff;">&gt;
+&lt;assemblies&gt;
+</span><span style="background: black; color:#40c4ff;">    &lt;add </span><span style="background: black; color:#eddac0;">assembly</span><span style="background: black; color:#40c4ff;">=</span><span style="background: black; color:#ff80ff;">"System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"</span><span style="background: black; color:#40c4ff;">/&gt;
+</span><span style="background: black; color:#40c4ff;">   &lt;/assemblies&gt;
+&lt;/compilation&gt;
+&lt;/system.web&gt;</span></pre><a href="http://11011.net/software/vspaste"></a><p>the runtime is going to use the first version of System.Web.Mvc matching the specified culture, version number and public key token. This is significant because <strong>the CLR checks the GAC first </strong>when resolving assembly references - and if it finds a matching assembly in the GAC, it won't look anywhere else. The ASP.NET MVC previews and beta release all use the same assembly version, culture and public keys, so the CLR has no way of distinguishing between the preview 3 version of System.Web.Mvc and the beta version of the same assembly. They're different DLLs with different <strong>file versions</strong>, but because the <strong>assembly version</strong> is the same, the CLR regards them as the same assembly.</p><p>There are techniques you can use to override this behaviour, but, according to <a href="http://stackoverflow.com/questions/267693/how-can-i-force-net-to-use-a-local-copy-of-an-assembly-thats-in-the-gac">this thread on StackOverflow</a>, these techniques<strong> </strong>only work if <strong>the assembly in the GAC has a different version to the assembly that's deployed with your application.</strong></p><p>Ok - no problem, we'll just remove System.Web.Mvc from the GAC, by running <a href="http://msdn.microsoft.com/en-us/library/ex0ss12c.aspx">gacutil.exe</a> /u to uninstall it.</p><pre>C:\Documents and Settings\dylan.beattie&gt;<strong>gacutil /u system.web.mvc</strong>
+Microsoft (R) .NET Global Assembly Cache Utility. Version 3.5.30729.1
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Assembly: system.web.mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL
+Unable to uninstall: assembly is required by one or more applications
+Pending references:
+SCHEME: &lt;windows_installer&gt; ID: &lt;msi&gt; DESCRIPTION : &lt;windows installer&gt;
+Number of assemblies uninstalled = 0
+Number of failures = 0
+
+C:\Documents and Settings\dylan.beattie&gt;</pre><p><a href="http://www.codinghorror.com/blog/archives/000818.html"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; margin: 0px 0px 10px 10px; border-right-width: 0px" height="96" alt="Works on MY Machine!" src="http://lh5.ggpht.com/_LV_l8kYLOwo/SRW4OTOKy2I/AAAAAAAAAHY/JBymuNqRM7U/works-on-my-machine-starburst%5B9%5D.png?imgmax=800" width="100" align="right" border="0" /></a> OK, that didn't work. Because we installed the ASP.NET MVC beta using Windows Installer, it's registered a dependency on System.Web.Mvc that means we can't uninstall it. So... registry hack time. This is the bit that might kill your PC, wife, cat, whatever.  Editing the registry is dangerous and can cause all kinds of problems, so read this stuff first, and if it sounds like a good idea, proceed at your own risk.</p><p>Fire up regedit and navigate to <strong>HKEY_CLASSES_ROOT\Installer\Assemblies\Global</strong>, and you should find a key in there called</p><p><strong>System.Web.Mvc,version="1.0.0.0",culture="neutral",publicKeyToken="31BF3856AD364E35",processorArchitecture="MSIL"</strong></p><p>I deleted this key. I also got a bit carried away and deleted the key</p><p><strong>System.Web.Mvc,1.0.0.0,,31bf3856ad364e35,MSIL  </strong>from</p><p><strong>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Fusion\GACChangeNotification\Default</strong></p><p>as well... but I forgot to try gacutil /u first, so I don't know whether this second step is necessary or not. It seemed like a good idea, though, and doesn't appear to have broken anything, so you may or may not need to delete this second key as well.</p><p>Having removed those keys, I could run gacutil /u and remove System.Web.Mvc quite happily:</p><pre>C:\>gacutil /u System.Web.Mvc
+Microsoft (R) .NET Global Assembly Cache Utility. Version 3.5.30729.1
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Assembly: System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL
+Uninstalled: System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL
+Number of assemblies uninstalled = 1
+Number of failures = 0
+
+C:\> </pre><p>My preview 3 project now builds and runs quite happily against the System.Web.Mvc DLLs installed as part of the website, and the VS2008 MVC Project template still works just like it did before.</p>

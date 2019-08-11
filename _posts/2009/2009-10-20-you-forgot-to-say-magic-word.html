@@ -1,0 +1,14 @@
+---
+layout: post
+title: You Forgot to Say the Magic Word…
+date: '2009-10-20T19:00:00.000+01:00'
+author: Dylan Beattie
+tags:
+- random
+- sql
+modified_time: '2009-10-20T19:00:01.942+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-5721928516499945592
+blogger_orig_url: http://www.dylanbeattie.net/2009/10/you-forgot-to-say-magic-word.html
+---
+
+<p>In Microsoft SQL Server, this query won’t work:</p>  <blockquote>   <p>SELECT * FROM ( SELECT * FROM Customer UNION SELECT * FROM Supplier) ORDER BY CompanyName</p> </blockquote>  <p>But – if you ask <em>nicely</em>, it does exactly what you’d expect:</p>  <blockquote>   <p>SELECT * FROM ( SELECT * FROM Customer UNION SELECT * FROM Supplier) <strong><font color="#ff0000">PLEASE</font> </strong>ORDER BY CompanyName</p> </blockquote>  <p>You won’t believe the look on your colleague’s faces when you solve their problem using simple good manners.</p>  <p><small>(Of course, it actually works because PLEASE in that context just acts as a table-name alias for result of the UNION sub-select, and sub-selects in SQL Server need to have a name. But don't let that stop you using it for fun and profit.)</small>  

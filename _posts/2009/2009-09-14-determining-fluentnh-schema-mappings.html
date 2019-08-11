@@ -1,0 +1,81 @@
+---
+layout: post
+title: Determining FluentNH Schema Mappings based on Entity Namespaces
+date: '2009-09-14T23:40:00.001+01:00'
+author: Dylan Beattie
+tags:
+- nhibernate
+modified_time: '2009-09-14T23:41:50.036+01:00'
+thumbnail: http://farm3.static.flickr.com/2445/3908231290_cf2e85b876_t.jpg
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7541576148063690536
+blogger_orig_url: http://www.dylanbeattie.net/2009/09/determining-fluentnh-schema-mappings.html
+---
+
+<p align="justify"><a title="Sunrise over Sardinia (otherwise this post would be all code and no pictures, and where&#39;s the fun in that?)" href="http://www.flickr.com/photos/dylanbeattie/3908231290/in/set-72157622332767804/"><img style="border-bottom: 0px; border-left: 0px; margin: 0px 0px 20px 20px; display: inline; border-top: 0px; border-right: 0px" title="" border="0" alt="Sardinia Sunrise by you." align="right" src="http://farm3.static.flickr.com/2445/3908231290_cf2e85b876.jpg" width="300" height="225" /></a>I’m setting up some Fluent NHibernate mappings for a rewrite of some of our legacy code, and one of the issues I’ve hit is that we make extensive use of cross-database views and joins – the data supporting our app is split across three separate SQL Server databases (which, thankfully, are all hosted by the same SQL Server instance).</p>  <p>Turns out this is pretty easy to do – Mike Hadlow has a <a href="http://mikehadlow.blogspot.com/2008/10/mapping-entities-to-multiple-databases.html">great post here</a> which covers the fundamentals.</p>  <p align="justify">I’ve extended this principal a bit, using the Conventions facility provided by Fluent NHibernate, so that you can determine the SQL database for each entity based on your entities’ namespaces, so I have a model that looks (very) roughly like this. Let's imagine that my core web data is in a database called WebStuff, my accounts system is in CashDesk and my CRM database is in DylanCrm. Each mapped entity is declared in a sub-namespace of my common Dylan.Entities namespace, with these sub-namespaces named to reflect the database they’re mapping:</p>  <blockquote>   <pre>
+namespace Dylan.Entities.WebStuff {
+	public class WebUser {
+		public int Id { get; set; }
+		public Customer AssociatedCustomer { get; set; }
+	}
+}
+
+namespace Dylan.Entities.CashDesk {
+	public class Invoice {
+		public int Id { get; set; }
+		public Customer Customer { get; set; }
+	}
+}
+
+namespace Dylan.Entities.DylanCrm {
+	public class Customer {
+		public int Id { get; set; }
+		public IList<invoice> Invoices { get; set; }
+	}
+}</pre>
+</blockquote>
+
+<p>NHibernate will quite happily retrieve and update data across multiple databases, by prepending the schema name to the table names - so you end up running SQL statements like <code>SELECT ... FROM CashDesk.dbo.Invoice WHERE ...</code>. If you're only mapping a handful of tables, it's easy to specify the schema for each table/object as in Mike's example - but you can also use <code>FluentNHibernate.Conventions</code> to achieve the same thing.</p>
+
+<p>First off, you'll need to add a new class which implements <code>IClassConvention</code> and modifies the <code>Schema</code> property of each class mapping:</p>
+
+<blockquote>
+  <pre>public class SchemaPrefixConvention : IClassConvention {
+
+	private string ExtractDatabaseName(string entityNamespace) {
+		return (entityNamespace.Substring(entityNamespace.LastIndexOf('.') + 1));
+	}
+
+	public void Apply(IClassInstance instance) {
+		instance.Schema(ExtractDatabaseName(instance.EntityType.Namespace) + &quot;.dbo&quot;);
+	}
+}</pre>
+</blockquote>
+
+<p>Once you've done that, you just need to reference this convention when you set up your mappings; if you're using the auto-mapping facility, it looks like this:</p>
+
+<blockquote>
+  <pre>mappings.AutoMappings.Add(
+	AutoMap
+		.AssemblyOf&lt;Invoice&gt;()
+		.Where(t =&gt; t.Namespace == &quot;Dylan.Entities.CashDesk&quot;)
+		<strong>.Conventions.Add&lt;SchemaPrefixConvention&gt;()</strong>
+	);
+
+mappings.AutoMappings.Add(
+	AutoMap
+		.AssemblyOf&lt;Customer&gt;()
+		.Where(t =&gt; t.Namespace == &quot;Dylan.Entities.DylanCrm&quot;)
+		<strong>.Conventions.Add&lt;SchemaPrefixConvention&gt;()</strong>
+	);
+
+mappings.AutoMappings.Add(
+	AutoMap
+		.AssemblyOf&lt;WebUser&gt;()
+		.Where(t =&gt; t.Namespace == &quot;Dylan.Entities.WebStuff&quot;)
+		<strong>.Conventions.Add&lt;SchemaPrefixConvention&gt;()</strong>
+	);</pre>
+</blockquote>
+
+<p>Fluent NH will run your Apply() method to each mapped class in each of these three mappings, which means the resulting configuration will qualify each table name with a schema name derived from the mapped class’ namespace – and once that’s in place, you can query, retrieve, update, join and generally hack your objects about at will, and completely ignore the fact that under the hood they're actually being persisted across multiple data stores.</p>
+
+<p>I think that's quite neat.</p>  

@@ -164,7 +164,7 @@
 		color: inherit;
 		font-weight: 600;
 		line-height: 1.75em;
-		margin-bottom: 1em;
+		
 
 		a {
 			color: inherit;
@@ -177,14 +177,23 @@
 		}
 	}
 
+	h1 { 
+		margin-bottom: 1em;
+	}
+
 	h2 {
 		font-size: 1.75em;
 		letter-spacing: -0.025em;
+		margin-bottom: 1em;
 	}
 
 	h3 {
 		font-size: 1.2em;
 		letter-spacing: -0.025em;
+		margin-bottom: 0.5em;
+	}
+	h4 { 
+		margin-bottom: 0em;
 	}
 
 	sub {

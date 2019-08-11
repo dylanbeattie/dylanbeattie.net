@@ -1,0 +1,108 @@
+---
+layout: post
+title: IdentityServer, OpenID Connect and Microsoft CRM Portals
+date: '2016-11-14T18:17:00.000Z'
+author: Dylan Beattie
+tags: 
+modified_time: '2016-11-15T14:50:21.352Z'
+thumbnail: https://lh3.googleusercontent.com/-ej3DqmphVmQ/WCoDsPw97NI/AAAAAAAAEJ0/Qa3Mj8Fut_Q/s72-c/image_thumb%25255B6%25255D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-9204949265927521461
+blogger_orig_url: http://www.dylanbeattie.net/2016/11/identityserver-openid-connect-and.html
+---
+
+<p>As readers of this blog will know, here at Spotlight we’re in the process of moving nine decades’ worth of legacy business process onto Microsoft Dynamics CRM, aka CRM Online, which I gather is now called Dynamics 365 (because hey, it’s not like naming things was hard enough already, right?)</p> <p>We’re also investigating a couple of options for building customer-facing systems that integrate with Dynamics. Until last year, there were really three options for this – a product called <a href="https://www.adxstudio.com/">Adxstudio</a>, a free Microsoft component called the CRM Portal Accelerator, or rolling your own solution using the CRM SDK. Around this time last year, Microsoft quietly retired the Portal Accelerator component and acquired Adxstudio, and since then, they’ve been in the process of assimilating it into the Dynamics product family – which has meant it’s been something of a moving target, both in terms of the supported features and in terms of the quality of documentation and examples. </p> <p>I’ve previously blogged about <a href="http://www.dylanbeattie.net/2016/07/aspnet-authentication-with-adxstudio.html">one way to integrate Adxstudio with your existing authentication system</a>, but that approach relied completely on running Adxstudio on-premise so you could run your own code as part of the request lifecycle – and as you may have noticed, there’s a bit of a trend in IT at the moment away from running your own servers and towards using hosted managed services, so that patching and backups are somebody else’s problem. Since Microsoft acquired Adxstudio, there’s been a lot of churn around what’s supported and what’s not – I’m guessing that behind the scenes they’re going through the Adxstudio codebase feature-by-feature and making sure it lines up with their plans for the Dynamics 365 platform, but that’s just guesswork on my part. </p> <p>One of the main integration points I’ve been waiting for is the ability for a Microsoft-hosted Portal solution to use a third-party OpenID Connect endpoint to authenticate users, and it appears in the latest update this is finally supported – albeit with a couple of bumps along the way. Here’s what I’ve had to do to get a proof-of-concept up and running.</p> <h4>Setting up Dynamics CRM Portals</h4> <p>First, you’ll need to set up a Dynamics Portal trial. You can get a 30-day hosted trial of Dynamics CRM Online by <a href="https://www.microsoft.com/en-gb/dynamics/crm-free-trial-overview.aspx">signing up here</a> – this actually gives you a full Office 365 organization including things like hosted Active Directory, as well as the Dynamics CRM Online instance we’re using in this example. Next, you’ll need to ask nicely for a trial of the portal add-on – which you can do by filling out the form at <a href="https://crmmanagedtrials.dynamics.com/">crmmanagedtrials.dynamics.com</a>. </p> <h4>Setting up IdentityServer and configuring an ngrok tunnel</h4> <p>Whilst you’re waiting for the nice Microsoft people to send you your trial license, get up and running with IdentityServer. For this prototype, I’m using the <a href="https://github.com/IdentityServer/IdentityServer3.Samples/tree/master/source/MVC%20Authentication">MVC Authentication</a> example from the <a href="https://github.com/IdentityServer/IdentityServer3.Samples">IdentityServer3.Samples</a> project – clone it to your workstation, open the MVC Authentication solution, hit F5, verify you can get up and running on localhost. </p> <p>Next – in order for Dynamics CRM Online to talk to your IdentityServer instance, you’ll need to make your IdentityServer endpoints visible to the internet. You could do this by deploying your IdentityServer sample to Azure or AWS, but for experiments like this, I like to use a tool called <a href="https://ngrok.com/">ngrok</a>, which will create temporary, secure tunnels from the internet to your workstation. <a href="https://ngrok.com/download">Download ngrok</a>, unzip it somewhere sensible.</p> <p>Pick a tunnel name. I’m using <strong>authdemo</strong> in this example but any valid DNS host name will do. Next, create a local IIS application pointing to the EmbeddedMvc folder in your samples directory, and set the host name to <strong>&lt;your tunnel name&gt;.ngrok.io</strong></p> <p><a href="https://lh3.googleusercontent.com/-tQaCEIG_qs4/WCoDqKnV9_I/AAAAAAAAEJw/ncn0mcGzbng/s1600-h/image%25255B12%25255D.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-ej3DqmphVmQ/WCoDsPw97NI/AAAAAAAAEJ0/Qa3Mj8Fut_Q/image_thumb%25255B6%25255D.png?imgmax=800" width="585" height="569"></a><br></p> <p>Now run ngrok.exe to create a tunnel from the internet to your new IIS application:</p> <p>C:\tools\ngrok&gt; <strong>ngrok.exe http –subdomain=authdemo 80</strong></p><pre><p>ngrok by @inconshreveable </p><p>
+</p><p>Session Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; online<br>Version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.1.18<br>Region&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; United States (us)<br>Web Interface&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://127.0.0.1:4040<br>Forwarding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://authdemo.ngrok.io -&gt; localhost:80<br>Forwarding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://authdemo.ngrok.io -&gt; localhost:80</p>
+<p>Connections&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ttl&nbsp;&nbsp;&nbsp;&nbsp; opn&nbsp;&nbsp;&nbsp;&nbsp; rt1&nbsp;&nbsp;&nbsp;&nbsp; rt5&nbsp;&nbsp;&nbsp;&nbsp; p50&nbsp;&nbsp;&nbsp;&nbsp; p90<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00&nbsp;&nbsp;&nbsp; 0.00&nbsp;&nbsp;&nbsp; 0.00&nbsp;&nbsp;&nbsp; 0.00</p>
+<p>All being</p></pre>
+<p>If that’s worked, you should be able to fire up a browser, go to <a href="http://authdemo.ngrok.io/">http://authdemo.ngrok.io/</a> – replacing ‘authdemo’ with your own tunnel name - and see the IdentityServer3 sample landing page:</p>
+<p><a href="https://lh3.googleusercontent.com/-_v32DaBMwkQ/WCoDttFvrpI/AAAAAAAAEJ4/a8XZ3e_Cv0Q/s1600-h/image%25255B10%25255D.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-njyq2Swpj_E/WCoDuo96OvI/AAAAAAAAEJ8/AVopYpeEVNc/image_thumb%25255B4%25255D.png?imgmax=800" width="640" height="465"></a></p>
+<h4>Configuring IdentityServer</h4>
+<p>Right. Next thing we need to do is to make a couple of changes to the IdentityServer configuration, so that it’ll run happily on authdemo.ngrok.io instead of on localhost</p>
+<p>First, <a href="https://identityserver.github.io/Documentation/docsv2/configuration/logging.html">enable logging</a>. Just do it. Use the package manager console to install the Serilog.Sinks.Trace package. Then add this to the top of your Configuration() method inside Startup:</p><pre>Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Trace()
+                .CreateLogger();
+</pre>
+<p>and add this to your web.config, specifying a path that’s writable by the application pool:</p><pre><code>&lt;system.diagnostics&gt;
+  &lt;trace autoflush="true"
+         indentsize="4"&gt;
+    &lt;listeners&gt;
+      &lt;add name="myListener"
+           type="System.Diagnostics.TextWriterTraceListener"
+           initializeData="<strong><font style="background-color: #ffff00">C:\logfiles\identityserver.log</font></strong>" /&gt;
+      &lt;remove name="Default" /&gt;
+    &lt;/listeners&gt;
+  &lt;/trace&gt;
+&lt;/system.diagnostics&gt;</code></pre>
+<p>Next, do a global search and replace, replacing any occurrence of <strong>localhost:44319</strong> with <strong>authdemo.ngrok.io</strong> – again, substituting your own tunnel name as required. 
+<p>Next, add a new client to the static EmbeddedMvc.IdentityServer.Clients class the IdentityServer sample project – changing the highlighted values to your own client ID, client secret, and portal instance URL:</p><pre><code>
+new Client {
+    ClientName = "Dynamics CRM Online",
+    ClientId = "<font style="background-color: #ffff00">crm</font>",
+    Flow = Flows.Hybrid,
+    ClientSecrets = new List<secret>() { new Secret("<font style="background-color: #ffff00">secret01</font>".Sha256()) },
+    RedirectUris = new List<string> { <br>      "<font style="background-color: #ffff00">https://my-portal-instance.microsoftcrmportals.com</font>" <br>    },
+    PostLogoutRedirectUris = new List<string> { <br>      "<font style="background-color: #ffff00">https://my-portal-instance.microsoftcrmportals.com</font>" <br>    },
+    AllowedScopes = new List<string> { "openid" }
+},
+</code></pre>
+<h4>&nbsp;</h4>
+<h4>Adding IdentityServer as an endpoint in CRM Portals</h4>
+<p>Finally, you need to <a href="https://www.microsoft.com/en-us/dynamics/crm-setup-and-administration/open-id-connect-provider-settings-for-portals.aspx">add your new IdentityServer as an identity provider</a>. CRM Portals uses the Dynamics CRM platform for all its configuration and data storage, so to add new settings you’ll need to log into your Dynamics CRM Online instance, go into Portals &gt; Site Settings, and add the following values:</p>
+<table cellspacing="0" cellpadding="4" width="696" border="1">
+<tbody>
+<tr>
+<td valign="top" width="194">
+<p><b><font size="2">Name</font></b></p></td>
+<td valign="top" width="334">
+<p><b><font size="2">Value</font></b></p></td>
+<td valign="top" width="166">
+<p><b><font size="2">Website</font></b></p></td></tr>
+<tr>
+<td valign="top" width="194">
+<p><font size="2">Authentication/OpenIdConnect/AuthDemo/Authority</font></p></td>
+<td valign="top" width="334">
+<p><font size="2">http://<font style="background-color: #ffff00">authdemo.ngrok.io</font>/identity/</font></p></td>
+<td valign="top" width="166">
+<p><font size="2">Customer Self-Service</font></p></td></tr>
+<tr>
+<td valign="top" width="194">
+<p><font size="2">Authentication/OpenIdConnect/AuthDemo/Caption</font></p></td>
+<td valign="top" width="334">
+<p><font size="2">IdentityServer OpenID Connect Demo</font></p></td>
+<td valign="top" width="166">
+<p><font size="2">Customer Self-Service</font></p></td></tr>
+<tr>
+<td valign="top" width="194">
+<p><font size="2">Authentication/OpenIdConnect/AuthDemo/ClientId</font></p></td>
+<td valign="top" width="334">
+<p><font style="background-color: #ffff00" size="2">crm</font></p></td>
+<td valign="top" width="166">
+<p><font size="2">Customer Self-Service</font></p></td></tr>
+<tr>
+<td valign="top" width="194">
+<p><font size="2">Authentication/OpenIdConnect/AuthDemo/ClientSecret</font></p></td>
+<td valign="top" width="334">
+<p><font style="background-color: #ffff00" size="2">secret01</font></p></td>
+<td valign="top" width="166">
+<p><font size="2">Customer Self-Service</font></p></td></tr>
+<tr>
+<td valign="top" width="194">
+<p><font size="2">Authentication/OpenIdConnect/AuthDemo/MetadataAddress</font></p></td>
+<td valign="top" width="334">
+<p><font size="2">http://<font style="background-color: #ffff00">authdemo.ngrok.io</font>/identity/.well-known/openid-configuration</font></p></td>
+<td valign="top" width="166">
+<p><font size="2">Customer Self-Service</font></p></td></tr></tbody></table>
+<p>Finally, it looks like you’ll need to restart the portal instance to get it to pick up the updated values – which you can do by logging into the Office 365 Admin Center, Admin Centers, CRM, Applications, Portal Add-On, clicking ‘MANAGE’, and pressing the nice big RESTART button on the Portal Actions page:</p>
+<p><a href="https://lh3.googleusercontent.com/-uu5KyKtAlJI/WCsUGP90UjI/AAAAAAAAEKU/smyrIBSSx70/s1600-h/image%25255B19%25255D.png"><img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-bo87xtSVI-0/WCsUHUBWGUI/AAAAAAAAEKY/q0B9UihT2IQ/image_thumb%25255B11%25255D.png?imgmax=800" width="640" height="344"></a></p>
+<p>And – assuming everything lines up exactly right – you should now see an additional login button on your CRM Portals instance:</p>
+<p><a href="https://lh3.googleusercontent.com/-OFTZfwQ5QsQ/WCsUIHRH6EI/AAAAAAAAEKc/5gqeMtXD25s/s1600-h/image%25255B28%25255D.png"><img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-QhedA-SNclQ/WCsUIlwCDjI/AAAAAAAAEKg/21_KrrvIEuw/image_thumb%25255B16%25255D.png?imgmax=800" width="640" height="406"></a></p>
+
+
+<p>Clicking on it will bounce you across to your ngrok-tunnelled IdentityServer MVC app running on localhost:</p>
+<p><a href="https://lh3.googleusercontent.com/-0pk4mHm85Gw/WCsUJZgUVtI/AAAAAAAAEKk/QogpAmvwW9c/s1600-h/image%25255B33%25255D.png"><img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-t-z5x8edELI/WCsUJ8l7nZI/AAAAAAAAEKo/Mg1E4P9El2E/image_thumb%25255B19%25255D.png?imgmax=800" width="640" height="406"></a>Log in as bob / secret, and you’ll get the OpenID permissions check:</p>
+<p><a href="https://lh3.googleusercontent.com/-8W1zdynt5ns/WCsULE26nRI/AAAAAAAAEKs/B5UxdX_b9N4/s1600-h/image%25255B39%25255D.png"><img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="https://lh3.googleusercontent.com/-Nqwca61wKV4/WCsULsA9mRI/AAAAAAAAEKw/AIhan7e_lK0/image_thumb%25255B23%25255D.png?imgmax=800" width="640" height="406"></a></p>
+<p>…and when you hit ‘Yes, Allow’, you’ll be redirected back to the CRM Portals instance, which will create a new CRM Contact linked to your OpenID Connect identity, and log you in to the portal. </p>
+<h4>Conclusions</h4>
+<p>Of course, in the real world there’s a lot more to it than this – there is a huge difference between a proof of concept like this and a production system. These sorts of user journeys form such a key part of delivering great user experience, and integrating multiple systems into your login and authentication/authorization journeys only makes this harder. But it did work, and it wasn’t actually all that complicated to get it up and running. It’s also interesting to see how something like OpenID Connect can be used to integrate a powerful open-source solution like IdentityServer with a heavyweight hosted platform service like CRM Portals.</p>
+<p>Whether we end up adopting a hosted solution like CRM Portals – as opposed to just building our own apps that connect to CRM via the SDK or the new OData API – remains to be seen, but it’s nice to see solutions from two radically different sources playing nicely together thanks to the joy of open protocols like OpenID Connect. Long may it continue.</p>

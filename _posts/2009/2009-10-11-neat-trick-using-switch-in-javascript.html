@@ -1,0 +1,39 @@
+---
+layout: post
+title: A Neat Trick using Switch in JavaScript
+date: '2009-10-11T15:46:00.002+01:00'
+author: Dylan Beattie
+tags: 
+modified_time: '2009-10-11T15:47:57.440+01:00'
+blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7603401045092122839
+blogger_orig_url: http://www.dylanbeattie.net/2009/10/neat-trick-using-switch-in-javascript.html
+---
+
+You ever see code blocks that look like this?<br />
+<br />
+<pre>if (someCondition) {
+    doSomeThing();
+} else if (someOtherCondition) {
+    doSomeOtherThing();
+} else if (someThirdCondition) {
+    doSomeThirdThing();
+} else {
+    doUsualThing();
+}</pre><br />
+Turns out in Javascript - and, I suspect, in other dynamically-typed languages that support switch statements - that you can do this:<br />
+<br />
+<pre>switch(true) {
+    case someCondition:
+        doSomeThing();
+        break;
+    case someOtherCondition:
+        doSomeOtherThing();
+        break;
+    case someThirdCondition:
+        doSomeThirdThing();
+        break;
+    default:
+        doUsualThing();
+        break;
+    }</pre><br />
+Of course, by omitting the break keyword you could wreak all sorts of havoc – but I can think of a couple of scenarios where you want to apply one or more enhancements (e.g. adding one or more CSS classes to a piece of mark-up) and this would fit very nicely.
