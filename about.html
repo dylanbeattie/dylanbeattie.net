@@ -1,26 +1,42 @@
 ---
 layout: right-sidebar
-title: About
+title: about me
 permalink: /about/
 redirect_from: "/p/about-me.html"
 ---
 <h1>About Me</h1>
 <p>My name is Dylan Beattie. I'm a software developer, <a href="/speaking">conference speaker</a> and <a
-    href="/music/">musician</a> based in London, UK. I work for <a href="https://www.skillsmatter.com/">Skills Matter</a>, and I'm a <a
-    href="https://mvp.microsoft.com/en-us/PublicProfile/5002699">Microsoft MVP</a>
+    href="/music/">musician</a> based in London, UK. I work for <a href="https://www.skillsmatter.com/">Skills
+    Matter</a>, and I'm a <a href="https://mvp.microsoft.com/en-us/PublicProfile/5002699">Microsoft MVP</a>
   for Visual Studio and Development Technologies. This blog and all content and
   opinions are my own.</p>
-  <p>You can <a href="https://twitter.com/dylanbeattie">follow me on Twitter</a>, <a
+<p>You can <a href="https://twitter.com/dylanbeattie">follow me on Twitter</a>, <a
     href="https://www.facebook.com/dylanbeattie">find me on Facebook</a>, read <a
     href="https://github.com/dylanbeattie">my code on GitHub</a>, view <a
     href="https://stackoverflow.com/users/5017/dylan-beattie">my profile on StackOverflow</a>, see <a
     href="https://www.flickr.com/photos/dylanbeattie/albums">my photographs on Flickr</a> and <a
     href="https://www.youtube.com/dylanbeattie">hear my music on YouTube</a>. You can even email me at <a
     href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> if you really want to.</p>
-<h2>Speaker Bios and Photographs</h2>
+<h2>Speaker Bios</h2>
 <p>If you're looking for a speaker bio or photographs for your event website, help yourself!</p>
+<h3>The Really Short Bio</h3>
+<p>Dylan Beattie Dylan Beattie designs software, builds websites and makes music. He lives in London.</p>
 {% assign bios = site.speaker_bios | sort: 'sort_key' %}
 {% for bio in bios %}
-  <h3>{{ bio.word_count }} Word Bio ({{ bio.char_count }} characters)</h3>
-  {{ bio.content }}
+<h3>{{ bio.word_count }} Word Bio ({{ bio.char_count }} characters)</h3>
+{{ bio.content }}
 {% endfor %}
+<h2>Photos</h2>
+<div class="container" id="mugshots">
+  <div class="row">
+    {% for pic in site.data.mugshots %}
+    <figure class="col-4 col-6-narrower col-12-mobilep">
+      <a href="/images/mugshots/fullsize/{{ pic.filename}}">
+        <img src="/images/mugshots/800x800/{{ pic.filename}}" alt="Photograph of Dylan Beattie from {{ pic.caption }}" />
+      </a>
+      <figcaption>{{ pic.caption }}</figcaption>
+      <cite>Photo: <a href="{{pic.credit_url}}">{{pic.credit}}</a></cite>
+    </figure>
+    {% endfor %}
+  </div>
+</div>

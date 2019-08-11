@@ -1,0 +1,59 @@
+- title: ProgNET
+  date: 11-13 Sep
+  url: https://prognet.io/
+  city: London, UK
+  country: gb
+
+- title: DevConf
+  date: 26-27 Sep
+  url: https://devconf.pl/
+  city: Kraków, Poland
+  country: pl
+
+- title: KanDDDinsky
+  date: 17-18 Oct
+  url: https://kandddinsky.de/
+  city: Berlin, Germany
+  country: de
+  
+- title: DDD East Midlands
+  date: 26 Oct
+  url: https://dddeastmidlands.com
+  city: Nottingham, UK
+  country: gb
+
+- title: Hack Manchester
+  date: 27 Oct
+  url: https://www.hac100.com/event/HM2019/
+  city: Manchester, UK
+  country: gb
+
+- title: ApexVox
+  date: 2 Nov
+  url: http://apexvox.net/
+  city: Cluj-Napoca, Romania
+  country: ro
+
+- title: BuildStuff
+  date: 13-15 Nov
+  url: https://buildstuff.lt/
+  city: Vilnius, Lithuania
+  country: lt
+  
+- title: BuildStuff
+  date: 18-19 Nov
+  url: https://buildstuff.com.ua/
+  city: Kyiv, Ukraine
+  country: ua
+
+- title: HalfStack
+  date: 22 Nov
+  url: https://halfstackconf.com/london/
+  city: London, UK
+  country: gb
+  
+- title: Xamarin UG
+  date: 26 Nov
+  url: https://www.meetup.com/Birmingham-DotNet-And-Xamarin-User-Group/events/263557251/
+  city: Birmingham, UK
+  country: gb

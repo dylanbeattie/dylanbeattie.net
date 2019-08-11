@@ -42,15 +42,25 @@ div#sidebar {
   }
   div.schedule {
     p {
+			font-size: 12px;			
       text-align: left;
       background-size: 48px 48px;
       background-repeat: no-repeat;
       background-position: left center;
-      padding: 2px 0 2px 54px;
+      padding: 8px 0 8px 54px;
       margin: 4px 0;
-      line-height: 1.4em;
+			line-height: 1.4em;
+			position: relative;
+			border-bottom: 1px solid #999;
       a {
-        font-weight: bold;
+				font-weight: bold;
+				font-size: 16px;
+				img {
+					position: absolute;
+					left: 0;
+					top: 0;
+					border: 1px solid #000;
+				}
       }
     }
   }
@@ -111,8 +121,8 @@ div#sidebar {
 ul.archives {
   list-style-type: none;
   margin: 0;
-	padding: 0;
-	
+  padding: 0;
+
   h2 {
     font-size: 1.2em;
     border-bottom: 1px solid _palette(accent, bg);
@@ -134,5 +144,27 @@ ul.archives {
       list-style-type: disc;
       margin-bottom: 0;
     }
+  }
+}
+
+div#mugshots {
+  font-size: 0.8em;
+  figure {
+		a {
+			text-decoration: none;
+			border: 0;
+			img {
+				width: 100%;
+				border-radius: 5px;
+				border: 1px solid #000;
+			}
+		}
+	}
+  figcaption,
+  cite {
+    display: block;
+    margin: 0 0 4px 0;
+		padding: 0;
+		line-height: 1.0em;
   }
 }

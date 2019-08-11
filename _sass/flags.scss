@@ -2,6 +2,6 @@ $countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwea
 
 @each $country in $countries {
 	.flag-#{$country} {
-		background-image: url(images/flags/shiny/64/#{$country}.png);
+		background-image: url(images/flags/flat/64/#{$country}.png);
 	}
 }
