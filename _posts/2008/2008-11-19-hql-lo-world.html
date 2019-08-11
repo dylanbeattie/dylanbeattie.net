@@ -12,6 +12,8 @@ modified_time: '2017-03-18T15:03:45.154Z'
 thumbnail: http://lh5.ggpht.com/_LV_l8kYLOwo/SSSoP0dNz8I/AAAAAAAAAHg/DghJ3Mu8pZ4/s72-c/image_thumb%5B6%5D.png?imgmax=800
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-3350003841404412024
 blogger_orig_url: http://www.dylanbeattie.net/2008/11/hql-lo-world.html
+redirect_from: "/2008/11/hql-lo-world.html"
+
 ---
 
 <p>I've been playing with Castle ActiveRecord for a project I'm working on, and hit a brick wall earlier tonight that left me completely stuck for a couple of hours... and turned out to be incredibly simple and obvious. Turns out I'd refactored one of my business objects - from Page to CmsPage - and hadn't noticed that in one particular place in the code, I was doing this:</p>  <pre class="code"><span style="background: black; color:#40c4ff;">var </span><span style="background: black; color:#eddac0;">rootPages </span><span style="background: black; color:silver;">= </span><span style="background: black; color:#40c4ff;">new </span><span style="background: black; color:cyan;">SimpleQuery</span><span style="background: black; color:silver;">&lt;</span><span style="background: black; color:cyan;">CmsPage</span><span style="background: black; color:silver;">&gt;</span><span style="background: black; color:#e0e0e0;">(</span><span style="background: black; color:#cc80d2;">@"from Page p where p.Parent is null"</span><span style="background: black; color:#e0e0e0;">);

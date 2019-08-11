@@ -8,6 +8,8 @@ modified_time: '2011-02-21T23:46:59.935Z'
 thumbnail: http://lh4.ggpht.com/_de7B8BtZZIw/TWL5csD7XmI/AAAAAAAAAFg/Pjuf_5EW8nU/s72-c/image_thumb%5B1%5D.png?imgmax=800
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-9118188328109451966
 blogger_orig_url: http://www.dylanbeattie.net/2011/02/check-out-smtp4dev-if-you-build-mail.html
+redirect_from: "/2011/02/check-out-smtp4dev-if-you-build-mail.html"
+
 ---
 
 <p><a href="http://twitter.com/giantdave">One of my cow-orkers</a> pointed me at a great little utility a while back called <a href="http://smtp4dev.codeplex.com/">smtp4dev</a>. It’s an SMTP server that listens on your local machine, and instead of relaying e-mail, it’ll capture them and store them in a queue so you can review and open them.</p>  <p><a href="http://lh6.ggpht.com/_de7B8BtZZIw/TWL5cJ2neAI/AAAAAAAAAFc/T3n46KwdwaE/s1600-h/image%5B3%5D.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://lh4.ggpht.com/_de7B8BtZZIw/TWL5csD7XmI/AAAAAAAAAFg/Pjuf_5EW8nU/image_thumb%5B1%5D.png?imgmax=800" width="534" height="393" /></a></p>  <p>It’s brilliant – simple and elegant and incredibly easy to use. Just configure your application (website, debugger, logging framework – whatever it is you’re building) to send mail on localhost:25, fire up smtp4dev, and watch the messages pile up. I’ve been building SMTP appenders for log4net this evening, and it’s been really, really useful.</p>  <p>Binaries and source are at <a href="http://smtp4dev.codeplex.com/">smtp4dev.codeplex.com</a> – well worth a look if you ever write software that sends e-mail.</p>  

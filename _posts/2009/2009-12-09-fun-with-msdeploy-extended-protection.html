@@ -7,6 +7,8 @@ tags:
 modified_time: '2009-12-09T17:08:40.824Z'
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-1558033500644415245
 blogger_orig_url: http://www.dylanbeattie.net/2009/12/fun-with-msdeploy-extended-protection.html
+redirect_from: "/2009/12/fun-with-msdeploy-extended-protection.html"
+
 ---
 
 <p>Trying to push a change to our live servers today, we got this wonderful message from msdeploy:</p>  <blockquote>   <p>Error: (09/12/2009 16:10:21) An error occurred when the request was processed on the remote computer.</p>    <p>Error: Child object 'extendedProtection' cannot be added to object 'windowsAuthentication'. The 'windowsAuthentication' provider may not support this deployment.</p>    <p>Error count: 1.</p> </blockquote>  <p>We do this several times a day… it worked yesterday, nobody changed anything, and suddenly today it doesn’t work. (Don’t you just <em>love</em> it when that happens?)</p>  <p>Now, msdeploy is wonderful, but has practically no documentation – which means when an error like this happens, you’re on your own.</p>  <p>A bit of Googling and a couple of lucky guesses later, and we worked out what was causing it. “Extended Protection” is apparently some of new fangled security framework that’s included in recent Windows Updates. Our internal servers install Windows updates automatically; our live servers don’t.</p>  <p>In other words – our staging server had quietly upgraded itself in the night to support extended authentication, and was now trying to push that configuration to the live server, which had absolutely no idea what was going on.</p>  <p>Logging on to the live server and installing the outstanding Windows security updates seems to have fixed it.</p>  

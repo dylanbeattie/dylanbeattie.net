@@ -8,6 +8,8 @@ modified_time: '2019-03-22T18:58:23.727Z'
 thumbnail: https://i.ytimg.com/vi/UABvXClJI68/default.jpg
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-7397276921158429017
 blogger_orig_url: http://www.dylanbeattie.net/2019/03/a-release-notes-bookmarkdownlet-for.html
+redirect_from: "/2019/03/a-release-notes-bookmarkdownlet-for.html"
+
 ---
 
 <p>One of the best ways to keep the rest of your team up to speed with what your dev teams are doing is release notes - even if all you're doing is gently reassuring the rest of the organisation that yes, you are patching security vulnerabilities, fixing bugs and quietly making things better.</p><p>I love using Slack for this - set up a channel where you post a friendly summary of everything that's being released whenever you deploy to production. Now, here at Skills Matter we're not quite doing continuous deployment yet - we work off short-lived branches that merge to master several times a day, but then once master has passed regression testing on our staging environment, the actual deployment to production is a manual process - we open a master &gt; production pull request in GitHub, merge it, and Heroku does the rest.</p><p>We track work in progress using <a href="https://www.pivotaltracker.com/">Pivotal Tracker</a>, and we use the various ticket state transitions as:</p><ul><li><strong>Start</strong> &gt; a developer has created a branch and begun coding the features</li>

@@ -7,6 +7,8 @@ tags:
 modified_time: '2013-06-24T13:03:01.718+01:00'
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-2390755771562500314
 blogger_orig_url: http://www.dylanbeattie.net/2013/06/linking-subversion-commits-to-pivotal.html
+redirect_from: "/2013/06/linking-subversion-commits-to-pivotal.html"
+
 ---
 
 <p>My team at work now keep our entire lives in <a href="https://www.pivotaltracker.com/">PivotalTracker</a>, and rather like it. We recently linked it to our GitHub repository using the built-in PivotalTracker integration that’s provided by GitHub, which worked really nicely. Thing is, we’re still in the process of migrating our codebase to GitHub – there’s lots of older projects with TeamCity jobs still linked to our in-house Subversion repo – and I wanted to add a similar facility for our projects that are still in Subversion.</p>  <p>This is all based on the <a href="https://www.pivotaltracker.com/help/api?version=v3#scm_post_commit">Source Control Management Post-Commit Hook Integration</a> feature in the Pivotal Tracker API, and getting it working required two scripts.</p>  <p><strong>post-commit.bat</strong> – this is the standard batch file used by Subversion on Windows to run code after a successful commit. Subversion runs this automatically, and passes in two command-line arguments – the (local) path of the repository that accepted the commit, and the revision number created by that commit. Ours now looks like this:</p>  <blockquote>   <pre>@echo off<br />$ps = %SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe<br />$ps Set-ExecutionPolicy unrestricted

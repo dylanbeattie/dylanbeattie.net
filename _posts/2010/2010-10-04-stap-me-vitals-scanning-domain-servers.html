@@ -7,6 +7,8 @@ tags:
 modified_time: '2010-10-04T18:00:52.383+01:00'
 blogger_id: tag:blogger.com,1999:blog-7295454224203070190.post-790374958585720907
 blogger_orig_url: http://www.dylanbeattie.net/2010/10/stap-me-vitals-scanning-domain-servers.html
+redirect_from: "/2010/10/stap-me-vitals-scanning-domain-servers.html"
+
 ---
 
 <p>In preparation for an overhaul of our hosting &amp; network infrastructure, I wanted to gather stats on exactly what was running on all of our remote servers – stuff like how much physical memory is installed in the servers, what’s their Dell service tag, what sort of disk interface they’re running, what version of Windows, that kind of thing.</p>  <p>There’s a command-line tool <a href="http://support.microsoft.com/kb/290216">wmic.exe</a> that does some neat stuff by hooking into the Windows Management Instrumentation interface – little snippets like:</p>  <div id="codeSnippetWrapper">   <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Consolas&#39;, &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"><p><strong>C:\&gt;</strong>wmic /node:myserver cpu get description<br />Description<br /></p><p>Intel(R) Xeon(TM) CPU 3.00GHz<br />Intel(R) Xeon(TM) CPU 3.00GHz<br />Intel(R) Xeon(TM) CPU 3.00GHz<br />Intel(R) Xeon(TM) CPU 3.00GHz<br /><br /><br />C:\&gt;</p></pre>
