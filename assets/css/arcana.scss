@@ -153,7 +153,11 @@
 	}
 
 	p, ul, ol, dl, table, blockquote {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
+	}
+
+	.wrapper p:last-child {
+		margin: 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -917,22 +921,22 @@
 /* Banner */
 
 	#banner {
-		background-image: url('../../images/banner.jpg');
-		background-position: center center;
+		background-image: url('../../images/dylan-linebreakers-oslo-by-glenn-henriksen.jpg');
+		background-position: top 25% right 50%;
 		background-size: cover;
-		height: 28em;
+		height: 30em;
 		text-align: center;
 		position: relative;
 
 		header {
 			position: absolute;
-			bottom: 0;
+			bottom: 20px;
 			left: 0;
 			width: 100%;
 			background: #212121;
 			background: rgba(27,27,27,0.75);
 			color: #fff;
-			padding: 1.5em 0;
+			padding: 1.0em 0;
 
 			h2 {
 				display: inline-block;
@@ -963,18 +967,25 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 5em 0 3em 0;
+		padding: 1em 0 1em 0;
 
 		&.style1 {
 			background: #fff;
 		}
 
-		&.style2 {
+		&.homepage-blurb {
 			background-color:		#fff;
 			background-image:		url('images/bg02.png'),			url('images/bg03.png'),			url('images/bg01.png');
 			background-position:	top left,						bottom left,					top left;
 			background-size:		100% 6em,						100% 6em,						auto;
 			background-repeat:		no-repeat,						no-repeat,						repeat;
+			p {
+				max-width: 640px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			
+			}
 		}
 
 		&.style3 {
@@ -1122,7 +1133,7 @@
 		/* Wrapper */
 
 			.wrapper {
-				padding: 3em 0 1em 0;
+				padding: 1em 0 1em 0;
 			}
 
 		/* CTA */
@@ -1140,7 +1151,6 @@
 					margin-bottom: 1em;
 				}
 			}
-
 	}
 
 /* Narrow */
@@ -1477,9 +1487,10 @@
 
 		/* Wrapper */
 
-			.wrapper {
+		/*	.wrapper {
 				padding: 2em 0 1px 0;
 			}
+			*/
 
 	}
 
@@ -1534,7 +1545,7 @@
 		/* Banner */
 
 			#banner {
-				height: 20em;
+				height: 24em;
 
 				header {
 					padding: 20px;
@@ -1544,7 +1555,7 @@
 		/* Wrapper */
 
 			.wrapper {
-				padding: 2em 20px 1px 20px;
+				padding: 1em;
 			}
 
 		/* CTA */
