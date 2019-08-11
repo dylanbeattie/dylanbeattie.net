@@ -4,12 +4,12 @@ title: blog
 ---
 {% for post in site.posts limit:5 %}
 <article>
-    <h1><a href="{{ BASE_PATH }}{{ post.url }}"></a>{{ post.title }}</a></h1>
-    {{ post.content }}
-    <cite>Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
-        &bull;
-        <a href="{{ BASE_PATH }}{{ post.url }}">permalink</a></a></cite>
-    <hr />
+	<h1><a href="{{ BASE_PATH }}{{ post.url }}"></a>{{ post.title }}</a></h1>
+	{{ post.content }}
+	<cite>Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
+		&bull;
+		<a href="{{ BASE_PATH }}{{ post.url }}">permalink</a></a></cite>
+	<hr />
 </article>
 
 {% endfor %}
