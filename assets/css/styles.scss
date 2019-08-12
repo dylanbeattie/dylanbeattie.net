@@ -37,6 +37,12 @@ article {
 }
 
 div#sidebar {
+	section#about-me {
+		img {
+			border-radius: 10px;
+			width: 100%;
+		}
+	}
   a {
     border: 0;
   }
@@ -125,8 +131,9 @@ ul.archives {
 
   h2 {
     font-size: 1.2em;
-    border-bottom: 1px solid _palette(accent, bg);
-    margin-bottom: 0;
+    border-top: 1px solid _palette(accent, bg);
+		margin-bottom: 0;
+		margin-top: 1.0em;
   }
 
   & > li > ul {
@@ -142,7 +149,10 @@ ul.archives {
     & > li > ul {
       list-style-position: inside;
       list-style-type: disc;
-      margin-bottom: 0;
+			margin-bottom: 0;
+			a {
+				border: 0;
+			}
     }
   }
 }

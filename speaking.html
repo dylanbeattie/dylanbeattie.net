@@ -1,0 +1,30 @@
+---
+layout: right-sidebar
+title: speakings
+permalink: /speaking/
+redirect_from: "/p/speaking.html"
+---
+<article>
+  <h1>Speaking</h1>
+  <p>I've been speaking at conferences and user groups since 2008. I've given talks at conferences all over the world,
+    from
+    high-level keynotes aimed at a wide audience, to deep-dive technical talks about REST APIs and hypermedia.</p>
+  <h3 id="contents">Current Talks</h3>
+  <p>Here's the talks that I'm giving at conferences and user groups in 2019. If you'd like to invite me to speak about
+    something else, get in touch.</p>
+  <ul>
+    {% assign talks = site.talks | sort: 'year' | reverse %}
+    {% for talk in talks %}
+    <li><a href="#{{ talk.slug }}">{{ talk.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% for talk in talks %}
+  <hr />
+  <section>
+    <h3 id="{{ talk.slug }}">{{ talk.title }}</h3>
+    <p>{{ talk.description | markdownify }}</p>
+    <p><a href="#contents">back to top</a></p>
+</p>
+  </section>
+  {% endfor %}
+</article>
