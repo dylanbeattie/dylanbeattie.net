@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<!-- Main -->
+<section class="wrapper style1">
+	<div class="container">
+		<div class="row gtr-200">
+			<div class="col-8 col-12-narrower">
+				<div id="content">
+					<div id="video-player">
+						<iframe id="youtube" name="youtube" src="https://www.youtube.com/embed/{{ page.youtube_id}}" frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<h1>{{ page.title }}</h1>
+					<p>Music: "{{ page.original_song }}" by {{ page.original_artist }} / &copy {{ page.original_copyright }}</p>
+					{{ content }}
+				</div>
+			</div>
+			<div class="col-4 col-12-narrower">
+				<div id="sidebar">
+						<h4>Musical Parodies</h4>
+						<p>My two great passions in life are music and technology. And I like making people laugh. So I take great songs – songs
+							I love, songs that are fun to play and fun to sing along and dance to – and I replace the lyrics with daft
+							jokes about software development. Then I make videos of them. Then I go along to conferences with my Steinberger
+							travel guitar, rope in a couple of other tech folks who are musically inclined, and perform them live on stage - check
+							out <a href="https://www.youtube.com/playlist?list=PLw0jj21rhfkM-etwRXGDIko0Ou-QLdeMq">Dylan Beattie and the
+									Linebreakers - Live at NDC Oslo 2019</a>
+								on YouTube for more.</p>
+					{% include song_list.html %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

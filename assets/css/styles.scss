@@ -37,36 +37,36 @@ article {
 }
 
 div#sidebar {
-	section#about-me {
-		img {
-			border-radius: 10px;
-			width: 100%;
-		}
-	}
+  section#about-me {
+    img {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
   a {
     border: 0;
   }
   div.schedule {
     p {
-			font-size: 12px;			
+      font-size: 12px;
       text-align: left;
       background-size: 48px 48px;
       background-repeat: no-repeat;
       background-position: left center;
       padding: 8px 0 8px 54px;
       margin: 4px 0;
-			line-height: 1.4em;
-			position: relative;
-			border-bottom: 1px solid #999;
+      line-height: 1.4em;
+      position: relative;
+      border-bottom: 1px solid #999;
       a {
-				font-weight: bold;
-				font-size: 16px;
-				img {
-					position: absolute;
-					left: 0;
-					top: 0;
-					border: 1px solid #000;
-				}
+        font-weight: bold;
+        font-size: 16px;
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          border: 1px solid #000;
+        }
       }
     }
   }
@@ -75,52 +75,28 @@ div#sidebar {
     font-size: 0.8em;
     text-align: justify;
   }
-  p#social-media-icons {
-    a {
-      font-size: 0px;
-      box-sizing: border-box;
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background: url(images/social_media_icons_strip.png) top left no-repeat;
-      background-size: 320px 32px;
-      margin-right: 10px;
-      &.facebook {
-        background-position: 0px 0px;
+
+  ul.playlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      line-height: 1.1em;
+      padding: 10px 0;
+      border-top: 1px solid #000;
+      height: 110px;
+      img {
+        width: 160px;
+        height: 90px;
+        float: left;
+        margin-right: 10px;
       }
-      &.twitter {
-        background-position: -32px 0px;
-      }
-      &.github {
-        background-position: -64px 0px;
-      }
-      &.google {
-        background-position: -96px 0px;
-      }
-      &.soundcloud {
-        background-position: -128px 0px;
-      }
-      &.linkedin {
-        background-position: -160px 0px;
-      }
-      &.stackoverflow {
-        background-position: -192px 0px;
-      }
-      &.rss {
-        background-position: -256px 0px;
-      }
-      &.youtube {
-        background-position: -256px 0px;
-        margin-right: 0px !important;
+      p {
+        font-size: 0.875em;
+        line-height: 1.2em !important;
       }
     }
-  }
-  a.stack-overflow-profile {
-    display: block;
-    width: 100%;
-    height: 58px;
-    background: #ffffff url(//stackoverflow.com/users/flair/5017.png) no-repeat right center;
-    box-sizing: border-box;
   }
 }
 
@@ -132,8 +108,8 @@ ul.archives {
   h2 {
     font-size: 1.2em;
     border-top: 1px solid _palette(accent, bg);
-		margin-bottom: 0;
-		margin-top: 1.0em;
+    margin-bottom: 0;
+    margin-top: 1em;
   }
 
   & > li > ul {
@@ -149,10 +125,10 @@ ul.archives {
     & > li > ul {
       list-style-position: inside;
       list-style-type: disc;
-			margin-bottom: 0;
-			a {
-				border: 0;
-			}
+      margin-bottom: 0;
+      a {
+        border: 0;
+      }
     }
   }
 }
@@ -160,21 +136,53 @@ ul.archives {
 div#mugshots {
   font-size: 0.8em;
   figure {
-		a {
-			text-decoration: none;
-			border: 0;
-			img {
-				width: 100%;
-				border-radius: 5px;
-				border: 1px solid #000;
-			}
-		}
-	}
+    a {
+      text-decoration: none;
+      border: 0;
+      img {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #000;
+      }
+    }
+  }
   figcaption,
   cite {
     display: block;
     margin: 0 0 4px 0;
-		padding: 0;
-		line-height: 1.0em;
+    padding: 0;
+    line-height: 1em;
+  }
+}
+
+div#video-player {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+article ul.playlist {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: 224px;
+    height: 140px;
+    text-align: center;
+    font-size: 0.8em;
+    a { border: 0px !important; } 
+    img {
+      width: 224px;
+      height: 126px;
+      border: 1px solid #000;
+    }
   }
 }
