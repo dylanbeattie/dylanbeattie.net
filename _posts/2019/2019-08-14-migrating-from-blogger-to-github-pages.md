@@ -79,7 +79,7 @@ That's it – Jekyll now hosts all those pages at their new `/2016/03/23/how-to-
 <meta http-equiv="refresh" content="0; url=/2016/03/23/how-to-really-break-internet.html">
 <meta name="robots" content="noindex">
 <h1>Redirecting&hellip;</h1>
-<a href="/2016/03/23/how-to-really-break-internet.html">Click here if you are not redirected.</a>
+<a href="/2016/03/23/how-to-really-break-internet.html">Click here...</a>
 </html>
 ``` 
 
@@ -90,7 +90,7 @@ It's not *quite* perfect – an HTTP `301 Moved Permanently` would strictly spea
 You see that little sidebar there, with all the events I'm speaking at and the flags in it of the countries I'm gonna be visiting? The flag images are from [GoSquared](https://github.com/gosquared/flags), and available under an MIT license. To display them in the schedule, I've used a [SASS list](https://sass-lang.com/documentation/values/lists) to generate CSS rules for each flag in the set:
 
 ``` scss
-/* _flags.scss: generate .flag-xx CSS classes for displaying elements with flag backgrounds */
+/* _flags.scss: generate .flag-xx CSS classes for elements with flag backgrounds */
 
 $countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwealth, 
   _england, _gosquared, _kosovo, _mars, _nagorno-karabakh, _nato, _northern-cyprus, 
@@ -131,16 +131,19 @@ The bios themselves are stored as multiline Markdown snippets in [`/_data/speake
   <hr />
   <h3>
     <span class="clipboard-links">
-      <a href="#" data-src-element-id="bio-{{ bio.title }}-html">copy html</a>
-      <a href="#" data-src-element-id="bio-{{ bio.title }}-markdown">copy markdown</a>
-      <a href="#" data-src-element-id="bio-{{ bio.title }}-text">copy text</a>
+      <a href="#" data-src-id="{{bio.id}}-html">copy html</a>
+      <a href="#" data-src-id="{{bio.id}}-markdown">copy markdown</a>
+      <a href="#" data-src-id="{{bio.id}}-text">copy text</a>
     </span>
     {{ bio.word_count }} Word Bio ({{ bio.char_count }} characters)
   </h3>
   {{ bio.content | markdownify }}
-  <input type="hidden" id="bio-{{ bio.title }}-markdown" value="{{ bio.content }}" />
-  <input type="hidden" id="bio-{{ bio.title }}-html" value="{{ bio.content | markdownify | escape_once }}" />
-  <input type="hidden" id="bio-{{ bio.title }}-text" value="{{ bio.content | markdownify | strip_html }}" />
+	<input type="hidden" id="{{bio.id}}-markdown" 
+	  value="{{ bio.content }}" />
+	<input type="hidden" id="{{bio.id}}-html"
+	  value="{{ bio.content | markdownify | escape_once }}" />
+	<input type="hidden" id="{{bio.id}}-text"
+	  value="{{ bio.content | markdownify | strip_html }}" />
 </article>
 {% endfor %}
 ```
