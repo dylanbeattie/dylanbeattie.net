@@ -37,7 +37,7 @@ Which is lovely. You see, I'm quite happy doing my own design work – and that'
 
 ### Migrating old blog posts
 
-This turned out to be a lot easier than I expected. There's a Ruby gem designed to do exactly this – check out the [Jekyll documentation](https://import.jekyllrb.com/docs/blogger/) and this [blog post from Kris Rice](http://krisrice.io/2017-10-06-migrating-my-blog-from-blogger-to-GitHub-pages-with-jekyll/) which goes into a bit more detail about it.
+This turned out to be a lot easier than I expected. There's a Ruby gem designed to do exactly this – check out the [Jekyll documentation](https://import.jekyllrb.com/docs/blogger/) and this [blog post from Kris Rice](http://krisrice.io/2017-10-06-migrating-my-blog-from-blogger-to-github-pages-with-jekyll/) which goes into a bit more detail about it.
 
 Once I'd migrated all the posts from my old Blogger site, I wanted to make sure all the old page URLs would still work. I didn't want to mess too much with Jekyll's conventions about structuring posts, though – Jekyll uses a `YYYY-MM-DD-title` format for URLS compared to Blogger's `YYYY-MM-title` format, and so I simultaneously wanted to adopt the Jekyll convention for new posts, to make things easier, but also to preserve the addresses of all my old posts so bookmarks and links still work.
 
@@ -56,7 +56,7 @@ blogger_orig_url: http://www.dylanbeattie.net/2016/03/how-to-really-break-intern
 ---
 ```
 
-There's also a Jekyll plugin called `redirect-from`, which is part of the `GitHub-pages` bundle (and, yes, it works a little like the infamous [`COMEFROM`](https://en.wikipedia.org/wiki/COMEFROM) flow control statement beloved of sadistic esolang designers). So all I had to do was trawl through every file in the `_posts` folder, find that line with the `blogger_orig_url` in it, parse the path part out of the URL, and add a line underneath like this:
+There's also a Jekyll plugin called `redirect-from`, which is part of the `github-pages` bundle (and, yes, it works a little like the infamous [`COMEFROM`](https://en.wikipedia.org/wiki/COMEFROM) flow control statement beloved of sadistic esolang designers). So all I had to do was trawl through every file in the `_posts` folder, find that line with the `blogger_orig_url` in it, parse the path part out of the URL, and add a line underneath like this:
 
 ``` yaml
 blogger_orig_url: http://www.dylanbeattie.net/2016/03/how-to-really-break-internet.html
@@ -116,7 +116,7 @@ $countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwea
 
 The [actual schedule is a YAML file](https://github.com/dylanbeattie/dylanbeattie.net/blob/master/_data/schedule.yml), and Jekyll generates the markup with the correct CSS classes based on the country codes from `schedule.yml`. It's easy to add new dates. The only thing it won't do is automatically archive old ones- 'cos hey, static content, remember? – but I reckon I can live with that for now.  
 
-(And yes, you can totally invite me to speak at your event by editing schedule.yml and sending me a PR... :) )
+(And yes, you can *absolutely* invite me to speak at your event by editing schedule.yml and sending me a PR. That would be really cool. :) )
 
 ### Speaker bios
 
@@ -151,7 +151,30 @@ The bios themselves are stored as multiline Markdown snippets in [`/_data/speake
 
 so each snippet is rendered to the page as HTML (via the `markdownify` filter), and also captured in three hidden variables – one markdown, one HTML, one plain text. Finally, there's [some JavaScript](https://github.com/dylanbeattie/dylanbeattie.net/blob/master/assets/js/main.js) attached to the 'copy xxx' links that'll copy the hidden input value into an invisible `textarea` and copy it.
 
+### Syntax Highlighting
+
+One of the great things about writing posts and pages in Markdown is that it's so easy to embed code samples - just wrap them in three backticks either side, something known as a *fenced code block*. Jekyll has a code formatting plugin called [Rouge](http://rouge.jneen.net/), that's included with the `github-pages` bundle, which allows you to specify a language for your code snippets and it'll highlight them for you:
+
+```` html
+``` html
+<p>This HTML snippet will get <a href="http://rouge.jneen.net/">highlighted</a></p>
+```
+````
+
+To get this to work, I had to enable highlighting in `_config.yml`
+
+``` yaml
+markdown: kramdown
+# enable rouge syntax highlighting
+highlighter: rouge
+```
+
+I also had to add a stylesheet to the site with the various coloring rules - all Rouge does is wrap all the code keywords,
+etc. in `<span>` tags with CSS classes on them, so I found [this syntax.css file](https://github.com/mojombo/tpw/blob/master/css/syntax.css) on GitHub, dropped it into my site's CSS, and it worked.
+
 ## Gotchas
+
+Pretty much everything I tried to do with Jekyll and GitHub Pages worked as documented, but I did hit two weird gotchas that caused a fair bit of head-scratching until I figured out what was going on...
 
 ### Case sensitive filesystems
 

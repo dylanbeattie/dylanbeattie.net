@@ -277,3 +277,12 @@ div.highlight {
   overflow-x: auto;
   margin: 8px 0;
 }
+
+p > code {
+  border: 1px solid #ddd;
+  background-color: #eee;
+  font-family: Consolas, courier, monospace;
+  font-size: 0.8em;
+  padding: 2px 2px 0px 2px;
+  border-radius: 4px;
+}
