@@ -1,15 +1,15 @@
+
 <!-- Logo -->
 <h1><a href="/" id="logo">dylan beattie <em>dot net</em></a></h1>
-
 <!-- Nav -->
 <nav id="nav">
 	<ul>
-		<li><a href="/">home</a></li>
-		<li><a href="/about">about me</a></li>
-		<li><a href="/speaking">speaking</a></li>
-		<li><a href="/music">music</a></li>
-		<!--<li><a href="/workshops">workshops</a></li>-->
-		<li><a href="/projects">projects</a></li>
-		<li><a href="/blog">blog</a></li>
+		{% for link in site.data.nav_menu %}
+		{% if page.url == link.href %}
+      <li class="current"><a href="{{link.href}}">{{link.text}}</a></li>
+    {% else %}
+			<li><a href="{{link.href}}">{{link.text}}</a></li>
+    {% endif %}
+		{% endfor %}
 	</ul>
 </nav>

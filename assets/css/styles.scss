@@ -10,16 +10,36 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 @import "flags";
+@import "syntax";
 
-
-@include breakpoints((
-  wide:	  ( 1281px,  1680px ),
-  normal:	( 981px,   1280px ),
-  narrow:	( 841px,   980px  ),
-  narrower:  ( 737px,   840px  ),
-  mobile:	( 481px,   736px  ),
-  mobilep:   ( null,	480px  )
-));
+@include breakpoints(
+  (
+    wide: (
+      1281px,
+      1680px
+    ),
+    normal: (
+      981px,
+      1280px
+    ),
+    narrow: (
+      841px,
+      980px
+    ),
+    narrower: (
+      737px,
+      840px
+    ),
+    mobile: (
+      481px,
+      736px
+    ),
+    mobilep: (
+      null,
+      480px
+    )
+  )
+);
 
 article {
   h1 {
@@ -129,27 +149,39 @@ ul.archives {
 
   h2 {
     font-size: 1.2em;
-    border-top: 1px solid _palette(accent, bg);
+    border-top: 2px solid _palette(border);
     margin-bottom: 0;
-    margin-top: 1em;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
   }
 
-  & > li > ul {
+  & > li {
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    h3 {
-      font-size: 1em;
-      margin: 0px;
-      padding: 0px;
-    }
+    & > ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      h3 {
+        font-size: 1em;
+        margin: 0px;
+        padding: 0px;
+      }
 
-    & > li > ul {
-      list-style-position: inside;
-      list-style-type: disc;
-      margin-bottom: 0;
-      a {
-        border: 0;
+      & > li {
+        margin: 0;
+        padding: 0;
+        & > ul {
+          list-style-position: inside;
+          list-style-type: disc;
+          margin-bottom: 0;
+          & > li {
+            padding: 0;
+            a {
+              border: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -213,23 +245,35 @@ article ul.playlist {
 section#banner {
   position: relative;
   cite#banner-photo-credit {
-    line-height: 12px;
+    line-height: 10px;
     margin: 0;
-    padding: 4px;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-size: 12px;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 10px;
     color: #fff;
     position: absolute;
-    left: 2px;
-    bottom: 2px;
+    left: 0px;
+    bottom: 0px;
     a {
       border: 0;
       color: #fff;
       text-decoration: underline;
     }
 
-    @include breakpoint('<=mobilep') {
+    @include breakpoint("<=mobilep") {
       display: none;
     }
   }
+}
+
+div.highlight {
+  pre {
+    font-family: Consolas, courier, monospace;
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.4em;
+  }
+  border: 1px solid #ccc;
+  overflow-x: auto;
+  margin: 8px 0;
 }

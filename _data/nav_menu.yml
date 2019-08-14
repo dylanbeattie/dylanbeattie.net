@@ -1,0 +1,18 @@
+- home: 
+  text: home
+  href: /
+- about:
+  text: about
+  href: /about
+- speaking:
+  text: speaking
+  href: /speaking
+- music:
+  text: music
+  href: /music
+- projects:
+  text: projects
+  href: /projects
+- blog:
+  text: blog
+  href: /blog

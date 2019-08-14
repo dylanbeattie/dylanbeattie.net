@@ -219,7 +219,7 @@
 	blockquote {
 		border-left: solid 0.5em _palette(border);
 		font-style: italic;
-		padding: 1em 0 1em 2em;
+		padding: 0.2em 0 0.2em 0.5em;
 	}
 
 /* Container */
@@ -836,7 +836,7 @@
 					text-decoration: none;
 					border: 0;
 					display: block;
-					padding: 1.5em 0.5em 1.35em 0.5em;
+					padding: 1em 0.5em 1em 0.5em;
 				}
 
 				&:first-child {
@@ -850,7 +850,6 @@
 				}
 
 				&.current {
-					font-weight: 600;
 
 					&:before {
 						@include vendor('transform', 'rotateZ(45deg)');
