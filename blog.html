@@ -2,7 +2,7 @@
 layout: right-sidebar
 title: blog
 ---
-<p>Here's my five latest blog posts - or you can browse <a href="/archives/">a complete archive of all my posts since 2008</a>.</p>
+<p>Here's my five latest blog posts - or you can browse <a href="/archives">a complete archive of all my posts since 2008</a>.</p>
 {% for post in site.posts limit:5 %}
 <article>
 	<h1><a href="{{ BASE_PATH }}{{ post.url }}"></a>{{ post.title }}</a></h1>
