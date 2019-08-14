@@ -1,0 +1,56 @@
+- title: 50_word_bio
+  word_count: 50
+  char_count: 300
+  content: |
+    Dylan Beattie is a software developer and technical speaker. 
+    He's been building web applications since the days of Windows NT 4; 
+    today he works on HTTP APIs, UX design, and distributed systems. 
+    Dylan lives and works in London and when he's not hacking code 
+    he plays guitar and writes songs.
+
+- title: 100_word_bio
+  word_count: 100
+  char_count: 600
+  content: |
+    Dylan wrote his first web page in 1992 and never looked back. He's been 
+    building data-driven web applications since the 1990s, and has worked on 
+    everything from tiny standalone websites to complex distributed systems. 
+    He's the CTO at [Skills Matter](https://skillsmatter.com/) in London, he's a
+    [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699), and
+    he regularly speaks at conferences and user groups, where he's spoken about 
+    topics from continuous delivery and Conway's Law to the history of the web 
+    and hypermedia APIs. 
+
+    When he's not wrangling code, Dylan plays guitar and writes songs. 
+    He's online at [dylanbeattie.net](https://dylanbeattie.net/) and on Twitter 
+    as [@dylanbeattie](https://twitter.com/dylanbeattie/).
+
+- title: 250_word_bio
+  word_count: 250
+  char_count: 1600
+  content: |
+    Dylan Beattie is a systems architect and software developer, who has 
+    built everything from tiny standalone websites to large-scale distributed 
+    systems. He's currently the CTO at [Skills Matter](https://skillsmatter.com/) 
+    in London, where he juggles his time between working on their software platform, 
+    supporting their conference and community teams, and speaking at various 
+    conferences and events they organise in London. From 2003 to 2018, he worked 
+    as webmaster, then IT Manager, and then systems architect at [Spotlight](https://www.spotlight.com),
+    where his first-hand experience of watching an organisation and their codebase
+    evolve over more than a decade provided him with a unique insight into how 
+    everything from web standards and API design to Conway's Law and recruitment 
+    ends up influencing a company’s code and culture. 
+
+    Dylan is actively involved in the international software development community. 
+    As well as his work with Skills Matter, he runs the [London .NET User Group](https://twitter.com/LondonDotNet), 
+    he's served on the programme committee for conferences including [NDC London](https://ndc-london.com/), 
+    [BuildStuff](https://buildstuff.lt), [FullStack](https://fullstackconference.com) 
+    and [ProgNET](https://prognet.io/), and he's a frequent speaker at conferences and 
+    technical events around the world. 
+
+    Dylan grew up in southern Africa, moving to the UK with his family when he was ten. 
+    He's a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699) and 
+    holds a degree in Computer Science from the University of Southampton. He’s a guitar 
+    player and songwriter, known for creating [musical parodies](https://dylanbeattie.net/music/) about software 
+    development. He's into skiing, scuba diving, Lego, cats, travel and photography, and he's 
+    normally found hanging around user groups, pubs and rock bars in London wearing a big black hat.

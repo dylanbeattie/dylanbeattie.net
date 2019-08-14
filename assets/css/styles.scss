@@ -33,6 +33,18 @@ article {
   }
   img {
     max-width: 100%;
+  } 
+}
+
+.clipboard-links {
+  float: right;
+  font-size: 0.8em;
+  font-weight: normal;
+  a {    
+    background-color: #ccc;
+    padding: 2px;
+    border: 1px solid #666;    
+    border-radius: 4px;
   }
 }
 

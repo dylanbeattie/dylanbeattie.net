@@ -20,11 +20,23 @@ redirect_from: "/p/about-me.html"
 <h2>Speaker Bios</h2>
 <p>If you're looking for a speaker bio or photographs for your event website, help yourself!</p>
 <h3>The Really Short Bio</h3>
-<p>Dylan Beattie Dylan Beattie designs software, builds websites and makes music. He lives in London.</p>
-{% assign bios = site.speaker_bios | sort: 'sort_key' %}
-{% for bio in bios %}
-<h3>{{ bio.word_count }} Word Bio ({{ bio.char_count }} characters)</h3>
-{{ bio.content }}
+<p>Dylan Beattie designs software, builds websites and makes music. He lives in London.</p>
+{% for bio in site.data.speaker_bios %}
+<article>
+  <hr />
+  <h3>
+    <span class="clipboard-links">
+      <a href="#" data-src-element-id="bio-{{ bio.title }}-html">copy html</a>
+      <a href="#" data-src-element-id="bio-{{ bio.title }}-markdown">copy markdown</a>
+      <a href="#" data-src-element-id="bio-{{ bio.title }}-text">copy text</a>
+    </span>
+    {{ bio.word_count }} Word Bio ({{ bio.char_count }} characters)
+  </h3>
+  {{ bio.content | markdownify }}
+  <input type="hidden" id="bio-{{ bio.title }}-markdown" value="{{ bio.content }}" />
+  <input type="hidden" id="bio-{{ bio.title }}-html" value="{{ bio.content | markdownify | escape_once }}" />
+  <input type="hidden" id="bio-{{ bio.title }}-text" value="{{ bio.content | markdownify | strip_html }}" />
+</article>
 {% endfor %}
 <h2>Photos</h2>
 <div class="container" id="mugshots">
@@ -32,7 +44,8 @@ redirect_from: "/p/about-me.html"
     {% for pic in site.data.mugshots %}
     <figure class="col-4 col-6-narrower col-12-mobilep">
       <a href="/images/mugshots/fullsize/{{ pic.filename}}">
-        <img src="/images/mugshots/800x800/{{ pic.filename}}" alt="Photograph of Dylan Beattie from {{ pic.caption }}" />
+        <img src="/images/mugshots/800x800/{{ pic.filename}}"
+          alt="Photograph of Dylan Beattie from {{ pic.caption }}" />
       </a>
       <figcaption>{{ pic.caption }}</figcaption>
       <cite>Photo: <a href="{{pic.credit_url}}">{{pic.credit}}</a></cite>

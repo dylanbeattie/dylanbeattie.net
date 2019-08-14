@@ -32,8 +32,6 @@ plugins:
   - jekyll-redirect-from
 
 collections:
-  speaker_bios:
-    output: true
   talks:
     output: true
   songs:
