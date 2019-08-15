@@ -10,7 +10,7 @@ means you're free to copy it, modify it and share it, subject to the following r
 * **NonCommercial** — You may not use the material for commercial purposes.
 * **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
-Further, you cannot use anything here to imply or suggest my involvement or endorsement with your own project. Code samples included in blog posts, including this one, are also released under the MIT License. 
+Further, you cannot use anything here to imply or suggest my involvement or endorsement with your own project. Code samples included in blog posts, including this one, are also released under the [MIT License](https://choosealicense.com/licenses/mit/). 
 
 In other words - if you find some code on here, you're free to use it for whatever you like, but if you want to use any of the
 articles, images, diagrams or anything else that's not source code, you've got to credit me, you've got to share your changes, and
