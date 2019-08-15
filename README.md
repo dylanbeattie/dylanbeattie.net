@@ -123,7 +123,6 @@ I've got a bunch of different speaker bios over at my [about me](/about) page, a
 
 The bios themselves are stored as multiline Markdown snippets in [`/_data/speaker_bios.yml`](https://github.com/dylanbeattie/dylanbeattie.net/blob/master/_data/speaker_bios.yml). Instead of allowing Jekyll to just render Markdown > HTML automatically, I've got this little loop in the code for the **about me** page:
 
-{% raw %}
 ``` html
 {% for bio in site.data.speaker_bios %}
 <article>
@@ -146,7 +145,6 @@ The bios themselves are stored as multiline Markdown snippets in [`/_data/speake
 </article>
 {% endfor %}
 ```
-{% endraw %}
 
 so each snippet is rendered to the page as HTML (via the `markdownify` filter), and also captured in three hidden variables – one markdown, one HTML, one plain text. Finally, there's [some JavaScript](https://github.com/dylanbeattie/dylanbeattie.net/blob/master/assets/js/main.js) attached to the 'copy xxx' links that'll copy the hidden input value into an invisible `textarea` and copy it.
 
