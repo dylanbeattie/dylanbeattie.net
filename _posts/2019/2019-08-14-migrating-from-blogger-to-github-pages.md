@@ -1,6 +1,7 @@
 ---
 title: Migrating from Blogger to GitHub Pages 
 ---
+
 So, you might have noticed I've done a bit of decorating... welcome to the 2019 incarnation of dylanbeattie.net. If you're interested in how I migrated ten years' worth of blog posts onto a Jekyll site hosted on GitHub Pages, read on. If you're not, there's funny videos over on [/music](/music) that you might enjoy.
 
 Still here? Cool! OK, so the very first version of dylanbeattie.net was a site I built in PHP back in 1999 or so, which I hosted on my own physical server – way back in the days when both of those things were still considered a pretty neat idea. About ten years I ago I started using Blogger, and before long I scrapped the old PHP site, pointed the main domain at my Blogger site, and just sort of got on with it.
@@ -20,6 +21,8 @@ There's also a couple of things I decided I definitely didn't want:
 Back in January, I was chatting with [Todd Gardner](https://twitter.com/toddhgardner) about how he created the [PubConf website](https://pubconf.io/), and he suggested I take a look at GitHub Pages and a thing called Jekyll. I spent an evening playing around with it, and was basically hooked.
 
 ### Jekyll and GitHub Pages
+
+> **Note:** the code for this site is available on GitHub at [github.com/dylanbeattie/dylanbeattie.net](https://github.com/dylanbeattie/dylanbeattie.net) 
 
 So here's how it works. You write your site in HTML or Markdown, and create datasets in YAML. Jekyll compiles them into a static HTML site. It supports a [templating language called Liquid](https://shopify.GitHub.io/liquid/), which lets you create templates, conditionals, navigation – you can actually do some pretty sophisticated stuff with it, but everything happens at build time. Which is actually very cool.
 
