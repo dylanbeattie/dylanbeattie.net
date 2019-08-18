@@ -228,12 +228,16 @@ article ul.playlist {
   text-align: center;
   li {
     display: inline-block;
-    width: 224px;
-    height: 140px;
     text-align: center;
     font-size: 0.8em;
+    line-height: 1.4em;
+    height: 200px;
     a {
       border: 0px !important;
+      strong {
+        display: block;
+        height: 60px;
+      }
     }
     img {
       width: 224px;
