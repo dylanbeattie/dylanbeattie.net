@@ -6,6 +6,7 @@ original_song: You Give Love a Bad Name
 original_artist: Bon Jovi  
 original_copyright: Jon Bon Jovi, Richie Sambora, Desmond Child
 youtube_id: nSKp2StlS6s  
+date: 2017-10-17
 ---  
 You know how it is... you're lured in. Seduced, even. You've been hurt before, but this time it'll be different. You're older, wiser, you're not going to fall for their lies...
 

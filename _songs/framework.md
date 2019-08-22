@@ -6,6 +6,7 @@ original_song: We Didn't Start The Fire
 original_artist: Billy Joel
 original_copyright: 1989 Columbia Records
 youtube_id: Wm2h0cbvsw8
+date: 2016-05-03
 ---
 
 _"Because telling a software developer there's already a framework to do something is like telling a songwriter there's already a song about love"_

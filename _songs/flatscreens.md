@@ -6,6 +6,7 @@ original_song: Sunscreen
 original_artist: Baz Luhrmann  
 original_copyright: Baz Luhrmann
 youtube_id: q3G4EPGH2r0  
+date: 2016-09-10
 ---  
 This one was originally a [PubConf](https://pubconf.io/) talk that I did at PubConf Sydney in 2016. I re-recorded it to use as part of the opening keynote at NDC Oslo in 2017, and I'll often use this as a sort of warm-up video when I'm doing conference talks.
  

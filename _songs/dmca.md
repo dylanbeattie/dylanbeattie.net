@@ -6,6 +6,7 @@ original_song: Y M C A
 original_artist: The Village People  
 original_copyright: Jacques Morali & Victor Willis / Sony / ATV Music Publishing Ltd.  
 youtube_id: mQnF1BBBtXs  
+date: 2017-07-15
 ---  
 I probably had the idea for this one about ten seconds after I first heard of the Digital Millenium Copyright Act. A little nostagia trip for everyone who remembers alt.binaries, Napster, Limewire, Kazaa, AudioGalaxy... ah, good times.  
   

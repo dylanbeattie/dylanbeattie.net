@@ -6,6 +6,7 @@ original_song: Piano Man
 original_artist: Billy Joel
 original_copyright: Billy Joel / Columbia Records
 youtube_id: jxi0ETwDvws  
+date: 2019-08-01
 ---  
 
 My lyrical tribute to the world's most misunderstood programming language. For the record, I absolutely love JavaScript - hell, I built an [entire compiler](https://codewithrockstar.com/online/) in it just for fun - but... let's just say it's got enough weirdness that getting an entire song out of it really wasn't very hard. ;)

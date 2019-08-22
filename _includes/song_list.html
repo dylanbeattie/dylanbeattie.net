@@ -1,5 +1,6 @@
 <ul class="playlist">
-  {% for song in site.songs %}
+  {% assign songs = (site.songs | sort: 'date') | reverse %}
+  {% for song in songs %}
   <li>
     <a href="{{ song.url }}">
       <img src="/images/parodies/{{ song.filename }}.jpg" />
