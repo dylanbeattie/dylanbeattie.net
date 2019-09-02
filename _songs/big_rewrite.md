@@ -9,9 +9,9 @@ youtube_id: xCGu5Z_vaps
 date: 2017-06-18
 ---
   
-The story goes that an interviewer once asked Don McLean what American Pie actually meant... his reply? "What does American Pie mean? It means I never have to work again."  
+The story goes that an interviewer once asked Don McLean what American Pie actually meant. His reply? 'What does American Pie mean? It means I never have to work again.'  
   
-When I wanted to write something that captured the whole history of software development, from assembly to MS-DOS to the dotcom bubble to devops and cloud and agile, there was really only one song to work with. And, of course, the 'big rewrite' is one of those eternal fallacies of our industry, generation after generation of developers doomed to repeat history because they haven't learned from it.
+When I wanted to write something that captured the whole history of software development, from assembly to MS-DOS to the dotcom bubble to devops and cloud and agile, there was really only one song to work with. And, of course, the 'big rewrite' is one of those eternal fallacies of our industry: generation after generation of developers doomed to repeat history because they haven't learned from it.
 
 But mainly it's just a sort of combined music/technology nostalgia trip. 
   

@@ -1,7 +1,7 @@
 ---  
 layout: song  
 filename: bad_name
-title: You Give REST a Bad Name
+title: You Give ReST a Bad Name
 original_song: You Give Love a Bad Name
 original_artist: Bon Jovi  
 original_copyright: Jon Bon Jovi, Richie Sambora, Desmond Child
@@ -10,15 +10,15 @@ date: 2017-10-17
 ---  
 You know how it is... you're lured in. Seduced, even. You've been hurt before, but this time it'll be different. You're older, wiser, you're not going to fall for their lies...
 
-Nope, it's not a song about love. It's about integrating with vendors who are absolutely insistent that the project will be easy, because they have a REST API.
+Nope, it's not a song about love. It's about integrating with vendors who are absolutely insistent that the project will be easy, because they have a ReST API.
 
-Basically the line 'you promised me JSON then sent XML' popped into my head one day and the rest just sort of grew from there.
+Basically the line 'you promised me JSON then sent XML' popped into my head one day and the song just sort of grew from there.
 
 ### Lyrics  
 
 This integration is going to hell,  
 You promised me JSON, then sent XML,  
-You say it works in a RESTful way,  
+You say it works in a ReSTful way,  
 Then your errors come back as 200 OK  
 
 Whoa, it's no surprise,  
@@ -28,10 +28,10 @@ Your data won't even deserialize
 #### CHORUS:  
 
 Your API is a hall of shame,    
-You give REST a bad name,  
+You give ReST a bad name,  
 It falls apart, and we take the blame,  
-You give REST a bad name  
-You give REST... a bad name  
+You give ReST a bad name  
+You give ReST... a bad name  
 
 Broken methods, missing docs,  
 Updates fail 'cos of database locks,  

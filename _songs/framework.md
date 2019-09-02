@@ -1,23 +1,23 @@
 ---
 layout: song
 filename: framework
-title: We're Gonna Build a Framework
-original_song: We Didn't Start The Fire
+title: We’re Gonna Build a Framework
+original_song: We Didn’t Start The Fire
 original_artist: Billy Joel
 original_copyright: 1989 Columbia Records
 youtube_id: Wm2h0cbvsw8
 date: 2016-05-03
 ---
 
-_"Because telling a software developer there's already a framework to do something is like telling a songwriter there's already a song about love"_
+_'Because telling a software developer there's already a framework to do something is like telling a songwriter there's already a song about love'_
 
-A few years back, I was hosting a panel show with Mark Rendle with a round called 'Bot or Not', and one of the bots we featured was a bot called [We Didn't Start It](https://twitter.com/we_didnt_start?lang=en), which makes up new lyrics for Billy Joel's "We Didn't Start the Fire" based on headlines that are trending on Google. (Really.)
+A few years back, I was hosting a panel show with Mark Rendle with a round called 'Bot or Not?', and one of the bots we featured was a bot called [We Didn’t Start It](https://twitter.com/we_didnt_start?lang=en), which makes up new lyrics for Billy Joel’s 'We Didn’t Start the Fire' based on headlines that are trending on Google. (Really.)
 
-A couple of rounds later we had a 'Framework or Transformer', where we'd give the panellists a name and they had to tell us whether it was a software development framework or a character from the 'Transformers' franchise. And afterwards, as we were having a beer and talking about how it went, Mark asked me if I thought there were enough software development frameworks to rewrite 'We Didn't Start The Fire'.
+A couple of rounds later we had a 'Framework or Transformer?', where we'd give the panellists a name and they had to tell us whether it was a software development framework or a character from the 'Transformers' franchise. Afterwards, as we were having a beer and talking about how it went, Mark asked me if I thought there were enough software development frameworks to rewrite 'We Didn’t Start The Fire'.
 
 Turns out there are. Which is nice.
 
-Also, I'm ridiculously happy about rhyming 'kendo' with 'zend-o' using the 'O' from 'ODBC'. 
+Also, I’m ridiculously happy about rhyming 'kendo' with 'zend-o' using the 'O' from 'ODBC'. 
 
 ### Lyrics
 
