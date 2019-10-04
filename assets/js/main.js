@@ -128,3 +128,5 @@ $(function() {
 		return(false);
 	});
 });
+
+$()

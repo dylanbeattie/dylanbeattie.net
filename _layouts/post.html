@@ -7,9 +7,10 @@ layout: default
 		<div class="row gtr-200">
 			<div class="col-9 col-12-narrower">
 				<div id="content">
-					<article>
+					<article class="{{ page.css-class }}">
 						<h1>{{ page.title }} </h1>
-						<cite class="byline">Posted by <strong>{{ page.author }}</strong> on {{ page.date | date_to_long_string }}
+						<cite class="byline">Posted by <strong>{{ page.author }}</strong> on
+							{{ page.date | date_to_long_string }}
 							&bull;
 							<a href="{{ BASE_PATH }}{{ page.url }}">permalink</a></cite>
 						{{ content }}

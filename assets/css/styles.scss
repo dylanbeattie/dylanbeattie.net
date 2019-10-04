@@ -291,3 +291,27 @@ p > code {
   padding: 2px 2px 0px 2px;
   border-radius: 4px;
 }
+
+
+article {
+  dl {
+    dt {
+      font-weight: bold;
+      margin: 8px;
+    }
+    dd {
+      margin-left: 16px;
+    }
+  }
+  &.transcript {
+    img {
+      display: block;
+      width: 80%;
+      margin: 16px auto;
+        
+      @include breakpoint('<=mobile') {
+        width: 100%;
+      }
+    }
+  }
+}
