@@ -2,7 +2,7 @@
 layout: article
 title: The Cost of Code
 author: Dylan Beattie
-permalink: /articles/the-cost-of-code
+permalink: /articles/the-cost-of-code/
 summary: A written version of a talk I presented at various software conferences and events in 2019, about the social and environmental impact of modern software development.
 css-class: transcript
 opengraph: 
