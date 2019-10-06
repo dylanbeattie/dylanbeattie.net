@@ -7,6 +7,9 @@
 - speaking:
   text: speaking
   href: /speaking
+- articles:
+  text: articles
+  href: /articles
 - music:
   text: music
   href: /music
