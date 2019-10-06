@@ -304,14 +304,21 @@ article {
     }
   }
   &.transcript {
-    img {
+    img, iframe {
       display: block;
-      width: 80%;
+      width: 60%;
       margin: 16px auto;
         
       @include breakpoint('<=mobile') {
         width: 100%;
       }
+    }
+    figcaption {
+      margin-top: -16px;
+      margin-bottom: 16px;
+      display: block;
+      font-size: 0.75em;
+      text-align: center;
     }
   }
 }
