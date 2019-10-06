@@ -4,4 +4,7 @@
 
 layout: index
 title: home
+opengraph:
+  description: dylanbeattie.net
+  image: /images/dylan-linebreakers-oslo-by-glenn-henriksen.jpg
 ---
