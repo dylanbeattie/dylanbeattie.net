@@ -1,8 +1,11 @@
 ---
-layout: post
+layout: article
 title: The Cost of Code
+author: Dylan Beattie
+permalink: /articles/the-cost-of-code
+summary: A written version of a talk I presented at various software conferences and events in 2019, about the social and environmental impact of modern software development.
 css-class: transcript
-# permalink: /the-cost-of-code
+thumbnail: /articles/the-cost-of-code/slide015.png
 ---
 *This is a version of a talk that I presented at various software conferences and community events in  2019.*
 
@@ -12,7 +15,7 @@ Hello, everybody, and welcome. My name is Dylan Beattie and I’m a nerd. I wrot
 
 ![A slide showing information about Dylan Beattie](slide003.png)
 
-I’m a cis het English white guy, my pronouns are he/him, and yes, I am aware that means [I live my life on the lowest difficulty setting](https://whatever.scalzi.com/2012/05/15/straight-white-male-the-lowest-difficulty-setting-there-is/). A brief content warning: this talk includes some discussion of road traffic accidents and aeroplane crashes; if that’s something any of you find difficult to discuss, feel free to leave or cover your ears or whatever works for you. I won’t be offended. 
+I’m a cis het English-speaking white guy, my pronouns are he/him, and yes, I am aware that means [I live my life on the lowest difficulty setting](https://whatever.scalzi.com/2012/05/15/straight-white-male-the-lowest-difficulty-setting-there-is/). A brief content warning: this talk includes some discussion of road traffic accidents and aeroplane crashes; if that’s something any of you find difficult to discuss, feel free to leave or cover your ears or whatever works for you. I won’t be offended. 
 
 Right. I’m here today to talk about a very simple question: what does code cost?
 

@@ -135,8 +135,8 @@
 	a {
 		@include vendor('transition', 'color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out');
 		color: _palette(accent, bg);
-		text-decoration: none;
-		border-bottom: dotted 1px;
+		text-decoration: underline;
+		/* border-bottom: dotted 1px; */
 
 		&:hover {
 			color: _palette(accent, bg);
