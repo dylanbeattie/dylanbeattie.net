@@ -7,7 +7,7 @@ summary: A written version of a talk I presented at various software conferences
 css-class: transcript
 opengraph: 
   description: Dylan Beattie talks about the economics of programming, and the social and environmental cost of modern software development.
-  image: /articles/the-cost-of-code/og_image.png
+  image: /articles/the-cost-of-code/summary_large_image.jpg
 ---
 *This is a version of a talk that I presented at various software conferences and community events in  2019.*
 
