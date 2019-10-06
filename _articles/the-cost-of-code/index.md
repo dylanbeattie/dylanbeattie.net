@@ -8,8 +8,9 @@ css-class: transcript
 opengraph: 
   description: Dylan Beattie talks about the economics of programming, and the social and environmental cost of modern software.
   image: /articles/the-cost-of-code/summary_large_image.jpg
+date: '2019-10-06T23:41:00.000+01:00'
 ---
-*This is a version of a talk that I presented at various software conferences and community events in  2019.*
+*This is a talk that I presented at various software conferences and community events in 2019. Videos of versions of this talk are available from [Beyond Tech 2019](https://skillsmatter.com/skillscasts/13058-the-cost-of-code) and [DotNext Saint-Petersburg 2019](https://www.youtube.com/watch?v=001SxQCEuv8)*
 
 ![A title slide with the words 'The Cost of Code']({{ page.url }}/slides/slide001.jpg)
 
