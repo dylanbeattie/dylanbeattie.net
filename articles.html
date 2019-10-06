@@ -4,9 +4,11 @@ title: articles
 permalink: /articles
 ---
 <h2>Articles and Essays</h2>
+<article>
 <dl>
 {% for article in site.articles %}
-<dt><a href="{{ article.url }}">{{ article.title }}</a></dt>
+<dt><a href="{{ article.url }}">{{ article.title }}</a> ({{ article.date | date: "%B %Y" }})</dt>
 <dd>{{ article.summary }}</dd>
 {% endfor %}
 </dl>
+</article>

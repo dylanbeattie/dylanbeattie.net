@@ -1,5 +1,7 @@
 ---
-title: Publishing Talks 
+title: Publishing Talks
+layout: post
+author: Dylan Beattie
 ---
 
 I used to blog a lot more than I do now. There's a couple of reasons for that, not least that a lot of the discussion and engagement that used to happen on blog post comments has now moved to Twitter and StackOverflow. But mainly, it's because these days almost all of my 'writing' time goes into creating talks for conferences and user groups - and that takes a huge amount of time.
@@ -18,6 +20,8 @@ It might help to think of it as an essay, in the original sense of the word:
 >
 > ​	- Paul Graham, [The Age of the Essay](http://www.paulgraham.com/essay.html), 2014
 
-I've written five new talks this year - six, if you include collaborations. I write the way I talk, and I talk at about 200 words per minute - so a 60-minute talk is roughly equivalent to writing a 12,000-word essay. And that essay then forms the backbone of the talk itself - the structure, the flow and the narrative; it's what I use to create slides, work out where to use code samples, animation and video. But until now, I've never actually published it.
+Now, I've written five new talks this year - six, if you include collaborations. I write the way I talk, and I talk at about 200 words per minute - so a 60-minute talk is roughly equivalent to writing a 12,000-word essay. And that essay then forms the backbone of the talk itself - the structure, the flow and the narrative; it's what I use to create slides, work out where to use code samples, animation and video. But until now, I've never actually published it.
 
-So I'm going to try and experiment. I've taken one of the talks I prepared this year - a talk called 'The Cost of Code' - and cleaned it up a bit. I've added most of the slides used in the live presentation, incorporated links to my source material, and put it all online. It's at https://dylanbeattie.net/talks/the-cost-of-code/, and I'd 
+So I'm going to try an experiment. I've taken one of the talks I prepared this year - a talk called 'The Cost of Code' - and cleaned it up a bit. I've added most of the slides used in the live presentation, incorporated links to my source material, and put it all online. 
+
+It's at [https://dylanbeattie.net/articles/the-cost-of-code/](https://dylanbeattie.net/articles/the-cost-of-code/) - check it out, and let me know what you think.
