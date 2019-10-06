@@ -6,14 +6,14 @@ permalink: /blog
 <p>Here's my five latest blog posts - or you can browse <a href="/blog/archives">a complete archive of all my posts since 2008</a>.</p>
 {% for post in site.posts limit:5 %}
 <article>
-	<h1><a href="{{ BASE_PATH }}{{ post.url }}"></a>{{ post.title }}</a></h1>
+	<h1><a href="{{ site.url }}{{ post.url }}"></a>{{ post.title }}</a></h1>
 	<cite class="byline">Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
 	&bull;
-	<a href="{{ BASE_PATH }}{{ post.url }}">permalink</a></cite>
+	<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
 	{{ post.content }}
 	<cite>Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
 		&bull;
-		<a href="{{ BASE_PATH }}{{ post.url }}">permalink</a></cite>
+		<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
 </article>
 
 {% endfor %}	
