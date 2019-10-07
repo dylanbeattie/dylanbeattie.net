@@ -304,6 +304,10 @@ article {
     }
   }
   &.transcript {
+    img {
+      border: 1px solid #000;
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.50);
+    }
     img, iframe {
       display: block;
       width: 60%;
@@ -314,11 +318,16 @@ article {
       }
     }
     figcaption {
-      margin-top: -16px;
+      margin-top: -12px;
       margin-bottom: 16px;
       display: block;
       font-size: 0.75em;
       text-align: center;
+      line-height: 1.4em;
+    }
+    .twitter-tweet {
+      display: block;
+      margin: 10px auto;
     }
   }
 }
