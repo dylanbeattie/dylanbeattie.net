@@ -10,11 +10,11 @@
 #  city: Kraków, Poland
 #  country: pl
 
-- title: Half a Day of .NET
-  date: 3 Oct
-  url: https://cnug.dk/events/half-a-day-of-dot-net/
-  city: Copenhagen, Denmark
-  country: dk
+# - title: Half a Day of .NET
+#   date: 3 Oct
+#   url: https://cnug.dk/events/half-a-day-of-dot-net/
+#   city: Copenhagen, Denmark
+#   country: dk
 
 - title: DUUGFest 2019
   date: 11 Oct
