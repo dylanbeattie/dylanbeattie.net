@@ -16,17 +16,23 @@
 #   city: Copenhagen, Denmark
 #   country: dk
 
-- title: DUUGFest 2019
-  date: 11 Oct
-  url: https://www.df19.nl/
-  city: Utrecht, Netherlands
-  country: nl
+# - title: DUUGFest 2019
+#   date: 11 Oct
+#   url: https://www.df19.nl/
+#   city: Utrecht, Netherlands
+#   country: nl
 
 - title: KanDDDinsky
   date: 17-18 Oct
   url: https://kandddinsky.de/
   city: Berlin, Germany
   country: de
+
+- title: Droidcon London 2019
+  date: 24-25 Oct
+  url: https://uk.droidcon.com/
+  city: London, UK
+  country: gb
   
 - title: DDD East Midlands
   date: 26 Oct
