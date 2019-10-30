@@ -28,23 +28,23 @@
 #   city: Berlin, Germany
 #   country: de
 
-- title: Droidcon London 2019
-  date: 24-25 Oct
-  url: https://uk.droidcon.com/
-  city: London, UK
-  country: gb
+# - title: Droidcon London 2019
+#   date: 24-25 Oct
+#   url: https://uk.droidcon.com/
+#   city: London, UK
+#   country: gb
   
-- title: DDD East Midlands
-  date: 26 Oct
-  url: https://dddeastmidlands.com
-  city: Nottingham, UK
-  country: gb
+# - title: DDD East Midlands
+#   date: 26 Oct
+#   url: https://dddeastmidlands.com
+#   city: Nottingham, UK
+#   country: gb
 
-- title: Hack Manchester
-  date: 27 Oct
-  url: https://www.hac100.com/event/HM2019/
-  city: Manchester, UK
-  country: gb
+# - title: Hack Manchester
+#   date: 27 Oct
+#   url: https://www.hac100.com/event/HM2019/
+#   city: Manchester, UK
+#   country: gb
 
 - title: ApexVox
   date: 2 Nov
