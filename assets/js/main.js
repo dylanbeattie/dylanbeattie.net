@@ -129,4 +129,20 @@ $(function() {
 	});
 });
 
+$(function() {
+	const playGif = function() {
+		this.src = this.src.replace(/\.png/, '.gif');
+	};
+	const stopGif = function() {
+		this.src = this.src.replace(/\.gif/, '.png');
+	}
+	$("img.animated-gif").one("load", function() {
+		stopGif.call(this);
+		$(this).mouseover(playGif);
+		$(this).mouseout(stopGif);
+	}).each(function() {
+		if(this.complete) $(this).trigger('load');
+	});	
+});
+
 $()
