@@ -145,87 +145,107 @@ Now you may not know this, but at one point in his career, the great French phil
 
 ![image-20191102171223837](index.assets/image-20191102171223837.png)
 
-Sartre would later go on to write [Being and Nothingness](https://en.wikipedia.org/wiki/Being_and_Nothingness), in which he discusses the illusion of choice and 
+Sartre would later go on to write [Being and Nothingness](https://en.wikipedia.org/wiki/Being_and_Nothingness), in which he discusses the illusion of choice - the notion that if the alternative doesn’t really exist, then you’re not really making a valid choice, no matter how hard you convince yourself that’s what you would have done anyway. And it’s the same with agile - if you don’t have a plan, choosing to respond to change is really a choice. The thing that the authors of the agile manifesto were trying to solve was something they had witnessed many, many times, which was teams delivering the wrong thing because they were following a plan, long after the point where it was obvious the plan was no longer valid.
 
-It’s the same with agile - if you don’t have a plan, you’re not actually choosing not to follow it. The thing that the authors of the agile manifesto were trying to solve was teams delivering the WRONG THING because that’s what they had planned to do - even when it was obvious that it was going to be wrong.
+![image-20191103141325347](index.assets/image-20191103141325347.png)
 
-So you have to have a plan. And you have to be prepared to change it. But trying to do architecture without any kind of plan or up-front design is never going to work.
+<figcaption>From <a href="https://agilemanifesto.org/">agilemanifesto.org</a></figcaption>
 
-Whilst we're on the subject of agile, there’s another statement I want to talk about. This is one of the principles behind the agile manifesto: ‘the best architectures, requirements and designs emerge from self-organising teams’. And again, a lot of people have interpreted this to mean ‘yay! we don't need any managers; the team can just organise themselves!’.
+You need to have a plan – and you need to be prepared to change it. And that’s difficult. When we humans invest in something – time, effort, money – we get attached to it. Read up on something called the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost) if you’re curious about this, but the point is – make a plan. Make the best plan you possibly can. And when reality bites and you realise your assumptions were flawed, be prepared to rip up your plan – or at least, that part of it – and come up with a better one.
 
-That's not what it means. It means that if a team does being to self-organise, you should be prepared to let it happen. Self-organising means you don’t TELL the team how to work; you give them the autonomy to figure it out for themselves. But if a team comes to you and asks for help, asks for some support when it comes to organising, holy shit you’d better have something better to offer them than ‘go over there and self-organise’.
+Whilst we're on the subject of agile, there’s another statement I want to talk about. This is one of the principles behind the agile manifesto: 
 
-And, again, that comes down to having a plan, but being flexible enough to update it when reality happens.
+![image-20191103142159208](index.assets/image-20191103142159208.png)
 
-And, finally, that qualifier: "within economic and technological constraints." In software, those constraints can be really, really difficult to understand - but they do exist. You come up with a beautiful design for a distributed system that requires eight development teams, you go to your CFO and find out you've only got budget to hire four people? Boom. Economic constraint. You design a really clever mobile phone application for scanning people's passports and then find out that iOS won't let your application use the near-field RFID scanning on Apple devices? Boom. Technological constraint.
+<figcaption>From <a href="https://agilemanifesto.org/">agilemanifesto.org</a></figcaption>
+
+And again, a lot of people have interpreted this to mean “yay! we don't need any managers; the team can just organise themselves!”
+
+That's not what it means. It means that if a team does begin to self-organise, you should be prepared to let it happen. Self-organising means you don’t tell the team how to work; give them the autonomy to figure it out for themselves. Don’t suppress emergent behaviour patterns and collaboration styles because they don’t match what’s in the plan. But if a team comes to you and asks for help, asks for some support when it comes to organising, you’d better have something better to offer them than “go over there and self-organise” - because even the best teams I’ve worked with will just self-organise themselves into the nearest pub and leave you to explain to the stakeholders why nothing’s getting delivered. 
+
+Again, it all comes down to having a plan, but being flexible enough to update it when reality happens.
+
+And, finally, that qualifier: “within economic and technological constraints”. In software, those constraints can be really, really difficult to understand - but they do exist. You come up with a beautiful design for a distributed system that requires eight development teams, you go to your CFO and find out you've only got budget to hire four people? Boom. Economic constraint. You design a really clever mobile phone application for scanning people's passports and then find out that iOS won't let your application use the near-field RFID scanning on Apple devices? Boom. Technological constraint.
+
+![image-20191103142522850](index.assets/image-20191103142522850.png)
 
 Sometimes, those constraints are obvious. Sometimes you'll only find them out as you go along. Sometimes they'll change halfway through a project - you're happily building modules and services and somebody from the legal team comes over and asks if you've heard about this thing called GDPR.
 
-Sometimes, the 'obvious' constraints are actually the things you should challenge the hardest, because things change faster than people do. The first wave of smartphones were all designed with the constraint that you can’t use a touchscreen on a mobile phone - it’d make the handsets too expensive, and even if you could do it, it wouldn’t work properly. And so when touchscreen technology got good enough that you COULD put it in a mobile phone, nobody was paying attention… except Apple. Now, that shouldn’t be an architectural DECISION - but you should absolutely be prepared to challenge the perceived constraints if you think they’re not valid.
+Sometimes, the 'obvious' constraints are actually the things you should challenge the hardest, because things change faster than people do. The first wave of smartphones were all designed with the constraint that you can’t use a touchscreen on a mobile phone - it’d make the handsets too expensive, and even if you could do it, it wouldn’t work properly. 
 
-The hard thing about those constraints is that, often, the architect ends up being the person who has to tell the dev teams why they can't do things the way they want to. You can't use that neat JavaScript library you found, because one of our biggest customers is still using Internet Explorer and we need to support them. There will be objectives and constraints that make sense at a strategic level, but for developers trying to ship working code, they're just a pain in the ass - and as the architect, it's up to you to manage that.
+![image-20191103142614099](index.assets/image-20191103142614099.png)
 
-So, we've identified the PURPOSE of architecture:
+And so when touchscreen technology got good enough that you could use it to create a touchscreen phone, nobody was paying attention except Apple. Now, that shouldn’t be an architectural *decision* – but you should absolutely be prepared to challenge the perceived constraints if you think they’re not valid.
 
-\* determine the needs of the user
+The hard thing about those constraints is that, often, the architect ends up being the person who has to tell the dev teams why they can't do things the way they want to. You can't use that neat JavaScript library you found, because one of our biggest customers is still using Internet Explorer and we need to support them. 
 
-\* design to meet those needs as effectively as possible
+![Explaining to your team that they can’t use the new shiny thing because you still support Internet Explorer](index.assets/newshiny.gif){: .animated-gif }
 
-\* within economic and technological constraints.
+There will be decisions, objectives and constraints that make sense at a strategic level, but for developers trying to ship working code, they're just a pain in the ass – and as the architect, it's up to you to manage that.
 
-Now I want to talk about the PROCESS of architecture. How do you do actually do it?
+So, we've identified the function of architecture, with a little help from Fred Brooks:
 
-Again, I like to think of this in three phases.
+![image-20191103143854642](index.assets/image-20191103143854642.png)
 
-\1. MAKE DECISIONS
+Now it’s time to verb the noun... let’s talk about the process of architecture. How do you do actually do it?
 
-\2. COMMUNICATE DECISIONS
+Again, I like to think of this in three phases: making decisions, communicating decisions, and reinforcing decisions.
 
-\3. ENFORCE DECISIONS
+![image-20191103143949778](index.assets/image-20191103143949778.png)
 
 Now, this isn't waterfall. This doesn't mean if you're trying to launch a product by the end of the year, you spend three months making decisions, three months communicating them and three months reinforcing them. You'll be doing this a lot. Sometimes, the whole cycle will take a couple of hours; sometimes it'll take weeks. Sometimes the outcome will be one single API endpoint, sometimes it'll be a roadmap and a tech strategy for an entire product - but here's some steps that might help you work through it.
 
-\## Making Decisions
-
-\### Identify what you've already got.
+### Step 1: Identify what you've already got.
 
 As an architect, this is fundamental to doing your job well. You need to understand what's already in play. 
 
-At this stage, forget about reading code and studying documentation. Sure, that might help, but it's often not the quickest way to develop the understanding that you need. What you're looking for here are components and connectors. Here's the simplest possible architecture - a static website. And even here, there's two components - there's your static website, and there's the rest of the world - and a connector. This thing. HTTP. You need to understand what it can do. How many requests per second are you handling right now? How many CAN you handle? If you had to scale up, could you? Is there any kind of security on that? What about authentication? There's that great line from the movie Apollo 13 - "I don't care about what anything was DESIGNED to do; I care about what it CAN do".
+At this stage, forget about reading code and studying documentation. Sure, that might help, but it's often not the quickest way to develop the understanding that you need. What you're looking for here are components and connectors. Here's the simplest possible architecture - a static website. And even here, there's two components - there's your static website, and there's the rest of the world - and a connector. This thing. HTTP. 
 
-If you're looking at more complex systems, this can be a lot of work - but there will always be SOMETHING you can do to understand the nature of the traffic that's flowing across those boundaries. See if you can get hold of the HTTP logfiles from the web servers. Got a database? See if you can get a profile trace, something that shows you what sort of queries are running against it, how long they're taking. If you're lucky, tools like NewRelic or Rollbar or MiniProfiler will already be integrated.
+![image-20191103144112844](index.assets/image-20191103144112844.png)
 
-Even if you're designing a completely new greenfield system, you STILL have existing components and constraints to think about. What sort of devices are you targetting? What sort of connectivity is available between your platform and your end users? Who are the developers you'll be working with, and what are they good at? If you don't have any developers yet, what's the recruitment and onboarding process? If you don't have one of those... well, at that point I'd be asking why they think they need a systems architect, but it matters.
+You need to understand what it can do. How many requests per second are you handling right now? How many CAN you handle? If you had to scale up, could you? Is there any kind of security on that? What about authentication? Are we serving web pages, or JSON, or large binary files? Can we put a caching proxy in there? If we hit it with too many requests in a second, what happens - do we get gracefully throttled, or do things start falling over? You want to channel the spirit of Gene Kranz, the mission director on Apollo 13 (he’s the one played by Ed Harris in the movie – which, by the way, is definitely my favourite movie of all time): **“I don’t care about what anything was *designed* to do; I care about what it *can* do”**
 
-Of course, most of us don't get to build greenfield systems; most organizations have systems running in production already. And as an architect, you need to understand what those systems can do - and what they can't. 
+![image-20191103144322922](index.assets/image-20191103144322922.png)
 
-\### Asking the Right Questions
+If you're looking at more complex systems, this can be a lot of work - but there will always be *something* you can do to understand the nature of the traffic that's flowing across those boundaries. See if you can get hold of the HTTP logfiles from the web servers. Got a database? See if you can get a profile trace, something that shows you what sort of queries are running against it, how long they're taking. If you're lucky, tools like NewRelic or Rollbar or MiniProfiler will already be integrated.
 
-Another really valuable skill for an architect is being able to translate between business requirements and engineering requirements. Stakeholders always want the same things - fast, secure, usable. Well, when developers hear 'fast', their eyes light up, they remember that one talk they saw at a conference about how StackOverflow use Redis to improve response times, and they start working on a way to cache all your web pages in a giant Redis cluster because the business wants it to be 'fast'. Then the stakeholders ask why it's taking so long and why your latest AWS invoice has $3,500 for something called 'reee-dis' on it.
+Once in a while, you’ll have the opportunity to work on what we call a greenfield system. And you’ll think “cool! no legacy code, no existing systems, no integration headaches - we can do whatever we want to!”
 
-Fast. Secure. Usable. These terms aren't actually terribly useful at all. What you want are metrics. FAST. OK, how about if commit to delivering page load in under 2.5 seconds for 95% of page requests? Then go a step further - you know from your investigations that you get about 100 requests per minute, so every minute, you're gonna get ninety-five happy users, and five people who have to wait just a little bit longer. Maybe ten seconds.
+![Animation showing a green field with various obstacles appearing in it.](index.assets/greenfield.gif){: .animated-gif }
+
+Well, there’s no such thing as a greenfield system. There will always be existing components, data sources, ideas that you can draw on. There will be politics – somebody will have managed to blame the last failure on the decision to use a message bus, and so when you propose RabbitMQ or 0MQ in a planning meeting it’ll be like you just stepped on an unexploded bomb. There’s going to be the inevitable rabbit holes - the OAuth2 provider that ends up taking three weeks to get the integration working properly, even after the first three providers took about twenty minutes each. And somewhere out there will be the wreckage of the last attempt to solve this problem. You might be able to salvage some of it; you might be able to learn from it – but if you think you’re working on a greenfield project, your assumptions are almost certainly flawed.   
+
+### Asking the Right Questions
+
+Another really valuable skill for an architect is being able to translate between business requirements and engineering requirements. Stakeholders always want the same things – “fast, secure, user friendly”. Well, when developers hear “fast”, their eyes light up, they remember that one talk they saw at a conference about how StackOverflow use Redis to improve response times, and they start working on a way to cache all your web pages in a giant Redis cluster because the business wants it to be “fast”. Then the stakeholders ask why it's taking so long and why your latest AWS invoice has $3,500 for something called 'reee-dis' on it.
+
+Fast. Secure. Usable. These terms aren't actually terribly useful at all. What you want are metrics. Let’s talk about “fast”. OK, how about if commit to delivering page load in under 2.5 seconds for 95% of page requests? Then go a step further - you know from your investigations that you get about 100 requests per minute, so every minute, you're gonna get ninety-five happy users, and five people who have to wait just a little bit longer. Maybe ten seconds.
+
+![image-20191103145617822](index.assets/image-20191103145617822.png)
 
 If that's not acceptable, give 'em some numbers to work with. What would you need to do to get from 95% to 99% - and what would that cost, in terms of development time, in terms of infrastructure? Maybe there's another solution? How much of that page load time is the Javascript libraries for your in-page advertising?
 
-'Secure' is another term that gets thrown around a lot but isn't actually very useful. The important questions here. Who's the threat profile? Are we worried about angry ex-boyfriends trying to break into somebody's email? Are we worried about Chinese botnets trying to bruteforce their way in using a password list they found on the darkweb? Or are we worried about MOSSAD? What about the contractors we've hired to do network support? Do we need to worry about what they have access to? Again, each of these questions is the starting point for a conversation about how we balance technological complexity with business constraints. Worried about angry ex-boyfriends? Use two-factor authentication and hope they didn't leave their phone at home. Chinese botnets? Enforce password complexity, maybe implement an artificial delay or a limit on login attempts. MOSSAD? They're probably already in, so stop worrying about it and get on with your life.
+![image-20191103145634786](index.assets/image-20191103145634786.png)
 
-And for all these sorts of considerations, ask yourself how you'll know if it turns out you were wrong. If your page load times go from 2 seconds to 5 seconds to 10 seconds, how do you know about it? If a Chinese botnet managed to log into a hundred of your user accounts, how would you know about it?
+“Secure” is another term that gets thrown around a lot but isn't actually very useful. The important question here is: what's the threat profile? Are we worried about angry ex-boyfriends trying to break into somebody's email? Are we worried about Chinese botnets trying to bruteforce their way in using a password list they found on the darkweb? Or are we worried about MOSSAD? 
 
-The responses to these incidents aren't necessarily going to be technological, but the first sign that they're happening is almost always going to be something unusual happening somewhere on your network.
+What about the contractors who we’re hiring to do network support? Do we need to worry about what they have access to? Again, each of these questions is the starting point for a conversation about how we balance technological complexity with business constraints. Worried about angry ex-boyfriends? Use two-factor authentication and hope they didn't leave their phone at home. Chinese botnets? Enforce password complexity, maybe implement an artificial delay or a limit on login attempts. MOSSAD? They're probably already in, so stop worrying about it and get on with your life.
 
-\### What can you build? People, patterns, packages and process.
+And for all these sorts of considerations, ask yourself how you'll know if it turns out you were wrong. If your page load times go from 2 seconds to 5 seconds to 10 seconds, how do you know about it? If a Chinese botnet managed to log into a hundred of your user accounts, how would you know about it? The responses to these incidents aren't necessarily going to be technological, but the first sign that they're happening is almost always going to be something unusual happening somewhere on your network.
 
-People? Who have you got? What are they good at? What’s their thing? If you need to hire people, how easily can you do it? 
+### What can you build? 
 
-Patterns? 
+As an architect, you’ve got to understand how good your teams are at shipping stuff – and how consistently you can hit your delivery objectives. And this comes down to what I think of as the four P’s: people, patterns, packages, process. 
 
-Packages?
+![image-20191103145902367](index.assets/image-20191103145902367.png)
 
-Process?
+Let’s start with people. Who have you got, and what helps them deliver their best work? And not just the people you’ve already got, but the people you might be hiring before too long – how easily can you find them? Are you making decisions about platforms, languages, processes that will make it easier or harder to hire the right kind of people? As an architect, you may not have a whole lot of clout when it comes to things like salaries, benefits and remote working policies - but you can definitely influence things like whether you’re going to keep using classic ASP, or start rebuilding things in .NET Core, and that can have a huge impact when you’re looking for smart people to join your teams.
 
-We already talked about knowing what's already running inside your organisation. But just as important is understanding what else is available out there in the world. As an architect, it's your responsibility to know what's out there - frameworks, tools, patterns, languages. Understand the capabilities, and the costs, of all those options - in the context of YOUR ORGANISATION.
+![image-20191103150659768](index.assets/image-20191103150659768.png)
 
-You've got to be careful here. Technology is EXCITING. Frameworks are SHINY. The stuff you're already using? You know everything that's wrong with it. You know about the headaches and the bottlenecks and the configuration problems, because when it's actually RUNNING, the good stuff becomes invisible, you take it for granted, and the bad stuff keeps interrupting your day.
+Patterns and packages is all about understanding what else is available out there in the world. As an architect, it's your responsibility to know what's out there - frameworks, tools, patterns, languages. Understand the capabilities, and the costs, of all those options - in the context of your organisation.
+
+Frameworks are SHINY. The stuff you're already using? You know everything that's wrong with it. You know about the headaches and the bottlenecks and the configuration problems, because when it's actually RUNNING, the good stuff becomes invisible, you take it for granted, and the bad stuff keeps interrupting your day.
 
 But the new amazing frameworks and patterns that you read about on Twitter and learn about at conferences and user groups? They're PERFECT! They'll solve ALL YOUR PROBLEMS!
 
