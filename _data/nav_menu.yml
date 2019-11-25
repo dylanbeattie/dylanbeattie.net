@@ -7,6 +7,9 @@
 - speaking:
   text: speaking
   href: /speaking
+- workshops:
+  text: workshops
+  href: /workshops
 - articles:
   text: articles
   href: /articles

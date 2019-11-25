@@ -55,6 +55,13 @@ article {
       margin: 0.5em 0;
     }
   }
+  blockquote { 
+    cite {
+      display: block;
+      padding-left: 100px;
+      margin: 0.5em 0;
+    }
+  }
   hr {
     border-width: 1px 0 0 0;
     border-style: solid;
@@ -335,5 +342,8 @@ article {
   .twitter-tweet {
     display: block;
     margin: 10px auto;
+  }
+  h4 {
+    margin-bottom: 16px;
   }
 }

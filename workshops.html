@@ -1,0 +1,22 @@
+---
+layout: right-sidebar
+title: workshops
+permalink: /workshops
+---
+<article>
+    <h2>Workshops and Training</h2> 
+<p>I've been running classroom training for software professionals since 2016. Drawing on over 
+  15 years' experience designing large-scale software applications, running software development 
+  teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs, 
+  I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
+  to the Microsoft .NET platform, and I'm currently offering two workshops aimed at helping
+  software professionals improve their communication and presentation skills.
+</p>
+<hr />
+{% for workshop in site.workshops %}
+<h3><a href="{{ workshop.url }}">{{ workshop.title }}</a></h3>
+{{ workshop.summary | markdownify }}
+<p><a href="{{ workshop.url }}">Read more...</a></p>
+{% endfor %}
+
+</article>
