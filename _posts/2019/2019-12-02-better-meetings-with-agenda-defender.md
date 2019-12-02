@@ -17,7 +17,7 @@ Everyone arrives on time, you kick off at 13:00 as scheduled… but then after t
 
 I have. And, yes, on a handful of occasions I’ve been the person doing the talking – sorry! But sticking to an agenda when you’re talking is hard – like a lot of so-called “soft skills”, participating in meetings effectively is way harder than most people think. Being able to plan and deliver a five-minute update in five minutes, or a half-hour presentation in exactly half an hour, is a skill that takes time and effort to improve.
 
-So I built a thing that can help. It’s called Agenda Defender, it's at https://agendadefender.app, and it can help you and your team keep your meetings on schedule.
+So I built a thing that can help. It’s called Agenda Defender, it's at [https://agendadefender.app](https://agendadefender.app), and it can help you and your team keep your meetings on schedule.
 
 First, type (or paste) your agenda. Local times, 24-hour clock, one line per item, with the finish time as the last entry.
 
