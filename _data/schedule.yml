@@ -70,11 +70,23 @@
 #   city: London, UK
 #   country: gb
   
-- title: Xamarin UG
-  date: 26 Nov
-  url: https://www.meetup.com/Birmingham-DotNet-And-Xamarin-User-Group/events/263557251/
-  city: Birmingham, UK
-  country: gb
+# - title: Xamarin UG
+#   date: 26 Nov
+#   url: https://www.meetup.com/Birmingham-DotNet-And-Xamarin-User-Group/events/263557251/
+#   city: Birmingham, UK
+#   country: gb
+
+- title: NDC Meetup in Porto
+  date: 7 January 2020
+  url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-porto-tickets-85068182223
+  city: Porto, Portugal
+  country: pt
+
+- title: NDC Meetup in Lisbon
+  date: 8 January 2020
+  url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-lisbon-tickets-85618592515
+  city: Lisbon, Portugal
+  country: pt
 
 - title: NDC London 
   date: 27-31 January 2020
