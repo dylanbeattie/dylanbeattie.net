@@ -5,10 +5,9 @@ author: Dylan Beattie
 opengraph: 
   description:Tracking down a random build failure with Jekyll and pubconf.io
 ---
+I use Jekyll and Github Pages for pretty much all my standalone websites these days, and I love it – the combination of static HTML, Markdown and YAML provides just enough data-driven behaviour to avoid lots of unnecessary duplication, but without any of the costs or overheads of running databases and server-side processing.
 
-I use Jekyll and Github Pages for pretty much all my standalone websites these days, and I love it - the combination of static HTML, Markdown and YAML provides just enough data-driven behaviour to avoid lots of unnecessary duplication, but without any of the costs or overheads of running databases and server-side processing.
-
-Until today. Today, dear reader, I hit a bump. And it starts, like so many things, at the pub. At [PubConf](https://pubconf.io/), to be more exact. [Todd Gardner](https://twitter.com/toddhgardner) is taking a bit of a break from travel in 2020, so I'm going to be running PubConf London at the end of January - which means I get commit access to pubconf.io (yay!) for the next two months. It's built using Jekyll and hosted on Github Pages, and I've had a local version of the PubConf website running on my Macbook for the last 4-5 months without any hassles... except last week, I repaved my Macbook with a clean install of macOS Catalina. And apart from a couple of weird quirks that I've managed to isolate, it's all good - including all my other Jekyll sites.
+Until today. Today, dear reader, I hit a bump. And it starts, like so many things, at the pub. At [PubConf](https://pubconf.io/), to be more exact. [Todd Gardner](https://twitter.com/toddhgardner) is taking a bit of a break from travel in 2020, so I'm going to be running PubConf London at the end of January – which means I get commit access to pubconf.io (yay!) for the next two months. It's built using Jekyll and hosted on Github Pages, and I've had a local version of the PubConf website running on my Macbook for the last 4-5 months without any hassles... except last week, I repaved my Macbook with a clean install of macOS Catalina. And apart from a couple of weird quirks that I've managed to isolate, it's all good – including all my other Jekyll sites.
 
 So I grab a fresh clone of the PubConf source tree, do the `bundle install` / `bundle exec jekyll serve` invocation, and... boom.
 
@@ -26,15 +25,15 @@ jekyll 3.8.5 | Error:  wrong number of arguments (given 2, expected 1)
 
 That's not good. And I hadn't even changed anything yet. So... here begins a protracted bout of yak-shaving. 
 
-First thought: perhaps macOS Catalina uses a different default version of Ruby, that's no longer compatible with this particular Jekyll configuration. So I spend an hour or so installing rbenv, the version manager that lets you run different Rubies side-by-side. No luck - `2.4.5`,` 2.4.9` and the default `2.6.3` all produce the same result.
+First thought: perhaps macOS Catalina uses a different default version of Ruby, that's no longer compatible with this particular Jekyll configuration. So I spend an hour or so installing rbenv, the version manager that lets you run different Rubies side-by-side. No luck – `2.4.5`,` 2.4.9` and the default `2.6.3` all produce the same result.
 
-I Google the error message. Now, what I'm looking for here is something that's *recent* - looks like various folks have had this error message over the years, but I'm trying to work out what might have changed with that stack recently that could be causing this error to start happening. I find this, which looks pretty promising, including [this comment from 15 October](https://github.com/envygeeks/jekyll-assets/issues/622#issuecomment-542363774):
+I Google the error message. Now, what I'm looking for here is something that's *recent* – looks like various folks have had this error message over the years, but I'm trying to work out what might have changed with that stack recently that could be causing this error to start happening. I find this, which looks pretty promising, including [this comment from 15 October](https://github.com/envygeeks/jekyll-assets/issues/622#issuecomment-542363774):
 
 > I believe this is actually an issue with a change in sprockets 4.0.0:
 
 I've never heard of Sprockets, but according to the internet "Sprockets is a Ruby library for compiling and serving web assets." Now, there are two things here which I think are interesting:
 
-1. The code for pubconf.io uses a plugin called `jekyll-assets` - which I don't use on any of my other Jekyll sites.
+1. The code for pubconf.io uses a plugin called `jekyll-assets` – which I don't use on any of my other Jekyll sites.
 2. `jekyll-assets` relies on Sprockets. 
 3. Sprockets released version 4.0.0 on October 8th.
 
@@ -66,7 +65,7 @@ pubconf.github.io $ bundle
 pubconf.github.io $ bundle exec jekyll serve
 ```
 
-Now, it still didn't work - but check this out: I'm now getting the same error locally as I get on TravisCI:
+Now, it still didn't work – but check this out: I'm now getting the same error locally as I get on TravisCI:
 
 ```bash
 Liquid Exception: Liquid syntax error (/Users/dylanbeattie/Projects/pubconf.github.io/_includes/head.html line 111): Unknown tag 'stylesheet' included in /_layouts/default.html
@@ -91,5 +90,5 @@ Now this is seriously weird. Sure, it explains what's broken, and the fix is eas
 
 So, the sprockets thing was a rabbit hole, it's nothing to do with macOS Catalina, and chatting with Todd, turns out he's got another site with an identical configuration, on a freshly-paved laptop, that's pulling down `jekyll-assets 2.4.0` without having to specify a version. 
 
-If anybody has any bright ideas as to what's going on, I'd be really curious to hear them. But, as happens so often in the wonderful world of modern web development, I got better things to do than try and figure out what caused the weird impossible bug that's not only now fixed, but according to all the available evidence should never even have happened in the first place... 
+If anybody has any bright ideas as to what's going on, I'd be really curious to hear them. But, as happens so often in the wonderful world of modern web development, I got better things to do than try to figure out what caused the weird impossible bug that's not only now fixed, but according to all the available evidence should never even have happened in the first place... 
 
