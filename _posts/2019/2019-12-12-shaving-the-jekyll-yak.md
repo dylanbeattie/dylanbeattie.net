@@ -79,13 +79,13 @@ So... what the hell does `Unknown tag 'stylesheet' included ` mean? Well, like b
 
 But I did find [this issue](https://github.com/envygeeks/jekyll-assets/issues/342) on the jekyll-assets Github repository, which includes this comment from [envygeeks](https://github.com/envygeeks/jekyll-assets/issues/342#issuecomment-360634222):
 
-> Our website is an unreliable source of documentation (right now, I'm working on adding that to my pipeline.. it'll be a few weeks yet.) Yes, every tag but `{% asset %}` has been removed. As for the GitHub-pages issue, this issue belongs to them, we've not changed anything by way of integration with Jekyll, other than how we hook in, we have people who happily use Jekyll-Assets 3.x with Github Pages and have no problems.
+> Our website is an unreliable source of documentation (right now, I'm working on adding that to my pipeline.. it'll be a few weeks yet.) Yes, every tag but `{% raw %}{% asset %}{% endraw %}` has been removed. As for the GitHub-pages issue, this issue belongs to them, we've not changed anything by way of integration with Jekyll, other than how we hook in, we have people who happily use Jekyll-Assets 3.x with Github Pages and have no problems.
 
 The smoking gun here:
 
-> **Yes, every tag but `{% asset %}` has been removed.** 
+> **Yes, every tag but `{% raw %}{% asset %}{% endraw %}` has been removed.** 
 
-Now, this comment is from January 2018. Which suggests that the `{% stylesheet %}` tag that's used in the PubConf code templates has been deprecated since the release of `jekyll-assets` v3.0.0, in November 2017.
+Now, this comment is from January 2018. Which suggests that the `{% raw %}{% stylesheet %}{% endraw %}` tag that's used in the PubConf code templates has been deprecated since the release of `jekyll-assets` v3.0.0, in November 2017.
 
 Now this is seriously weird. Sure, it explains what's broken, and the fix is easy – add `gem "jekyll-assets", "~> 2.3.2"` to the `group: jekyll_plugins do` section in the project's `Gemfile` – but doesn't give us any clues at all as to why this didn't break until now. Because as far as I can tell, on 8th November 2019 – just over a month ago – TravisCI was quite happily running that build and ending with `jekyll-assets` version 2.something and everything just worked. Despite the fact it, apparently, should have stopped working on November 2017, two years earlier, when the first 3.x version of `jekyll-assets` was shipped.
 
