@@ -3,8 +3,10 @@ title: Shaving the Jekyll Yak
 layout: post
 author: Dylan Beattie
 opengraph: 
-  description:Tracking down a random build failure with Jekyll and pubconf.io
+  description: Tracking down a bizarre build failure with Jekyll and pubconf.io
 ---
+UPDATE: [Thanks to the amazing power of Detective Twitter, I think we figured out what’s going on… ](#update-the-solution)
+
 I use Jekyll and Github Pages for pretty much all my standalone websites these days, and I love it – the combination of static HTML, Markdown and YAML provides just enough data-driven behaviour to avoid lots of unnecessary duplication, but without any of the costs or overheads of running databases and server-side processing.
 
 Until today. Today, dear reader, I hit a bump. And it starts, like so many things, at the pub. At [PubConf](https://pubconf.io/), to be more exact. [Todd Gardner](https://twitter.com/toddhgardner) is taking a bit of a break from travel in 2020, so I'm going to be running PubConf London at the end of January – which means I get commit access to pubconf.io (yay!) for the next two months. It's built using Jekyll and hosted on Github Pages, and I've had a local version of the PubConf website running on my Macbook for the last 4-5 months without any hassles... except last week, I repaved my Macbook with a clean install of macOS Catalina. And apart from a couple of weird quirks that I've managed to isolate, it's all good – including all my other Jekyll sites.
@@ -91,4 +93,30 @@ Now this is seriously weird. Sure, it explains what's broken, and the fix is eas
 So, the sprockets thing was a rabbit hole, it's nothing to do with macOS Catalina, and chatting with Todd, turns out he's got another site with an identical configuration, on a freshly-paved laptop, that's pulling down `jekyll-assets 2.4.0` without having to specify a version. 
 
 If anybody has any bright ideas as to what's going on, I'd be really curious to hear them. But, as happens so often in the wonderful world of modern web development, I got better things to do than try to figure out what caused the weird impossible bug that's not only now fixed, but according to all the available evidence should never even have happened in the first place... 
+
+### UPDATE: THE SOLUTION
+
+One of the best reasons I’ve found for writing blog posts like this is that you get a lot more eyeballs on the problem than just your own – and thanks to some [sterling work](https://twitter.com/shiftkey/status/1205142441579499520) by [@shiftkey](https://twitter.com/shiftkey), we figured it out. Or at least came up with a pretty plausible explanation.
+
+Travis CI has a 28-day bundler cache, which means if you run a build within 28 days of the previous build, it’ll reuse the same set of dependencies. And it’s been a busy few years for PubConf, with events taking place frequently enough that it’s entirely possible this is the first time since 2017 that 28 days has passed without somebody or something kicking off a Travis CI build. So when I kicked off that build yesterday, that was the first time in literally years that Travis has built the whole project from scratch -- and so picked up v3.x of the `jekyll-assets` plugin.
+
+But really, what’s at the root of all this grief is our old friend, the [leaky abstraction](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/). Jekyll and Github Pages offer a really simple, elegant solution for creating static websites -- and most of the time, you can just run the handful of commands in the documentation, write your Markdown, `git push` it and everything works. You don’t have to know about Ruby versions and bundler and [`Gemfile.lock`](https://bundler.io/v1.3/rationale.html) -- all that stuff is supposed to be abstracted away so you can focus on writing content. And it all works great, right up until it doesn’t. We could probably have avoided this problem by locking the plugin to a specific version, or by [committing Gemfile.lock to revision control](https://www.google.com/search?q=should+I+commit+Gemfile.lock) -- but there’s drawbacks to both of those approaches, and neither of them warrants any mention in the documentation for Jekyll or for the jekyll-assets plugin.
+
+The other problem with abstractions is that the more complexity they’re hiding, the harder it is to figure out what’s going on when something stops working. Remember, this thing started out as:
+
+```
+jekyll 3.8.5 | Error:  wrong number of arguments (given 2, expected 1)
+```
+
+when the actual thing that went wrong was something closer to:
+
+```
+jekyll 3.8.5 | Error: you haven't run a fresh build in over two years and we've just picked up a major release of the jekyll-assets plugin that hasn't been used in this project before, and which is no longer compatible with the syntax that's used in your website templates. You'll either need to update your templates so you're using the new asset tags required by jekyll-assets 3.x, or modify your _config.yml to specify that you need version 2.x of the jekyll-assets plugin.
+```
+
+
+
+
+
+ 
 
