@@ -1,14 +1,19 @@
 ---
 title: Look! I Made a Company!
+layout: post
+author: Dylan Beattie
+opengraph: 
+  description: Dylan Beattie announces the launch of Ursatile Ltd, a new London-based consultancy specialising in software developer training and techology strategy.
+  image: /images/posts/2020-01-28-ursatile-card.png
 ---
 
-October 31, 2019 was an interesting date for several reasons. First, it was the date when the United Kingdom was supposed to leave the European Union. Well, one of many such dates. It didn’t. Second, it was Hallowe’en, and I had plans to fly to Cluj-Napoca, the regional capital of Transylvania. I was going out there to speak at a software conference, but still – flying to Transylvania on Hallowe’en is pretty cool, right?
+October 31, 2019 was an interesting date for several reasons. First, it was the date when the United Kingdom was supposed to leave the European Union. Well, one of many such dates. It didn’t. Second, it was Hallowe’en, and I had plans to fly to Cluj-Napoca, the regional capital of Transylvania, to speak at a software conference. Yep – flying to Transylvania on Hallowe’en! Pretty cool, right? #goth
 
-It didn’t happen. I found out around lunchtime on the 31st that Skills Matter – where I was CTO – was being placed into administration with immediate effect. For complicated reasons I shan’t go into here, the company had run out of money and was being shut down. I would need to cancel my trip, go into work on Friday morning, and lay off my entire team. Nobody would get any notice period or severance pay, and contractors’ invoices for work they’d already done would be passed over to the administrators along with any other outstanding debts. Then I said farewell to my colleagues, handed in my keys and walked out of CodeNode for what may well be the last time.
+Things didn’t quite work out that way. I found out around lunchtime on the 31st that Skills Matter, the company where I worked as CTO since 2017, was being placed into administration with immediate effect. For complicated reasons I shan’t go into here, the company was being shut down literally overnight. I cancelled my trip, went into work on Friday morning, and laid off my entire team. Nobody got any notice period or severance pay. Then I said farewell to my colleagues, handed in my keys and walked out of CodeNode for what may well be the last time.
 
-Now, I’ve left jobs before. There’s a couple of months of notice and handover, time to plan your next move, figure out where you want to go, what you want to work on. Not this time. On Thursday morning I was a salaried employee with a three-month notice period and a pretty solid benefits package; on Friday afternoon I was unemployed. Within a week, the administrators had shut down the Google and LastPass accounts used to manage access to all our systems; the website was taken offline, and that was it.
+Now, I’ve left jobs before. There’s a couple of months of notice and handover, time to plan your next move, figure out where you want to go, what you want to work on. Not this time. On Thursday morning I was a salaried employee with a three-month notice period and a pretty solid benefits package; by Friday afternoon I was unemployed.
 
-I managed to get a late flight to Romania on Friday so I could still speak at Devoxx on Saturday, and by the time I got back to London on Sunday evening, I’d decided I wasn’t going to look for another job. Not that the idea of applying for every “rockstar developer” job on LinkedIn didn't have a certain appeal… but it was definitely time to try something else.
+I managed to get a late flight to Romania on Friday so I could still speak at Devoxx on Saturday. By the time I got back to London on Sunday evening, I’d decided I wasn’t going to look for another job. Not that the idea of applying for every “rockstar developer” job on LinkedIn didn't have a certain appeal… but it was definitely time to try something else. Respond to change, instead of following a plan. 
 
 I’ve always loved working with computers, but over the past five years I’ve also discovered that I love teaching. I love travelling, I love working with new people and unfamiliar technologies, seeing how different teams have solved the same problems. The sort of work I wanted to do didn’t seem particularly compatible with any kind of conventional job, so, like a lot of folks who work in IT, I decided to set up my own consultancy, specialising in training, software development and technology strategy. I set myself a three-month deadline, to get something up and running in time for NDC London – and here we are. 
 
@@ -30,6 +35,6 @@ Remote is good too. I run workshops about how to use Slack, email and online too
 
 So, yeah. My new website is at [ursatile.com](https://ursatile.com). That’s not really for you. I mean, take a look by all means, but you’re already here and you’re still reading this, so I figure we’re already cool. No, the website is for search engines, and for your boss and your CFO. I have email – [hello@ursatile.com](mailto:hello@ursatile.com) – and you can even reach me by phone on [+44 7395 649389](tel:+447395649389).
 
-I’ll be at NDC London this week, so if you're around, come and say hi. I’d obviously love to talk to anybody who’s interested in hiring me, but I also want to know what you’re all working on and what you think your challenges are going to be this year.
+I’ll be at [NDC London](https://ndc-london.com/) this week – and I'm hosting [PubConf London](https://pubconf.io/) on Friday if you can't make it to NDC – so if you're around, come and say hi. I’d obviously love to talk to anybody who’s interested in hiring me, but I also want to know what you’re all working on and what you think your challenges are going to be this year.
 
 And finally, a huge thanks to all the people who've helped me get this far. It's been a difficult few months, and there's still a lot of stuff I need to figure out, but so far everyone I've turned to for advice and help has been absolutely lovely – so thank you, all of you!
