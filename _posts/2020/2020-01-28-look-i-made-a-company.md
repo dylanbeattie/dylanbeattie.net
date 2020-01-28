@@ -17,7 +17,7 @@ I managed to get a late flight to Romania on Friday so I could still speak at De
 
 I’ve always loved working with computers, but over the past five years I’ve also discovered that I love teaching. I love travelling, I love working with new people and unfamiliar technologies, seeing how different teams have solved the same problems. The sort of work I wanted to do didn’t seem particularly compatible with any kind of conventional job, so, like a lot of folks who work in IT, I decided to set up my own consultancy, specialising in training, software development and technology strategy. I set myself a three-month deadline, to get something up and running in time for NDC London – and here we are. 
 
-<a href="https://ursatile.com/"><img src="/images/posts/ursatile-banner.png"
+<a href="https://ursatile.com/"><img src="/images/posts/2020-01-28-ursatile-banner.png"
 style="border: 0; box-shadow: none"
  /></a>
 
