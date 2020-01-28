@@ -3,7 +3,7 @@ title: Look! I Made a Company!
 layout: post
 author: Dylan Beattie
 opengraph: 
-  description: Dylan Beattie announces the launch of Ursatile Ltd, a new London-based consultancy specialising in software developer training and techology strategy.
+  description: Dylan Beattie announces the launch of Ursatile, a London-based consultancy specialising in software development, communications training and techology strategy.
   image: /images/posts/2020-01-28-ursatile-card.png
 ---
 
