@@ -88,9 +88,15 @@
 #   city: Lisbon, Portugal
 #   country: pt
 
-- title: NDC London 
-  date: 27-31 January 2020
-  url: https://ndc-london.com/
+# - title: NDC London 
+#   date: 27-31 January 2020
+#   url: https://ndc-london.com/
+#   city: London, UK
+#   country: gb
+
+- title: .NeXt Generation
+  date: 26 February 2020
+  url: https://www.meetup.com/NeXt-Gen/events/268328855/
   city: London, UK
   country: gb
 
@@ -112,11 +118,11 @@
   city: Copenhagen, Denmark
   country: dk
 
-- title: NDC Porto
-  date: 21-24 April 2020
-  url: https://ndcporto.com/
-  city: Porto, Portugal
-  country: pt
+- title: DotNext 
+  date: 6-7 April 2020
+  url: https://dotnext-piter.ru/en/
+  city: Saint-Petersburg, Russia
+  country: ru
   
 - title: .NET fwdays'20
   date: 11 April 2020
@@ -124,6 +130,13 @@
   city: Kyiv, Ukraine
   country: ua
 
+
+- title: NDC Porto
+  date: 21-24 April 2020
+  url: https://ndcporto.com/
+  city: Porto, Portugal
+  country: pt
+  
 - title: Devoxx UK
   date: 13-15 May 2020
   url: https://www.devoxx.co.uk/
