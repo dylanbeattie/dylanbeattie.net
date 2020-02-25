@@ -17,31 +17,30 @@ That kind of thing.
 
 ### Lyrics  
 
-W3C, RFC, a JIRA ticket and a style guide.
-I deploy with FTP, run it all on the client side
-Don't need Ruby, don't need Rails,
-Ain't nothing running on my stack
-I'm hard wired, for web scale,
-Yeah, I'm gonna bring the 90s back
+W3C, RFC, a JIRA ticket and a style guide.  
+I deploy with FTP, run it all on the client side  
+Don't need Ruby, don't need Rails,  
+Ain't nothing running on my stack   
+I'm hard wired, for web scale,  
+Yeah, I'm gonna bring the 90s back  
+  
+I'm shipping HTML,  
+HTML,  
+I'm shipping HTML,  
+HTML...  
+  
+No logins, no trackers,  
+No cookie banners to ignore  
+I ain't afraid of, no hackers  
+Just the occasional 404  
+They hatin', what I do,  
+But that's 'cos they don't understand  
+Mark it up, break it down,  
+Remember to escape your ampersands...  
+  
+I'm shipping HTML,  
+HTML,  
+I'm shipping HTML,  
+HTML...  
 
-I'm shipping HTML,
-HTML,
-I'm shipping HTML,
-HTML...
-
-No logins, no trackers,
-No cookie banners to ignore
-I ain't afraid of, no hackers
-Just the occasional 404
-They hatin', what I do,
-But that's 'cos they don't understand
-Mark it up, break it down,
-Remember to escape your ampersands...
-
-
-I'm shipping HTML,
-HTML,
-I'm shipping HTML,
-HTML...
-
-(But it's really just markdown.)
+(But it's really just markdown.)  
