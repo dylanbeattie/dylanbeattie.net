@@ -331,6 +331,11 @@ article {
       width: 100%;
     }
   }
+  img.screenshot {
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+  }
   figcaption {
     margin-top: -12px;
     margin-bottom: 16px;
