@@ -7,9 +7,11 @@ opengraph:
   image: /images/posts/generic-post.png
 ---
 
-It's March 17th. Most of Europe is on lockdown, the COVID-19 situation is ongoing. There are [fish in Venice's canals for the first time in 60 years](https://edition.cnn.com/travel/article/venice-canals-clear-water-scli-intl/index.html), and the British government has upgraded their advice from 'wash your hands and sing a song' to 'probably don't go to the pub'.
+It's March 17th. Most of Europe is on lockdown, the COVID-19 situation is ongoing. There are [fish in Venice's canals for the first time in 60 years](https://edition.cnn.com/travel/article/venice-canals-clear-water-scli-intl/index.html), and the British government has upgraded their advice from ‘wash your hands and sing a song’ to ‘don’t go to the pub’.
 
 But our ongoing quest to virtualise all the things goes on! Today I hosted the first in a series of lunchtime virtual meetups - we had Guy Royse and Stephen Haunts doing 15-minute lightning talks to an audience of around 50 attendees, and it worked really quite well.
+
+
 
 
 
