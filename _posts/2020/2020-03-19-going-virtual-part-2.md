@@ -16,7 +16,7 @@ And yes, this is all still *very* weird; the news cycle has gone into overdrive,
 
 ![2020-03-19_13-37-45](/images/posts/2020-03-19-going-virtual-part-2/2020-03-19_13-37-45.png)
 
-Today I ran our second virtual meetup - we had [Filip Ekberg](https://twitter.com/fekberg) talking about pattern matching in C#, with lots of technical content and code samples; [Clifford Agius](https://twitter.com/CliffordAgius) talking about building a mobile flight simulator out of a burger van, and [Christine Seeman](https://twitter.com/Tech_Christine) talking about ashtanga yoga and even showing us a couple of yoga positions live via Zoom, which was really cool. We had 66 live attendees at one point, most of them live on camera and voice chat, and we tried out a couple of different things based on feedback and ideas from Tuesday; here's what we learned.
+Today I ran our second virtual meetup - we had [Filip Ekberg](https://twitter.com/fekberg) talking about pattern matching in C#, with lots of technical content and code samples; [Clifford Agius](https://twitter.com/CliffordAgius) talking about building a mobile flight simulator out of a burger van, and [Christine Seeman](https://twitter.com/Tech_Christine) talking about ashtanga yoga and even showing us a couple of yoga positions live via Zoom, which was really cool. We had 66 live attendees at one point, most of them live on camera and voice chat, and we tried out a couple of different things based on feedback and ideas from Tuesday; here's what we learned.
 
 ### **Timezones are Weird**
 
