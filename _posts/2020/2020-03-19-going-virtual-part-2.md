@@ -14,7 +14,7 @@ Last Friday I ran an online lunch over Zoom. [On Tuesday I ran a virtual meetup]
 
 And yes, this is all still *very* weird; the news cycle has gone into overdrive, nobody has the faintest idea what new restrictions and cancellations are going to be announced in the next 48 hours, and we're all figuring a lot of things out very, very quickly. As you probably saw, [NDC Conferences has hired me](https://dylanbeattie.net/2020/03/18/ndc-online-community-ambassador.html) as their Online Community Ambassador for the next few months whilst we're working this stuff out - which is awesome, because it means I can give this stuff my undivided attention until we've all worked out the details.
 
-![2020-03-19_13-37-45](../../images/posts/2020-03-17-going-virtual-part-2/2020-03-19_13-37-45.png)
+![2020-03-19_13-37-45](/images/posts/2020-03-20-going-virtual-part-2/2020-03-19_13-37-45.png)
 
 Today I ran our second virtual meetup - we had [Filip Ekberg](https://twitter.com/fekberg) talking about pattern matching in C#, with lots of technical content and code samples; [Clifford Agius](https://twitter.com/CliffordAgius) talking about building a mobile flight simulator out of a burger van, and [Christine Seeman](https://twitter.com/Tech_Christine) talking about ashtanga yoga and even showing us a couple of yoga positions live via Zoom, which was really cool. We had 66 live attendees at one point, most of them live on camera and voice chat, and we tried out a couple of different things based on feedback and ideas from Tuesday; here's what we learned.
 
