@@ -14,17 +14,17 @@ Last Friday I ran an online lunch over Zoom. [On Tuesday I ran a virtual meetup]
 
 And yes, this is all still *very* weird; the news cycle has gone into overdrive, nobody has the faintest idea what new restrictions and cancellations are going to be announced in the next 48 hours, and we're all figuring a lot of things out very, very quickly. As you probably saw, [NDC Conferences has hired me](https://dylanbeattie.net/2020/03/18/ndc-online-community-ambassador.html) as their Online Community Ambassador for the next few months whilst we're working this stuff out - which is awesome, because it means I can give this stuff my undivided attention until we've all worked out the details.
 
-![2020-03-19_13-37-45](/images/posts/2020-03-20-going-virtual-part-2/2020-03-19_13-37-45.png)
+![2020-03-19_13-37-45](/images/posts/2020-03-19-going-virtual-part-2/2020-03-19_13-37-45.png)
 
 Today I ran our second virtual meetup - we had [Filip Ekberg](https://twitter.com/fekberg) talking about pattern matching in C#, with lots of technical content and code samples; [Clifford Agius](https://twitter.com/CliffordAgius) talking about building a mobile flight simulator out of a burger van, and [Christine Seeman](https://twitter.com/Tech_Christine) talking about ashtanga yoga and even showing us a couple of yoga positions live via Zoom, which was really cool. We had 66 live attendees at one point, most of them live on camera and voice chat, and we tried out a couple of different things based on feedback and ideas from Tuesday; here's what we learned.
 
-**Timezones are Weird**
+### **Timezones are Weird**
 
 I mean, we knew that anyway - but we had a bunch of folks in Europe on their lunch break, Christine presenting live from Omaha, Nebraska where it was still early morning, and folks tuning in from as far away as Australia where it was already evening.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Doing some evening coding and joining some UK friends on their lunchtime talk testing 😁<br><br>For some reason <a href="https://twitter.com/dylanbeattie?ref_src=twsrc%5Etfw">@dylanbeattie</a> is now on my TV 😂 <a href="https://t.co/zeR85c4jej">pic.twitter.com/zeR85c4jej</a></p>&mdash; Amy 🏡👩‍💻🐺 (@Amys_Kapers) <a href="https://twitter.com/Amys_Kapers/status/1240626090806112259?ref_src=twsrc%5Etfw">March 19, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-**It Takes Two: A Producer and a Presenter**
+### **It Takes Two: A Producer and a Presenter**
 
 For today's meeting, we had [Martin Thwaites](https://twitter.com/MartinDotNet) "producing" the meetup - I added him as a co-host on the Zoom call, and he was the one muting and unmuting people, switching the 'Video Spotlight' onto the speaker, answering questions in the chatroom, and that kind of thing. This was a huge improvement over Tuesday - it meant I was free to host the meetup, stand in front of a camera and actually talk to people without having to remember to click this and select that and keep one eye on the chat session.
 
@@ -38,7 +38,7 @@ Martin's comments on Zoom:
 * "Switching the Video Spotlight during the Q&A needs some thought - it's good to see you asking the question and the speaker answering it, but I'm not sure how jerky that was for the audience."
 * "Having speakers as co-hosts might help - finding them (in the gallery view) to spotlight them was a pain"
 
-**Use Sli.do for questions**
+### **Use Sli.do for questions**
 
 We set up a [Slido](https://sli.do) event for this, and shared the link in the chat and as part of my intro slides. One great thing to remember about online events - if you want people to go to a URL, you don't have to rely on web addresses and QR codes on a PowerPoint slide; you can just get the producer to put the link into the chat.
 
@@ -51,9 +51,9 @@ Martin's comments:
 * "Dismissing questions is an easy way to moderate, they disappear from the screen. Having it behind you helped. Promoting the questions needs to be a bit more insync so that the video switching happens better."
 * "I'm thinking that it might be an idea to think about streaming to a location that then outputs to Zoom, then something like OBS can combine the streams – so the idea would be that all the hosts somehow join a stream, and that stream is sent to the zoom... would make coordinating the speakers easier, but has some fairly significant downsides"
 
-**Equipment Makes a Difference**
+### **Equipment Makes a Difference**
 
-When you're running an event like this, it's quite apparent that people fall into three broad categories when it comes to online presenting. 
+I'm sure this doesn't come as a surprise to anybody, but when you're running an event like this, it's quite apparent that people fall into three broad categories when it comes to online presenting. 
 
 1. People who haven't really ever done this before - which is fine; the main reason I'm running these virtual meetups is to give everyone a chance to practise, refine their setup, adapt their material and so on. 
 2. People who are clearly experienced presenters and have also done a lot of video calls and remote meetings, but haven't really tried presenting online before. These are the folks who don't need a whole lot of practice, but for whom investing in a better mic or a decent lighting setup will make a huge difference to how well their material works in a virtual format
