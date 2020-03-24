@@ -2,9 +2,9 @@
 title: "Going Virtual, Part 2"
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: In which I share notes and observations after running a couple of remote meetups using Zoom.
-  image: /images/posts/2020-03-19-going-virtual-part-2/card.png
+meta: 
+  og_description: In which I share notes and observations after running a couple of remote meetups using Zoom.
+  og_image: /images/posts/2020-03-19-going-virtual-part-2/card.png
 typora-copy-images-to: ../../images/posts/2020-03-19-going-virtual-part-2
 ---
 

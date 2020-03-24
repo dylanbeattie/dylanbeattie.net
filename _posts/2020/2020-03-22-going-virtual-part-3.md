@@ -2,15 +2,15 @@
 title: "Going Virtual, Part 3"
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: In which I share notes and observations from a week of remote socialising.
-  image: /images/posts/2020-03-22-going-virtual-part-3/card.jpg
+meta: 
+  og_description: In which I share notes and observations from a week of remote socialising.
+  og_image: /images/posts/2020-03-22-going-virtual-part-3/card.jpg
 typora-copy-images-to: ../../images/posts/2020-03-22-going-virtual-part-3
 ---
 
 Once upon a time, a very long time ago now, about last Friday, people used to go to pubs and bars and talk to each other face to face. You remember. Now that we're living here in Generation Lockdown, that's not a thing any more, and so we're all socialising on Zoom and Hangouts and WebEx. Until last week, I'd never joined a "Zoom party" in my life... this week, I've joined four. It's been interesting, and fun, but humans, we got some details to figure out if this thing's gonna work.
 
-Let's start with some observations. Human gatherings exist on a spectrum. At one extreme there's the business meeting, in which a group of named invidivuals meet at a specified time, for a specified time. During this time, all the attendees are expected to give the meeting their undivided attention. One person speaks at a time, the rest listen, maybe somebody takes notes, and when it's over, everybody leaves. Now I know as well as any of you that meetings in the real world don't necessarily work like that, but most of the software we're using to talk to each other now was designed for business, and so it is designed to try and replicate that experience.
+Let's start with some observations. Human gatherings exist on a spectrum. At one extreme there's the business meeting, in which a group of named invidivuals meet at a specified time, for a specified time. During this time, all the attendees are expected to give the meeting their undivided attention. One person speaks at a time, the rest listen, maybe somebody takes notes, and when it's over, everybody leaves. Now I know as well as any of you that meetings in the real world don't necessarily work like that, but most of the software we're using to talk to each other now was designeс сердечным приветомd for business, and so it is designed to try and replicate that experience.
 
 A little further along, there's dinners, tabletop gaming sessions - probably still the same group for the duration of the event, but it's a little more relaxed. Then there's house parties and pub nights, where there's a definite location where "the thing" is happening, but people are wandering in and out, splitting into conversation groups, branching and merging and mingling and going outside for a cigaratte. And then there's one of those nights when you head out alone, visit four or five different bars, seeing who's where, bumping into random friends and friendly randoms.
 

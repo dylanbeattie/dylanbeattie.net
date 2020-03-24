@@ -2,9 +2,9 @@
 title: "NDC Online Community Ambassador"
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: In which Dylan Beattie announces that he'll be working with NDC Conferences for the next three months to help them figure out how to do this whole virtual online conference thing.
-  image: /images/posts/2020-03-18-ndc-online-community-ambassador.png
+meta: 
+  og_description: In which Dylan Beattie announces that he'll be working with NDC Conferences for the next three months to help them figure out how to do this whole virtual online conference thing.
+  og_image: /images/posts/2020-03-18-ndc-online-community-ambassador.png
 ---
 
 Hi everyone.

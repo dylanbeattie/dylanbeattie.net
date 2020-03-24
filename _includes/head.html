@@ -1,26 +1,26 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4266979-9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4266979-9');
-</script>
-<title>{{ page.title }} : dylanbeattie.net</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="/assets/css/arcana.css" />
 <link rel="stylesheet" href="/assets/css/styles.css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="{{ page.meta.twitter_card }}" />
 <meta name="twitter:site" content="@dylanbeattie" />
 <meta name="twitter:creator" content="@dylanbeattie" />
 
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="og:title" content="{{ page.title }} : dylanbeattie.net" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ page.opengraph.description }}" />
-<meta property="og:image" content="{{ site.url }}{{ page.opengraph.image }}" />
+<meta property="og:description" content="{{ page.meta.og_description }}" />
+<meta property="og:image" content="{{ site.url }}{{ page.meta.og_image }}" />
 <meta property="fb:app_id" content="534656893997390" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4266979-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-4266979-9');
+</script>
+<title>{{ page.title }} : dylanbeattie.net</title>

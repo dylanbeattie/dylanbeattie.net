@@ -2,9 +2,9 @@
 title: "Going Virtual, Part 1"
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: In which I host a virtual lunch on Zoom and it works very well and people get quite excited about it.
-  image: /images/posts/generic-post.png
+meta: 
+  og_description: In which I host a virtual lunch on Zoom and it works very well and people get quite excited about it.
+  og_image: /images/posts/generic-post.png
 ---
 
 It's March 2020 and everything is cancelled. COVID-19 has been declared a pandemic by the World Health Organisation, Norway is closed, Italy is closed, the US has banned travel from most European countries, and the British government is, um, advising us to wash our hands while singing songs until we develop "herd immunity".

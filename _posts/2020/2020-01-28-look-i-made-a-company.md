@@ -2,9 +2,9 @@
 title: Look! I Made a Company!
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: Dylan Beattie announces the launch of Ursatile, a London-based consultancy specialising in software development, communications training and techology strategy.
-  image: /images/posts/2020-01-28-ursatile-card.png
+meta: 
+  og_description: Dylan Beattie announces the launch of Ursatile, a London-based consultancy specialising in software development, communications training and techology strategy.
+  og_image: /images/posts/2020-01-28-ursatile-card.png
 ---
 
 October 31, 2019 was an interesting date for several reasons. First, it was the date when the United Kingdom was supposed to leave the European Union. Well, one of many such dates. It didn’t. Second, it was Hallowe’en, and I had plans to fly to Cluj-Napoca, the regional capital of Transylvania, to speak at a software conference. Yep – flying to Transylvania on Hallowe’en! Pretty cool, right? #goth

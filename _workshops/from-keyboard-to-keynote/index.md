@@ -8,9 +8,9 @@ summary: |
 
   This is a one-day workshop about how to create, refine and deliver great technical talks at conferences and technology meetups. It’s around 50% presentation and classroom-style training, and 50% collaboration and hands-on sessions.  By the end of the day all of the attendees will have created and prepared two short (3-minute) talks, received some suggestions and audience feedback. 
 css-class: transcript 
-opengraph: 
-  description: Dylan Beattie presents 'From Keyboard to Keynote', a workshop aimed at software professionals who want to improve their public speaking skills.
-  image: /workshops/from-keyboard-to-keynote/summary_large_image.jpg
+meta: 
+  og_description: Dylan Beattie presents 'From Keyboard to Keynote', a workshop aimed at software professionals who want to improve their public speaking skills.
+  og_image: /workshops/from-keyboard-to-keynote/summary_large_image.jpg
 date: '2019-11-25T14:00:00.000+00:00'
 ---
 {{ page.summary }}

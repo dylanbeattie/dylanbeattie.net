@@ -2,9 +2,9 @@
 title: "Going Virtual, Part 2"
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: In which I host a virtual lunch on Zoom and it works very well and people get quite excited about it.
-  image: /images/posts/generic-post.png
+meta: 
+  og_description: In which I host a virtual lunch on Zoom and it works very well and people get quite excited about it.
+  og_image: /images/posts/generic-post.png
 ---
 
 It's March 17th. Most of Europe is on lockdown, the COVID-19 situation is ongoing. There are [fish in Venice's canals for the first time in 60 years](https://edition.cnn.com/travel/article/venice-canals-clear-water-scli-intl/index.html), and the British government has upgraded their advice from ‘wash your hands and sing a song’ to ‘don’t go to the pub’.

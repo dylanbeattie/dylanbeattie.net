@@ -2,8 +2,8 @@
 title: Shaving the Jekyll Yak
 layout: post
 author: Dylan Beattie
-opengraph: 
-  description: Tracking down a bizarre build failure with Jekyll and pubconf.io
+meta: 
+  og_description: Tracking down a bizarre build failure with Jekyll and pubconf.io
 ---
 UPDATE: [Thanks to the amazing power of Detective Twitter, I think we figured out what’s going on… ](#update-the-solution)
 

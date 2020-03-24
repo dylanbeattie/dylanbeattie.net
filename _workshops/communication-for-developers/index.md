@@ -8,9 +8,9 @@ summary: |
 
   This is a two-day hands-on workshop for software developers, managers and stakeholders, aimed at helping you to use your time and technology to communicate more effectively. Using a combination of classroom teaching, role play, hands-on workshops, exercises, games and puzzles, we’ll look at the huge range of tools and channels you can use to communicate with your teammates, users and stakeholders, and how to use those tools more effectively. You'll learn how to write better stories, bug reports and documentation; how to hold better meetings; how to make decisions more effectively; and how to use communication to deliver great user experiences. 
 css-class: transcript 
-opengraph: 
-  description: Dylan Beattie presents 'Communication for Developers', a workshop for professional software developers.
-  image: /workshops/communication-for-developers/summary_large_image.jpg
+meta: 
+  og_description: Dylan Beattie presents 'Communication for Developers', a workshop for professional software developers.
+  og_image: /workshops/communication-for-developers/summary_large_image.jpg
 date: '2019-11-25T14:00:00.000+00:00'
 ---
 {{ page.summary }}
