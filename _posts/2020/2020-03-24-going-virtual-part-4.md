@@ -3,7 +3,7 @@ title: "Going Virtual, Part 4"
 layout: post
 author: Dylan Beattie
 meta: 
-  og_description: Dylan Beattie discusses the Zoom malware controversy in the light of the COVID-19 lockdown situation.
+  og_description: “People are dying. Cities are locked down. Who, really, cares about Zoom monitoring your online activity right now?”
 typora-copy-images-to: ../../images/posts/2020-03-22-going-virtual-part-3
 ---
 
