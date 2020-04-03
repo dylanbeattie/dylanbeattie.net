@@ -25,7 +25,9 @@ Over the last few weeks, I've tested every single video conferencing and online 
 
 Let's put it this way. None of them is remotely close to meeting together in real life, but all of them are vastly better than getting sick with coronavirus - so it comes down to what constraints and capabilities we're optimising for, and what we're prepared to compromise on.
 
-There are virtual conference platforms out there - but there's no way we were going to have enough time to evaluate the options, choose a platform, get the crew and volunteers up to speed, set up accounts for the speakers and partners, and have it all ready to go by April 1st. So we decided to go with familiar tools.
+There are virtual conference platforms out there - but there's no way we were going to have enough time to evaluate the options, choose a platform, get the crew and volunteers up to speed, set up accounts for the speakers and partners, and have it all ready to go by April 1st. 
+
+We also wanted to make sure that, wherever possible, our speakers could present their sessions using equipment they already had; some of our speakers create a lot of video training and so are already tricked-out with greenscreens, cameras, and microphones - but a lot of them just have their development laptop, maybe a USB webcam and a headset microphone, and the last thing we wanted to do was ask speakers to go out and buy specialist equipment when we weren't ourselves confident about the format and the technology yet. So we decided to go with familiar tools, hooked together in interesting ways - Zoom, Slack, Slido, YouTube, and e-mail.
 
 We set up a dedicated Slack workspace for NDC Copenhagen 2020, and decided that would be the backbone of the virtual conference. Folks who bought tickets got invited to join the Slack workspace, we use Slack for discussion, announcements, Q&A, chat, and - here's the key part - at the end of the conference, we're going to delete the workspace. That's it: conference is over, see you at the next one.
 
