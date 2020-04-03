@@ -44,7 +44,7 @@ We had several requests from attendees to be able to watch the live streams with
 
 So, with some help from the crew from [Video for Web](https://videoforweb.no/) in Norway, here's the setup we ended up running.
 
-![image-20200403142821621](../../images/posts/2020-04-03-going-virtual-ndc-copenhagen/image-20200403142821621.png)
+![image-20200403142821621](/images/posts/2020-04-03-going-virtual-ndc-copenhagen/image-20200403142821621.png)
 
 1. Each conference track is a Zoom meeting, that starts around 8am and runs right through the day. One of the NDC crew stays in that meeting all day - they're the track host; they'll help speakers get set up and connected. 
 2. The Video for Web crew have three separate PCs, each one connected to a different Zoom track. These are running Open Broadcast System (OBS) - they'll do a live capture of the speaker video and screen share from the Zoom call, combine this with the Slido feed and some NDC branding, and stream the result to YouTube.
@@ -91,7 +91,6 @@ In another life, I was getting on a plane tomorrow, flying from Copenhagen to Sa
 
 But here in the upside-down, that's all postponed, cancelled or gone virtual, so the next big thing on the schedule is NDC Porto, which we're now running as another online event. Copenhagen's gone great, we've learned a *lot* about what works, what doesn't work; we've got lots of interesting new ideas to try and lots of valuable feedback and information to share with all our speakers...
 
+![image-20200403161930704](/images/posts/2020-04-03-going-virtual-ndc-copenhagen/image-20200403161930704.png)
+
 For now, though, I'm gonna open a beer, fire up a Zoom call and enjoy a bit of post-conference relaxation. See y'all for the next one!
-
-![image-20200403161930704](../../images/posts/2020-04-03-going-virtual-ndc-copenhagen/image-20200403161930704.png)
-
