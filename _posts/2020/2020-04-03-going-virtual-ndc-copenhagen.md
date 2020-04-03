@@ -93,3 +93,5 @@ But here in the upside-down, that's all postponed, cancelled or gone virtual, so
 
 For now, though, I'm gonna open a beer, fire up a Zoom call and enjoy a bit of post-conference relaxation. See y'all for the next one!
 
+![image-20200403161930704](../../images/posts/2020-04-03-going-virtual-ndc-copenhagen/image-20200403161930704.png)
+
