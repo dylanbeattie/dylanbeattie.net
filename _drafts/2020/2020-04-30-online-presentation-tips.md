@@ -20,9 +20,15 @@ First – the absolute, cast-iron, golden rule of online presentations: **Test e
 
 With that in mind, here's my top ten tips for doing great online presentations.
 
+## It's dangerous to go alone!
+
+![It's_dangerous_to_go_alone!_Take_this.](../../images/posts/2020-05-01-online-presentation-tips/It's_dangerous_to_go_alone!_Take_this..png)
+
+Everything here will be much easier if you've got a couple of other people helping you figure it out. Friends, colleagues, fellow speakers - some people you trust to give you frank, honest feedback, who you can ask to jump on a Zoom call or a YouTube stream for a few minutes to help you try something out. Be prepared to return the favour, and be patient - we're living through some scary times right now and everyone's a little strung out. I have a Slack workspace running over at ursatile.slack.com where a bunch of us are helping each other work things out - you're [very welcome to join us.](https://join.slack.com/t/ursatile/shared_invite/zt-dco7z2xz-rdUircTJiUkdtmvZ39Dmqg)
+
 ## Rehearse your content
 
-This sounds obvious, but it's easily overlooked. Remote isn't just another conference stage, it's a completely new format. Even if you've done a talk a dozen times, the first time you do it remote, it's going to freak you out. Rehearse. Do your talk by yourself, in the room where you're going to be presenting. Don't worry about equipment yet – this is about *content*. Rehearse until you can deliver your talk flawlessly, to a blank wall that doesn't laugh at any of your jokes or raise a hand for any of your questions. If you can handle that, you can handle anything that a virtual conference is going to throw at you.
+This sounds obvious, but it's easily overlooked. Online isn't just another meetup or conference stage, it's a completely new format. Even if you've done a talk a dozen times, the first time you do it remote, it's going to be weird. Rehearse. Do your talk by yourself, in the room where you're going to be presenting. Don't worry about equipment yet – this is about *content*. Rehearse until you can deliver your talk flawlessly, to a blank wall that doesn't laugh at any of your jokes or raise a hand for any of your questions. If you can handle that, you can handle anything that a virtual conference is going to throw at you.
 
 ## Microphones
 
@@ -133,9 +139,13 @@ On the day you're presenting, dress up, Dress like you would if you were doing t
 
 You're going to be presenting for an hour. Your brain doesn't know this. Your brain thinks you're at home, where the bathroom is right down the hall and you can always pop to the kitchen for a snack or a glass of water... but you're not. You're at a conference, on a stage, with hundreds of people watching you. Now is no time to take a toilet break – so go before you join the call for your talk. Eat a snack, make sure there's a glass or two of water within easy reach (having a coughing fit during a talk is bad enough at the best of times, but right now it's a *really* bad idea) – and be prepared to take a break afterwards. If you do it right, you'll forget you're at home; you'll be 100% focused on your talk and your audience – and without the feedback you'd get from a live crowd, you'll hit the end and you'll crash, hard. The part where you'd normally be buzzing from the adrenaline of live performance... you'll get that, but you'll be in a room, by yourself, staring at a Slack chat. Again, your brain will probably be like "right, that's over, what's next on my to-do list?" – but give yourself some time to recover. Take a break, walk around the block, sit and drink a cup of coffee, decompress.
 
+## Relax. You got this.
 
+The transition to online events is hard. Most of us had no time to prepare - and it's not like you can invite a couple of friends over to help you figure this out, or organise a (physical!) meetup to talk about how to make it work.
 
+There's a new set of skills to learn here. There's new tools and technology, sure, but there's also a completely new presentation style to master - one that's familiar to radio DJs and studio TV presenters, but completely alien to most of us over here in the tech industry. And we're doing it in some seriously weird circumstances. As somebody put it the other day:
 
+> You are not "working from home". You are at home, trying to work, in the middle of a global pandemic that has turned the world upside down. Cut yourself a little slack.
 
 
 
