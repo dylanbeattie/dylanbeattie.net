@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta: 
   og_description: In which I share tips, tricks and advice about how to do online presentations at conferences and meetups.
-  og_image: /images/posts/posts/2020-05-01-online-presentation-tips/card.png
+  og_image: /images/posts/2020-05-01-online-presentation-tips/card.png
 typora-copy-images-to: ..\..\images\posts\2020-05-01-online-presentation-tips\
 ---
 
