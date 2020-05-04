@@ -336,14 +336,6 @@ article {
     border: 0;
     box-shadow: none;
   }
-  figcaption {
-    margin-top: -12px;
-    margin-bottom: 16px;
-    display: block;
-    font-size: 0.75em;
-    text-align: center;
-    line-height: 1.4em;
-  }
   .twitter-tweet {
     display: block;
     margin: 10px auto;
@@ -351,4 +343,13 @@ article {
   h4 {
     margin-bottom: 16px;
   }
+}
+
+figcaption {
+  margin-top: -12px;
+  margin-bottom: 16px;
+  display: block;
+  font-size: 0.75em;
+  text-align: center;
+  line-height: 1.4em;
 }
