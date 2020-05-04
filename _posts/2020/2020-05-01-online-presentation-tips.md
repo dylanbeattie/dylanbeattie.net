@@ -3,7 +3,7 @@ title: "Online Presentation Tips"
 layout: post
 author: Dylan Beattie
 meta: 
-  og_description: In which I share tips, tricks and advice about how to do online presentations at conferences and meetups.
+  og_description: Tips and advice from Dylan Beattie about presenting your talk at an online conference or virtual meetup.
   og_image: /images/posts/2020-05-01-online-presentation-tips/card.png
 typora-copy-images-to: ..\..\images\posts\2020-05-01-online-presentation-tips\
 ---
