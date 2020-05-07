@@ -91,6 +91,6 @@ And don't forget to wash your hands :)
 * Scott Hanselman's "[Creating the ultimate remote worker webcam setup on a budget](https://www.hanselman.com/blog/GoodBetterBestCreatingTheUltimateRemoteWorkerWebcamSetupOnABudget.aspx)" has some great tips about cameras, lighting and audio (and check out the accompanying [YouTube video](https://www.youtube.com/watch?v=xrnF6hdLrIE) as well)
 * [This post from Raymond Camden](https://www.raymondcamden.com/2020/03/10/tips-for-giving-remote-presentations) includes great remote speaking tips from many well-known speakers – John Papa, Jen Looper, Chris Heilmann, and many more.
 * [Daniella Latham has an article on Kahoot](https://kahoot.com/blog/2020/03/13/host-effective-remote-presentation/) that includes some good tips about adapting your material for the online format. 
-* I'm running a Slack workspace at ursatile.slack.com where a bunch of speakers and meetup organisers are sharing tips and ideas about online presenting – [you're very welcome to join us](https://kahoot.com/blog/2020/03/13/host-effective-remote-presentation/).
+* I'm running a Slack workspace at ursatile.slack.com where a bunch of speakers and meetup organisers are sharing tips and ideas about online presenting – [you're very welcome to join us](https://join.slack.com/t/ursatile/shared_invite/zt-dco7z2xz-rdUircTJiUkdtmvZ39Dmqg).
 
 
