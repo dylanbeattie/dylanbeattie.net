@@ -73,9 +73,9 @@ This is one of 72 lists of stock phrases known as the "[Harvard Sentences](http:
 
 > "a collection of phonetically balanced sentences that measure a large range of different qualities in the human voice. These were originally published in 1969 as the Institute of Electrical and Electronics Engineers recommended practice for speech quality measurements."
 
- – you can find the whole list online at http://www.cs.columbia.edu/~hgs/audio/harvard.html
+ – you can find [the whole list online here](http://www.cs.columbia.edu/~hgs/audio/harvard.html). 
 
-If you hear loud pop or thud on words like 'pepper' and 'beef', that's called a *plosive* – it's the mic picking up the sharp release of breath that happens when we pronounce letters like 'b' and 'p'. See if you can move the mic downwards or to the side slightly so that it isn't directly in front of your mouth. If you hear hissing or whistling on words like 'stew' and 'seats', that's called *sibilance* – try moving the mic a little further away from your mouth.
+If you hear loud pop or thud on words like 'pepper' and 'bubble', that's called a *plosive* – it's the mic picking up the sharp release of breath that happens when we pronounce letters like 'b' and 'p'. See if you can move the mic downwards or to the side slightly so that it isn't directly in front of your mouth. If you hear hissing or whistling on words like 'stew' and 'seats', that's called *sibilance* – try moving the mic a little further away from your mouth.
 
 Play with the distance until you've got a good clear voice with minimal background noise, but you're not getting any hissing or popping. If your mic has a volume control, turn it up until you're about as loud as you can go without hearing any distortion or seeing any warning lights, then back it off about 5%. Do this every time you change anything – move the furniture, get a new mic, install new drivers. And remember the golden rule: **listen to yourself.** That's what your audience is going to be listening to for an hour – if it doesn't sound good in your own room, on your own headphones, there's no *wa*y that sending it halfway around the world on a video call is going to make it any better. 
 
