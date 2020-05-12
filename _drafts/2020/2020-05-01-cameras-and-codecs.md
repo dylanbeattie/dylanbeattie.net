@@ -1,3 +1,7 @@
+Video Killed The Radio Star
+
+
+
 #### A word about codecs
 
 Codec is short for compressor/decompressor – it's how we compress a huge amount of high-definition video information into a digital signal that's small enough to send over the internet in real time, and then decompress it at the other end. Most modern video conferencing systems use two different codecs; one for your camera, and one for sharing your screen – and they are **not the same.** 
