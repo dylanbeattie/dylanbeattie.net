@@ -10,7 +10,7 @@ typora-copy-images-to: ..\..\images\posts\2020-05-12-microphones\
 
 In my last post, I [shared some tips for giving online presentations](/2020/05/01/online-presentation-tips.html). In this talk, we're going to completely nerd out about microphones, and how to get the best possible results out of the equipment you already have.
 
-![9434755558_129d6bce9e_o](../../images/posts/2020-05-01-microphones/9434755558_129d6bce9e_o.jpg)
+![9434755558_129d6bce9e_o](/images/posts/2020-05-01-microphones/9434755558_129d6bce9e_o.jpg)
 
 <figcaption>[drestwn via Flicker](https://flickr.com/photos/99173313@N07/9434755558) / CC BY 2.0</figcaption>
 
@@ -48,7 +48,7 @@ If you're going shopping, you'll need to consider how your mic connects to your 
 
 If you're going for a standalone mic or a wireless system, you'll need an audio interface to connect it to your computer. I highly recommend the [Yamaha AG03 and AG06](https://www.soundonsound.com/reviews/yamaha-ag06-ag03), for this – they're great quality, incredibly versatile and easy to use.
 
-![img](https://uk.yamaha.com/en/files/Series_header_ag_01_1200x480_5dd0ce1d99cc4da369d9e0a9066ae97d.jpg)
+![Photograph of Yamaha AG03 and AG06 USB mixing consoles](/images/posts/2020-05-12-microphones/yamaha-ag03-ag06.png)
 
 <figcaption>Yamaha AG06 and AG03 portable USB mixing consoles</figcaption>
 
