@@ -26,7 +26,7 @@ Audio isn't like that. **Your ears never blink.** We hear every detail, every ke
 
 Before we go any further, take a look at this video. I recorded myself using seven different microphones at the same time, so you can hear for yourself how the different microphones sound, and how they cope with different kinds of interference and background noise.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/STS2-IDMaa8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" height="360" style="width: 640px; height: 360px; text-align: center;" src="https://www.youtube.com/embed/STS2-IDMaa8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Microphone placement
 
