@@ -12,9 +12,9 @@ In my last post, I [shared some tips for giving online presentations](/2020/05/0
 
 ![9434755558_129d6bce9e_o](/images/posts/2020-05-01-microphones/9434755558_129d6bce9e_o.jpg)
 
-<figcaption><a href="https://flickr.com/photos/99173313@N07/9434755558">drestwn via Flicker</a>a> / CC BY 2.0</figcaption>
+<figcaption><a href="https://flickr.com/photos/99173313@N07/9434755558">drestwn via Flicker</a> / CC BY 2.0</figcaption>
 
-Audio quality is essential to connecting with your audience when you're presenting remotely. A conference is about **speakers** giving **talks**. Not looks, not stands, not dances – **talks**. We are speakers, we are there to talk, and our audiences are there to listen. If your audience can't hear you, you've lost them, no matter how beautiful your slides or or how many hours you've spent practising – and when you're presenting online, your microphone is the [Jesus nut](https://en.wikipedia.org/wiki/Jesus_nut) – the single point of failure that can bring the whole thing crashing down.
+Audio quality is essential to connecting with your audience when you're presenting remotely. A conference is about **speakers** giving **talks**. Not looks, not stands, not dances – **talks**. We are speakers, we are there to talk, and our audiences are there to listen. If your audience can't hear you, you've lost them, no matter how beautiful your slides or or how many hours you've spent practising...  and when you're presenting online, your microphone is the [Jesus nut](https://en.wikipedia.org/wiki/Jesus_nut) – the single point of failure that can bring the whole thing crashing down.
 
 You can easily spend a [fortune](https://www.thomann.de/gb/large_diaphragm_mics.html?oa=prd) on specialist microphones, but if you don't know what you're doing, it won't make any difference – and if you *do* know what you're doing, you can get great results from relatively inexpensive kit.
 
