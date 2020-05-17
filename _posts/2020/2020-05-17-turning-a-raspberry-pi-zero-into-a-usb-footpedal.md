@@ -4,6 +4,7 @@ layout: post
 author: Dylan Beattie
 meta: 
   og_description: "Turning a Raspberry Pi Zero W into a heavy-duty footswitch controller that emulates a USB keyboard."
+  og_image: /images/posts/2020-05-17-raspberry-pi-footpedal/card.png
 typora-copy-images-to: ../../images/posts/2020-05-17-raspberry-pi-footpedal
 ---
 
