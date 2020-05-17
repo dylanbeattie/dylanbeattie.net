@@ -11,11 +11,11 @@ I often find myself doing daft things with computers and playing the guitar at t
 
 I've used various kinds of foot controllers in the past, but none of them has ever done quite what I wanted. The two that have stuck around the longest are the [AirTurn PEDPro](https://www.airturn.com/products/airturn-pedpro) and the [iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/). 
 
-![airturn-ped-pro](../../images/posts/2020-05-17-raspberry-pi-footpedal/airturn-ped-pro.jpg)
+![airturn-ped-pro](/images/posts/2020-05-17-raspberry-pi-footpedal/airturn-ped-pro.jpg)
 
 The PEDPro runs on Bluetooth and works great as a hands-free Powerpoint clicker - it connects to Windows or macOS as a Bluetooth keyboard, but it only has two keys, which are (normally) hardwired to be Left and Right. This works great for controlling Powerpoint, but it's a bit limited. 
 
-![10158884_800](../../images/posts/2020-05-17-raspberry-pi-footpedal/10158884_800-1589740727862.jpg)The [iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) has four footswitches, and works great with iOS and macOS, but it connects to the host system as some kind of proprietary Bluetooth MIDI device, and it doesn't work (at all) on Windows.
+![10158884_800](/images/posts/2020-05-17-raspberry-pi-footpedal/10158884_800-1589740727862.jpg)The [iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) has four footswitches, and works great with iOS and macOS, but it connects to the host system as some kind of proprietary Bluetooth MIDI device, and it doesn't work (at all) on Windows.
 
 So I figured building my own pedalboard might be a fun lockdown project. At a bare minimum, I wanted to be able to switch between scenes in OBS and control some sort of media player at the same time, so I can stop/start videos and backing tracks and switch between different camera angles when doing live streams.
 
@@ -38,7 +38,7 @@ The other nice thing about the Pi Zero W is that it’s got exactly the same har
 
 ### Plan A: Bluetooth
 
-![Image](../../images/posts/2020-05-17-raspberry-pi-footpedal/EXBPCCoWoAEHpK4.jpg)
+![Image](/images/posts/2020-05-17-raspberry-pi-footpedal/EXBPCCoWoAEHpK4.jpg)
 
 My first approach with this project was to get the Pi Zero to connect to the host PC over Bluetooth, and emulate a Bluetooth keyboard. (yay wireless!). I spent a rather fun, if occasionally frustrating, weekend playing around with this. You can read the tweet-by-tweet accounts from [day 1](https://twitter.com/dylanbeattie/status/1256593530279145472) and [day 2](https://twitter.com/dylanbeattie/status/1256899500242804737) -  but to cut a long story short, I couldn’t get it to work well enough for what I wanted. 
 
@@ -64,19 +64,19 @@ So, I recast the project a bit. The milestone for this part was to get to a poin
 
 This was actually pretty straightforward, thanks to a really great article “[Composite USB Gadgets on the Raspberry Pi Zero]()” over over at iSticktoit.net. I did have one slight stumbling block… when I first started working on this, I originally found [this tutorial](https://randomnerdtutorials.com/raspberry-pi-zero-usb-keyboard-hid/) instead.  That’s almost exactly the same - the code samples are *identical* - except the Random Nerd Tutorials article says quite clearly that you can run the whole thing off a single micro USB port:
 
-![image-20200517163434097](../../images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517163434097.png)
+![image-20200517163434097](/images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517163434097.png)
 
 
 
 Now, a little later in the article, our Random Nerd author does actually say:
 
-![image-20200517163507995](../../images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517163507995.png)
+![image-20200517163507995](/images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517163507995.png)
 
 To say this does not match my own experience would be putting it mildly… the first few times I tried booting the Pi drawing power through this USB port, it caused all sorts of chaos, including completely shutting down the entire USB bus on my Windows PC more than once, leaving me with no mouse and no keyboard. That was fun. It is *possible* - I got a working setup a few times using only a single USB cable - but no way would I recommend it.
 
 After a few rounds of this, I tried booting the Pi using standalone USB power, waiting until it was up and running, and then connecting the second USB port to the host PC - and it worked flawlessly. You have no idea how excited I got when I saw this little pop-up in the corner of my Windows 10 display:
 
-![image-20200517165722956](../../images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517165722956.png)
+![image-20200517165722956](/images/posts/2020-05-17-raspberry-pi-footpedal/image-20200517165722956.png)
 
 **TL;DR: Boot the Pi using dedicated USB power. Once it is up and running, connect the peripheral USB port to the host PC, and everything works fine.**
 
@@ -179,4 +179,4 @@ Finally, I needed a box to put it all in - a box that wouldn't get upset if 102k
 
 🤘🏻
 
-![IMG_4923](../../images/posts/2020-05-17-raspberry-pi-footpedal/IMG_4923.JPG)
+![IMG_4923](/images/posts/2020-05-17-raspberry-pi-footpedal/IMG_4923.JPG)
