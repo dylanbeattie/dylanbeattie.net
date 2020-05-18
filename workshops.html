@@ -9,12 +9,18 @@ permalink: /workshops
   15 years' experience designing large-scale software applications, running software development 
   teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs, 
   I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
-  to the Microsoft .NET platform, and I'm currently offering two workshops aimed at helping
+  to the Microsoft .NET platform, and I run workshops aimed at helping
   software professionals improve their communication and presentation skills.
 </p>
 <hr />
+<h2>Online Workshops for 2020</h2>
+<p>The following workshops are now available <em>fully online</em>. For online courses, attendees will need a microphone, webcam and a good internet connection; teaching
+will be done via video chat systems such as Zoom, WebEx Meetings or Jitsi, depending on the class, and group work and exercises have all been 
+adapted to work with online collaboration tools.</p>
 {% for workshop in site.workshops %}
 <h3><a href="{{ workshop.url }}">{{ workshop.title }}</a></h3>
+<p><strong>Format:</strong> {{ workshop.format }}<br />
+<strong>Duration:</strong> {{ workshop.length }}</p>
 {{ workshop.summary | markdownify }}
 <p><a href="{{ workshop.url }}">Read more...</a></p>
 {% endfor %}

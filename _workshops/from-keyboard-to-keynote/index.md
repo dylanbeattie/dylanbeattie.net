@@ -1,6 +1,8 @@
 ---
 layout: workshop
 title: "Workshop: From Keyboard to Keynote"
+format: Online
+length: 1 day
 author: Dylan Beattie
 permalink: /workshops/from-keyboard-to-keynote/
 summary: |

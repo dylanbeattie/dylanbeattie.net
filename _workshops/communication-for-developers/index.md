@@ -1,6 +1,8 @@
 ---
 layout: workshop
 title: "Workshop: Communication for Developers"
+format: Online
+length: 2 days
 author: Dylan Beattie
 permalink: /workshops/communication-for-developers/
 summary: |
