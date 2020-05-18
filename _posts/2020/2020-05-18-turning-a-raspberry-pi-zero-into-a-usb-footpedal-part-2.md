@@ -8,7 +8,7 @@ meta:
 typora-copy-images-to: ../../images/posts/2020-05-18-raspberry-pi-footpedal-part-2
 ---
 
-In part 1, I described the software and config required to use a Raspberry Pi Zero W to create a bank of footswitches that the host computer thinks is a USB keyboard. So far, so good - some Python hacking, some Linux config, a bit of GPIO and USB HID programming... all nice and friendly and revision-controlled.
+In [part 1 of this post](/2020/05/17/turning-a-raspberry-pi-zero-into-a-usb-footpedal.html), I described the software and config required to use a Raspberry Pi Zero W to create a bank of footswitches that the host computer thinks is a USB keyboard. So far, so good - some Python hacking, some Linux config, a bit of GPIO and USB HID programming... all nice and friendly and revision-controlled.
 
 That's only half the problem, though. The main reason I'm building this thing is that I want a way to control the computer by stamping on things. When I'm playing the guitar and doing live shows, on stage or streaming via Twitch or YouTube, I want to be able to switch shots and control backing tracks by pressing switches with my feet. Now, I'm not *exactly* sure what would happen if 102kg of slightly excitable developer stood on a Raspberry Pi Zero W - or a normal computer keyboard, for that matter - but I suspect if it happened regularly, one might find that the devices in question started complaining a bit.
 
@@ -26,19 +26,19 @@ Just like software, you should always plan to [build one version to throw away](
 * How much sheet stock will I need, and what shapes will I need to cut?
 * Is there enough space between the switches that I won't accidentally press two switches at once?
 
-![IMG_4736]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4736.JPEG)
+![IMG_4736](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4736.JPEG)
 
 <figcaption>Sketching layouts and checking clearance for the components</figcaption>
 
-![IMG_4738]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4738.JPG)
+![IMG_4738](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4738.JPG)
 
 <figcaption>Cardboard prototype for the top part of the housing</figcaption>
 
-![IMG_4741]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4741.JPG)
+![IMG_4741](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4741.JPG)
 
 <figcaption>Testing the footswitches in the cardboard housing mockup</figcaption>
 
-![IMG_4751]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4751.JPG)
+![IMG_4751](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4751.JPG)
 
 <figcaption>The Pi Zero board and the footswitches installed in the prototype housing to check clearance</figcaption>
 
@@ -50,35 +50,35 @@ Now I just need to make the same thing again, except in 1mm steel instead of car
 
 First step was to cut a piece of steel for the top of the housing, and then drill the five mounting holes for the switches:
 
-![IMG_4759]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4759.JPG)
+![IMG_4759](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4759.JPG)
 
 <figcaption>Mounting holes for the foot switches</figcaption>
 
 Next step was to bend the top part of the housing. There's dozens of videos on YouTube about how to bend sheet metal - some show you how to use a machine called a metal brake; some show you how to make a metal brake if you don't have one available, and some show you how to bend metal if you don't have a brake available. [This video from Cosador](https://www.youtube.com/watch?v=KdMtecvnPRI) is great if you want an overview of a few different techniques. I ended up using hand bends and hammered bends for most of my project, using a couple of lengths of cold-rolled steel angle and lots of clamps to hold everything straight. It came out OK - not perfect, but good enough for what I need.
 
-![IMG_4760]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4760.JPG)
+![IMG_4760](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4760.JPG)
 
 <figcaption>Improvised metal brake made by clamping angle and square section steel onto my kitchen table.</figcaption>
 
-![IMG_4763]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4763.JPG)
+![IMG_4763](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4763.JPG)
 
 <figcaption>The main bends for the top part of the casing done.</figcaption>
 
-![IMG_4787]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4787.JPG)
+![IMG_4787](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4787.JPG)
 
 <figcaption>Test fitting the foot switches into the bent metal casing.</figcaption>
 
 For the bottom half of the casing, I needed to bend up the edges of the case, but also to cut notches for the HDMI and USB ports on the Pi Zero. 
 
-![IMG_4821]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4821.JPG)
+![IMG_4821](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4821.JPG)
 
 <figcaption>Rough-cutting the bottom casing panel using a jigsaw</figcaption>
 
-![IMG_4877]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4877.JPG)
+![IMG_4877](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4877.JPG)
 
 <figcaption>Work in progress filing out the notches for the Pi IO connectors</figcaption>
 
-![IMG_4880]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4880-1589755857669.JPG)
+![IMG_4880](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4880-1589755857669.JPG)
 
 <figcaption>Testing fit of the Pi Zero IO ports</figcaption>
 
@@ -90,17 +90,17 @@ One more thing I did was to use a needle file to enlarge the mounting holes on t
 
 To wire the switches to the Pi's GPIO ports, I cut one end off a 40-pin ribbon cable, giving me an easy wiring harness with about 15cm of wire on each pin. The fun part here was figuring out which wire connects to which pin... I used a Raspberry Pi breakout board for this, and it took about an hour of testing connections with a multimeter and labelling each wire as I identified which pin it connected to. Fiddly, but not actually difficult.
 
-![IMG_4896]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4896.JPG)
+![IMG_4896](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4896.JPG)
 
 <figcaption>Tracing the individual cables in the 40-pin ribbon cable back to the source pins</figcaption>
 
 For this project, I wired GPIO pins 04-08 to switches 1-5. At this stage I also wired in two extra breakout ports - one's a mono 6.5mm jack socket, the other is a stereo 6.5mm jack socket. I wired these into GPIO pins 9 and 10+11, so I could hook up three extra external footswitches to give me another three inputs on the board.
 
-![IMG_4904]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4904.JPG)
+![IMG_4904](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4904.JPG)
 
 Here's both parts of the casing, with all five switches and the two 6.5mm breakout ports all wired in and the ribbon cable seated on the Pi's GPIO connector. You can see the 6 holes I drilled in the case here - the original plan was to tap M3 threads into the top half of the casing and assemble the case using M3 bolts. Turns out 1mm mild steel isn't actually hard enough to hold a thread... two of them came out OK, one of them I stripped completely and ended up bodging by supergluing a nut in place above the hole, the other three I'll fix in the next iteration. You can also see the Pi board here mounted on a piece of 6mm MDF, which is attached to the steel using 3M Command Strips - they're normally used to hold pictures on the wall, but they adhere to steel and to MDF pretty well and they're easily removable if necessary.
 
-![IMG_4927]/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4927.JPG)
+![IMG_4927](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/IMG_4927.JPG)
 
 <figcaption>The Piedroit wired up and ready for final assembly</figcaption>
 
@@ -118,5 +118,5 @@ Second, there's no status LEDs or anything. No way of telling whether the board 
 
 And, of course, there's all the "it would be cool if..." - reprogramming key mappings, macros, modifier keys... once you get into these kinds of projects, the hardest part is knowing when to stop. 
 
-But this one is done. I'll be using it for a bunch of events I'm doing this week, including HalfStack on Friday, and I'm sure you'll be able to catch it in action on a YouTube or Twitch stream near you before too long!
+But this one is done. I'll be using it for a bunch of events I'm doing this week, including [HalfStack Online on Friday](https://halfstackconf.com/online/), and I'm sure you'll be able to catch it in action on a YouTube or Twitch stream near you before too long!
 
