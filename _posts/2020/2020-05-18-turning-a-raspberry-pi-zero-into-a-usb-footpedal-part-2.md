@@ -16,7 +16,7 @@ So having solved the logical elements of this puzzle, let's figure out the physi
 
 Well, as with many problems in life, the answer is... **metal**. In this case, [0.6mm bright mild steel sheet](https://www.diy.com/departments/steel-panel-l-0-5m-w-250mm-t-0-6mm/253965_BQ.prd), because that's what I could get hold of. I don't have access to a proper machine shop or any welding gear (#lifegoals), so I had to come up with a design that I could make using the tools and materials I had available, but which would protect the Pi and other bits of delicate circuitry within.
 
-![mintice-momentary-button-electric-switch](../../images/posts/2020-05-18-raspberry-pi-footpedal-part-2/mintice-momentary-button-electric-switch.jpg)
+![mintice-momentary-button-electric-switch](/images/posts/2020-05-18-raspberry-pi-footpedal-part-2/mintice-momentary-button-electric-switch.jpg)
 
 The switches I'm using for this project are a brand called Mintice, [available from Amazon for £11.79 for a pack of 5](https://www.amazon.co.uk/gp/product/B073S4YVF4). They're pretty easy to work with, other than requiring you to drill a 12mm diameter hole... making holes in sheet steel is easy, especially if you have a drill press... I don't have a drill press. I'm working with a cordless hand drill here, so making sure the holes end up exactly where they're supposed to be is a bit tricky. 
 
