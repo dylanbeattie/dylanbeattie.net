@@ -4,8 +4,9 @@ layout: post
 author: Dylan Beattie
 meta: 
   og_description: "Building a heavy duty case for a Raspberry Pi USB footswitch."
-  og_image: /images/posts/2020-05-18-raspberry-pi-footpedal-part-2/card.png
+  og_image: /images/posts/2020-05-18-raspberry-pi-footpedal-part-2/card.jpg
 typora-copy-images-to: ../../images/posts/2020-05-18-raspberry-pi-footpedal-part-2
+typora-root-url: .\..\..
 ---
 
 In [part 1 of this post](/2020/05/17/turning-a-raspberry-pi-zero-into-a-usb-footpedal.html), I described the software and config required to use a [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) to create a bank of footswitches that the host computer thinks is a USB keyboard. So far, so good: a little Python hacking, some Linux modules, a bit of GPIO and USB HID programming. All nice and friendly and revision-controlled.
