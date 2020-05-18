@@ -176,7 +176,7 @@ for pin in ALL_PINS:
 
 ## The Case
 
-Finally, I needed a box to put it all in - a box that wouldn't get upset if 102kg of Dylan stood on it wearing cowboy boots. Tune in tomorrow for part 2, which involves a lot less code - and a lot more sheet steel. 
+Finally, I needed a box to put it all in - a box that wouldn't get upset if 102kg of Dylan stood on it wearing cowboy boots. Check out [part 2 of this post](/2020/05/18/turning-a-raspberry-pi-zero-into-a-usb-footpedal-part-2.html) which involves a lot less code - and a lot more sheet steel. 
 
 🤘🏻
 
