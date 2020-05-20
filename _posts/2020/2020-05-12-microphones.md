@@ -30,7 +30,7 @@ Before we go any further, take a look at this video. I recorded myself using sev
 
 ### Microphone placement
 
-You want your mic as close to your mouth as possible; 2" (5cm) to 6" (30cm) is ideal – but you also want to avoid moving around too much relative to the microphone.
+You want your mic as close to your mouth as possible; 5 cm (2") to 25 cm (10") is ideal. You also want to avoid moving around too much relative to the microphone.
 
 Headset mics are great, because they keep the microphone in the same position relative to your mouth – you can turn your head, walk around, and they still sound good. Lavalier mics – the ones that clip into your clothes – and phone headsets also work pretty well, and you can stand up and walk around, as long as you remember not to turn your head. If you're using a fixed mic on a stand, you'll need to sit very, very still to get the best results from it.
 
