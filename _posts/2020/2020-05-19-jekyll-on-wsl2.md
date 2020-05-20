@@ -5,7 +5,7 @@ author: Dylan Beattie
 meta: 
   og_description: "A performance comparison of the Jekyll static site generator running on the Windows Subsystem for Linux (WSL) 1 vs WSL2."
   og_image: /images/posts/2020-05-19-jekyll-on-wsl2/card.jpg
-twitter_card: summary_large_image
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../2020-05-19-jekyll-on-wsl2
 typora-root-url: .\..\..
 ---
