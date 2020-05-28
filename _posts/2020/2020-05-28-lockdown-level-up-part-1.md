@@ -5,6 +5,7 @@ author: Dylan Beattie
 meta: 
   og_description: In which Dylan builds a (nearly) silent workstation PC for running online presentations and workshops.
   og_image: /images/posts/2020-05-28-lockdown-level-up-part-1/card.jpg
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-05-28-lockdown-level-up-part-1
 typora-root-url: .\..\..
 ---
