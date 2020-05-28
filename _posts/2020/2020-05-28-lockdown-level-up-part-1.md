@@ -3,8 +3,8 @@ title: "Locking Down & Levelling Up, Part 1: New Computer Time"
 layout: post
 author: Dylan Beattie
 meta: 
-  og_description: In which Dylan builds a rather shiny computer to use for running online presentations and workshops.
-  og_image: /images/posts/generic-post.png
+  og_description: In which Dylan builds a (nearly) silent workstation PC for running online presentations and workshops.
+  og_image: /images/posts/2020-05-28-lockdown-level-up-part-1/card.jpg
 typora-copy-images-to: ../../images/posts/2020-05-28-lockdown-level-up-part-1
 typora-root-url: .\..\..
 ---
