@@ -14,9 +14,9 @@ Now, I have a bit of a head start here, because I do actually have a dedicated r
 
 Plus, with everything going online, I kept getting invited to join Slack workspaces. Compiling the .NET Framework from source while running Adobe Premiere and Far Cry simultaneously and livestreaming the whole lot to Twitch in 1080p in real time is one thing, but being in 15 Slack workspaces at the same time requires some *serious* processing power... 
 
-*(Did I mention the bit about how buying hardware is a coping strategy? Cool. Glad we've cleared that up.)*
-
 It's been a long while since I've had a proper workstation. Like most nerds of a certain age, I spent the 1990s and 2000s constantly tinkering with big PCs, adding RAM, upgrading CPUs and graphics cards - y'all remember 3Dfx and the Voodoo chipset? Some time back in 2015 the graphics card in my last one failed. I just copied everything across to my laptop and used that as my main machine until I got it fixed... and then never got it fixed. So step 1 of this process was to get a proper computer. I wanted to switch back to running Windows 10 as my main day-to-day operating system (and keep macOS on the laptop for music stuff); I wanted something that could drive a *stupid* number of external monitors and peripherals, and I wanted something that was blazing fast and whisper quiet.
+
+*(Did I mention the bit about how buying hardware is a coping strategy? Cool. Glad we've cleared that up.)*
 
 Enter the lovely people at [QuietPC](https://www.quietpc.com/). A few hours poking around their website, and one very, very helpful phone call, and I had my ideal machine spec'ed out. After having a few too many recordings ruined by the sound of the fans on my Macbook firing up halfway through a take, I wanted something completely fanless. I got pretty close: the system I ended up with has a passive-cooled power supply and CPU cooler, I ended up adding a single 140mm BeQuiet case fan, and there's a fan on the GPU that only starts up when you drive it *hard*. Most of the time it's completely silent.
 
