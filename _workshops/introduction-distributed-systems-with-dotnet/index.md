@@ -53,7 +53,9 @@ date: '2020-05-18T14:00:00.000+00:00'
 
 ## Target Audience and Prerequisites
 
-This workshop is aimed at developers with some experience writing applications using C# and Microsoft .NET. Attendees will need to bring a laptop running Windows, macOS or Linux, and ideally install the Microsoft .NET SDK from https://dotnet.microsoft.com/download.
+This workshop is aimed at developers with some experience writing applications using C# and Microsoft .NET.
+
+The workshop is run fully online, using Zoom and various online collaboration tools. Attendees will be writing and running .NET code during the workshop, so will need to join the workshop on a computer running Windows, macOS or Linux, and ideally install the Microsoft .NET SDK from https://dotnet.microsoft.com/download.
 
 Exercises can be done in .NET Framework 4.6+ or .NET Core 2.0+
 
