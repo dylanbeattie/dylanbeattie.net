@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20200704T180000Z
+DTEND:20200704T190000Z
+DTSTAMP:20200702T114036Z
+ORGANIZER;CN=dylan.beattie@gmail.com:mailto:dylan.beattie@gmail.com
+UID:69kuoei130b33iavv5fjalccbg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=dylan.beattie@hey.com;X-NUM-GUESTS=0:mailto:dylan.beattie@hey.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=dylan.beattie@gmail.com;X-NUM-GUESTS=0:mailto:dylan.beattie@gmail.com
+X-MICROSOFT-CDO-OWNERAPPTID:-2025126743
+CREATED:20200702T113313Z
+DESCRIPTION:I'm going to play a live rock show in my house and stream the w
+ hole thing live on the internet - an hour of classic rock covers. Bon Jovi\
+ , AC/DC\, Queen\, Muse\, Pink Floyd\, Guns n' Roses\, and maybe even a few 
+ surprises.\n\nTune in on Saturday at 19:00 UK time and join the fun. I'd re
+ commend Twitch but I'll be on Facebook and YouTube as well.\n\nTwitch: http
+ s://twitch.tv/dylanbeattie\nFacebook: https://facebook.com/dylanbeattie\nYo
+ uTube: https://youtube.com/dylanbeattie\n\nAfterparty will be on Zoom - I'l
+ l share the links at the end of the show.\n\nSee you all there\, friends!\n
+ \n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~::~:~::-\nPlease do not edit this section of the description.\n\nThis
+  event has a video call.\nJoin: https://meet.google.com/vxp-kark-djk\n\nVie
+ w your event at https://www.google.com/calendar/event?action=VIEW&eid=Njlrd
+ W9laTEzMGIzM2lhdnY1ZmphbGNjYmcgZHlsYW4uYmVhdHRpZUBoZXkuY29t&tok=MjMjZHlsYW4
+ uYmVhdHRpZUBnbWFpbC5jb21iZjYwYmUzYTY2NzM1NTkxODhiNDBiNWU4MTAwOWI0ZDQ5ZmI4YW
+ I4&ctz=Europe%2FLondon&hl=en_GB&es=1.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20200702T114035Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Stay In\, Rock Out: Dylan Beattie Live Online
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
