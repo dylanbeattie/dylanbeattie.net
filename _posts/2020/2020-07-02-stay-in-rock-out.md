@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta: 
   og_description: Dylan Beattie is playing a livestreamed rock show on Saturday 4 July, 19:00 UK time. Let's stay in and rock out. \m/
-  og_image: /images/posts/2020-07-02-stay-in-rock-out/card.jpg
+  og_image: /images/posts/2020-07-02-stay-in-rock-out/card.png
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-07-02-stay-in-rock-out
 typora-root-url: .\..\..
