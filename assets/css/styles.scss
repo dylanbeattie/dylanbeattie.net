@@ -353,3 +353,22 @@ figcaption {
   text-align: center;
   line-height: 1.4em;
 }
+
+table.grid {
+  font-size: 80%;
+  border: 1px solid #999;
+  border-collapse: collapse;
+  tr:nth-child(even) {
+    background-color: #eee;
+  }
+  tr {
+    td, th {
+      padding: 8px;
+      border: 1px solid #999;
+    }
+    td:nth-child(4) {
+      text-align: right;
+    }
+
+  }
+}
