@@ -12,7 +12,7 @@ typora-root-url: .\..\..
 
 Next **Thursday, July 16th,** I'm running a workshop with the folks from Fusion Workshops in Birmingham, all about building distributed systems using .NET Core. It'll be completely online, hands-on, delivered using Zoom and various online tools - plus a lot of live coding, hooking our code into various cloud services and watching things running live over the internet. I've run this workshop with a couple of different groups and the online format actually works brilliantly - plus it's *way* more impressive running a distributed application when you're sending messages a few hundred miles between cities, instead of between two laptops in a classroom.
 
-**Tickets are on sale now: https://www.eventbrite.com/e/distributed-systems-net-with-dylan-beattie-tickets-107811475024**
+**Tickets are on sale now: [https://www.eventbrite.com/e/distributed-systems-net-with-dylan-beattie-tickets-107811475024](https://www.eventbrite.com/e/distributed-systems-net-with-dylan-beattie-tickets-107811475024)**
 
 **What's a distributed system?** 
 
