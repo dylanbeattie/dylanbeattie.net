@@ -1,4 +1,5 @@
 ---
+sequence: 1
 layout: workshop
 title: "Workshop: Introduction to Distributed Systems with Microsoft .NET"
 format: Online
@@ -12,8 +13,24 @@ meta:
   og_description: Dylan Beattie presents a one-day workshop about building distributed systems with Microsoft .NET
   og_image: /workshops/communication-for-developers/summary_large_image.jpg
 date: '2020-05-18T14:00:00.000+00:00'
+dates:
+  - date_string: July 16, 2020 (10:00-16:00 BST)
+    venue: Online via Zoom
+    cost: £250 + booking fee
+    href: https://www.eventbrite.com/e/distributed-systems-net-with-dylan-beattie-tickets-107811475024
 ---
 {{ page.summary }}
+
+{% assign next_date = page.dates | first %}
+{% if next_date %}
+<hr />
+<p>
+  <a class="book_now" href="{{ next_date.href }}">Book now!</a>
+  Next date: <strong>{{ next_date.date_string }}</strong><br />
+  {{ next_date.venue }} • {{ next_date.cost }}
+</p>
+<hr />
+{% endif %}
 
 ## Course Structure and Contents
 

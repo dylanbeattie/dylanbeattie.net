@@ -1,4 +1,5 @@
 ---
+sequence: 4
 layout: workshop
 title: "Workshop: Distributed Systems Deep Dive with Microsoft .NET"
 format: Online

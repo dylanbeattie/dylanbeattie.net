@@ -1,4 +1,5 @@
 ---
+sequence: 2
 layout: workshop
 title: "Workshop: Communication for Developers"
 format: Online

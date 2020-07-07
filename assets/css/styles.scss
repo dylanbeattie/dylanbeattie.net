@@ -372,3 +372,15 @@ table.grid {
 
   }
 }
+a.book_now {
+  float: right;
+  padding: 16px;
+  display: block;
+  background-color: _palette(accent, bg);
+  color: _palette(accent, fg);
+  font-weight: normal;
+  font-size: 120%;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  border-radius: 8px;
+}

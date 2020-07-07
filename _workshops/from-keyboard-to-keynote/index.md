@@ -1,4 +1,5 @@
 ---
+sequence: 3
 layout: workshop
 title: "Workshop: From Keyboard to Keynote"
 format: Online

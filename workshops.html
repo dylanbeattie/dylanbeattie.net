@@ -14,15 +14,27 @@ permalink: /workshops
 </p>
 <hr />
 <h2>Online Workshops for 2020</h2>
-<p>The following workshops are now available <em>fully online</em>. For online courses, attendees will need a microphone, webcam and a good internet connection; teaching
-will be done via video chat systems such as Zoom, WebEx Meetings or Jitsi, depending on the class, and group work and exercises have all been 
+<p>These workshops are now available <em>fully online</em>. For online courses, attendees will need a microphone, webcam and a good internet connection; teaching
+will be done via video chat systems such as Zoom, Webex Meetings or Jitsi, depending on the class, and group work and exercises have all been 
 adapted to work with online collaboration tools.</p>
-{% for workshop in site.workshops %}
+{% assign workshops = site.workshops | sort: "sequence" %}
+{% for workshop in workshops %}
+<hr />
 <h3><a href="{{ workshop.url }}">{{ workshop.title }}</a></h3>
+{% assign next_date = workshop.dates | first %}
+{% if next_date %}
+<p>
+  <a class="book_now" href="{{ next_date.href }}">Book now!</a>
+  Next date: <strong>{{ next_date.date_string }}</strong><br />
+  {{ next_date.venue }} • {{ next_date.cost }}
+</p>
+
+{% endif %}
 <p><strong>Format:</strong> {{ workshop.format }}<br />
 <strong>Duration:</strong> {{ workshop.length }}</p>
 {{ workshop.summary | markdownify }}
 <p><a href="{{ workshop.url }}">Read more...</a></p>
+
 {% endfor %}
 
 </article>
