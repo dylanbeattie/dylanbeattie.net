@@ -57,4 +57,4 @@ That's pretty much it. A couple of things to add:
 * When I first started out, I used the 2-minutes-per-slide approach - for a 60 minute talk, I need to make 30 slides, then for each slide, come up with 2 minutes of content for it. I worked like that for a year or two and absolutely hated it.
 * A one-hour talk is about 10,000 words. That's the same length as an undergraduate dissertation at many UK universities. Preparing talks this way is a lot of work - I normally reckon on about 30-50 hours of prep time from the first rough outline to the having the talk "stage ready."
 
-And for the sake of comparison, this blog post is 1,153 words - it'd make a pretty good 5-minute lightning talk with a bit of trimming - and it's taken me just over 30 minutes to write it. Maybe I should just have replied on Twitter after all... :)
+And for the sake of comparison, this blog post is 1,156 words - it'd make a pretty good 5-minute lightning talk with a bit of trimming - and it's taken me just over 45 minutes to write it. Maybe I should just have replied on Twitter after all... :)
