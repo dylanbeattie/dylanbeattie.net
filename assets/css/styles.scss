@@ -68,6 +68,14 @@ article {
     border-color: _palette(accent, bg);
     margin: 20px 0;
   }
+  div.panel {
+    text-align: center;
+    font-weight: bold;
+    background-color: lighten(_palette(fg-light), 25);
+    border: 1px solid _palette(fg-bold);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
   img {
     max-width: 100%;
   }
@@ -329,6 +337,14 @@ article {
       
     @include breakpoint('<=mobile') {
       width: 100%;
+    }
+  }
+  iframe#youtube {
+    width: 640px;
+    height: 360px;
+    @include breakpoint('<=mobile') {
+      width: 100%;
+      height: auto;
     }
   }
   img.screenshot {
