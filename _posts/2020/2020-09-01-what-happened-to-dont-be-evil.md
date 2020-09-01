@@ -26,7 +26,7 @@ Well, I found a feature in Google Calendar today that scores zero out of five on
 
 Go on. Look.
 
-<iframe id="youtube" name="youtube" src="https://www.youtube.com/embed/0Wdho8Gpd9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="youtube" name="youtube" src="https://www.youtube.com/embed/y88e_e9DhMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 *(yes, I know the video is on YouTube. Yes, I know YouTube is owned by Google. No, I don't believe for one second that Google is going to change anything because I wrote a blog post. But maybe reading this might inspire one of you to Not Be Evil when you're doing your own stuff, and perhaps that's enough.)*
 
