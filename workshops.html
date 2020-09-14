@@ -4,37 +4,22 @@ title: workshops
 permalink: /workshops
 ---
 <article>
-    <h2>Workshops and Training</h2> 
-<p>I've been running classroom training for software professionals since 2016. Drawing on over 
-  15 years' experience designing large-scale software applications, running software development 
-  teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs, 
-  I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
-  to the Microsoft .NET platform, and I run workshops aimed at helping
-  software professionals improve their communication and presentation skills.
-</p>
-<hr />
-<h2>Online Workshops for 2020</h2>
-<p>These workshops are now available <em>fully online</em>. For online courses, attendees will need a microphone, webcam and a good internet connection; teaching
-will be done via video chat systems such as Zoom, Webex Meetings or Jitsi, depending on the class, and group work and exercises have all been 
-adapted to work with online collaboration tools.</p>
-{% assign workshops = site.workshops | sort: "sequence" %}
-{% for workshop in workshops %}
-<hr />
-<h3><a href="{{ workshop.url }}">{{ workshop.title }}</a></h3>
-{% assign next_date = workshop.dates | first %}
-{% if next_date %}
-<p>
-  <a class="book_now" href="{{ next_date.href }}">Book now!</a>
-  Next date: <strong>{{ next_date.date_string }}</strong><br />
-  {{ next_date.venue }} • {{ next_date.cost }}
-</p>
-
-{% endif %}
-<p><strong>Format:</strong> {{ workshop.format }}<br />
-<strong>Duration:</strong> {{ workshop.length }}</p>
-{{ workshop.summary | markdownify }}
-<p><a href="{{ workshop.url }}">Read more...</a></p>
-
-{% endfor %}
-
+  <h2>Workshops and Training</h2>
+  <div class="panel">
+    <a href="https://urs.tl/dbnw/">
+      <img class="banner" src="/images/ursatile-banner-800px.png" alt="Ursatile banner"
+        title="Online training from Ursatile" />
+    </a>
+    <p>As of July 2020, I'll be running all my online workshops and training courses through
+      <a href="https://urs.tl/dbnw/">Ursatile</a>, my online training company. Check out
+      <a href="https://urs.tl/dbnw/">ursatile.com</a> or <a href="https://twitter.com/ursatile">follow @ursatile</a>
+      on Twitter for workshop dates, details and booking links
+    </p>
+  </div>
+  <p>I've been running classroom training for software professionals since 2016. Drawing on over
+    15 years' experience designing large-scale software applications, running software development
+    teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs,
+    I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
+    to the Microsoft .NET platform, and I run workshops aimed at helping
+    software professionals improve their communication and presentation skills.</p>
 </article>

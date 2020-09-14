@@ -338,6 +338,11 @@ article {
     @include breakpoint('<=mobile') {
       width: 100%;
     }
+    &.banner {
+      width: 60%;
+      border: 0;
+      box-shadow: none;
+    }
   }
   iframe#youtube {
     width: 640px;
