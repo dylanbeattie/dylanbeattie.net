@@ -111,6 +111,14 @@ div#sidebar {
   a {
     border: 0;
   }
+  section#schedule {
+    small {
+      display: block;
+      font-size: 0.6em;
+      line-height: 1.4em;
+      text-align: justify;
+    }
+  }
   div.schedule {
     p {
       font-size: 12px;
