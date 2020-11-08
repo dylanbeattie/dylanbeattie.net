@@ -16,28 +16,28 @@
   (
     wide: (
       1281px,
-      1680px
+      1680px,
     ),
     normal: (
       981px,
-      1280px
+      1280px,
     ),
     narrow: (
       841px,
-      980px
+      980px,
     ),
     narrower: (
       737px,
-      840px
+      840px,
     ),
     mobile: (
       481px,
-      736px
+      736px,
     ),
     mobilep: (
       null,
-      480px
-    )
+      480px,
+    ),
   )
 );
 
@@ -55,7 +55,7 @@ article {
       margin: 0.5em 0;
     }
   }
-  blockquote { 
+  blockquote {
     cite {
       display: block;
       padding-left: 100px;
@@ -280,7 +280,7 @@ article ul.playlist {
 section#banner {
   position: relative;
   cite#banner-photo-credit {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 10px;
     margin: 0;
     padding: 3px;
@@ -323,7 +323,6 @@ p > code {
   border-radius: 4px;
 }
 
-
 article {
   dl {
     dt {
@@ -336,14 +335,15 @@ article {
   }
   img {
     border: 1px solid #000;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.50);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   }
-  img, iframe {
+  img,
+  iframe {
     display: block;
     width: 60%;
     margin: 16px auto;
-      
-    @include breakpoint('<=mobile') {
+
+    @include breakpoint("<=mobile") {
       width: 100%;
     }
     &.banner {
@@ -355,7 +355,7 @@ article {
   iframe#youtube {
     width: 640px;
     height: 360px;
-    @include breakpoint('<=mobile') {
+    @include breakpoint("<=mobile") {
       width: 100%;
       height: auto;
     }
@@ -391,14 +391,14 @@ table.grid {
     background-color: #eee;
   }
   tr {
-    td, th {
+    td,
+    th {
       padding: 8px;
       border: 1px solid #999;
     }
     td:nth-child(4) {
       text-align: right;
     }
-
   }
 }
 a.book_now {
@@ -409,7 +409,35 @@ a.book_now {
   color: _palette(accent, fg);
   font-weight: normal;
   font-size: 120%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   border-radius: 8px;
+}
+
+dl.crossword-solutions {
+  dt {
+    font-weight: normal;
+    margin-left: 2em;
+    span.clue-number {
+      display: inline-block;
+      width: 2em;
+      margin-left: -2em;
+      font-weight: bold;
+    }
+  }
+  dd {
+    span.clue-answer {
+      font-weight: bold;
+      &.trump {
+        color: #c33;
+      }
+      &.biden {
+        color: #33f;
+      }
+    }
+    margin-left: 4em;
+  }
+  u {
+    background-color: #ff9;
+  }
 }
