@@ -16,7 +16,7 @@ Here's how I set it all up.
 
 I'm using a free certificate from [ZeroSSL](https://zerossl.com/) - I'm hosting my example code here on workshop.ursatile.com, so I signed up with ZeroSSL and registered a free 90-day certificate for that hostname. When you click on "Install" here, you get the option to choose a Server Type - but there's no mention of .NET Core, Kestrel or IIS in that list, so I went for "Default Format":
 
-<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118163816449.png" alt="image-20201118163816449" style="zoom:80%;" />
+<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118163816449.png" alt="image-20201118163816449"  />
 
 This will download a ZIP file containing three files - `certificate.crt`, `ca_bundle.crt` and `private.key`. 
 
@@ -33,25 +33,29 @@ It'll prompt you for an export password - if you're using this for anything even
 * **If you leave the export password blank, anybody who gets hold of the .PFX file can impersonate you**
 * **Do not check your PFX file into Github or publish it online anywhere**
 
+Remember - there's no point securing your PFX file with a secure password if you then hardcode that password into your `Program.cs` and check it into Github along with the `.pfx` file itself. 
+
 Once you've got your certificate exported as `certificate.pfx`, we need to tell the Kestrel web server to use it.
 
 If you've created your ASP.NET Core web app the usual way, you'll find a method in `Program.cs` called `CreateHostBuilder` - this is where we can specify the options passed to the Kestrel server when it's started up. We'll need to add a call to the `webBuilder.ConfigureKestrel()` method like this:
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
-	Host.CreateDefaultBuilder(args)
-		.ConfigureWebHostDefaults(webBuilder => {
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder => {
             
             webBuilder.ConfigureKestrel(options => {               
                 var port = 5001;
                 var pfxFilePath = @"D:\workshop.ursatile.com\certificate.pfx";
-				// The password you specified when exporting the PFX file using OpenSSL
+                // The password you specified when exporting the PFX file using OpenSSL.
+                // This would normally be stored in configuration or an environment variable;
+                // I've hard-coded it here just to make it easier to see what's going on.
                 var pfxPassword = "green cairo angle piano"; 
 
                 options.Listen(IPAddress.Any, port, listenOptions => {
                     // Enable support for HTTP1 and HTTP2 (required if you want to host gRPC endpoints)
                     listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-		            // Configure Kestrel to use a certificate from a local .PFX file for hosting HTTPS
+                    // Configure Kestrel to use a certificate from a local .PFX file for hosting HTTPS
                     listenOptions.UseHttps(pfxFilePath, pfxPassword);
                 });
             });
@@ -62,7 +66,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 To check it's all working, fire it up with `dotnet run` and then point a browser at `http://localhost:5001` - you should see an error message just like this one:
 
-<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118171317975.png" alt="Screenshot of a browser privacy error message" style="zoom: 67%;" />
+<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118171317975.png" alt="Screenshot of a browser privacy error message" />
 
 but if you click "Advanced" and read the small print:
 
@@ -70,7 +74,7 @@ but if you click "Advanced" and read the small print:
 
 That's actually exactly what we want. To run code locally using your new certificate, hack your hosts file and add a line to the end pointing `workshop.ursatile.com` or whatever domain you're using at 127.0.0.1; if you want the rest of the world to play along too, you'll need to register a DNS CNAME record pointing at your IP address and make sure that port 5001 (or whatever you used) is mapped to your workstation - oh, and remember to to disable the Windows firewall for that port.
 
-<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118171710454.png" alt="image-20201118171710454" style="zoom:67%;" />
+<img src="/images/posts/2020-11-18-using-https-with-kestrel/image-20201118171710454.png" alt="image-20201118171710454" />
 
 **But... is it safe?**
 
