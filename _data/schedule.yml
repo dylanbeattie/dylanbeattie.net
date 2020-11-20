@@ -1,61 +1,61 @@
-- title: From Keyboard to Keynote (Workshop)
-  date: 21-22 September 2020
-  url: https://www.buildstuff.events/from-keyboard-to-keynote
-  city: Online
-  country: internet
+# - title: From Keyboard to Keynote (Workshop)
+#   date: 21-22 September 2020
+#   url: https://www.buildstuff.events/from-keyboard-to-keynote
+#   city: Online
+#   country: internet
 
-- title: München .NET Meetup
-  date: 23 September 2020
-  url: https://www.meetup.com/munich-dotnet-meetup/events/272669730/
-  city: Online
-  country: internet
+# - title: München .NET Meetup
+#   date: 23 September 2020
+#   url: https://www.meetup.com/munich-dotnet-meetup/events/272669730/
+#   city: Online
+#   country: internet
 
-- title: How to Run Remote Workshops
-  date: 26, 28, 29, 30 September 2020
-  url: https://ursatile.com/workshops/how-to-run-remote-workshops.html
-  city: Online
-  country: internet
+# - title: How to Run Remote Workshops
+#   date: 26, 28, 29, 30 September 2020
+#   url: https://ursatile.com/workshops/how-to-run-remote-workshops.html
+#   city: Online
+#   country: internet
 
-- title: NDC Sydney
-  date: 12-16 October 2020
-  url: https://ndcsydney.com/
-  city: Online
-  country: internet
+# - title: NDC Sydney
+#   date: 12-16 October 2020
+#   url: https://ndcsydney.com/
+#   city: Online
+#   country: internet
 
-- title: Brighton Web Dev Meetup
-  date: 20 October 2020
-  url: https://www.meetup.com/Brighton-Web-Development-Meetup/events/272954184/
-  city: Online
-  country: internet
+# - title: Brighton Web Dev Meetup
+#   date: 20 October 2020
+#   url: https://www.meetup.com/Brighton-Web-Development-Meetup/events/272954184/
+#   city: Online
+#   country: internet
 
-- title: Innovative TechTalks 
-  date: 6 October 2020
-  url: https://www.meetup.com/Maxcode-Software-Development-Meetup-Group/events/273315756/
-  city: Online 
-  country: internet
+# - title: Innovative TechTalks 
+#   date: 6 October 2020
+#   url: https://www.meetup.com/Maxcode-Software-Development-Meetup-Group/events/273315756/
+#   city: Online 
+#   country: internet
 
-- title: GOTO Copenhagen
-  date: 9-11 November 2020
-  url: https://gotocph.com/
-  city: Copenhagen
-  country: dk
-- title: BuildStuff
-  date: 11-15 November 2020
-  url: https://buildstuff.events/
-  city: Vilnius
-  country: lt
+# - title: GOTO Copenhagen
+#   date: 9-11 November 2020
+#   url: https://gotocph.com/
+#   city: Copenhagen
+#   country: dk
+# - title: BuildStuff
+#   date: 11-15 November 2020
+#   url: https://buildstuff.events/
+#   city: Vilnius
+#   country: lt
 
-- title: "Workshop: Introduction to Distributed Systems with .NET Core"
-  date: 19 November 2020
-  url: https://www.eventbrite.com/e/introduction-to-distributed-systems-net-core-with-dylan-beattie-tickets-119602742021
-  city: Online
-  country: internet
+# - title: "Workshop: Introduction to Distributed Systems with .NET Core"
+#   date: 19 November 2020
+#   url: https://www.eventbrite.com/e/introduction-to-distributed-systems-net-core-with-dylan-beattie-tickets-119602742021
+#   city: Online
+#   country: internet
 
-- title: "Workshop: Communication for Software Teams"
-  date: 24-27 November 2020
-  url: https://www.eventbrite.com/e/communication-for-software-teams-tickets-120395206303?aff=erelpanelorg
-  city: Online
-  country: internet
+# - title: "Workshop: Communication for Software Teams"
+#   date: 24-27 November 2020
+#   url: https://www.eventbrite.com/e/communication-for-software-teams-tickets-120395206303?aff=erelpanelorg
+#   city: Online
+#   country: internet
 
 # #- title: ProgNET
 # #  date: 11-13 Sep
