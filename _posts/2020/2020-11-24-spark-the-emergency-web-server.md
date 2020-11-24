@@ -22,7 +22,7 @@ Serving HTTP on 0.0.0.0 port 80 ...
 
 ![image-20201124104555262](/images/posts/2020-11-24-spark-the-emergency-web-server/image-20201124104555262.png)
 
-That works pretty well, but the module syntax has changed in the Python 3 - it's `http.server` instead of `SimpleHTTPServer` - and, obviously, it won't work without Python installed.
+That works pretty well, but it's a bit verbose. Plus, the module syntax has changed in the Python 3 - it's `http.server` instead of `SimpleHTTPServer` - and, obviously, it won't work without Python installed.
 
 Enter **[Spark](https://github.com/rif/spark)**. It's a tiny standalone web server, written in Go by [Radu Ioan Fericean](https://www.fericean.ro/), with [binaries available for Windows, macOS, and Linux](https://github.com/rif/spark/releases). Add it to your system path, and then you can just type `spark` in any directory and it'll share it over HTTP on port 8080.
 
