@@ -7,7 +7,7 @@ meta:
 typora-copy-images-to: ../../images/posts/2020-11-24-spark-the-emergency-web-server/
 typora-root-url: .\..\..
 ---
-*TL;DR: Spark (https://github.com/rif/spark) is a tiny standalone web server, written in Go, with binaries available for most platforms. And it's very cool.*
+*TL;DR: Spark ([https://github.com/rif/spark](https://github.com/rif/spark)) is a tiny standalone web server, written in Go, with binaries available for most platforms. And it's very cool.*
 
 When it comes to web dev, I'm kinda old school. I've been building web apps long enough that I remember when you could build an entire web site just by pointing your browser at `file:///c:/websites/mysite/index.htm`, hack it around until it worked, then upload the whole folder via FTP and boom, job done.
 
