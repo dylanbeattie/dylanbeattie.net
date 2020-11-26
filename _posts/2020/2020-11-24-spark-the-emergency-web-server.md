@@ -1,9 +1,9 @@
 ---
-title: Spark - the "emergency web server" written in Go
+title: Spark - a tiny standalone HTTP server
 layout: post
 author: Dylan Beattie
 meta:
-    og_description: Quick'n'dirty HTTP hosting with Spark, the "emergency web server"
+    og_description: Quick'n'dirty HTTP hosting with Spark, the emergency web server
 typora-copy-images-to: ../../images/posts/2020-11-24-spark-the-emergency-web-server/
 typora-root-url: .\..\..
 ---
