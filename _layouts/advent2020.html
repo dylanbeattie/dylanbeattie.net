@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<!-- Main -->
+<section class="wrapper style1">
+	<div class="container">
+		<div class="row gtr-200">
+			<div class="col-9 col-12-narrower">
+				<div id="content">
+					<article class="{{ page.css-class }}">
+						<h1>Advent of Cool Nerd Things : {{ page.title }} </h1>
+						<cite class="byline">Posted by <strong>{{ page.author }}</strong> on
+							{{ page.date | date_to_long_string }}
+							&bull;
+							<a href="{{ site.url }}{{ page.url }}">permalink</a></cite>
+						{{ content }}
+						<hr />
+						<p>Part of <a href="/advent2020">Dylan's Advent of Cool Nerd Things 2020</a></p>
+					</article>
+				</div>
+			</div>
+			<div class="col-3 col-12-narrower">
+				<div id="sidebar">
+					{% include right-sidebar.html %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

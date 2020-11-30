@@ -1,0 +1,33 @@
+---
+layout: right-sidebar
+title: blog
+permalink: /advent2020
+meta:
+    og_description: Dylan Beattie's Advent of Cool Nerd Things 2020
+---
+<article>
+<h1>Dylan's Advent of Cool Nerd Things 2020</h1>
+<p>Every day until Christmas, I'll be posting about a software tool, website, utility or tip that I think is cool.</p>
+<dl>
+{% assign posts = site.posts | sort: 'date' %}
+{% for post in posts %}
+{% if post.categories contains "advent2020" %}
+<dt>{{ post.date | date: "%d %B" }}: <a href="{{ site.url }}{{ post.url }}">{{ post.tool.name }}</a> </dt>
+<dd><p>{{ post.tool.summary }} &bull; <a href="{{ site.url }}{{ post.url }}">read more...</a></p>
+	<p>Website: <a href="{{post.tool.url}}">{{post.tool.url}}</a></p>
+</dd>
+{% endif %}
+{% endfor %}	
+</dl>
+</article>
+<!--<article>
+	<h1><a href="{{ site.url }}{{ post.url }}"></a>{{ post.title }}</a></h1>
+	<cite class="byline">Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
+	&bull;
+	<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
+	{{ post.content }}
+	<cite>"{{ post.title }}" was posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
+		&bull;
+		<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
+</article>
+-->
