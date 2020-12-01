@@ -17,11 +17,11 @@ tool:
     summary: Sizer is a freeware utility that allows you to resize any window to an exact, predefined size.
 ---
 
-I'm a stickler for detail. If I'm taking screenshots to use in a blog post or a Powerpoint slide, I like to get the window I'm capturing to be exactly the right size and shape before I snap it. This used to involve a lot of very, very patient dragging - and then I found [Sizer](http://www.brianapps.net/sizer4/). It's a tiny Windows app that runs in the background until you right-click a window frame: 
+I'm a stickler for detail. If I'm taking screenshots to use in a blog post or a PowerPoint slide, I like to get the window I'm capturing to be exactly the right size and shape before I snap it. This used to involve a lot of very, very patient dragging – and then I found [Sizer](http://www.brianapps.net/sizer4/). It's a tiny Windows app that runs in the background until you right-click a window frame: 
 
 ![sizer](/images/posts/2020-12-advent/sizer-1606743424916.png)
 
-It's got loads of cool extra features as well - snap to grid, custom sizes, it'll move windows as well as resizing them. Check out the [user guide](http://www.brianapps.net/sizer/userguide.html) to see what else it can do.
+It's got loads of cool extra features as well, like snap to grid, custom sizes, and it'll move windows as well as resizing them. Check out the [user guide](http://www.brianapps.net/sizer/userguide.html) to see what else it can do.
 
-Sizer is online at [http://www.brianapps.net/sizer4/](http://www.brianapps.net/sizer4/) - check it out.
+Sizer is online at [http://www.brianapps.net/sizer4/](http://www.brianapps.net/sizer4/) – check it out.
 
