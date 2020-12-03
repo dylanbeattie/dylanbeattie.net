@@ -30,7 +30,7 @@ Plus - did I mention the image quality is good? Here is in Zoom, side-by-side wi
 
 It's on macOS and Windows, but it's iPhone only (sorry, Android fans.) The consumer version of Camo for Windows is still in beta - there's a signup form on their site; I've been running it on Windows for a month or so without any problems at all, including running it alongside four other cameras in a really elaborate multi-cam streaming setup. 
 
-Oh, and apparently there's a 40% off until December 4th if you sign up with the code CYBERCAMO. 
+Oh, and apparently there's a 40% off until December 4th if you sign up with the code **CYBERCAMO**. 
 
-Check it out: https://reincubate.com/camo/
+Check it out: [https://reincubate.com/camo/](https://reincubate.com/camo/)
 
