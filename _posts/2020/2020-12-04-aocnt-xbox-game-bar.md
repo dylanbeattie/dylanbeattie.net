@@ -3,7 +3,7 @@ title: "Dylan's Advent of Cool Nerd Things Day 4: X-Box Game Bar"
 layout: advent2020
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2020-12-advent/cards/2020-12-04-xbox-game-bar.png"
+  og_image: /images/posts/2020-12-advent/cards/2020-12-04-xbox-game-bar.png
   og_description: "Screen recorder, audio controls, performance stats and chat. Built into Windows. Try it - press Win+G."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-12-advent/
