@@ -32,5 +32,5 @@ OK, here it is with some options:
 
 ![img](/images/posts/2020-12-advent/SNAGHTML938b4d.PNG)
 
-It's wonderfully old school, it's simple, it works, and I've found it really, really useful. Check it out: https://www.di-mgt.com.au/wclock/download.html
+It's wonderfully old school, it's simple, it works, and I've found it really, really useful. Check it out: [https://www.di-mgt.com.au/wclock/download.html](https://www.di-mgt.com.au/wclock/download.html)
 
