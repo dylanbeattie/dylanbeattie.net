@@ -22,7 +22,7 @@ It's kinda nice living in a world where it's so easy to stay connected to people
 
 That's where Franz comes in. It's a Windows desktop app that pulls together basically ALL THE THINGS and gathers them into one place:
 
-![image-20201204154305574](/images/posts/2020-12-advent/image-20201204154305574.png)
+![image-20201206122152793](/images/posts/2020-12-advent/image-20201206122152793.png)
 
 The free tier lets you add up to three services; paid subs give you more connected apps, plus cool things like the Franz Todo List. I've been running it for a couple of weeks, and recently activated the free trial to see how it copes with lots of connected apps - but so far I've been really, really impressed.
 
@@ -32,7 +32,9 @@ Oh, and their SEO strapline made me giggle:
 
 >  **Franz* is a free messaging app /former emperor of Austria, that combines chat & messaging services into one application.**
 
-Check it out at https://meetfranz.com/
+Check it out at [https://meetfranz.com/](https://meetfranz.com/)
+
+
 
 
 
