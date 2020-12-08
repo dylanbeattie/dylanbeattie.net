@@ -22,7 +22,7 @@ But there are a handful of workflows where testing on localhost isn't an option 
 
 Now, you could set up a certificate, open a port on your home or office firewall, register a domain name, set up some DNS host records... in fact, I've posted recently about how I've done exactly this. But it's a lot of effort and it's easy to overlook something and end up leaving something exposed on the internet that shouldn't be there. 
 
-Alternatively, you can use ngrok. Ngrok is brilliant. It's a tiny executable. You download it, you run it, you tell it what port to listen on, and it creates a secure, temporary tunnel from the internet to that port on your local machine. The tunnel stays open for a long as ngrok is running - and when you stop ngrok, the tunnel goes away. 
+Alternatively, you can use ngrok. Ngrok is brilliant. It's a tiny executable. You download it, you run it, you tell it what port to listen on, and it creates a secure, temporary tunnel from the internet to that port on your local machine. The tunnel stays open for a long as ngrok is running – and when you stop ngrok, the tunnel goes away. 
 
 ![image-20201206172913178](/images/posts/2020-12-advent/image-20201206172913178.png)
 

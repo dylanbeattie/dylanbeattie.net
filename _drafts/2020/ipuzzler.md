@@ -1,0 +1,9 @@
+
+
+iPuzzler, on the other hand, is a completely new project of mine. One of my hobbies is creating cryptic crossword puzzles. There's a fantastic program called Crossword Compiler, from WordWeb Software, that I use to create puzzles. Crossword Compiler is excellent, but web export is a real weak point - it hasn't been updated in years, and the interactive puzzles it creates are still based on a Java applet, which means no iOS support *at all*, and a lot of tedious security warnings and unpleasantness on most other platforms.  Back in 2015, the folks from [Puzzazz](http://www.puzzazz.com/) published [ipuz](http://www.ipuz.org/), an open data format based on JSON for crossword puzzles. Crossword Compiler will export ipuz files, and there are several paid apps that can read them, but what I really wanted was a way to publish my ipuz files on my own website, with an interactive 'player' similar to the [one used for the puzzles on the Guardian website](https://www.theguardian.com/crosswords/cryptic/28283). 
+
+This is where the optimism kicks in: **"I know... I'll build my own web player for ipuz files! How hard can it be?"**
+
+The first prototype was a dirty hack - static HTML, handwritten JavaScript, with lots of jQuery and DOM manipulation, just to see if it was possible to deliver the kind of user interactions I was looking for. After about 2-3 days of work, the answer was definitely yes – but by that point the code was such a mess I wasn't confident working with it any more. I shoved all that code into a v1_spike folder and started over. 
+
+The second iteration started life as a jQuery plugin, but after a few days of hacking and some entertaining chat with David Whitney over Zoom beers, I realised I could probably do it as a web component and avoid the jQuery dependency completely. This also gave me a nice "line in the sand" in terms of browser support - I'd support anything that could run web components. 
