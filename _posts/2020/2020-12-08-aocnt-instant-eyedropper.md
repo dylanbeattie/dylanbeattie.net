@@ -20,9 +20,9 @@ This one's a tool I've used for years and years, and it's absolutely wonderful. 
 
 ![instant-eyedropper-example](/images/posts/2020-12-advent/instant-eyedropper-example.gif)
 
-That's pretty much it. You can configure the mode; "click" mode is one click to activate the tool, and again to select a colour and copy it, and if that's just too many clicks, put it in "drag" mode and then just drag the mouse from the tool onto any pixel on the screen. You can tweak the exact HTML format – would you like your hex digits in uppercase or lowercase? But, really, it's just a wonderfully simple, useful, unobtrusive tool. It sits in your system tray until you need it, it does exactly what it's supposed to, and then it gets out the way so you can get on with whatever you were doing.
+That's pretty much it. You can configure the mode; "click" mode is one click to activate the tool, and again to select a colour and copy it, and if that's just too many clicks, put it in "drag" mode and then just drag the mouse from the tool onto any pixel on the screen. You can also tweak the exact HTML format to get your hex digits in your preferred format – but, really, it's just a wonderfully simple, useful, unobtrusive tool. It sits in your system tray until you need it, it does exactly what it's supposed to, and then it gets out the way so you can get on with whatever you were doing.
 
 ![image-20201206194134042](/images/posts/2020-12-advent/image-20201206194134042.png)
 
-It's free, [open source](https://github.com/miaupaw/instant-eyedropper), runs on Windows XP through Windows 10 (and I know, because I've run it on every single version of Windows from XP to 10) - check it out at http://instant-eyedropper.com/, and if you find it useful, why not throw $5 their way to support the project? 
+It's free, [open source](https://github.com/miaupaw/instant-eyedropper), runs on Windows XP through Windows 10 (and I know, because I've run it on every single version of Windows from XP to 10) – check it out at http://instant-eyedropper.com/, and if you find it useful, why not throw $5 their way to support the project? 
 
