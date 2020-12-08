@@ -24,5 +24,5 @@ That's pretty much it. You can configure the mode; "click" mode is one click to 
 
 ![image-20201206194134042](/images/posts/2020-12-advent/image-20201206194134042.png)
 
-It's free, [open source](https://github.com/miaupaw/instant-eyedropper), runs on Windows XP through Windows 10 (and I know, because I've run it on every single version of Windows from XP to 10) – check it out at http://instant-eyedropper.com/, and if you find it useful, why not throw $5 their way to support the project? 
+It's free, [open source](https://github.com/miaupaw/instant-eyedropper), runs on Windows XP through Windows 10 (and I know, because I've run it on every single version of Windows from XP to 10) – check it out at [http://instant-eyedropper.com/](http://instant-eyedropper.com/), and if you find it useful, why not throw $5 their way to support the project? 
 
