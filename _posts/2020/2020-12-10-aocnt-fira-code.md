@@ -3,7 +3,7 @@ title: "Dylan's Advent of Cool Nerd Things Day 10: Fira Code"
 layout: advent2020
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2020-12-advent/cards/2020-12-11-aocnt-fira-code.png
+  og_image: /images/posts/2020-12-advent/cards/2020-12-10-aocnt-fira-code.png
   og_description: "Fira Code: the best programming font in the world, ever."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-12-advent/
