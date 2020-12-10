@@ -9,7 +9,7 @@ meta:
 typora-copy-images-to: ../../images/posts/2020-12-advent/
 typora-root-url: .\..\..
 categories:
-    – advent2020
+    - advent2020
 tool:
     name: Fira Code
     url: https://github.com/tonsky/FiraCode
@@ -28,7 +28,7 @@ Here's a snippet of F# code using the regular Consolas typeface, and the same co
 
 ![image-20201208180855193](/images/posts/2020-12-advent/image-20201208180855193.png)
 
-This is **exactly the same source code** – it's a regular ASCII text file; the only thing that's changed is the font. At a glance, the ligatures might look like an eye-catching gimmick, but I find them really, really useful for working on code that has lots of gnarly operators – if you've ever had a JavaScript bug caused by double-equals (`==`') vs triple-equals (`===`), you'll appreciate how visually distinct Fira Code makes these two character sequences. 
+This is **exactly the same source code** – it's a regular ASCII text file; the only thing that's changed is the font. At a glance, the ligatures might look like an eye-catching gimmick, but I find them really, really useful for working on code that has lots of gnarly operators - if you've ever had a JavaScript bug caused by double-equals (`==`') vs triple-equals (`===`), you'll appreciate how visually distinct Fira Code makes these two character sequences. 
 
 ![img](https://repository-images.githubusercontent.com/26500787/bf313080-6b02-11ea-9cd5-c3dca880736d)
 
