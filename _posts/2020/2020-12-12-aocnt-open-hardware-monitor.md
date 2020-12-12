@@ -1,9 +1,9 @@
 ---
-title: "Dylan's Advent of Cool Nerd Things Day X: Open Hardware Monitor"
+title: "Dylan's Advent of Cool Nerd Things Day 12: Open Hardware Monitor"
 layout: advent2020
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2020-12-advent/cards/2020-12-0X-aocnt-open-hardware-monitor.png
+  og_image: /images/posts/2020-12-advent/cards/2020-12-12-aocnt-open-hardware-monitor.png
   og_description: "Open Hardware Monitor is a free open source software that monitors temperature sensors, fan speeds, voltages, load and clock speeds of a computer."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-12-advent/
