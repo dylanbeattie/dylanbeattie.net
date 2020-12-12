@@ -1,5 +1,5 @@
 ---
-title: "Dylan's Advent of Cool Nerd Things Day X: Open Hardware Monitor"
+title: "Dylan's Advent of Cool Nerd Things Day 12: Open Hardware Monitor"
 layout: advent2020
 author: Dylan Beattie
 meta:
