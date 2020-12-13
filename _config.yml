@@ -16,9 +16,8 @@
 title: dylanbeattie.net
 email: dylan@dylanbeattie.net
 description: >- # this means to ignore newlines until "baseurl:"
-  Dylan Beattie's personal web site, where he writes about
-  code, technology and travel, and shares
-  funny music videos about software development.
+  Dylan Beattie does fun things with computers, code, comedy,
+  music, and video. This is where he writes about it.
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # url: the base hostname & protocol for your site, e.g. http://example.com
