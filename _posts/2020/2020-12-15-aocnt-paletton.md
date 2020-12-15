@@ -16,7 +16,7 @@ tool:
     summary: Paletton is an online design tool for creating colour combinations that work together well.
 ---
 
-Colour (or color, if you're an HTML parser, a .NET class specification or a human being from the United States of America) is complicated. Way complicated. I'm a pretty monotone kind of person - my clothes are black, my walls are white, my food is beige, and I'm still not entirely comfortable with the existence of green LEGO bricks.
+Colour (or color, if you're an HTML parser, a .NET class specification or a human being from the United States of America) is complicated. Way complicated. I'm a pretty monotone kind of person - my clothes are black, my walls are white, most of my favourite foods are beige, and I'm still not entirely comfortable with the existence of green LEGO bricks.
 
 But colour matters. There's a wonderful infographic from [The Logo Company](https://thelogocompany.net/) called the [Color Emotion Guide](https://thelogocompany.net/blog/infographics/psychology-color-logo-design/), that illustrates how dozens of popular brands use colour to evoke particular emotions and connections when consumers look at their logos:
 
@@ -30,7 +30,7 @@ If you want your projects to end up in category 1, find a brilliant designer, pa
 
 ![image-20201213010534428](/images/posts/2020-12-advent/image-20201213010534428.png)
 
-Formerly known as Color Scheme Designer, Paletton is online at https://paletton.com/. It's ad-supported, but it's much more usable with an ad blocker running, so hey, why not block the ads and throw them a few bucks via the Donate link if you find it useful? 
+Formerly known as Color Scheme Designer, Paletton is online at [https://paletton.com/](https://paletton.com/). It's ad-supported, but it's much more usable with an ad blocker running, so hey, why not block the ads and throw them a few bucks via the Donate link if you find it useful? 
 
 
 
