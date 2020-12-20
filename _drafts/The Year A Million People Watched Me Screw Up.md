@@ -8,5 +8,5 @@ I did the talk, and it didn't go great. My Macbook Pro had developed a weird dis
 
 No big deal. You do enough conference talks, you're gonna have some off days. The 40 or so folks in the room seemed to enjoy it, the NDC crew got the whole thing on video, as they always do, and then a month later the entire world turned upside-down and I completely forgot about.
 
-But... at some point during 2020, the YouTube algorithms found it and decided it was shiny, and started recommending it to people. Whatever those people did, it reinforced that algorithm, and it was recommended to more, and more, and more people. 100,000 views. 250,000. Half a million. A million. Right now it's 
+But... at some point during 2020, the YouTube algorithms found it and decided it was shiny, and started recommending it to people. Whatever those people did, it reinforced that algorithm, and it was recommended to more, and more, and more people. 100,000 views. 250,000. Half a million. A million. Right now it's on 1.4 million views. 
 
