@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/London
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/London
+X-LIC-LOCATION:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20201222T132845Z
+UID:20201222T132845Z-353555028@marudot.com
+DTSTART;TZID=Europe/London:20201227T190000
+DTEND;TZID=Europe/London:20201227T210000
+SUMMARY:Dylan's Holiday Party Stream
+URL:https://twitch.tv/dylanbeattie
+DESCRIPTION:Dylan's throwing a party on the internet! Music\, comedy\, daft nerd jokes\, cats\, and a whole lot of fun with greenscreens.\n\nTune in on https://twitch.tv/dylanbeattie or https://youtube.com/dylanbeattie\n\nSee you there!
+END:VEVENT
+END:VCALENDAR
