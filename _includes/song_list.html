@@ -3,7 +3,7 @@
   {% for song in songs %}
   <li>
     <a href="{{ song.url }}">
-      <img src="/images/parodies/{{ song.filename }}.jpg" />
+      <img class="do-not-autolink" src="/images/parodies/{{ song.filename }}.jpg" />
       <strong>{{ song.title }}</strong>
     </a>
   </li>
