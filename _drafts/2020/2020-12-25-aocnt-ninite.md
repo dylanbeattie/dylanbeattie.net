@@ -4,7 +4,7 @@ layout: advent2020
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2020-12-advent/cards/2020-12-25-aocnt-ninite.png
-  og_description: "Ninite: install all your favourite free Windows programs at once"
+  og_description: "Ninite is the one-click installer for all the stuff you need on your new PC."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2020-12-advent/
 typora-root-url: .\..\..
@@ -13,29 +13,20 @@ categories:
 tool:
     name: Ninite
     url: https://ninite.com/
-    summary: Ninite installs all your favourite free Windows programs at once.
+    summary: "Ninite is the one-click installer for all the stuff you need on your new PC."
 ---
 
-I'm sure I'm not the only person who's used the 2020 lockdowns and travel restrictions to justify buying a new computer. With everyone working from home all the time and portability just really not a thing at the moment, lots of folks have gone back to desktop PCs after working on laptops for many years - and after a year of installing every single video calling app under the sun and who knows how many "productivity tools", maybe the Christmas break is a good time to repave your PC and start 2021 with a nice fresh Windows install.
+Happy Christmas, friends! Have we saved the best for last? Well, I'll let you decide... we've had 24 days of fantastic tools, utilities, websites and apps.
 
-Of course, reinstalling means, well, reinstalling. All those apps you use every day without really thinking about it - 7-Zip for unzipping things, 
+In the first week of [#nerdvent](/nerdvent), we [resized windows with Sizer](https://dylanbeattie.net/advent2020/2020/12/01/aocnt-sizer.html), visualised hard drive space with [WinDirStat](https://dylanbeattie.net/advent2020/2020/12/02/aocnt-windirstat.html), turned our [iPhones into webcams using Camo](https://dylanbeattie.net/advent2020/2020/12/03/aocnt-camo.html), powered up Windows with the [X-Box Game Bar](https://dylanbeattie.net/advent2020/2020/12/04/aocnt-xbox-game-bar.html), kept on top of timezones with [WClock](https://dylanbeattie.net/advent2020/2020/12/05/aocnt-wclock.html), managed all our [social media apps with Franz](https://dylanbeattie.net/advent2020/2020/12/06/aocnt-franz.html), and tunnelled the internet to our [local machines with ngrok](https://dylanbeattie.net/advent2020/2020/12/07/aocnt-ngrok.html). Week 2 brought us [Instant Eyedropper](https://dylanbeattie.net/advent2020/2020/12/08/aocnt-instant-eyedropper.html), [PowerToys](https://dylanbeattie.net/advent2020/2020/12/09/aocnt-microsoft-powertoys.html) and the [Fira Code programming font](https://dylanbeattie.net/advent2020/2020/12/10/aocnt-fira-code.html); we edited [audio files with Audacity](https://dylanbeattie.net/advent2020/2020/12/11/aocnt-audacity.html), kept an eye on our systems with [Open Hardware Monitor](https://dylanbeattie.net/advent2020/2020/12/12/aocnt-open-hardware-monitor.html), jumped cacti and dodged pterodactyls with the [Chrome Dino Game](https://dylanbeattie.net/advent2020/2020/12/13/aocnt-chrome-dino-game.html), and wrote beautiful [Markdown documents with Typora](https://dylanbeattie.net/advent2020/2020/12/14/aocnt-typora.html). Week 3 we [got colourful with Paletton](https://dylanbeattie.net/advent2020/2020/12/15/aocnt-paletton.html), [compressed files with 7-Zip](https://dylanbeattie.net/advent2020/2020/12/16/aocnt-7-zip.html), made [beautiful images of source code with Carbon](https://dylanbeattie.net/advent2020/2020/12/17/aocnt-carbon.html), got [cracking with GitKraken](https://dylanbeattie.net/advent2020/2020/12/18/aocnt-gitkraken.html), got creative with [Canva and Unsplash](https://dylanbeattie.net/advent2020/2020/12/19/aocnt-canva-and-unsplash.html), [broadcast ourselves with OBS](https://dylanbeattie.net/advent2020/2020/12/20/aocnt-obs.html) and got our volume controls under control with [EarTrumpet](https://dylanbeattie.net/advent2020/2020/12/21/aocnt-eartrumpet.html). Finally, we met the incomparable [Beyond Compare](https://dylanbeattie.net/advent2020/2020/12/22/aocnt-beyond-compare.html), gave Windows a spring clean with [Autoruns](https://dylanbeattie.net/advent2020/2020/12/23/aocnt-autoruns.html), and tested our emails with [Mailtrap](https://dylanbeattie.net/advent2020/2020/12/24/aocnt-mailtrap.html). And yes, I did actually publish a blog post every day for 25 days. I'm as surprised as you are. Especially since I've also managed to do Advent of Code every single day as well, and stream it live on [Twitch](https://twitch.tv/dylanbeattie) and [YouTube](https://www.youtube.com/playlist?list=PLw0jj21rhfkNzudewWxn4HVobz8hB__Tm). 
+
+Anyway. It's Christmas! Let's meet the last awesome tool I'm going to write about for #nerdvent: [Ninite](https://ninite.com/). Ninite is amazing. Open the Ninite website, tick the apps you want, and it'll give you a single, bundled installer that will install all of them on your Windows PC, with sensible defaults, no spyware or bundled crap.
 
 
-Colour (or color, if you're an HTML parser, a .NET class specification or a human being from the United States of America) is complicated. Way complicated. I'm a pretty monotone kind of person - my clothes are black, my walls are white, most of my favourite foods are beige, and I'm still not entirely comfortable with the existence of green LEGO bricks.
 
-But colour matters. There's a wonderful infographic from [The Logo Company](https://thelogocompany.net/) called the [Color Emotion Guide](https://thelogocompany.net/blog/infographics/psychology-color-logo-design/), that illustrates how dozens of popular brands use colour to evoke particular emotions and connections when consumers look at their logos:
+![image-20201224015701170](/images/posts/2020-12-advent/image-20201224015701170.png)
 
-![Logo Color Psychology](https://thelogocompany.net/wp-content/uploads/2013/01/Color_Emotion_Guide221.png)
-
-When it comes to colour - and all sorts of aspects of visual design - I tend to group things into three categories. Category 1 is the things that just blow you away with how brilliant they are. Category 2 is the stuff you don't really notice. And category 3 is the things that are so awful you can't really ignore them. 
-
-If you want your projects to end up in category 1, find a brilliant designer, pay them, and trust them; if you want your projects to end up in category 3, let your database engineers design your user interface. But if you're happy sitting quietly in category 2, you can do a lot worse than learning some basic design principles, and then relying on tools that can help you avoid common mistakes.
-
-[Paletton](https://paletton.com/) is such a tool. It's an online tool for creating colour schemes, and it's delightfully simple; you pick a colour you like, and tell it how many complementary colours you'd like to go with it and what sort of generator to use, and it'll give you a palette. It'll generate pretty much any kind of scheme, from bold contrasting primary colours to subtle muted pastels, but it's based around mathematical colour models that should help you create usable colour schemes and avoid any horrible clashes and unpleasantness.
-
-![image-20201213010534428](/images/posts/2020-12-advent/image-20201213010534428.png)
-
-Formerly known as Color Scheme Designer, Paletton is online at [https://paletton.com/](https://paletton.com/). It's ad-supported, but it's much more usable with an ad blocker running, so hey, why not block the ads and throw them a few bucks via the Donate link if you find it useful? 
+When I'm setting up a new PC or reinstalling Windows, I use the default browser to get my Ninite installer, and Ninite does the rest. Web browsers, image editors, utilities, developer tools - in fact, quite a few of the tools I've written about over the last few months are available via Ninite, so why not check it out by using it to check them out?
 
 
 
