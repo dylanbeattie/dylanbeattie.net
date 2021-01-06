@@ -62,7 +62,7 @@ The output from this program should be:
 
 ```
 1
-260
+117
 ```
 
  and it should exit cleanly with the operating system return code (aka error level) `0`. The final `output 9` should NOT be executed.
