@@ -82,6 +82,23 @@ article {
   padding-bottom: 32px;
   border-bottom: 1px solid _palette(accent, bg);
   margin-bottom: 32px;
+  table {
+    font-size: 80%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    tr td, tr th {
+      border: 1px solid #000;
+      padding: 8px;
+      code {
+        font-family: monospace;
+      }
+      text-align: left;
+    }
+    tr th {
+      font-weight: bold;
+      background-color: lighten(_palette(fg-light), 25);
+    }
+  }
 }
 
 .clipboard-links {
