@@ -1,0 +1,31 @@
+FILENAME:	MF.INC
+AUTHOR:		Dylan Beattie
+EMAIL:		dmb197@ecs.soton.ac.uk
+DATE:		February 11, 1999
+
+MF.INC - Model description file for use with POV-Ray v3.1
+
+************************
+*** WORK IN PROGRESS ***
+************************
+
+This is one of those projects that got started and never got finished.
+
+It's a complete POV-Ray v3.0+ model of the Millenium Falcon, and visually
+it's probably about 90% there, but in terms of actual detail it's probably
+more like 60-70% complete. The missing details are things like the
+detail inside the access ports on the top and bottom of the ship - not 
+obvious unless you're looking closely or from a particular angle, but it
+should still be there. It was coded entirely by hand, from a large-scale
+plastic model kit, and since it's been knocking around in this nearly-
+completed state for over six months now, I thought I'd post the code
+to the web and see if anyone wanted to finish it off... The current form
+is usable from most angles, although you might see the odd missing detail
+here and there.
+
+Be warned, my code is probably almost unreadable - most #declared objects
+have logical names, but my use of CSGs and so on is uncommented.
+
+Good luck, and have fun.
+
+Dylan
