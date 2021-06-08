@@ -3,7 +3,7 @@ title: "Guru Meditation and Bad Error Messages"
 layout: post
 author: Dylan Beattie
 meta:
-  og_description: "Guru Mediation, the Fastly outage, and writing good error messages"
+  og_description: "Varnish, Guru Mediation, the Fastly outage - and the art of writing good error messages."
 typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
 ---

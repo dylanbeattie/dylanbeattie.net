@@ -61,5 +61,5 @@ defaults:
     values:
       meta:
         og_description: "An article from dylanbeattie.net"
-        og_image: /images/opengraph/summary.jpg
+        og_image: /images/opengraph/dylanbeattie-summary.jpg
         twitter_card: summary
