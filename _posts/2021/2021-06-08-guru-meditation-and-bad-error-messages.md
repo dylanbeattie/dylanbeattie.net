@@ -4,7 +4,6 @@ layout: post
 author: Dylan Beattie
 meta:
   og_description: "Guru Mediation, the Fastly outage, and writing good error messages"
-  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
 ---
