@@ -8,7 +8,7 @@ typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
 ---
 
-Today's [Fastly outage](https://www.theguardian.com/technology/2021/jun/08/massive-internet-outage-hits-websites-including-amazon-govuk-and-guardian-fastly) is a nice moment to reflect on the fact that developers are absolutely terrible at writing error messages. Earlier today, some of the biggest sites on the web were offline for about 15 minutes. The BBC, the New York Times, Reddit, the UK government. Visitors to those sites got a cryptic error message: 
+Today's [Fastly outage](https://www.theguardian.com/technology/2021/jun/08/massive-internet-outage-hits-websites-including-amazon-govuk-and-guardian-fastly) is a nice moment to reflect on the fact that developers are absolutely terrible at writing error messages. Earlier today, some of the biggest sites on the web were offline for nearly an hour, including the BBC, the New York Times, Reddit, Stack Overflow, GitHub, and many UK government sites. During the outage, visitors to those sites got a cryptic error message: 
 
 > **Error 503 Service Unavailable.** 
 >
