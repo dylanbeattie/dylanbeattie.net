@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2021-06-11-onyx-boox-note-air.jpg
-  og_description: "In which Dylan gets quite excited about the ONYX BOOX Note Air, an e-ink tablet running Android 10.0 that supports Bluetooth keyboards."
+  og_description: "In which Dylan gets quite excited about an e-ink tablet running Android 10.0 that supports Bluetooth keyboards."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
