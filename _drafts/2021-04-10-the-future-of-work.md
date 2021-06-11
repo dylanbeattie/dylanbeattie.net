@@ -11,3 +11,4 @@ typora-root-url: .\..\..
 ---
 
 I’ve been following lots of online discussions, articles and threads about the future of work and the whole question of remote vs onsite. Now, this is something I’ve been interested in for a long while. There have been periods in my career where I’ve 
+

@@ -16,7 +16,7 @@ Today's [Fastly outage](https://www.theguardian.com/technology/2021/jun/08/massi
 >
 > **Guru Mediation:** 
 >
-> Details: cache-lcy19240-LCY (and then a long, meaningless string of numbers)
+> Details: cache-lcy19240-LCY *(and then a long, meaningless string of numbers)*
 >
 > Varnish cache server
 
@@ -34,6 +34,8 @@ Now, a quick recap about how to write good error messages. It comes down to reme
 Now, let's talk about “503 Service Unavailable Guru Mediation.” That's a joke. No, really. To about a hundred people on the planet, that is incredibly funny, because “Guru Meditation” is what their old Amiga 500 used to say when something went badly wrong.
 
 Now today's outage was definitely caused by Fastly, but the actual error message is coming from [Varnish](https://varnish-cache.org/), an open-source software application that’s many organisations, including Fastly, to improve website performance. Varnish is really, really good, but... let's just say that “user friendly” wasn't on their list of requirements. Varnish is a high-performance HTTP caching proxy and URL rewriting engine. You configure it by writing rules in a domain-specific language, VCL, which is based on C (yes, that C). Those rules are compiled into a shared binary that runs as part of the Varnish network pipeline. It's an app built by nerds, for nerds, to do one specific thing, and do it as fast as possible - and it does that one thing very well indeed. But at some point, one of the Varnish developers had to make a decision: "hey, what should we return if something goes wrong?" – and they decided that the best thing to do would be to return an HTTP 503 error, and include a joke about Amigas *(although keen eyes will notice that the original “Guru Med**ita**tion” has actually changed to “Guru Med**ia**tion” in the Varnish error message. Cute.)*
+
+> UPDATE: It looks like the change from "meditation" to "mediation" isn't part of Varnish, it's part of Fastly. Somebody actually took the time to dig into the Varnish configuration they're running, find the Amiga joke, and change it to a slightly modified version of the Amiga joke. Some folks on Twitter hypothesised that this is so Fastly can tell the difference between a problem with their own Varnish stack and a problem with one of their customers' Varnish stacks, which kinda makes sense - but, hey, while they were in there, they could have, y'know, replaced it with something… helpful?
 
 This morning, I reckon about 100 million people probably saw that error message. I reckon less than 1% of them understood it, and of the 1% who understood it, probably 1% of those even realised it was a joke, let alone found it funny. The other 99 million people who saw it? Most of them probably freaked out a bit, because it looked like half of the internet had suddenly stopped working. 
 
