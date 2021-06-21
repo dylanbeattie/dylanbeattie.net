@@ -370,7 +370,7 @@ article {
     }
   }
 
-  iframe#youtube {
+  iframe#youtube, iframe.youtube {
     width: 640px;
     height: 360px;
     @include breakpoint("<=mobile") {

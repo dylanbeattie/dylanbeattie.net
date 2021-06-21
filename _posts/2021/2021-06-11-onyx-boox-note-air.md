@@ -21,7 +21,7 @@ Last week, after a particularly bright and sunny day which I spent indoors, with
 
 **Check out the full video review at [https://youtu.be/LaL8TQ-PzYs](https://youtu.be/LaL8TQ-PzYs) to see all the various features in action:**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/LaL8TQ-PzYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  class="youtube" width="640" height="360" src="https://www.youtube.com/embed/LaL8TQ-PzYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### TL;DR:
 

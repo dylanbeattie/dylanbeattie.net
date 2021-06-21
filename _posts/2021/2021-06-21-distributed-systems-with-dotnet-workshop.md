@@ -20,7 +20,7 @@ On July 6th and 7th, I'm running a [live online workshop with the folks from fwd
 
 Check out the video below for more info about what we'll be learning and how it all works.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/syRFvVt6k8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" width="640" height="360" src="https://www.youtube.com/embed/syRFvVt6k8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 It's a fully online workshop, using a combination of Zoom, Slack, and Visual Studio LiveShare; we'll discuss the principles and patterns involved in designing distributed systems, and then actually implement them so you can see how they work in practice. Attendees will implement their own services and endpoints, and by the end of the workshop we'll be running a live system, sending real requests and messages across the internet between us in real time to see how it all fits together.
 
