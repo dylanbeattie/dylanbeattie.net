@@ -3,8 +3,8 @@ title: "Java Criminally Underhyped? Not Back in 1997."
 layout: post
 author: Dylan Beattie
 meta:
-#  og_image: /images/posts/2021-07-01-back-to-the-office.jpg
-  og_description: "In which Dylan remembers the Olden Times, when Network Computers were going to take over the world and Java was the last programming language anybody would ever need."
+#  og_image: /images/posts/2021-07-01-.jpg
+  og_description: "A tale of the Olden Times, when Network Computers running Java applets were going to take over the world."
 #  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
