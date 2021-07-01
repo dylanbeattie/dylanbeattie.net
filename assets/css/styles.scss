@@ -76,6 +76,15 @@ article {
     padding: 1rem;
     margin-bottom: 1rem;
   }
+
+  div.footnotes {
+    ol {
+      li {
+        font-size: 80%;
+      }
+    }
+  }
+
   img {
     max-width: 100%;
   }
@@ -459,3 +468,4 @@ dl.crossword-solutions {
     background-color: #ff9;
   }
 }
+
