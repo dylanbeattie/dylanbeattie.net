@@ -1,6 +1,7 @@
 ---
 slug: the-web-that-never-was
 title: The Web That Never Was
+year: 2015
 description: |
   The story of the web is a story about freedom. It's a story about information, breaking down barriers, and creating new ways for people to communicate, collaborate and share their ideas. It’s also a story that has as much do with marketing, money and meetings as it does with research and innovation. It’s a story of mediocre ideas that succeeded where brilliant ideas failed, a story of compromises, rushed deadlines and last-minute decisions. And it could so easily have been very, very different.
 

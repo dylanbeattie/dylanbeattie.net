@@ -1,6 +1,7 @@
 ---
 slug: real-world-rest
 title: Real-world ReST and Hands-on Hypermedia
+year: 2015
 description: |
   So you've built your HTTP API, and now that it's live, you're suddenly dealing with a whole new set of problems. Do you really need to PUT the entire customer object just to change someone's email address? Why does it take you 25 API calls just to render a shopping cart? How do you find the bottlenecks when just drawing a web page requires 50 HTTP requests? What happens when one of your API consumers accidentally tries to GET your entire customer database?
 
