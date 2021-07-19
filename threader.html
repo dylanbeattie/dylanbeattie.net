@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Twitter Threader</title>
+<style>
+h1 {
+font-size: 16px;
+	margin: 0;
+}
+p {
+position: absolute;
+right: 8px;
+top: 8px;
+margin: 0;
+}
+div {
+	position: absolute;
+	left: 8px;
+	right: 8px;
+	top: 32px;
+	bottom: 64px;
+}
+textarea {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	font-family: "Trebuchet MS", Verdana, Arial, helvetica, sans-serif;
+	line-height: 1.4em;
+	padding: 8px;
+}
+span.under {
+	color: #999;
+}
+span.exact {
+	color: #3f3;
+	font-weight: bold;
+}
+span.over {
+color: #900;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Twitter Threader</h1>
+<p>Character counts per paragraph:
+<span id="counts"></span>
+</p>
+<div>
+<textarea>
+</textarea>
+</div>
+<script>
+const COOKIE_NAME = "threader";
+
+document.addEventListener('DOMContentLoaded', _ => document.querySelector("textarea").innerText = loadCookie("threader"));
+
+document.querySelector("textarea").addEventListener("keyup", handleTextareaKeyUp);
+
+function handleTextareaKeyUp(e) {
+	var text = e.target.value;
+	var lines = text.replace(/\r/, '').split(/\n\n+/);
+	var counts = lines.map(l => l.length);
+	var labels = counts.map(c => {
+		if (c < 280) return(`<span class='under'>${c}</span>`);
+		if (c == 280) return(`<span class='exact'>${c}</span>`);
+		return(`<span class='over'>${c}</span>`);
+	});
+	var output = labels.join(" / ");
+	document.querySelector("#counts").innerHTML = output;
+	saveCookie(text);
+}
+
+function saveCookie(value) {
+	console.log(`${COOKIE_NAME}=${encodeURIComponent(value)};expires=Sat, 02 Mar 2222 00:00:00 GMT;path=/`);
+	document.cookie = `${COOKIE_NAME}=${encodeURIComponent(value)};expires=Sat, 02 Mar 2222 00:00:00 GMT;path=/`;
+}
+
+function loadCookie() {
+	let tokens = decodeURIComponent(document.cookie).split(';');
+	for(let i = 0; i < tokens.length; i++) {
+		let token = tokens[i];
+		while (token.charAt(0) == ' ') token = token.substring(1);
+		if (token.indexOf(COOKIE_NAME) == 0) return decodeURIComponent(token.substring(COOKIE_NAME.length+1, token.length));
+	}
+	return("");
+}
+
+</script>
+</body>
+</html>

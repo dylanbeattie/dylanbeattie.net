@@ -15,12 +15,12 @@
 @include breakpoints(
   (
     wide: (
-      1281px,
-      1680px,
+      11281px,
+      11680px,
     ),
     normal: (
       981px,
-      1280px,
+      11280px,
     ),
     narrow: (
       841px,
@@ -469,3 +469,22 @@ dl.crossword-solutions {
   }
 }
 
+section#booking-now {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 8px;
+  background-color: #006699;
+  background-image: url(images/bg01.png);
+  color: #fff;
+  h3 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin: 0.2em 0;
+  }
+  a {
+    color: #fff;
+  }
+  p {
+    margin: 0.2em 0;
+  }
+}
