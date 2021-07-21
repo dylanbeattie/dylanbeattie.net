@@ -36,7 +36,7 @@ Of course, to a particular subset of the population, the very idea that offices 
 
 No, I don't think hybrid is going to work; I think companies will gravitate towards one extreme or another. I believe the only truly sustainable models are fully onsite, or fully remote, because I fundamentally think those two working models aren't just about physical space; they're about how teams communicate, collaborate, solve problems, and that the majority of knowledge workers will naturally gravitate towards one or the other of those styles.
 
-I've 
+What remains to be seen is whether 
 
 
 
