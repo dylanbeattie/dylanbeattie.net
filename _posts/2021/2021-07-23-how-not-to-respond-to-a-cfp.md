@@ -16,31 +16,33 @@ Many big technology conferences hold an open CFP[^1], and competition for speaki
 
 That said, there are some very common factors among the talks that **don't** get accepted, so rather than telling you how to write a proposal, I'm going to share some tips about what **not** to do.
 
-[^1]: CFP stands for "call for papers", a term we've adopted from academic conferences where presentations are usually based on scientific papers published in academic journals. I've also seen it retconned as "call for proposals" or "call for presentations", but really everybody just calls them CFPs without worrying too much about what it stands for.
+[^1]: CFP stands for “call for papers”, a term we've adopted from academic conferences where presentations are usually based on scientific papers published in academic journals. I've also seen it retconned as “call for proposals” or “call for presentations”, but really everybody just calls them CFPs without worrying too much about what it stands for.
 
 ### 1. Too short
 
-There's a particular kind of Hollywood action movie that can be perfectly described in fewer than ten words. "*Die Hard* on a bus", "*The Matrix*, but with vampires", "Gangsters killed his dog… now he wants revenge."
+There's a particular kind of Hollywood action movie that can be perfectly described in fewer than ten words.  “*Die Hard* on a bus”,  “*The Matrix*, but with vampires”,  “Gangsters killed his dog… now he wants revenge.”
 
-Well, dear readers, this isn't Hollywood, and if you want to get your talks accepted, you'll need to work a little harder than that. I have reviewed submissions before where the entire talk description was “this is a talk about blockchain”. Literally six words. No event is going to offer you a speaking spot –  let alone cover hotel and airfare – based on a six word pitch. (*Especially* if the only one of those words that's remotely related to technology is "blockchain")
+Well, dear readers, this isn't Hollywood, and if you want to get your talks accepted, you'll need to work a little harder than that. I have reviewed submissions before where the entire talk description was “this is a talk about blockchain”. Literally six words. No event is going to offer you a speaking spot –  let alone cover hotel and airfare – based on a six word pitch. (*Especially* if the only one of those words that's remotely related to technology is “blockchain”)
 
 A good proposal should probably be around 200-400 words; long enough that you can establish some context, tell us a bit about who you are and what you're talking about, and give the audience some idea what they can expect to see if they come to your talk.
 
 ### 2. Too long
 
-At the other extreme are the essay submissions. You don't see too many of these in the wild, because most events use platforms like Sessionize that can impose a character limit on the talk description, but I've seen proposals that read like somebody pasted an entire blog posts into the submission form. Save the detail for the talk itself (or, hey – publish a blog post instead? After all, you've already written most of it!) – but when it comes to a CfP, it's all about striking a balance between brevity and detail .
+At the other extreme are the essay submissions. You don't see too many of these in the wild, because most events use platforms like Sessionize that can impose a character limit on the talk description, but I've seen proposals that looked like somebody had pasted an entire blog post into the submission form. Save the detail for the talk itself (or, y'know, publish a blog post?) – because when it comes to responding to the CFP, it is all about striking a balance between brevity and detail.
 
 ### 3. Nothing special
 
 > **“In this talk I will show you how to get started with machine learning in Python”.** 
 
-OK, great… but what would somebody get from attending this talk that they can't find on the web, or by watching YouTube videos? Are you a key contributor to an open-source project in that area? Have you or your team used that technology to do something particularly unusual or innovative? Is there something interesting about how you personally got involved with machine learning in Python? If the answer to all these questions is "no", your submission will probably be rejected in favour of something that offers more in the way of perspective and personality. 
+OK, great subject, interesting topic, and very relevant to a lot of folks working in tech. 
+
+Ask yourself: what would somebody get from attending this talk that they can't find on the web, or by watching YouTube videos? Are you a key contributor to an open-source project in that area? Have you or your team used that technology to do something particularly unusual or innovative? Is there something interesting about how you personally got involved with machine learning in Python? If the answer to all these questions is “no”, your submission will probably be rejected in favour of something that offers more in the way of perspective and personality. 
 
 There's another saying in Hollywood that a successful director's first movie is always a movie that nobody else could have made. Think about your talks the same way; try to pitch something that nobody else could do.
 
 ### 4. Sales pitch
 
-Also known as the "single vendor solution talk", programme committees can smell these a mile away:
+Also known as the “single vendor solution talk”, programme committees can smell these a mile away:
 
 >  **“GDPR is hard! In this talk, Bob will explain how OmniCorp DataMulch 3.0 will solve all your organisation's data management headaches”**
 
@@ -59,7 +61,7 @@ As a native English speaker, I'm acutely aware that many of the brightest people
 
 In a perfect world, you'd follow up on every one of these - “hey, did you mean Angular, the popular Java***Script*** framework?” – but when a programme committee is trying to pick 75 talks out of 980 submissions, those kinds of errors indicate a lack of care on behalf of the person writing the proposal, and are often enough to justify an immediate rejection.
 
-Finally, read through your submission and check it makes sense. I've seen proposals where I'm guessing somebody edited something for length, and removed a key sentence or phrase, leaving an abstract that really didn't make a huge amount of sense. Careless editing can leave you with a proposal like: "machine learning is revolutionising the world of financial analysis. In this talk, we'll look at how you can use FoobarJS to streamline your deployments." OK, fine – but what does FoobarJS and deployments have to do with machine learning or financial analysis?
+Finally, read through your submission and check it makes sense. I've seen proposals where I'm guessing somebody edited something for length, and removed a key sentence or phrase, leaving an abstract that really didn't make a huge amount of sense. Careless editing can leave you with a proposal like: “machine learning is revolutionising the world of financial analysis. In this talk, we'll look at how you can use FoobarJS to streamline your deployments.” OK, fine – but what does FoobarJS and deployments have to do with machine learning or financial analysis?
 
 ### 7. Lazy copy/pasting
 
@@ -71,13 +73,13 @@ When you're submitting an existing talk to a new event, though, make sure you ch
 
 ### 8. Too generic
 
-You want to present "Introduction to Python" in half-an-hour? Good luck. That's just about long enough to explain that Python exists, it's a programming language, it comes in version 2 and version 3, and they're different because… oh my goodness look at that, we're just about out of time.
+You want to present “Introduction to Python” in half-an-hour? Good luck. That's just about long enough to explain that Python exists, it's a programming language, it comes in version 2 and version 3, and they're different because… oh my goodness look at that, we're just about out of time.
 
 That's not to say you can't present broad intro-level talks – but your CFP submission needs to make it very clear what your angle is. Show the committee you've thought about who’s likely to be in the audience, what level of knowledge and experience you’re expecting them to have prior to your session, and exactly what it is that they can expect to learn by the end of your presentation.
 
 ### 9. Too specific
 
-At the other extreme from the "introduction to Python" are the talks that aren't likely to attract any audience because they're only relevant to a handful of developers working in a very specialist area. You may be the world's foremost expert on aspect-oriented programming in Object COBOL, but face it, if you drew a Venn diagram of people who are interested in AOP and people who are interested in Object COBOL, you'd probably end up with two very small circles, and the only person on the overlap is you. 
+At the other extreme from the “introduction to Python” are the talks that aren't likely to attract any audience because they're only relevant to a handful of developers working in a very specialist area. You may be the world's foremost expert on aspect-oriented programming in Object COBOL, but face it, if you drew a Venn diagram of people who are interested in AOP and people who are interested in Object COBOL, you'd probably end up with two very small circles, and the only person on the overlap is you. 
 
 If you're submitting to an AOP conference, or an event that has an Object COBOL track, then hey, you might be in with a shot. But for events that target a broader audience, this kind of extremely specialist topic is likely to be rejected in favour of something that’s relevant to more of the audience.
 
