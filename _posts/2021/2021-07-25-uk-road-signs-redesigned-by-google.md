@@ -3,7 +3,7 @@ title: "UK Road Signs (Redesigned by Google)"
 layout: post
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/uk-road-signs-redesigned-by-google-social-media-banner1600.jpg
+  og_image: /images/posts/uk-road-signs-redesigned-by-google-social-media-banner1600.png
   og_description: "What if the Google Apps team redesigned UK road signs?"
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2021/
