@@ -14,5 +14,4 @@ Last year, Google redesigned the icons used for many of their web and mobile app
 
 What if [UK road signs](https://www.gov.uk/guidance/the-highway-code/traffic-signs) were redesigned by the Google Workspace team?
 
-![uk-road-signs-redesigned-by-google1600](/images/posts/2021/uk-road-signs-redesigned-by-google1600.png)
-
+<img src="/images/posts/uk-road-signs-redesigned-by-google-1600px.png" class="screenshot do-not-autolink" alt="A mockup showing how five UK road signs might look if redesigned to reflect Google Workspace design conventions." />
