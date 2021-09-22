@@ -12,7 +12,11 @@ layout: default
 							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<h1>{{ page.title }}</h1>
+					{% if page.original_song %}
 					<p>Music: "{{ page.original_song }}" by {{ page.original_artist }} / &copy {{ page.original_copyright }}</p>
+					{% else %}
+					<p>Copyright &copy {{ page.original_copyright }}</p>
+					{% endif %}
 					{{ content }}
 				</div>
 			</div>

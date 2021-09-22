@@ -1,10 +1,10 @@
 ---
-title: "Modelling reactions to a post with REST"
+title: ""
 layout: post
 author: Dylan Beattie
 meta:
 #  og_image: /images/posts/2021-07-21-how-not-to-respond-to-a-cfp.jpg
-  og_description: "Modelling reactions to a social media post using REST"
+#  og_description: "Modelling reactions to a social media post using REST"
 #  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2021/
 typora-root-url: .\..\..
@@ -36,9 +36,7 @@ So picking apart this:
 
 What does that actually mean – and what happens if you call it multiple times?
 
-One of the reasons I like REST as an architectural style is that, much like test-driven development, if you find yourself struggling with something it's often a sign that your underlying design isn't quite right.
-
-
+One of the reasons I like REST as an architectural style is that, like test-driven development, it often 
 
 
 
