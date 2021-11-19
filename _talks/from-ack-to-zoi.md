@@ -1,5 +1,5 @@
 ---
-slug: friends-facts-facetime
+slug: from-ack-to-zoi
 year: 2021
 title: "From ACK to ZOI: The Story of Software in Three Letter Acronyms"
 description: |
