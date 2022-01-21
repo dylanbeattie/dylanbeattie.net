@@ -1,3 +1,50 @@
+- title: NDC Porto 
+  date: 25-29 April 2022
+  url: https://ndcporto.com/speakers/dylan-beattie
+  city: Porto, Portugal
+  country: pt
+
+- title: JFokus
+  date: 3-4 May 2022
+  url: https://www.jfokus.se/speakers/13586
+  city: Stockholm, Sweden
+  country: se
+
+- title: NDC London
+  date: 9-13 May 2022
+  url: https://ndclondon.com/speakers/dylan-beattie
+  city: London, UK
+  country: gb
+
+- title: CodeCamp Festival
+  date: 19 May 2022
+  url: https://codecamp.ro/the-festival/
+  city: Bucharest, Romania
+  country: ro
+
+# - title: ITKonekt TBC
+#   date: 21 May 2022
+#   city: Belgrade, Serbia
+#   country: rs
+
+# - title: CityJS
+#   date: 27 May 2022
+#   url: https://greece.cityjsconf.org
+#   city: Athens, Greece
+#   country: gr
+
+- title: NDC Copenhagen
+  date: 30 May - 2 June 2022
+  url: https://ndccopenhagen.com/speakers/dylan-beattie
+  city: Copenhagen, Denmark
+  country: dk
+
+- title: NDC Oslo
+  date: 26-30 September 2022
+  url: https://ndcoslo.com/
+  city: Oslo, Norway
+  country: "no"
+
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020
 #   url: https://www.buildstuff.events/from-keyboard-to-keynote

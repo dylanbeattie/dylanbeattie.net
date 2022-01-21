@@ -1,6 +1,12 @@
 <div class="schedule">
   {% for e in site.data.schedule %}
-  <p class="flag-{{ e.country }}"><a href="{{ e.url }}">{{ e.title}}</a><br />
-    {{e.date}}<br />{{ e.city }}</p>
+  <p class="flag-{{ e.country }}">
+    {% if e.url %}
+    <a href="{{ e.url }}">{{ e.title}}</a><br />
+    {% else %}
+    <a>{{ e.title}}</a><br />
+    {% endif %}
+    {{e.date}}<br />{{ e.city }}
+  </p>
   {% endfor %}
 </div>
