@@ -37,6 +37,13 @@ Anyway. Here's how it all works. You'll need to register your app in the **App r
 
 The `ClientId` there is the `Application (client) Id` from the Azure dashboard.
 
+Install the NuGet packages for the `Microsoft.Identity.Web` middleware:
+
+```bash
+dotnet add package Microsoft.Identity.Web
+dotnet add package Microsoft.Identity.Web.UI
+```
+
 Then we need to add a few things to our `Startup.cs`:
 
 Define a string constant for the **policy name**, and another one for the **authorised domain**:
