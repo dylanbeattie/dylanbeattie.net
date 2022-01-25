@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2022-01-25-securing-admin-pages-with-aspnet-and-azure-ad.png
-  og_description: "Using Azure OpenID Connect to secure the admin area of a public website using ASP.NET Core"
+  og_description: "How to use ASP.NET Core and Azure OpenID Connect to secure the admin area of a public website and restrict access based on an authenticated user's email domain."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
