@@ -4,15 +4,15 @@ layout: post
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2022-01-25-securing-admin-pages-with-aspnet-and-azure-ad.png
-  og_description: "Using Azure OpenID Connect to lock down the admin area of a public website using ASP.NET Core 3.1"
-  # twitter_card: summary_large_image
+  og_description: "Using Azure OpenID Connect to secure the admin area of a public website using ASP.NET Core"
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 
 
 ---
 
-I recently had to implement an authentication pattern which I must have built a dozen times over the course of my career, on everything from classic ASP to Ruby. This time around it's in ASP.NET Core on .NET Core 3.1, and although all the individual components are easy enough to plug in, I couldn't find a resource describing how to implement this exact use case, so here's how I did it.
+I recently had to implement an authentication pattern which I must have built a dozen times over the course of my career, on various platforms ranging from classic ASP to Ruby on Rails. This time around it's in ASP.NET Core on .NET Core 3.1, and although all the individual components are easy enough to plug in, I couldn't find a resource describing how to implement this exact use case, so here's how I did it.
 
 #### The Scenario
 
