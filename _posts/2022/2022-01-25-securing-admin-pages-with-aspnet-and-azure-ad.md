@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2022/2022-01-25-securing-admin-pages-with-aspnet-and-azure-ad.png
-  og_description: "How to use ASP.NET Core and Azure OpenID Connect to secure the admin area of a public website and restrict access based on an authenticated user's email domain."
+  og_description: "Using ASP.NET Core and Azure OpenID Connect to restrict access to admin features based on an authenticated user's email domain."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
@@ -217,4 +217,6 @@ It'd be nice to replace this with something that explains only people with @exam
 
 I also have no idea yet how you go about testing this - this sort of federated authentication is very much in the "sufficiently advanced technology and therefore indistinguishable from magic" category, and security has always been hard to test even when it doesn't involve exchanging encrypted tokens with Actual Microsoft Infrastructure. 
 
-But, hey, it works, and only adds a few lines of code.
+But, hey, it works, and only adds a few lines of code. I'm quite happy with that – and the fact that all the authentication, password resets, locked accounts, setting up accounts for new users is all running on somebody else's stack?
+
+That, my friends, is what we call progress.
