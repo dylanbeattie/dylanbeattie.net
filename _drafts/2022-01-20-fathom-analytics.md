@@ -11,7 +11,7 @@ typora-root-url: .\..\..
 
 ---
 
-I run about of websites. There's this one, dylanbeattie.net, which has existed in various forms since 2002 and has been hosted 
+I run a bunch of websites. 
 
 The plan:
 
