@@ -8,8 +8,6 @@ meta:
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
-
-
 ---
 
 I recently had to implement an authentication pattern which I must have built a dozen times over the course of my career, on various platforms ranging from classic ASP to Ruby on Rails. This time around it's in ASP.NET Core on .NET Core 3.1, and although all the individual components are easy enough to plug in, I couldn't find a resource describing how to implement this exact use case, so here's how I did it.
@@ -105,11 +103,18 @@ public static class AuthorizationPolicyExtensions {
 
 > ℹ️ Notice that we're prepending an @-sign here. If we omitted this, you could sign in by registering a domain like `fakeexample.com` and setting up a Microsoft login using that domain, because `"script.kiddie@fakeexample.com".EndsWith("example.com")` will return true. 
 
-Finally, map a controller route for our secure area, and include the authorization policy:
+Finally, in the `Configure` method, we need to make sure the app is using both authentication and authorisation *(as an aside, don't you love how clear this syntax is?)*
+
+```csharp
+app.UseAuthentication();
+app.UseAuthorization();
+```
+
+And then map a controller route for our secure area, which includes the authorization policy:
 
 ```csharp
 app.UseEndpoints(endpoints => {
-
+    
     endpoints.MapControllerRoute("secure", 
         "{area:exists}/{controller=Home}/{action=Index}/{id?}")
         .RequireAuthorization(EMPLOYEES_ONLY_POLICY);
