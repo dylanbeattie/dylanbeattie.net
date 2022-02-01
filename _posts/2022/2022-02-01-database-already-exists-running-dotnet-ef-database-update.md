@@ -42,7 +42,7 @@ I recreated the database user linked to the login (and added them to the `db_own
 ```sql
 USE [my-database]
 GO
-CREATE USER [my-user] FOR LOGIN [my-user] WITH DEFAULT_SCHEMA=[db_owner]
+CREATE USER [my-user] FOR LOGIN [my-user] WITH DEFAULT_SCHEMA=[dbo]
 GO
 USE [my-database]
 GO
