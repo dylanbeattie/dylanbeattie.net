@@ -3,9 +3,9 @@ title: "'The Art of Code' Workshops with fwdays to support Ukraine"
 layout: post
 author: Dylan Beattie
 meta:
-  # og_image: /images/posts/2022/2022-04-02-the-art-of-code-workshops-with-fwdays.png
+  og_image: /images/posts/2022/2022-04-02-the-art-of-code-workshops-with-fwdays.png
   og_description: "I'm running a series of online workshops about creative coding, based on ideas from my talk “The Art of Code”, with all profits going to support Ukraine."
-  # twitter_card: summary_large_image
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 ---
