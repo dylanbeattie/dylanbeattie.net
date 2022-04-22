@@ -16,7 +16,7 @@ I'm working on a couple of new talks at the moment, and thought people might be 
 
 All my talks start life as a written transcript. I speak at 1,000 characters per minute, so for a 1-hour talk, that's about 60,000 characters -- between 10,000 and 12,000 words. But the first draft of a talk is normally more like 15,000-20,000 words, because this is where I throw absolutely everything at the wall to see what sticks. All the ideas, all the stories, everything that's been rattling around in my brain or my Evernote library since I started thinking about writing the talk.
 
-Once I've got everything drafted, I edit, edit, and edit again. I move things around, figure out how to connect the sections so the talk flows properly, and then go through and edit out the bombadil until I have something about the right length which I think hangs together nicely.
+Once I've got everything drafted, I edit, edit, and edit again. I move things around, figure out how to connect the sections so the talk flows properly, and then go through and edit out the [bombadil](https://twitter.com/dylanbeattie/status/1515650147119779850) until I have something about the right length which I think hangs together nicely.
 
 > Good morning, everybody! I'm Dylan, and I'm here today to talk to you about yak shaving. You're probably wondering what yak shaving is. Well... you know that thing where you need to do something really, really trivial? Like changing the year from 2021 to 2022 in the copyright footer on your website... shouldn't be a big deal, right? So you check out the code, and change it, and commit the change, and then you go to deploy it to production and discover that the SSL certificate used by your deployment pipeline has expired. So you roll a new certificate... but you can't install the new key onto the production server because your user account doesn't have permission to do that. So you try to sudo onto the box, but you don't know the root password, and the only person who does know it is backpacking in the Cordillera Huayhuash until March, so the only way to get it live is to physically log onto the server in recovery mode, but nobody's been into the server room for so long that the lock on the door has rusted shut, so you go to the hardware store and get some WD40, and you squirt it into the lock, and whack it a few times with a hammer to try and loosen it up... and somebody walks past and sees you attacking the server room door lock with a hammer and asks what you're doing, and you reply "CAN'T YOU SEE I'M TRYING TO UPDATE THE COPYRIGHT FOOTER ON THE WEBSITE?"
 >
@@ -38,7 +38,7 @@ I save that as a text file.
 
 I have a PowerPoint template that contains my preferred fonts and colour scheme -- and which also contains a VBA macro I wrote, which will take the transcript TXT file and turn it into a slide deck. It'll put the slide marker text as the headline on each slide, and put the relevant chunk of the transcript into the slide notes area:
 
-```visual basic
+```visualbasic
 Public Sub BuildSlideDeckFromTranscript()
     Dim filePath As String
     Dim contents As String
