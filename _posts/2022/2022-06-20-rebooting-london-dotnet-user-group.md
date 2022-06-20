@@ -5,7 +5,7 @@ author: Dylan Beattie
 meta:
   og_image: /images/posts/2022/2022-06-20-rebooting-london-dotnet-user-group.png
   og_description: "The London .NET User Group is back! Find out who we are, what we're doing, and how you can get involved."
-  # twitter_card: summary_large_image
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 ---
