@@ -3,7 +3,7 @@ title: "Rebooting the London .NET User Group"
 layout: post
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2022/2022-06-20-rebooting-london-dotnet-user-group.png
+  og_image: /images/posts/2022/2022-06-20-rebooting-ldnug.jpg
   og_description: "The London .NET User Group is back! Find out who we are, what we're doing, and how you can get involved."
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
