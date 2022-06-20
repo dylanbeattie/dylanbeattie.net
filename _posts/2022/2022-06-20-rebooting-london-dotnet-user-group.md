@@ -68,8 +68,6 @@ We'll also ask you to provide refreshments: water, tea, coffee, soft drinks and 
 
 If that all sounds like something you're interested in, drop us an email and let's work something out. We aim to schedule events at least three months in advance.
 
-When it sht e
-
 ### Where do I find out more?
 
 All our events are announced via our Meetup group:
