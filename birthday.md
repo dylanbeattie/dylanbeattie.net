@@ -19,7 +19,7 @@ layout: birthday
       or sing, let me know and I'll try to make it happen.
     </dd>
     <dt>Do I need to bring anything?</dt>
-    <dd>Just your favourite plectrum. I'll provide guitars, bass, backline, mics... all the things.</dd>
+    <dd>Just your favourite plectrum. I'll provide guitars, bass, backline, mics... all the things. (See the <a href="#gear-list">gear list</a> if you need to know what'll be there!</dd>
     <dt>I can just turn up and play? I don't need to lug my guitar along?</dt>
     <dd>Yes.</dd>
     <dt>Can I bring my guitar anyway?</dt>
