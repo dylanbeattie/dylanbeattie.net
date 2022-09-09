@@ -45,23 +45,23 @@
 #   city: Copenhagen, Denmark
 #   country: dk
 
-- title: Tweakers Summit
-  date: 23 June 2022
-  url: https://tweakers.net/partners/devsummit2022/
-  city: Utrecht, Netherlands
-  country: nl
+# - title: Tweakers Summit
+#   date: 23 June 2022
+#   url: https://tweakers.net/partners/devsummit2022/
+#   city: Utrecht, Netherlands
+#   country: nl
 
-- title: Azure Lowlands
-  date: 30 June 2022
-  url: https://azurelowlands.com
-  city: Utrecht, Netherlands
-  country: nl
+# - title: Azure Lowlands
+#   date: 30 June 2022
+#   url: https://azurelowlands.com
+#   city: Utrecht, Netherlands
+#   country: nl
 
-- title: FullStack eXchange
-  date: 25-28 July 2022
-  url: https://skillsmatter.com/conferences/13770-fullstack-exchange-2022
-  city: London, UK
-  country: gb
+# - title: FullStack eXchange
+#   date: 25-28 July 2022
+#   url: https://skillsmatter.com/conferences/13770-fullstack-exchange-2022
+#   city: London, UK
+#   country: gb
 
 - title: DevConf 2022
   date: 31 August - 2 September 2022
