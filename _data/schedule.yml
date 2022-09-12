@@ -81,12 +81,30 @@
   city: Oslo, Norway
   country: "no"
 
+- title: Techorama NL
+  date: 10-12 October 2022
+  url: https://www.techorama.nl/
+  city: Utrecht, Netherlands
+  country: nl
+
+- title: Devoxx
+  date: 12-14 October 2022
+  city: Antwerp, Belgium
+  country: be
+  url: https://devoxx.be/
+
 - title: BuildStuff
   date: 9-11 November 2022
   url: https://www.buildstuff.events
   city: Vilnius, Lithuania
   country: lt
 
+- title: Modern Frontends Live
+  date: 15-18 November 2022
+  url: https://www.modernfrontends.live/
+  city: London, UK
+  country: gb
+  
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020
 #   url: https://www.buildstuff.events/from-keyboard-to-keynote
