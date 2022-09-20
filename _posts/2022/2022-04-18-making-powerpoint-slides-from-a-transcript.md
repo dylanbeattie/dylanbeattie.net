@@ -48,7 +48,8 @@ Public Sub BuildSlideDeckFromTranscript()
     contents = ReadUtf8TextFile(filePath)
     
     Dim slideTexts As Variant
-    slideTexts = Split(contents, "[SLIDE: ")
+    ' vbTextCompare indicates case-insensitive string comparison
+    slideTexts = Split(contents, "[SLIDE: ", , vbTextCompare)
     slideCount = UBound(slideTexts, 1)
     If slideCount <= 0 Then
         MsgBox ("I didn't find any slide markers in that file.")
