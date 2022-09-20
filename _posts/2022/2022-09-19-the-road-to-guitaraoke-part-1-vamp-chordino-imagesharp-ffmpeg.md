@@ -146,7 +146,7 @@ static IEnumerable<IVideoFrame> CreateFramesSD(int count, int width, int height,
         var time = frame * SPF;
         using Image<Rgba32> image = new(width, height, Color.Transparent);
         image.Mutate(x => x
-			.Fill(options, transBlack, new RectangularPolygon(0, chordBarTop, width, chordBarHeight))
+            .Fill(options, transBlack, new RectangularPolygon(0, chordBarTop, width, chordBarHeight))
         );
         var lastChord = String.Empty;
         foreach (var chord in chords) {
@@ -162,9 +162,9 @@ static IEnumerable<IVideoFrame> CreateFramesSD(int count, int width, int height,
             image.Mutate(x => x.DrawText(chord.PrettyName, font, Color.White, point));
         }
         image.Mutate(x => x
-			.Fill(options, transRed, new RectangularPolygon(0, chordBarTop, playheadPosition, chordBarHeight))
-			.Fill(options, white, new RectangularPolygon(playheadPosition - 2f, chordBarTop, 4, chordBarHeight))
-		);
+            .Fill(options, transRed, new RectangularPolygon(0, chordBarTop, playheadPosition, chordBarHeight))
+            .Fill(options, white, new RectangularPolygon(playheadPosition - 2f, chordBarTop, 4, chordBarHeight))
+        );
         using ImageVideoFrameWrapper<Rgba32> wrapper = new(image);
         yield return wrapper;
     }
