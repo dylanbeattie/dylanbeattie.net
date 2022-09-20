@@ -10,7 +10,9 @@ typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 ---
 
-One of my side projects at the moment is running a monthly karaoke night at my local brewery tap, the awesome Ignition Brewery in Sydenham -- but it's karaoke with a twist.[![guitaraoke-social-media-banner](/images/posts/2022/guitaraoke-social-media-banner.jpg)](https://guitaraoke.live/)
+One of my side projects at the moment is running a monthly karaoke night at my local brewery tap, the awesome Ignition Brewery in Sydenham -- but it's karaoke with a twist.
+
+[<img src="/images/posts/2022/guitaraoke-social-media-banner.jpg" alt="guitaraoke-social-media-banner" style="zoom:50%;" />](https://guitaraoke.live/)
 
 As well as singing, you can get up and play guitar or bass; instruments and backline are provided, and I've created 5-channel mixes of all the backing tracks so we can fade out specific instruments if somebody wants to play them live.
 
@@ -220,7 +222,7 @@ public class ImageVideoFrameWrapper<T> : IVideoFrame, IDisposable where T : unma
 
 That'll spit out a `.webm` video file.  The final step is to composite this video onto the original backing video, which is another job for `ffmpeg`:
 
-```yaml
+```bash
 ffmpeg
 		# input file #0:
 		-i original.mp4
@@ -240,7 +242,7 @@ ffmpeg
 
 That'll produce `composite.mp4`, which is the original backing video with the transparent chord overlay composited onto the top of it. It's also a 4-minute video I don't have permission to publish online, with a 5.1 surround sound mix that's going to sound really weird unless you're running it through the right audio gear, so just for all you folks following along at home, I ran it through `ffmpeg` one more time:
 
-```yaml
+```bash
 ffmpeg 
 	# input file: 
 	-i .\composite.mp4 
@@ -270,6 +272,6 @@ That'll produce a 30-second clip, in regular stereo, which I've uploaded to YouT
 
 That's a pretty convincing proof of concept... but there's a world of difference between doing it once, with one clip, and being able to churn out the 50+ tracks you need to actually run a karaoke night. So next steps are to add beat detection, so I can quantise the timing of the chord changes to land on the beat exactly. Not essential, but nice to have.
 
-I also need to automate the various steps - video > WAV > chords > overlay > composite - so I can churn this thing across a folder full of tracks and spit out dozens of videos at a time.
+I also need to automate the various steps - video > WAV > chords > overlay > composite - so I can churn this thing across a folder full of tracks and spit out dozens of videos at a time. I suspect some tracks will need some manual editing of the chord data before rendering the video, so I also need to figure out a way to run a high-speed version, 12fps at 640x360, to check the results, and then the high-quality 1280x720 60fps version to produce the final video.
 
 And if you want to see it in action, come along to the [Ignition Brewery and Taproom](https://ignition.beer/) on the third Saturday of the month and check it out. Bonus points if you actually get up and play something. 🎸🤘🍻
