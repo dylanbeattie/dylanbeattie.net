@@ -139,12 +139,15 @@ static IEnumerable<IVideoFrame> CreateFramesSD(int count, int width, int height,
     var chordTextTop = chordBarTop + chordBarHeight * 0.2f;
     var transBlack = Brushes.Solid(Color.FromRgba(0, 0, 0, 200));
     var transRed = Brushes.Solid(Color.FromRgba(255, 0, 0, 127));
+    var white = Brushes.Solid(Color.White);
     for (var frame = 0; frame < count; frame++) {
         Console.WriteLine();
         Console.Write($"Frame {frame}/{count}: ");
         var time = frame * SPF;
         using Image<Rgba32> image = new(width, height, Color.Transparent);
-        image.Mutate(x => x.Fill(options, transBlack, new RectangularPolygon(0, chordBarTop, width, chordBarHeight)));
+        image.Mutate(x => x
+			.Fill(options, transBlack, new RectangularPolygon(0, chordBarTop, width, chordBarHeight))
+        );
         var lastChord = String.Empty;
         foreach (var chord in chords) {
             if (chord.Name == "N") continue; // No chord
@@ -158,8 +161,10 @@ static IEnumerable<IVideoFrame> CreateFramesSD(int count, int width, int height,
             Console.Write($"{chord.Name} ");
             image.Mutate(x => x.DrawText(chord.PrettyName, font, Color.White, point));
         }
-        image.Mutate(x => x.Fill(options, transRed, new RectangularPolygon(0, chordBarTop, playheadPosition, chordBarHeight)));
-        image.Mutate(x => x.Fill(options, Brushes.Solid(Color.White), new RectangularPolygon(playheadPosition - 2f, chordBarTop, 4, chordBarHeight)));
+        image.Mutate(x => x
+			.Fill(options, transRed, new RectangularPolygon(0, chordBarTop, playheadPosition, chordBarHeight))
+			.Fill(options, white, new RectangularPolygon(playheadPosition - 2f, chordBarTop, 4, chordBarHeight))
+		);
         using ImageVideoFrameWrapper<Rgba32> wrapper = new(image);
         yield return wrapper;
     }
