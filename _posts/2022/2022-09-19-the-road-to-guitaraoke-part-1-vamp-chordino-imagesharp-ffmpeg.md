@@ -10,13 +10,13 @@ typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 ---
 
-One of my side projects at the moment is running a monthly karaoke night at my local brewery tap, the awesome Ignition Brewery in Sydenham -- but it's karaoke with a twist.
+One of my side projects at the moment is running a monthly karaoke night at my local brewery tap, the very awesome [Ignition Brewery in Sydenham](https://ignition.beer/) -- but it's karaoke with a twist.
 
 [<img src="/images/posts/2022/guitaraoke-social-media-banner.jpg" alt="guitaraoke-social-media-banner" style="zoom:50%;" />](https://guitaraoke.live/)
 
-As well as singing, you can get up and play guitar or bass; instruments and backline are provided, and I've created 5-channel mixes of all the backing tracks so we can fade out specific instruments if somebody wants to play them live.
+As well as singing, you can get up and play guitar or bass; instruments and backline are provided, and I've created 5-channel mixes of all the backing tracks so we can fade out specific instruments if somebody wants to play them live. 
 
-I ran the first Guitaraoke night in August, and it went great (despite a heat wave and a train strike!) -- but by far the most common bit of feedback I got was "it would be great it we could see the guitar chords on the video". Well... yeah, it would. After all, the whole point of karaoke is that the singer doesn't have to know the words... if we're going to do Guitaraoke properly, the players shouldn't need to know the songs.
+I ran the first [Guitaraoke](https://guitaraoke.live/) night in August, and it went great (despite a heat wave and a train strike!) -- but by far the most common bit of feedback I got was "it would be great it we could see the guitar chords on the video". Well... yeah, it would. After all, the whole point of karaoke is that the singer doesn't have to know the words... if we're going to do Guitaraoke properly, the players shouldn't need to know the songs.
 
 So, that's the requirement: **guitar chords on screen on the night.** For the last couple of weeks, I've been investigating possible ways of doing this -- from editing the videos by hand in Premiere (which is way too time-consuming), to building some sort of custom video player that'll read chord charts from a text file and overlay them onto the video (turns out building a video player is *hard*), to complicated systems involving OBS.
 
