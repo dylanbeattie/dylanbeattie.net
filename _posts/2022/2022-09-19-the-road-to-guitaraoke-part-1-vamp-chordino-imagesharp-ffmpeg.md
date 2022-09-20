@@ -3,9 +3,9 @@ title: "The Road To Guitaraoke, Part 1: Vamp, Chordino, ImageSharp, and ffmpeg"
 layout: post
 author: Dylan Beattie
 meta:
-  # og_image: /images/posts/2022/2022-07-08-reinstalling-windows-again.jpg
+  og_image: /images/posts/2022/2022-09-19-the-road-to-guitaraoke-part-1-vamp-chordino-imagesharp-ffmpeg.jpg
   og_description: "A proof-of-concept using Vamp, Chordino, ImageSharp and ffmpeg to add live guitar chord charts to karaoke videos"
-  # twitter_card: summary_large_image
+  twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
 ---
