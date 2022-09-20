@@ -86,7 +86,7 @@ So, here's my approach:
 
 #### Rendering video in .NET using ImageSharp and FFMpegCore
 
-I used .NET here because I know it, and I like it. To actually draw the chord names onto each frame, I'm using ImageSharp; each frame is then wrapped in an `ImageVideoFrameWrapper`, a class I wrote to pass data from ImageSharp to ffmpeg. I'm then using the `FFMpegCore` library to read those frames directly from memory and render them into the output video stream. Note that I'm using the `.webm` format here, and specifying `libvpx-vp9` as the video codec -- this is because I want my output video to support alpha transparency. 
+I used .NET here because I know it, and I like it. To actually draw the chord names onto each frame, I'm using [ImageSharp](https://sixlabors.com/products/imagesharp/); each frame is then wrapped in an `ImageVideoFrameWrapper`, a class I wrote to pass data from ImageSharp to ffmpeg. I'm then using a .NET library called [FFMpegCore](https://github.com/rosenbjerg/FFMpegCore) to read those frames directly from memory and render them into the output video stream. Note that I'm using the `.webm` format here, and specifying `libvpx-vp9` as the video codec -- this is because I want my output video to support alpha transparency. 
 
 Here's the program code:
 
@@ -225,50 +225,50 @@ public class ImageVideoFrameWrapper<T> : IVideoFrame, IDisposable where T : unma
 }
 ```
 
-That'll spit out a `.webm` video file.  The final step is to composite this video onto the original backing video, which is another job for `ffmpeg`:
+That'll create a transparent video file with moving chords on it in  `chords.webm`.  The final step is to composite this video onto the original backing video, which is another job for `ffmpeg`:
 
 ```bash
 ffmpeg
-		# input file #0:
-		-i original.mp4
-		# video codec for input file #1: libvpx-vp9
-		-c:v libvpx-vp9 
-		# input file #1
-		-i chords.webm
-        # video filter: scale video #1 to 1280x720, store that in [z], then overlay [z] onto video #0
-		-filter_complex "[1:v]scale=1280:720[z];[0:v][z]overlay" 
-		# video codec for output: libx264
-		-c:v libx264 
-		# video bitrate for output@: 2500kbps
-		-b:v 2500k 
-		# output filename
-		composite.mp4
+  # input file #0:
+  -i original.mp4
+  # video codec for input file #1: libvpx-vp9
+  -c:v libvpx-vp9 
+  # input file #1
+  -i chords.webm
+  # video filter: scale video #1 to 1280x720, store that in [z], then overlay [z] onto video #0
+  -filter_complex "[1:v]scale=1280:720[z];[0:v][z]overlay" 
+  # video codec for output: libx264
+  -c:v libx264 
+  # video bitrate for output@: 2500kbps
+  -b:v 2500k 
+  # output filename
+  composite.mp4
 ```
 
 That'll produce `composite.mp4`, which is the original backing video with the transparent chord overlay composited onto the top of it. It's also a 4-minute video I don't have permission to publish online, with a 5.1 surround sound mix that's going to sound really weird unless you're running it through the right audio gear, so just for all you folks following along at home, I ran it through `ffmpeg` one more time:
 
 ```bash
 ffmpeg 
-	# input file: 
-	-i .\composite.mp4 
-	# audio channels: 2
-	-ac 2 
-	# audio filter: render 5.1 down to 2.0 audio.
-	#  FL (front left) = 0.7 * FC (front center), + 0.70 * FL (front left) + 1.0 * BL (back left)
-	#  FR (front left) = 0.7 * FC (front center), + 0.70 * FR (front right) + 1.0 * BR (back right)
-	-af "pan=stereo|FL=0.7*FC+0.70*FL+1.0*BL|FR=0.7*FC+0.70*FR+1.0*BR" 
-	# skip start time to 45 seconds 
-	-ss 00:00:45 
-	## trim video length to 30 seconds
-	-t 00:00:30 
-	# use the codec for video: libx264
-	-c:v libx264 
-	# set the video bitrate to 2500kbps
-	-b:v 2500k 
-	# use the codec for audio: aac
-	-c:a aac 
-	# output filename
-	guitaraoke-demo.mp4
+  # input file: 
+  -i .\composite.mp4 
+  # audio channels: 2
+  -ac 2 
+  # audio filter: render 5.1 down to 2.0 audio.
+  #  FL (front left) = 0.7 * FC (front center), + 0.70 * FL (front left) + 1.0 * BL (back left)
+  #  FR (front left) = 0.7 * FC (front center), + 0.70 * FR (front right) + 1.0 * BR (back right)
+  -af "pan=stereo|FL=0.7*FC+0.70*FL+1.0*BL|FR=0.7*FC+0.70*FR+1.0*BR" 
+  # skip start time to 45 seconds 
+  -ss 00:00:45 
+  # trim video length to 30 seconds
+  -t 00:00:30 
+  # use the codec for video: libx264
+  -c:v libx264 
+  # set the video bitrate to 2500kbps
+  -b:v 2500k 
+  # use the codec for audio: aac
+  -c:a aac 
+  # output filename
+  guitaraoke-demo.mp4
 ```
 
 That'll produce a 30-second clip, in regular stereo, which I've uploaded to YouTube so you can see the results:
@@ -277,6 +277,15 @@ That'll produce a 30-second clip, in regular stereo, which I've uploaded to YouT
 
 That's a pretty convincing proof of concept... but there's a world of difference between doing it once, with one clip, and being able to churn out the 50+ tracks you need to actually run a karaoke night. So next steps are to add beat detection, so I can quantise the timing of the chord changes to land on the beat exactly. Not essential, but nice to have.
 
-I also need to automate the various steps - video > WAV > chords > overlay > composite - so I can churn this thing across a folder full of tracks and spit out dozens of videos at a time. I suspect some tracks will need some manual editing of the chord data before rendering the video, so I also need to figure out a way to run a high-speed version, 12fps at 640x360, to check the results, and then the high-quality 1280x720 60fps version to produce the final video.
+I also need to automate the various steps - video > WAV > chords > overlay > composite - so I can churn this thing across a folder full of tracks and spit out dozens of videos at a time. I suspect some tracks will need some manual editing of the chord data before rendering the video, so I also need to figure out a way to run a high-speed version, probably 12fps at 640x360, to check the results, and then the high-quality 1280x720 60fps version to produce the final video.
 
 And if you want to see it in action, come along to the [Ignition Brewery and Taproom](https://ignition.beer/) on the third Saturday of the month and check it out. Bonus points if you actually get up and play something. 🎸🤘🍻
+
+### Links
+
+* ImageSharp: [https://sixlabors.com/products/imagesharp/](https://sixlabors.com/products/imagesharp/) 
+* FFMPEGCore: [https://github.com/rosenbjerg/FFMpegCore](https://github.com/rosenbjerg/FFMpegCore)
+* Vamp Plugins: [https://www.vamp-plugins.org/](https://www.vamp-plugins.org/)
+* Chordino plugin for Vamp: [https://code.soundsoftware.ac.uk/projects/nnls-chroma/](https://code.soundsoftware.ac.uk/projects/nnls-chroma/)
+* Guitaraoke: [https://guitaraoke.live/](https://guitaraoke.live/)
+* Karaoke tracks and videos purchased from [https://www.karaoke-version.co.uk/karaoke/](https://www.karaoke-version.co.uk/karaoke/)
