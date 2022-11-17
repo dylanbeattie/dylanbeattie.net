@@ -1,0 +1,9 @@
+---
+slug: sockets-sparks-magic-smoke
+year: 2022
+title: "Sockets, Sparks and Magic Smoke"
+description: |
+  For thousands of years, humans have watched in awe as lightning flashed across the sky. Benjamin Franklin studied electricity by flying kites in thunderstorms, Michael Faraday discovered the relationship between electricity, magnetism and motion, and today, our world literally runs on electricity. We've built vast power grids that carry hundreds of gigawatts across continents, our cars, phones, and earbuds run on batteries, and we've sent radioisotope generators to the furthest reaches of space – and implanted them into our own bodies. And within the last century, we've learned to used electricity to represent information; true and false, one and zero, countless electrical bits bouncing all over the planet, carrying news, video, music, games, and the metadata that keeps our society connected.
+
+  Join Dylan Beattie for an insightful and entertaining look at how humans have used the power of the electron to build our digital society. We'll demystify the everyday electrical systems which we all take for granted - what's really happening when you charge your phone? Why don't Americans use electric kettles? What's actually happening inside that 8Gb USB stick you've got on your keyring? We'll dig into some of the most remarkable devices and systems ever built. We'll look at the fundamental limitations of physics, why we'll probably never see a 10GHz CPU core, and how quantum computing could be the key to breaking that barrier. Finally, we'll look at what happens when it goes wrong, and what engineers can do about it – from error correcting RAM chips, to why hospitals run backup power supplies, to what happens when entire countries suddenly need more power than we expected.
+--- 

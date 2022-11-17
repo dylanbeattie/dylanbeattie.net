@@ -63,46 +63,58 @@
 #   city: London, UK
 #   country: gb
 
-- title: DevConf 2022
-  date: 31 August - 2 September 2022
-  url: https://devconf.pl
-  city: Łódź, Poland
-  country: pl
+# - title: DevConf 2022
+#   date: 31 August - 2 September 2022
+#   url: https://devconf.pl
+#   city: Łódź, Poland
+#   country: pl
 
-- title: EuroBSDCon
-  date: 15-18 September 2022
-  url: https://2022.eurobsdcon.org
-  city: Vienna, Austria
-  country: at
+# - title: EuroBSDCon
+#   date: 15-18 September 2022
+#   url: https://2022.eurobsdcon.org
+#   city: Vienna, Austria
+#   country: at
 
-- title: NDC Oslo
-  date: 26-30 September 2022
-  url: https://ndcoslo.com/
-  city: Oslo, Norway
-  country: "no"
+# - title: NDC Oslo
+#   date: 26-30 September 2022
+#   url: https://ndcoslo.com/
+#   city: Oslo, Norway
+#   country: "no"
 
-- title: Techorama NL
-  date: 10-12 October 2022
-  url: https://www.techorama.nl/
-  city: Utrecht, Netherlands
-  country: nl
+# - title: Techorama NL
+#   date: 10-12 October 2022
+#   url: https://www.techorama.nl/
+#   city: Utrecht, Netherlands
+#   country: nl
 
-- title: Devoxx
-  date: 12-14 October 2022
-  city: Antwerp, Belgium
-  country: be
-  url: https://devoxx.be/
+# - title: Devoxx
+#   date: 12-14 October 2022
+#   city: Antwerp, Belgium
+#   country: be
+#   url: https://devoxx.be/
 
-- title: BuildStuff
-  date: 9-11 November 2022
-  url: https://www.buildstuff.events
-  city: Vilnius, Lithuania
-  country: lt
+# - title: BuildStuff
+#   date: 9-11 November 2022
+#   url: https://www.buildstuff.events
+#   city: Vilnius, Lithuania
+#   country: lt
 
 - title: Modern Frontends Live
   date: 15-18 November 2022
   url: https://www.modernfrontends.live/
   city: London, UK
+  country: gb
+
+- title: YOW! London
+  date: 29-30 November 2022
+  url: https://yowlondon.com/2022
+  city: London, UK
+  country: gb
+
+- title: DDD North
+  date: 3 December 2022
+  url: https://www.dddnorth.co.uk/
+  city: Hull, UK
   country: gb
   
 # - title: From Keyboard to Keynote (Workshop)
