@@ -99,11 +99,11 @@
 #   city: Vilnius, Lithuania
 #   country: lt
 
-- title: Modern Frontends Live
-  date: 15-18 November 2022
-  url: https://www.modernfrontends.live/
-  city: London, UK
-  country: gb
+# - title: Modern Frontends Live
+#   date: 15-18 November 2022
+#   url: https://www.modernfrontends.live/
+#   city: London, UK
+#   country: gb
 
 - title: YOW! London
   date: 29-30 November 2022
@@ -116,7 +116,31 @@
   url: https://www.dddnorth.co.uk/
   city: Hull, UK
   country: gb
-  
+
+- title: NDC London
+  date: 23-27 January 2023
+  url: https://ndclondon.com/
+  city: London, UK
+  country: gb
+
+- title: Swetugg 
+  date: 8-9 February 2023
+  url: https://swetugg.se/sthlm-2023/speakers/dylan-beattie
+  city: Stockholm, Sweden
+  country: se
+
+- title: Beauty in Code
+  date: 4 March 2023
+  url: https://beautyincode.se/
+  city: Malmö, Sweden
+  country: se
+
+- title: CodeCamp Festival
+  date: 4 May 2023
+  url: https://codecamp.ro/codecamp_festival-2023/
+  city: Bucharest, Romania
+  country: ro
+
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020
 #   url: https://www.buildstuff.events/from-keyboard-to-keynote
