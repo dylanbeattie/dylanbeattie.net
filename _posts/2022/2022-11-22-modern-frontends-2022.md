@@ -4,7 +4,7 @@ layout: post
 author: Dylan Beattie
 meta:
   og_image: /images/posts/2022/2022-11-22-modern-frontends-live.jpg
-  og_description: "You want to know what it was like running a workshop at Modern Frontends Live 2022? Read on..."
+  og_description: "My experience running a workshop and speaking at Modern Frontends Live"
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2022/
 typora-root-url: .\..\..
