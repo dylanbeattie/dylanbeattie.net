@@ -98,4 +98,4 @@ Here's what other people have been saying about Modern Frontends Live:
 * Mike Hartington: [Modern Frontends Live](https://mhartington.io/post/modern-frontends-live/)
 * Chris Perry: [Modern Frontends: An Attendee's Perspective](https://christopherallanperry.github.io/blog/2022/11/20/modern_frontends-an_attendees_perspective.html)
 * Hidde de Vries: [My experience at Modern Frontends Live](https://hidde.blog/modern-frontends-live/) 
-* Toddy Libby: [Modern Frontends](https://toddl.dev/posts/modern-frontends/)
+* Todd Libby: [Modern Frontends](https://toddl.dev/posts/modern-frontends/)
