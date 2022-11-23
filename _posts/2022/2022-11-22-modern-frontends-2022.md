@@ -30,7 +30,7 @@ I decline, politely, because **I do this for a living**. A substantial part of m
 
 **November 10th:** With a week to go until the conference, the agenda still hadn’t been published – I knew I would be speaking some time on Thursday or Friday, but had no idea exactly when. I got an email confirming that my workshop was going ahead – four attendees, two days of in-person training on Tuesday and Wednesday, 9am–5pm, in the “London Suite” at ExCeL – but no sign of the conference agenda. On Thursday morning, all the speakers received an email saying the agenda would be published later that day. Thursday came... Thursday went... no agenda.
 
-Friday 11th: I received another email:
+**November 11th**: I received another email:
 
 >  Subject: SCHEDULE UPDATE
 >
@@ -72,7 +72,7 @@ I didn’t go back on Friday. After two days of training and a day of conference
 
 I’ve seen comments online about how polarised the discussion around the event has been, that everybody either loved it or hated it. Well, I think a lot of attendees actually had a great time – and a lot of that is down to the speakers, some of whom I now understand had paid their own travel costs in order to participate. But I’ve also chatted with the sponsors, and I have some idea how much they paid to be there.
 
-By my reckoning, the total sponsorship revenue for this event was well in excess of £100,000. That’s over a hundred grand that is no longer available to support any other events. For some partners, that’s their entire event sponsorship budget for this year – wiped out for two folding tables in a hallway and a few hundred attendees. And *wow*, that pisses me off -- especially when I consider that my participation, and that of speakers like me, was probably a factor in those partners’ decisions to sponsor the event.
+By my reckoning, the total sponsorship revenue for this event was well in excess of £100,000. That’s over a hundred grand that is no longer available to support any other events. For some partners, Modern Frontends wiped out their entire event sponsorship budget for this year -- for two folding tables in a hallway and a few hundred attendees. And *wow*, that pisses me off -- especially when I consider that my participation, and that of speakers like me, was probably a factor in those partners’ decisions to sponsor the event.
 
 **And this brings us to the difficult part.**
 
