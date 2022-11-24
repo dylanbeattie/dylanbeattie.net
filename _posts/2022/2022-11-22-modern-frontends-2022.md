@@ -30,7 +30,7 @@ I decline, politely, because **I do this for a living**. A substantial part of m
 
 **November 10th:** With a week to go until the conference, the agenda still hadn’t been published – I knew I would be speaking some time on Thursday or Friday, but had no idea exactly when. I got an email confirming that my workshop was going ahead – four attendees, two days of in-person training on Tuesday and Wednesday, 9am–5pm, in the “London Suite” at ExCeL – but no sign of the conference agenda. On Thursday morning, all the speakers received an email saying the agenda would be published later that day. Thursday came... Thursday went... no agenda.
 
-**November 11th**: I received another email:
+Friday 11th: I received another email:
 
 >  Subject: SCHEDULE UPDATE
 >
@@ -72,7 +72,7 @@ I didn’t go back on Friday. After two days of training and a day of conference
 
 I’ve seen comments online about how polarised the discussion around the event has been, that everybody either loved it or hated it. Well, I think a lot of attendees actually had a great time – and a lot of that is down to the speakers, some of whom I now understand had paid their own travel costs in order to participate. But I’ve also chatted with the sponsors, and I have some idea how much they paid to be there.
 
-By my reckoning, the total sponsorship revenue for this event was well in excess of £100,000. That’s over a hundred grand that is no longer available to support any other events. For some partners, Modern Frontends wiped out their entire event sponsorship budget for this year -- for two folding tables in a hallway and a few hundred attendees. And *wow*, that pisses me off -- especially when I consider that my participation, and that of speakers like me, was probably a factor in those partners’ decisions to sponsor the event.
+By my reckoning, the total sponsorship revenue for this event was well in excess of £100,000. That’s over a hundred grand that is no longer available to support any other events. For some partners, that’s their entire event sponsorship budget for this year – wiped out for two folding tables in a hallway and a few hundred attendees. And *wow*, that pisses me off -- especially when I consider that my participation, and that of speakers like me, was probably a factor in those partners’ decisions to sponsor the event.
 
 **And this brings us to the difficult part.**
 
@@ -80,7 +80,7 @@ Modern Frontends Live owes me money. I don’t know how much, because I haven’
 
 Well, I’m not going to keep quiet and play nice about this. People who I know and respect have stuck their heads above the parapet to publicise what happened with this event. I care more about supporting them than I do about the money, and the more I find out about how this event was organised, the less comfortable I am with realising any kind of profit from it.
 
-But I’m also not prepared to walk away and let Modern Frontends Live keep the proceeds, or claim that my speaking up about this justifies them not paying me what I’m owed.
+But I’m also not prepared to walk away and let Modern Frontends Live keep the proceeds, or claim that my speaking up about this justifies them not paying me my share.
 
 **So here’s the deal.** I have asked Gen Ashley to work out the numbers and tell me how much my share of the revenue comes to. I expect to invoice Modern Frontends Live for the the full amount, I expect them to pay it -- and in return, in the spirit of Gen's request all those months ago, I will use that money to support the developer community. I’m one of the organisers of the [London .NET User Group](https://www.meetup.com/en-AU/london-net-user-group/). Since 2002, our group has run free community meetups for developers working on .NET, web, and associated technologies.
 
@@ -91,6 +91,9 @@ And if they don’t pay me? I think that’ll send a pretty clear message to any
 **Your move, Gen.**
 
 Here's what other people have been saying about Modern Frontends Live:
+
+* Niall Maher at [Codú](https://www.youtube.com/@codu) has posted a YouTube video "[10 Tips on Running a Terrible Conference - Lessons from Modern Frontends](https://www.youtube.com/watch?v=Ekn-qiH8Ozw)"
+* Niamh McCooey: [My Experience at Modern Frontends Live](https://dev.to/niamhmccoo/my-experience-at-modern-frontends-live-1lcn)
 
 * Jo Franchetti: [My experience of Modern Frontends Conference](https://dev.to/thisisjofrank/my-experience-of-modern-frontends-conference-1cgg) 
 * Cassie Evans: [Modern Frontends](https://www.cassie.codes/posts/modern-frontends/)
