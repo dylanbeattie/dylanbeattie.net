@@ -92,10 +92,12 @@ And if they don’t pay me? I think that’ll send a pretty clear message to any
 
 Here's what other people have been saying about Modern Frontends Live:
 
-* Jo Franchetti: [My experience of Modern Frontends Conference](https://dev.to/thisisjofrank/my-experience-of-modern-frontends-conference-1cgg) 
+
 * Cassie Evans: [Modern Frontends](https://www.cassie.codes/posts/modern-frontends/)
-* JD Hillen: [My Experience at Modern Frontends Live](https://jdhillen.com/blog/my-experience-at-modern-frontends-live/)
-* Mike Hartington: [Modern Frontends Live](https://mhartington.io/post/modern-frontends-live/)
 * Chris Perry: [Modern Frontends: An Attendee's Perspective](https://christopherallanperry.github.io/blog/2022/11/20/modern_frontends-an_attendees_perspective.html)
 * Hidde de Vries: [My experience at Modern Frontends Live](https://hidde.blog/modern-frontends-live/) 
+* JD Hillen: [My Experience at Modern Frontends Live](https://jdhillen.com/blog/my-experience-at-modern-frontends-live/)
+* Jo Franchetti: [My experience of Modern Frontends Conference](https://dev.to/thisisjofrank/my-experience-of-modern-frontends-conference-1cgg) 
+* Mike Hartington: [Modern Frontends Live](https://mhartington.io/post/modern-frontends-live/)
+* Niamh McCooey: [My Experience at Modern Frontends Live](https://dev.to/niamhmccoo/my-experience-at-modern-frontends-live-1lcn)
 * Todd Libby: [Modern Frontends](https://toddl.dev/posts/modern-frontends/)
