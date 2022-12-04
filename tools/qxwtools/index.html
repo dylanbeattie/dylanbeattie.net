@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QXWTools</title>
+    <style>
+        html {
+            font-family: Arial;
+            font-size: 10px;
+        }
+        table { border-collapse: collapse; }
+        table tr th, table tr td { 
+            vertical-align: top;
+            border: 1px solid #000;
+            padding: 8px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <input
+      type="text"
+      id="word1-input"
+      name="word1"
+      placeholder="BRAZIL"
+      value="BRAZIL"
+    />
+    <input
+      type="text"
+      id="word2-input"
+      name="word2"
+      placeholder="FRANCE"
+      value="FRANCE"
+    />
+    <input type="button" id="go-button" value="Go!" />
+    <hr />
+    <table id="results-table"></table>
+    <script type="module">
+      import WordList from './wordlist.js'
+      String.prototype.replaceAt = function (index, replacement) {
+        return (
+          this.substring(0, index) +
+          replacement +
+          this.substring(index + replacement.length)
+        )
+      }
+      document.getElementById('go-button').addEventListener('click', findWords)
+      function findWords() {
+        let results = new Array()
+        let word1 = document.getElementById('word1-input').value
+        let word2 = document.getElementById('word2-input').value
+        if (word1.length != word2.length) return
+        for (let i = 0; i < word1.length; i++) {
+          var char1 = word1[i]
+          var char2 = word2[i]
+          if (char1 == char2) continue
+          let splurp = new Array()
+          for (let z = 0; z < 16; z++) {
+            splurp[z] = new Array()
+            var candidates = WordList.filter(w => w.length >= 3 && w[z] == char1)
+            for (var c = 0; c < candidates.length; c++) {
+              var wandidate = candidates[c].replaceAt(z, char2)
+              if (WordList.includes(wandidate)) {
+                splurp[z].push(candidates[c] + '/' + wandidate)
+              }
+            }
+          }
+          results[i] = (splurp);
+        }
+        var table = document.getElementById("results-table");
+        Object.keys(results).forEach(key => {
+            let tr = document.createElement("tr");
+            let th = document.createElement("th");
+            th.innerHTML = key;
+            tr.appendChild(th);
+            for(var i = 0; i < results[key].length; i++) {
+                let td = document.createElement("td");
+                console.log(results[key][i]);
+                td.innerHTML = (results[key][i]).join("<br />");
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        });
+      }
+      findWords();
+    </script>
+  </body>
+</html>
