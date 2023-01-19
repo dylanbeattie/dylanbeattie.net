@@ -105,23 +105,29 @@
 #   city: London, UK
 #   country: gb
 
-- title: YOW! London
-  date: 29-30 November 2022
-  url: https://yowlondon.com/2022
-  city: London, UK
-  country: gb
+# - title: YOW! London
+#   date: 29-30 November 2022
+#   url: https://yowlondon.com/2022
+#   city: London, UK
+#   country: gb
 
-- title: DDD North
-  date: 3 December 2022
-  url: https://www.dddnorth.co.uk/
-  city: Hull, UK
-  country: gb
+# - title: DDD North
+#   date: 3 December 2022
+#   url: https://www.dddnorth.co.uk/
+#   city: Hull, UK
+#   country: gb
 
 - title: NDC London
   date: 23-27 January 2023
   url: https://ndclondon.com/
   city: London, UK
   country: gb
+
+- title: JFokus
+  date: 6-8 February 2023
+  url: https://www.jfokus.se/speakers/14022
+  city: Stockholm, Sweden
+  country: se
 
 - title: Swetugg 
   date: 8-9 February 2023
@@ -140,6 +146,24 @@
   url: https://codecamp.ro/codecamp_festival-2023/
   city: Bucharest, Romania
   country: ro
+
+- title: NDC Oslo 
+  date: 22-25 May 2023
+  url: https://ndcoslo.com/
+  city: Oslo, Norway
+  country: "no"
+
+- title: DevSum
+  date: 25-26 May 2023
+  url: https://devsum.se/
+  city: Oslo, Norway
+  country: "no"
+    
+- title: GOTO Amsterdam
+  date: 26-29 June 2023
+  url: https://gotoams.nl/2023
+  city: Amsterdam, Netherlands
+  country: nl
 
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020

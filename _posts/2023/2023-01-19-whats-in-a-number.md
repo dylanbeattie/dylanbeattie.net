@@ -30,19 +30,17 @@ So the actual question here is something closer to:
 
 > We have a solid, finished product that can't be shipped as 1.0.0 because of politics. What version number would mean you were comfortable using our package on your projects?
 >
-> :black_square_button: 0.9.x
+> **▢** 0.9.x
 >
-> :black_square_button: 1.0.0-rcx
+> **▢** 1.0.0-rcx
 >
-> :black_square_button: I can't/won't use either of those versions
+> **▢** I can't/won't use either of those versions
 >
-> :black_square_button: Either would be OK for me
+> **▢** Either would be OK for me
 
-And THAT, that's a much more interesting question.
+Now that's a *much* more interesting question. I've run plenty of stuff in production that uses 0.9.x packages, but I have only very occasionally deployed a prerelease package as part of a production release, and only under very specific circumstances.
 
-I've run plenty of stuff in production that uses 0.9.x packages, but I have only very occasionally deployed a prerelease package as part of a production release, and only under very specific circumstances.
-
-Let's say I'm running Foobar 2.1.0. I know Foobar, I've used it on a bunch of projects, it's solid, I trust it. I find a bug. The bug will be fixed in the forthcoming 2.1.1 release... but I need it now. In that situation, I'll install 2.1.1-rc1, but as a temporary fix. This is reinforced by the way the NuGet package management ecosystem usually requires an explicit opt-in to find and install prerelease packages: It's not something you're likely to do by mistake:
+Let's say I have a project which uses Foobar 2.1.0. I know Foobar, I've used it on a bunch of projects, it's solid, I trust it. I find a bug. The bug will be fixed in the forthcoming 2.1.1 release... but I need it now. In that situation, I'll install 2.1.1-rc1, but as a temporary fix. This is reinforced by the way the NuGet package management ecosystem usually requires an explicit opt-in to find and install prerelease packages: It's not something you're likely to do by mistake:
 
 ![A screenshot of the NuGet package manager interface, with the "Include prerelease" checkbox highlighted](/images/posts/2023/image-20230119125322592.png)
 
