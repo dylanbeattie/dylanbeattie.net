@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<!-- Main -->
+<section class="wrapper style1">
+  <div class="container">
+    <div class="row gtr-200">
+      <div class="col-9 col-12-narrower">
+        <div id="content">
+          <h1>{{ page.title }}</h1>
+          <p>{{ page.description | markdownify }}</p>
+		  {% if page.presented_at %} 
+          <h4>This talk was presented at:</h4>
+          <ul class="presented-at">
+			{% for pa in page.presented_at %}
+            <li class="flag-{{ pa.country }}">
+              {{ pa.date | date: "%b %d, %Y" }}: {{ pa.event }}, {{ pa.city }}
+              {% if pa.url %} &bull;
+              <a href="{{ pa.url }}">video</a>
+              {% endif %}
+            </li>
+            {% endfor %}
+			{% endif %} 
+          </ul>
+		  <hr />
+		  <a href="/talks">Other talks by Dylan Beattie</a>
+        </div>
+      </div>
+      <div class="col-3 col-12-narrower">
+        <div id="sidebar">
+          {% include right-sidebar.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

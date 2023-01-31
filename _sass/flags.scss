@@ -11,10 +11,23 @@ $countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwea
 	MY, MZ, NA, NC, NE, NF, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, 
 	PN, PR, PS, PT, PW, PY, QA, RO, RS, RU, RW, SA, SB, SC, SD, SE, SG, SH, SI, SK, SL, SM, 
 	SN, SO, SR, SS, ST, SV, SY, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, 
-	TW, TZ, UA, UG, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW;
+	TW, TZ, UA, UG, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW, WWW;
 
 @each $country in $countries {
 	.flag-#{to-lower-case($country)} {
 		background-image: url(images/flags/shiny/64/#{$country}.png);
 	}
+	ul.presented-at li.flag-#{to-lower-case($country)} {
+		background-image: url(images/flags/shiny/24/#{$country}.png);
+		list-style: none;
+		background-position: left 50%;
+		background-repeat: no-repeat;
+		padding-left: 32px;		
+		margin-left: 0px;
+	}
+}
+
+ul.presented-at {
+	margin-left: 4px;
+	padding-left: 0px;
 }

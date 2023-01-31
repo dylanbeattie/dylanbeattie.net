@@ -63,3 +63,8 @@ defaults:
         og_description: "An article from dylanbeattie.net"
         og_image: /images/opengraph/dylanbeattie-summary.jpg
         twitter_card: summary
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"

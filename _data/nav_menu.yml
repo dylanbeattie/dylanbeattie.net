@@ -2,17 +2,17 @@
   text: home
   href: /
 - about:
-  text: about
+  text: about me
   href: /about
-- speaking:
-  text: speaking
-  href: /speaking
+- talks:
+  text: talks
+  href: /talks
 - workshops:
   text: workshops
   href: /workshops
-- articles:
-  text: articles
-  href: /articles
+# - articles:
+#   text: articles
+#   href: /articles
 - music:
   text: music
   href: /music

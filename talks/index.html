@@ -1,0 +1,56 @@
+---
+layout: right-sidebar
+title: speaking
+# permalink: /speaking
+opengraph:
+  description: Dylan Beattie's conference taks and workshops about software development.
+  image: /speaking/summary_large_image.jpg
+redirect_from: '/p/speaking.html'
+redirect_from: '/speaking'
+redirect_from: '/speaking.html'
+---
+
+<article>
+  <h1>Talks</h1>
+  <p>
+    I've been giving talks at conferences and user groups since 2008, covering a huge
+    range of topics related to software development, the web, and the relationship 
+    between technology and society.</p>
+  <p>
+    talks at conferences all over the world, from high-level keynotes aimed at a
+    wide audience to deep-dive technical talks about software architecture, character encoding
+    systems, web components and API design.
+  </p>
+  <p>
+    If you'd like to invite me to speak at your conference or meetup, please
+    drop me an email to
+    <a href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a>
+    and let's chat.
+  </p>
+  <p>
+    Here are the talks and topics that I'm currently doing at conferences and
+    meetups. I'm always developing new ideas, and if you'd like to hire me to deliver
+    a talk on a specific topic for your conference or company event, please get in touch.
+  </p>
+  {% assign years = site.talks | map: 'year' | uniq | sort | reverse %} 
+  {% for  year in years %}
+  <h3>{{ year }}</h3>
+  <ul>
+    {% assign talks = site.talks | where: 'year', year %} {% for talk in talks
+    %}
+    <li><a href="{{ talk.url }}">{{ talk.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  <!--
+  {% assign talks = site.talks  | sort: 'year' | reverse %}
+  {% for talk in talks %}
+  <hr />
+  <section>
+    <h3 id="{{ talk.slug }}">{{ talk.title }}</h3>
+    <p>{{ talk.description | markdownify }}</p>
+    <p><a href="#contents">back to top</a></p>
+    </p>
+  </section>
+  {% endfor %}
+--></article>
