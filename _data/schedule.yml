@@ -117,36 +117,42 @@
 #   city: Hull, UK
 #   country: gb
 
-- title: NDC London
-  date: 23-27 January 2023
-  url: https://ndclondon.com/
+#- title: NDC London
+#  date: 23-27 January 2023
+#  url: https://ndclondon.com/
+#  city: London, UK
+#  country: gb
+
+#- title: JFokus
+#  date: 6-8 February 2023
+#  url: https://www.jfokus.se/speakers/14022
+#  city: Stockholm, Sweden
+#  country: se
+
+#- title: Swetugg 
+#  date: 8-9 February 2023
+#  url: https://swetugg.se/sthlm-2023/speakers/dylan-beattie
+#  city: Stockholm, Sweden
+#  country: se
+
+#- title: Beauty in Code
+#  date: 4 March 2023
+#  url: https://beautyincode.se/
+#  city: Malmö, Sweden
+#  country: se
+
+#- title: CodeCamp Festival
+#  date: 4 May 2023
+#  url: https://codecamp.ro/codecamp_festival-2023/
+#  city: Bucharest, Romania
+#  country: ro
+
+- title: London .NET
+  date: 18 May 2023
+  url: https://www.meetup.com/london-net-user-group/events/293168072/
   city: London, UK
   country: gb
-
-- title: JFokus
-  date: 6-8 February 2023
-  url: https://www.jfokus.se/speakers/14022
-  city: Stockholm, Sweden
-  country: se
-
-- title: Swetugg 
-  date: 8-9 February 2023
-  url: https://swetugg.se/sthlm-2023/speakers/dylan-beattie
-  city: Stockholm, Sweden
-  country: se
-
-- title: Beauty in Code
-  date: 4 March 2023
-  url: https://beautyincode.se/
-  city: Malmö, Sweden
-  country: se
-
-- title: CodeCamp Festival
-  date: 4 May 2023
-  url: https://codecamp.ro/codecamp_festival-2023/
-  city: Bucharest, Romania
-  country: ro
-
+  
 - title: NDC Oslo 
   date: 22-25 May 2023
   url: https://ndcoslo.com/
@@ -158,12 +164,67 @@
   url: https://devsum.se/
   city: Oslo, Norway
   country: "no"
-    
+ 
+- title: CityJS
+  date: 30 May 2023
+  url: https://greece.cityjsconf.org/
+  city: Athens, Greece
+  country: gr
+  
 - title: GOTO Amsterdam
   date: 26-29 June 2023
   url: https://gotoams.nl/2023
   city: Amsterdam, Netherlands
   country: nl
+
+- title: Codegarden
+  date: 14-16 June 2023
+  url: https://codegarden.umbraco.com/
+  city: Odense, Denmark
+  country: dk
+  
+- title: Copenhagen Developers Festival
+  date: 28 August - 1 September 2023
+  url: https://cphdevfest.com/
+  city: Copenhagen, Denmark
+  country: dk
+  
+- title: Digit
+  date: 21 September 2023
+  url: https://digit.dev/
+  city: Tartu, Estonia
+  country: EE
+ 
+- title: DrivUn
+  date: 27 September 2023
+  url: https://drivun.co/
+  city: Amsterdam, Netherlands
+  country: NL
+  
+- title: NDC Porto
+  date: 16-20 October 2023
+  url: https://ndcporto.com/
+  city: Porto, Portugal
+  country: PT
+  
+- title: CodeCamp Iasi
+  date: 31 October - 2 November 2023
+  url: https://codecamp.ro/conferences/codecamp_iasi/
+  city: Iasi, Romania
+  country: RO
+  
+ 
+- title: BuildStuff
+  date: 15-17 November 2023
+  url: https://buildstuff.events/
+  city: Vilnius, Lithuania
+  country: LT
+  
+- title: NDC London
+  date: 29 January - 2 February 2024
+  url: https://ndclondon.com/
+  city: London, UK
+  country: GB
 
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020
