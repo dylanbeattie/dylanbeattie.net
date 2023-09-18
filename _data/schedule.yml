@@ -146,48 +146,48 @@
 #  url: https://codecamp.ro/codecamp_festival-2023/
 #  city: Bucharest, Romania
 #  country: ro
-
-- title: London .NET
-  date: 18 May 2023
-  url: https://www.meetup.com/london-net-user-group/events/293168072/
-  city: London, UK
-  country: gb
-  
-- title: NDC Oslo 
-  date: 22-25 May 2023
-  url: https://ndcoslo.com/
-  city: Oslo, Norway
-  country: "no"
-
-- title: DevSum
-  date: 25-26 May 2023
-  url: https://devsum.se/
-  city: Oslo, Norway
-  country: "se"
- 
-- title: CityJS
-  date: 30 May 2023
-  url: https://greece.cityjsconf.org/
-  city: Athens, Greece
-  country: gr
-  
-- title: GOTO Amsterdam
-  date: 26-29 June 2023
-  url: https://gotoams.nl/2023
-  city: Amsterdam, Netherlands
-  country: nl
-
-- title: Codegarden
-  date: 14-16 June 2023
-  url: https://codegarden.umbraco.com/
-  city: Odense, Denmark
-  country: dk
-  
-- title: Copenhagen Developers Festival
-  date: 28 August - 1 September 2023
-  url: https://cphdevfest.com/
-  city: Copenhagen, Denmark
-  country: dk
+#
+#- title: London .NET
+#  date: 18 May 2023
+#  url: https://www.meetup.com/london-net-user-group/events/293168072/
+#  city: London, UK
+#  country: gb
+#  
+#- title: NDC Oslo 
+#  date: 22-25 May 2023
+#  url: https://ndcoslo.com/
+#  city: Oslo, Norway
+#  country: "no"
+#
+#- title: DevSum
+#  date: 25-26 May 2023
+#  url: https://devsum.se/
+#  city: Oslo, Norway
+#  country: "se"
+# 
+#- title: CityJS
+#  date: 30 May 2023
+#  url: https://greece.cityjsconf.org/
+#  city: Athens, Greece
+#  country: gr
+#  
+#- title: GOTO Amsterdam
+#  date: 26-29 June 2023
+#  url: https://gotoams.nl/2023
+#  city: Amsterdam, Netherlands
+#  country: nl
+#
+#- title: Codegarden
+#  date: 14-16 June 2023
+#  url: https://codegarden.umbraco.com/
+#  city: Odense, Denmark
+#  country: dk
+#  
+#- title: Copenhagen Developers Festival
+#  date: 28 August - 1 September 2023
+#  url: https://cphdevfest.com/
+#  city: Copenhagen, Denmark
+#  country: dk
   
 - title: Digit
   date: 21 September 2023
@@ -200,6 +200,12 @@
   url: https://drivun.co/
   city: Amsterdam, Netherlands
   country: nl
+
+- title: Birmingham .NET User Group
+  date: 11 October 2023
+  url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
+  city: Birmingham, UK
+  country: gb
   
 - title: NDC Porto
   date: 16-20 October 2023
@@ -212,13 +218,36 @@
   url: https://codecamp.ro/conferences/codecamp_iasi/
   city: Iasi, Romania
   country: ro
-  
+
+- title: XPand 2023
+  date: 4-5 November 2020
+  url: https://xpandconf.com/
+  city: Dead Sea, Jordan
+  country: jo
  
 - title: BuildStuff
   date: 15-17 November 2023
   url: https://buildstuff.events/
   city: Vilnius, Lithuania
   country: lt
+
+- title: YOW! Melbourne
+  date: 30 November - 1 December 2023
+  url: https://yowcon.com/melbourne-2023
+  city: Melbourne, Australia
+  country: au
+
+- title: YOW! Brisbane
+  date: 4-5 December 2023
+  url: https://yowcon.com/brisbane-2023
+  city: Brisbane, Australia
+  country: au
+
+- title: YOW! Sydney
+  date: 7 - 8 December 2023
+  url: https://yowcon.com/sydney-2023
+  city: Sydney, Australia
+  country: au
   
 - title: NDC London
   date: 29 January - 2 February 2024

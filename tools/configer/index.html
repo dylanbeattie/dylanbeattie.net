@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configer</title>
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      div#inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 4px;
+        position: fixed;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        top: 64px;
+      }
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Paste JSON. Toggle between Azure config and appsettings.json</p>
+    <div id="inputs">
+      <textarea id="appSettings-textarea"></textarea>
+      <textarea id="azure-textarea"></textarea>
+    </div>
+    <script>
+      async function load() {
+        const response = await fetch("appSettings.json");
+        const json = await response.text();
+        document.getElementById("appSettings-textarea").value = json;
+        document.getElementById("azure-textarea").value = appSettingsToAzure();
+      }
+      document
+        .getElementById("azure-textarea")
+        .addEventListener("input", function () {
+          document.getElementById("appSettings-textarea").value =
+            azureToAppSettings();
+        });
+      document
+      .getElementById("appSettings-textarea")
+      .addEventListener("input", function () {
+        document.getElementById("azure-textarea").value =
+          appSettingsToAzure();
+      });
+      load();
+      function glob(result, prefix, obj) {
+        for (var key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            var value = obj[key];
+            switch (typeof value) {
+              case "string":
+              case "number":
+                result[prefix + key] = value;
+                break;
+              case "object":
+                glob(result, prefix + key + "__", value);
+                break;
+              default:
+                result[prefix + key] = typeof value;
+                break;
+            }
+          }
+        }
+        return result;
+      }
+
+      function appSettingsToAzure() {
+        var json = document.getElementById("appSettings-textarea").value;
+        var data = JSON.parse(json);
+        var azure = glob({}, "", data);
+        var donk = [];
+        for (var key in azure) {
+          donk.push({ name: key, value: azure[key], slotSetting: false });
+        }
+        return JSON.stringify(donk, null, 2);
+      }
+
+      function azureToAppSettings() {
+        try {
+          var json = document.getElementById("azure-textarea").value;
+          var data = JSON.parse(json);
+          var appSettings = {};
+          for (var i = 0; i < data.length; i++) {
+            var item = data[i];
+            var key = item.name;
+            var value = item.value;
+            var tokens = key.split("__");
+            var token;
+            var obj = appSettings;
+            for (var j = 0; j < tokens.length - 1; j++) {
+              var token = tokens[j];
+              if (!obj[token]) obj[token] = {};
+              obj = obj[token];
+            }
+            obj[tokens[tokens.length - 1]] = value;
+          }
+          return JSON.stringify(appSettings, null, 2);
+        } catch (ex) {
+          return ex;
+        }
+      }
+    </script>
+  </body>
+</html>
