@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>PerlMagick Windows 2000 HowTo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../default.css" type="text/css">
+<link rel="home" href="/magick/" />
+<meta name="keywords" content="ImageMagick PerlMagick Magick IIS Windows 2000">
+<meta name="description" content="A quick-start guide for installing PerlMagick on Windows 2000 systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td bgcolor="#000066">
+      <div align="right"><font color="#FFFFFF"><b><font size="3">File Paths under
+        PerlMagick for Windows</font></b></font></div>
+    </td>
+  </tr>
+</table>
+<p>Part of <a href="/magick/">Dylan's Collection of PerlMagick Stuff</a></p>
+<hr />
+<p>Under Windows, Perl uses the forward-slash as the path delimiter - so if you're
+  passing paths in from other Windows languages, you need to substitute / for
+  \ in the path definitions. (Think about it - \ is an escape character in Perl,
+  so c:\new\names\ is actually a three-line string :)) Perl paths should look
+  like c:/myfolder/myfile.jpg, and relative paths should be relative to the directory
+  from which the script is *executing* - NOT the folder where the script is actually
+  stored (they can be different). Regarding absolute vs. relative paths, one of
+  the 'quirks' of IIS is that scripts don't execute from the path they're stored
+  in. Try the following short snippet of code:</p>
+<pre>#!/bin/perl
+use Cwd;
+print &quot;Content-type: text/html\r\n\r\n&quot;;
+print cwd();</pre>
+<p>If you run this from c:\inetpub\wwwroot\cgi-bin\, it'll print &quot;c:\inetpub\wwwroot&quot;
+  as the current working directory. If you run it from c:\inetpub\wwwroot\cgi-bin\my\sub\folder\
+  it'll *still* print &quot;c:\inetpub\wwwroot&quot; as the current working directory.</p>
+<p>Much of what I do involves calling PerlMagick scripts from ASP pages - the
+  ASP page will contain a tag something like:</p>
+<p>&lt;img src=&quot;/cgi-bin/resize.pl?src=&lt;%=some_image%&gt;&amp;width=200&amp;height=200&quot;
+  width=&quot;200&quot; height=&quot;200&quot;&gt;</p>
+<p>(For those not familiar with ASP syntax, within this code, the &lt;%=some_image%&gt;
+  will expand at runtime the the value of the variable some_image.)</p>
+<p>Somewhere higher up the page, I'll put in a call like:</p>
+<p>some_image = Server.URLEncode(Replace(Server.MapPath(&quot;/images/myimage.jpg&quot;),
+  &quot;\&quot;, &quot;/&quot;)</p>
+<p>In this, the .MapPath method will turn the WWW relative path (/images/myimage.jpg)
+  into an absolute path on the local filesystem (c:\inetpub\wwwroot\mysite\images\myimage.jpg).
+  The Replace call will perform the slash-substitution (c:/inetpub/wwwroot/mysite/images/myimage.jpg)
+  and the URLEncode method will encode this path so it can be safely passed via
+  the QueryString - producing</p>
+<p>c%3A%2Finetpub%2Fwwwroot%2Fmysite%2Fimages%2Fmyimage%2Ejpg</p>
+<p>This way, the ASP code (which has access to the Server object) performs all
+  the complicated substitution, and the path that's passed to resize.pl is already
+  in the correct format.</p>
+<hr>
+<p align="center"><font size="1">Page maintained by Dylan Beattie. &lt;<u>imagemagick [at] dylanbeattie [dot] net</u>&gt; <br>
+  Copyright &copy; 2001 dylanbeattie.net. <br>
+  The information contained in this page may be freely distributed and modified<br>
+  subject to the terms of the ImageMagick distribution agreement.</font></p>
+</body>
+</html>

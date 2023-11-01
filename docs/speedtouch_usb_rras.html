@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Using the SpeedTouch ADSL USB Modem as a Routing Interface under Windows 2000</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Using the SpeedTouch ADSL USB Modem as a Routing Interface under Windows 2000</h1>
+<p>Dylan Beattie, August 2002</p>
+<hr>
+<h2>Disclaimer</h2>
+<p>This document describes a number of highly dubious practices, including editing your computer's registry. You can do some serious damage, even destroy your system and have to re-install Windows. I accept no responsibility or liability for any damage occurring as a direct or indirect result of the information supplied here. Microsoft would advise you not to do this. Alcatel would advise you not to do this. Your ISP would advise you not to do this. I did it anyway, and it works for me. If it doesn't work for you - too bad. Not my problem. If you lose your MP3 collection, your car and your house - too bad. Again, not my problem. You have been warned. If you want to do this safely and properly, buy an ADSL router.</p>
+<h2>Overview</h2>
+<p>Windows 2000 includes a Routing & Remote Access service, allowing you to configure a Windows 2000 box as a router. The Alcatel SpeedTouch USB ADSL modem (aka the 'frog' or 'stingray' modem) is a fairly common ADSL modem, supplied with many home ADSL installation packages.</p>
+<p>Before I had ADSL installed, I used Windows 2000 RRAS in conjunction with a standard 56K dial-up modem to provide shared internet access to the three computers on my home network. After upgrading to ADSL, this worked fine until version 1.4 of Alcatel's modem drivers, in which they explicitly disabled this capability.<a class="footnote" href="#footnote1">[1]</a> Coincidentally, this was around the time their first dedicated ADSL routers became available. This meant I had to resort to using Windows' built-in 'Internet Connection Sharing', which has numerous shortcomings:<p>
+<ul>
+<li>ICS overrides any existing network configuration, and insists on setting up its own DNS and DHCP services.</li>
+<li>ICS requires a user to physically log on from the console and connect to the internet manually. This means the machine can't be remotely rebooted unless there's someone at home to log on and re-establish the connection. Since I use Terminal Services and assorted other services from work, this was a major inconvenience.</li>
+<li>If anything goes wrong when I'm not home, my housemates had to log on to my server as an Administrator and reset the internet connection. Since I'm kinda paranoid about my computers, I wasn't overly happy about this.</li>
+</ul>
+<p>After weeks of hunting and experimenting, I found <a href="http://groups.google.com/groups?selm=df72015.0203200519.24950b26%40posting.google.com">this post</a> in Google's newsgroup archive, describing the registry changes that are required to enable the ADSL modem as a routing interface.</p>
+<p>I've tested this with the version 1.6 drivers under Windows 2000 Server, and it works. Other driver versions or operating systems may or may not work - again, if it doesn't work for you, try something else..</p>
+<h2>Instructions</h2>
+<ol>
+<li>Make sure you've got your ADSL modem installed and working. You should be able to establish an ADSL connection, browse the web, etc. using the normal dial-up networking interface. <b>Don't</b> enable Internet Connection Sharing - if it's enabled, then switch it off.</li>
+<li>Fire up regedit (Start -> Run -> regedit). You now need to search under <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class for the ClassID entry that corresponds to your SpeedTouch ADSL modem (figure 1). This varies from system to system, so you'll have to go through the ClassID entries checking the descriptions for each of them.
+<p><img src="speedtouch/figure01.png" alt="Figure 1: Registry key containing ADSL modem configuration settings" /></p>
+</li>
+<li>Once you've found the right ClassID, find the sub-key containing the PeakDownStreamBitRate and PeakUpStreamBitRate keys. Again, this may vary depending on your setup, ISP, etc. so you may have to experiment a bit. You need to alter or create the EnableForRouting and EnableForOutboundRouting DWORD keys, setting both values to 1 as shown. Once this is done, you'll have to reboot.
+<p><img src="speedtouch/figure02.png" alt="Figure 2: Registry values required to enable modem as a routing interface" /></p>
+<p>Your ADSL router is now a valid routing interface, and can be defined as such under Windows 2000 Routing &amp; Remote Access. Configuring this service is beyond the scope of this document - Control Panel =&raquo; Administrative Tools =&raquo; Routing &amp; Remote Access, right-click on your server in the left-hand pane and click 'Configure and Enable Routing &amp; Remote Access' should get you started. Follow the defaults for a NAT internet router and you should be in business. See the Windows 2000 Help for more information - the help on RRAS is actually quite comprehensive and usually very helpful.</p>
+</li>
+</ol>
+<hr />
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+<tr><td valign="top"><a name="footnote1" />[1]</td><td valign="top"><p class="footnote">Stupidly, I didn't keep a copy of the old modem drivers around, so once I'd upgraded to the v1.4 drivers there was no going back. Whatever Alcatel's reasons for disabling this facility, what pissed me off was the fact it was done without warning and without notification... after the upgrade, my router just stopped working and it took a good three hours of head-scratching (no internet access, you see) to work out what was going on. Something along the lines of 'NOTE: This upgrade will disable routing interface support in Windows 2000 RRAS' would have been much appreciated. With any luck, this document will cost them a few (needless!) ADSL router sales and redress the balance a little.&lt;/RANT&gt;</p></td></tr></table>
+<hr />
+<p class="small_print">Documentation copyright &copy; Dylan Beattie 2002 except where indicated.</p>
+<p class="small_print">Permission is granted to copy, distribute and/or modify this documentation under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts.</p>
+</body>
+</html>
+
+
+

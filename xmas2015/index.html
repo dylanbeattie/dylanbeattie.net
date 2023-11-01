@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>A five-dimensional festive Venn diagram with jokes, by @dylanbeattie</title>
+<script type="text/javascript">
+var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+function mo(filename) {
+	document.images[0].src = filename + ".png";
+}
+
+function oc(filename, event) {
+	var area = document.getElementById(filename);
+	var touchLink = document.getElementById("touch_link");
+	touchLink.href = area.href;
+	touchLink.innerHTML = area.alt + " &gt;&gt;";
+	mo(filename);
+	event.preventDefault();
+	return(false);
+}
+function reset() { document.images[0].src = "x.png"; }
+</script>
+<style>
+html { font-family: Trebuchet MS, Arial, sans-serif; margin: 0; padding: 0; }
+div#wrapper { width: 1000px; margin: 10px auto; position: relative; border: 0; padding: 0; }
+img { margin: 0px auto; display: block; }
+img.preload { width: 1px; height: 1px; display: inline; position: absolute; }
+
+a#touch_link { font-size: 14px; font-weight: bold; text-decoration: none; position: absolute; top: 0px; right: 0px; padding: 4px; }
+a#touch_link:hover { text-decoration: underline; }
+p { margin-top: 0; }
+div#share_links { position: absolute; right: 0px; }
+div#titles { position: absolute; left: 0px; top: 0px; font-size: 14px; text-align: left; line-height: 22px; }
+</style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=366471826743977";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="wrapper">
+	<div id="titles">
+		<p><strong>"My Favourite Things"</strong><br />A five-dimensional festive Venn diagram<br />
+		With jokes.</br>
+		Made by <a href="https://twitter.com/dylanbeattie">@dylanbeattie</a>.</p>
+		<div>
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="A five-dimensional festive Venn diagram - with jokes." data-via="dylanbeattie">Tweet</a>
+		<div class="fb-share-button" data-href="http://www.dylanbeattie.net/xmas2015/" data-layout="button_count"></div>
+		</div>
+	</div>
+	<a id="touch_link" target="_blank">&nbsp;</a>
+<article>
+<img id="christmas" src="x.png" border="0" width="945" height="895" usemap="#star_map" alt="Happy Christmas!" />
+</article>
+</div>
+<map name="star_map">
+<area id="c" onmouseover="mo('c');" onclick="return(oc('c', event));" 			onmouseout="reset();" alt="Code your own Santa Tracker" title='10 PRINT "HAPPY CHRISTMAS"&#13;20 GOTO 10&#13;RUN' href="https://santatracker.google.com/?utm_source=VillageHPP#codelab" shape="poly" coords="352,307,53,335,279,537,164,370,160,370" style="outline:none;"  />
+<area id="f" onmouseover="mo('f');" onclick="return(oc('f', event));" 			onmouseout="reset();" alt="Read about American Pale Ale" title="'There's a hole in my bucket, dear Liza, dear Liza...' &#13;&#13;'Oh no! You have pail ail!'" href="http://darkstarbrewing.co.uk/beer/" shape="poly" coords="667,534,735,830,471,678,669,736" style="outline:none;"  />
+<area id="m" onmouseover="mo('m');" onclick="return(oc('m', event));" 			onmouseout="reset();" alt="Watch Eric Johnson playing a Fender Stratocaster" title="Spot the odd one out: &#13;Stratocaster &#13;Telecaster &#13;Starcaster &#13;Doncaster" href="https://youtu.be/15eu7ar5EKM?t=131" shape="poly" coords="592,311,897,335,669,539,787,370" style="outline:none;"  />
+<area id="s" onmouseover="mo('s');" onclick="return(oc('s', event));" 			onmouseout="reset();" alt="Watch the best ski video ever." title="Q: What's funnier than a snowboarder on a button-lift?&#13;A: Nothing!" href="https://www.youtube.com/watch?v=ygxufRprWpY" shape="poly" coords="353,307,473,30,592,303,473,145" style="outline:none;"  />
+<area id="n" onmouseover="mo('n');" onclick="return(oc('n', event));" 			onmouseout="reset();" alt="Read the Spotlight Backstage Blog" title="That's me. In the corner." href="http://backstage.spotlight.com/" shape="poly" coords="472,676,211,832,280,537,279,739" style="outline:none;"  />
+<area id="fc" onmouseover="mo('fc');" onclick="return(oc('fc', event));" 		onmouseout="reset();" alt="Discover London's Top Ten Burgers at Young &amp; Foodish" title="Note that 'C' food is not the same as seafood." href="http://youngandfoodish.com/london/top-10-burgers-in-london/" shape="poly" coords="474,680,669,739,670,534,609,662" style="outline:none;"  />
+<area id="fn" onmouseover="mo('fn');" onclick="return(oc('fn', event));" 		onmouseout="reset();" alt="Discover London's Best Ribs" title="What's spare about them, anyway? Do pigs carry them in case they break one?" href="http://www.timeout.com/london/restaurants/londons-best-ribs" shape="poly" coords="508,307,534,391,596,305" style="outline:none;"  />
+<area id="mc" onmouseover="mo('mc');" onclick="return(oc('mc', event));" 		onmouseout="reset();" alt="See 'Cantina Band' played on a Chapman Stick" title="Actually, 'chap man stick' sounds kinda rude when you think about it..." href="https://www.youtube.com/watch?v=a7kIclA4yq4" shape="poly" coords="353,308,157,370,280,533,251,400" style="outline:none;"  />
+<area id="mf" onmouseover="mo('mf');" onclick="return(oc('mf', event));" 		onmouseout="reset();" alt="Watch 'Dead Ringer for Love'" title="Things Meat Loaf Would Do For Love&#13;&#13;&#x2611; Anything&#13;&#x2610; That" href="https://youtu.be/KSTIsZULYmY?t=135" shape="poly" coords="355,307,411,390,327,388" style="outline:none;"  />
+<area id="nc" onmouseover="mo('nc');" onclick="return(oc('nc', event));" 		onmouseout="reset();" alt="Follow Peter Mayhew on Twitter" title="Why don't rancors eat wookiees?&#13;&#13;They're too chewie." href="https://twitter.com/TheWookieeRoars" shape="poly" coords="570,505,669,537,640,454" style="outline:none;"  />
+<area id="sc" onmouseover="mo('sc');" onclick="return(oc('sc', event));" 		onmouseout="reset();" alt="Watch the Two Ronnies 'Four Candles'" title="Four candles? No, fork handles." href="https://www.youtube.com/watch?v=Cz2-ukrd2VQ" shape="poly" coords="473,578,472,679,541,628" style="outline:none;"  />
+<area id="sf" onmouseover="mo('sf');" onclick="return(oc('sf', event));" 		onmouseout="reset();" alt="Make mulled wine" title="Q: What does Billy Ray Cyrus like to do with wine at Christmas?&#13;A: Mull it." href="http://www.bbc.co.uk/food/recipes/mulledwine_8156" shape="poly" coords="474,144,592,308,473,239,354,307" style="outline:none;"  />
+<area id="mn" onmouseover="mo('mn');" onclick="return(oc('mn', event));" 		onmouseout="reset();" alt="Watch 'Comfortably Numb' at Live8" title="I grew up listening to 'Shine On You Crazy Diamond'... &#13;&#13;I put it one day when I was a kid, and by the time it finished I was twenty-six." href="https://youtu.be/G4i8tzFbTAk?t=274" shape="poly" coords="594,309,788,370,669,535,695,400" style="outline:none;"  />
+<area id="sm" onmouseover="mo('sm');" onclick="return(oc('sm', event));" 		onmouseout="reset();" alt="Watch Metal Jingle Bells" title="Jingle bells, Batman smells,&#13;Robin flew away&#13;The Batmobile, lost a wheel,&#13;on the motorway" href="https://youtu.be/9c0X9AwsH1U?t=14" shape="poly" coords="279,536,373,505,346,585" style="outline:none;"  />
+<area id="sn" onmouseover="mo('sn');" onclick="return(oc('sn', event));" 		onmouseout="reset();" alt="Read: is the mistletoe tradition dying out?" title="Did you hear about the catholic priest who dropped his sermon book on his foot?&#13;He got missal toe." href="http://www.theguardian.com/lifeandstyle/shortcuts/2015/dec/21/kiss-under-mistletoe-victorian-tradition-dying-out" shape="poly" coords="472,677,280,740,279,536,338,660" style="outline:none;"  />
+<area id="fnc" onmouseover="mo('fnc');" onclick="return(oc('fnc', event));" 	onmouseout="reset();" alt="Learn about the science of chocolate" title="There's a rumour Cadburys are launching a new product aimed at the Far East.&#13;&#13;But it might just be a Chinese Wispa." href="https://www.youtube.com/watch?v=bt7tzEzEg5o" shape="poly" coords="592,305,620,389,535,387" style="outline:none;"  />
+<area id="mfc" onmouseover="mo('mfc');" onclick="return(oc('mfc', event));" 	onmouseout="reset();" alt="Watch Cream's 'White Room'" title="Descartes: 'Waiter, I'd like a cup of coffee without cream, please.'&#13;Waiter: 'I'm sorry, sir, we're out of cream. Would you take it without milk?'" href="https://youtu.be/pkae0-TgrRU?t=21" shape="poly" coords="411,386,390,447,278,410,277,532,249,400,353,304,328,389" style="outline:none;"  />
+<area id="mfn" onmouseover="mo('mfn');" onclick="return(oc('mfn', event));" 	onmouseout="reset();" alt="Watch Salt'n'Pepa 'Push It'" title="One of my friends was hospitalised after eating a Naga Viper chilli.&#13;&#13;The chef was arrested for assault with a deadly pepper." href="https://www.youtube.com/watch?v=vCadcBR95oU" shape="poly" coords="351,306,410,388,437,307" style="outline:none;"  />
+<area id="mnc" onmouseover="mo('mnc');" onclick="return(oc('mnc', event));" 	onmouseout="reset();" alt="Listen to Chroma Key on Spotify" title="I liked Dream Theater's first two albums.&#13;&#13;They used chromatic polyrhythms less, and Kevin Moore." href="https://play.spotify.com/track/6eaJIZ2x41y7aGR5TYOoo6" shape="poly" coords="595,310,695,401,668,536,640,456,574,505,554,445,667,409" style="outline:none;"  />
+<area id="sfc" onmouseover="mo('sfc');" onclick="return(oc('sfc', event));" 	onmouseout="reset();" alt="Watch Greg and Mike detonate high-explosive crackers in slow motion" title="For the benefit of our American readers, crackers &#13;are all about stupid hats, gunpowder, and pulling &#13;at the family dinner table." href="https://www.youtube.com/watch?v=Fom6c-WH5ig" shape="poly" coords="473,579,524,543,592,636,665,536,612,663,473,677,540,628" style="outline:none;"  />
+<area id="sfn" onmouseover="mo('sfn');" onclick="return(oc('sfn', event));" 	onmouseout="reset();" alt="Make Nigella's Star Topped Mince Pies" title="Q: What do you call an undercover Polo?&#13A: A mint spy!" href="http://www.nigella.com/recipes/view/STAR-TOPPED-MINCE-PIES-5238" shape="poly" coords="354,306,474,240,593,308,508,306,534,388,474,387,474,269" style="outline:none;"  />
+<area id="smc" onmouseover="mo('smc');" onclick="return(oc('smc', event));" 	onmouseout="reset();" alt="Hear John Rutter's 'Candlelight Carol'" title="'How can you capture the wind on the water?' is &#13;kind of a dumb question in world where sailing &#13;ships have been a thing for hundreds of years." href="https://www.youtube.com/watch?v=SSZqYn0UtNY" shape="poly" coords="472,578,406,626,473,679" style="outline:none;"  />
+<area id="smf" onmouseover="mo('smf');" onclick="return(oc('smf', event));" 	onmouseout="reset();" alt="Learn to play the Dance of the Sugar Plum Fairy" title="Clara and the Prince travel to the beautiful Land of Sweets, &#13;ruled by the Sugar Plum Fairy in his place until his return. &#13; &#13;He recounts for her how he had been saved from the Mouse King &#13;by Clara and had been transformed back into his own self. &#13;&#13;Afterwards, they agree never to drop acid on Christmas Eve ever again." href="https://www.youtube.com/watch?v=MdfEo2_JJh4" shape="poly" coords="306,456,278,537,373,505" style="outline:none;"  />
+<area id="smn" onmouseover="mo('smn');" onclick="return(oc('smn', event));" 	onmouseout="reset();" alt="Hear Eartha Kitt singing 'Santa Baby'"  title="Eartha Kitt's Christmas List&#13; &#13; &#x2610; Sable&#13; &#x2610; 54 Convertible (light blue)&#13; &#x2610; Yacht&#13; &#x2610; Deed to a mine (platinum!)&#13; &#x2610; Duplex&#13; &#x2610; Checks&#13; &#x2610; Tree decorations (Tiffany)&#13; &#x2610; A Ring." href="https://www.youtube.com/watch?v=jFMyF9fDKzE" shape="poly" coords="336,663,281,537,347,583,373,505,423,541,355,636,472,677" style="outline:none;"  />
+<area id="snc" onmouseover="mo('snc');" onclick="return(oc('snc', event));" 	onmouseout="reset();" alt="Watch a real coal fire" title="In Thatcher's Britain, coal fires YOU!" href="https://www.youtube.com/watch?v=U38n8cex4Ho" shape="poly" coords="573,504,667,535,599,586" style="outline:none;"  />
+<area id="sfnc" onmouseover="mo('sfnc');" onclick="return(oc('sfnc', event));" 	onmouseout="reset();" alt="Make roasted chestnuts" title="[I only know one chestnut joke, and it's very rude.]" href="http://www.bbcgoodfood.com/howto/guide/how-roast-chestnuts" shape="poly" coords="668,536,594,638,524,542,473,578,496,502,577,506,572,508,598,586" style="outline:none;"  />
+<area id="smfc" onmouseover="mo('smfc');" onclick="return(oc('smfc', event));" 	onmouseout="reset();" alt="Watch 'Zombie' by Cranberries" title="I genuinely did a little dance when I thought of this one... I mean, how many seasonal musical food-related things beginning with 'C' are there?" href="https://www.youtube.com/watch?v=6Ejga4kJUts" shape="poly" coords="279,527,279,409,391,445,411,389,436,460,374,505,308,456" style="outline:none;"  />
+<area id="smfn" onmouseover="mo('smfn');" onclick="return(oc('smfn', event));" 	onmouseout="reset();" alt="Watch 'Sugar Mice' by Marillion" title="OK, a sugar mouse I can get - but why would anybody want a salt pig?" href="https://youtu.be/kIPrJmzG7Ss?t=120" shape="poly" coords="352,309,473,269,473,386,534,388,473,432,412,389,436,308" style="outline:none;"  />
+<area id="mfnc" onmouseover="mo('mfnc');" onclick="return(oc('mfnc', event));" 	onmouseout="reset();" alt="Watch 'Cherry Pie' by Warrant" title="Mathematician: 'pi-r-squared' &#13;Baker: 'No... pie are round. Brownies are square. Idiot.'" href="https://youtu.be/OjyZKfdwlng?t=65" shape="poly" coords="593,309,666,409,555,445,573,504,512,460,537,387,620,386" style="outline:none;"  />
+<area id="smnc" onmouseover="mo('smnc');" onclick="return(oc('smnc', event));" 	onmouseout="reset();" alt="Read XKCD #959 'Caroling'" title="Three friends are out on Christmas Eve; they get horribly drunk, fall in &#13;the canal, and die. They get to the Pearly Gates, where St Peter tells &#13;them will only get into Heaven if they can show they were celebrating &#13;Christmas. &#13;&#13;The first man pulls out his cigarette lighter, lights it and &#13;says 'Look - it's my Christmas candle!' - and in he goes. &#13;&#13;The second man pulls out his car keys, jingles them and says &#13;'Listen - sleigh bells!' - and in he goes. &#13;&#13;The third man reaches into his pocket - and pulls out a pair of &#13;ladies' knickers. &#13;&#13;'What have those got to do with Christmas?' asks St Peter. &#13;&#13;The third man replies 'er... they're Carol's.'" href="https://xkcd.com/959/" shape="poly" coords="373,504,448,503,474,580,404,627,474,677,353,639,421,540" style="outline:none;"  />
+<area id="smfnc" onmouseover="mo('smfnc');" onclick="return(oc('smfnc', event));" onmouseout="reset();" alt="Hear my brother's favourite Christmas song ever." title="Worked out what should go here yet?" href="https://www.youtube.com/watch?v=nQrdxtWgHbE" shape="poly" coords="410,387,475,433,533,387,512,458,574,504,495,504,473,579,451,504,370,506,434,460" style="outline:none;"  />
+</map>
+
+<img src="c.png" class="preload" />
+<img src="f.png" class="preload" />
+<img src="fc.png" class="preload" />
+<img src="fn.png" class="preload" />
+<img src="fnc.png" class="preload" />
+<img src="m.png" class="preload" />
+<img src="mc.png" class="preload" />
+<img src="mf.png" class="preload" />
+<img src="mfc.png" class="preload" />
+<img src="mfn.png" class="preload" />
+<img src="mfnc.png" class="preload" />
+<img src="mn.png" class="preload" />
+<img src="mnc.png" class="preload" />
+<img src="n.png" class="preload" />
+<img src="nc.png" class="preload" />
+<img src="s.png" class="preload" />
+<img src="sc.png" class="preload" />
+<img src="sf.png" class="preload" />
+<img src="sfc.png" class="preload" />
+<img src="sfnc.png" class="preload" />
+<img src="sm.png" class="preload" />
+<img src="sfn.png" class="preload" />
+<img src="smc.png" class="preload" />
+<img src="smf.png" class="preload" />
+<img src="smfc.png" class="preload" />
+<img src="smfn.png" class="preload" />
+<img src="smn.png" class="preload" />
+<img src="smnc.png" class="preload" />
+<img src="sn.png" class="preload" />
+<img src="snc.png" class="preload" />
+<img src="smfnc.png" class="preload" />
+<img src="x.png" class="preload" />
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4266979-9', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

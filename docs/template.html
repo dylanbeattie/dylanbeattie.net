@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>#title#</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Microsoft IIS6 SMTP Service Allows Messages Containing Bare Linefeeds</h1>
+<p>Dylan Beattie, #date#</p>
+<hr>
+<h2>Overview</h2>
+<p>After upgrading our web server from Windows 2000 Server to Windows 2003 Server, we found that a small number of customers were no longer receiving any e-mail from our site.</p>
+<p>For each failed message, the Windows Event Log contained the following event:</p>
+<table>
+<tr><th>Source</th><td>smtpsvc</td></tr>
+<tr><th>Category</th><td>none</td></tr>
+<tr><th>Event ID</th><td>4006</td></tr>
+<tr><th>Description</th><td>Message delivery to the host 'xxx.xxx.xxx.xxx' failed while delivering to the remote domain 'recipient.tld' for the following reason: The connection was dropped by the remote host.</td></tr>
+</table>
+</p>
+<p>Our site is written in JScript ASP, and we're using the CDO libraries to send e-mail messages via an SMTP pickup directory.</p>
+<h2>Links &amp; Acknowledgements</h2>
+<hr />
+<p class="small_print">Documentation copyright &copy; Dylan Beattie 2002 except where indicated.</p>
+<p class="small_print">Permission is granted to copy, distribute and/or modify this documentation under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts.</p>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Secure FTP with RSA Authentication Using OpenSSH v3.4-1 on Windows 2000</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Secure FTP with RSA Authentication Using OpenSSH v3.4-1 on Windows 2000</h1>
+<p>Dylan Beattie, July 2002</p>
+<hr>
+<h2>Overview</h2>
+<p>This document outlines how to use the OpenSSH tools to create a secure file
+  transfer mechanism which can be automated via shell scripts or batch files.
+  One application of this - the thing we're using it for - is to allow our clients
+  to automate the data transfer process from their sales mainframe to our web
+  servers, without any danger of the information contained therein being compromised
+  in transit. In a nutshell; at eight every night, their mainframe spits out a
+  fresh batch of sales figures; at nine every night, this is automatically uploaded
+  to our server via SFTP using RSA authentication, and at midnight, our server
+  picks up the fresh data from the upload directory and imports it into the database.
+  This document describes how we set up the middle stage of this process - installing
+  OpenSSH and configuring it to allow secure, unattended file transfer operations.
+</p>
+<ol>
+  <li>The OpenSSH server is installed on the web server.</li>
+  <li>The OpenSSH client tools are installed on the remote machine(s).</li>
+  <li>An RSA key pair is generated at each client machine</li>
+  <li>The public key from each of these key pairs is sent to the server and added to the list of authorised keys.</li>
+</ol>
+<p>These examples are based on a fictional Windows 2000 Server called <code>fortress</code>,
+  with the fully-qualified internet hostname <code>www.fortress.com</code>. This
+  machine is not part of a Windows NT domain, but is configured as a stand-alone
+  server, and we've created a local Windows user account called <code>johndoe</code>.
+</p>
+<pre>Command transcripts are shown in monospaced type, with the bits you type shown in <b>bold</b></pre>
+<p>These examples are tested and verified for OpenSSH v3.4-1 running on Windows 2000 Server, and have been tested using both the Windows and Linux versions of the OpenSSH client utilities. Other version/platform combinations may or may not work as described here.</p>
+<hr>
+<h2>Disclaimer</h2>
+<p>I'm by no means a security expert, and I'm not an OpenSSH guru. If you find these notes helpful, great - if you don't, there's plenty of more detailed resources out there which <b>will</b> answer your questions if you take the time to read them properly. Contributions and testimonials are welcome; questions will be read and possibly answered but I'm making no guarantees, and please don't rely on this information for anything important. I don't know whether it's the most secure or most effective way of doing this, but it works and that's good enough for me. If it's not good enough for you, don't use it :)</p>
+<hr>
+<h2>Walkthrough</h2>
+<h3>Install OpenSSH on the WWW server</h3>
+<ol>
+  <li>Get OpenSSH from <a href="http://www.networksimplicity.com/openssh/">http://www.networksimplicity.com/openssh/</a>.
+    Run the installer, accepting all default options.These instructions assume
+    OpenSSH has been installed to C:\Program&nbsp;Files\NetworkSimplicity\</li>
+  <li>Check Windows file/folder permissions, and make sure the local user <code>johndoe</code> has Full Control of the C:\Program&nbsp;Files\NetworkSimplicity\ssh\ directory and all it's sub-directories, otherwise you'll get odd 'Access Denied' messages when you try to upload the public key files later.
+  <li>Configure the passwd and group files within the OpenSSH configuration as
+    follows. Here, we create an entry for the local user 'fortress', and a standard
+    local group file. If you're setting up domain users or inter-domain trust
+    relationships, consult the documentation.
+    <pre>
+Microsoft Windows 2000 [Version 5.00.2195]
+(C) Copyright 1985-2000 Microsoft Corp.
+
+C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;<b>mkpasswd -l -u johndoe &gt;&gt; ..\etc\passwd</b>
+C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;<b>mkgroup -l &gt;&gt; ..\etc\group</b>
+</pre>
+  </li>
+  <li>Type <code><b>net start opensshd</b></code> at the command line to start
+    the server</li>
+</ol>
+<h3>Install OpenSSH on the client workstation</h3>
+<h2></h2>
+<ol>
+  <li>Get OpenSSH from <a href="http://www.networksimplicity.com/openssh/">http://www.networksimplicity.com/openssh/</a>.
+    Run the installer, selecting only the client tools. These instructions assume
+    OpenSSH has been installed to c:\Program&nbsp;Files\networksimplicity\</li>
+  <li>From the command line, verify that you can connect to the server using ssh
+    [ssh syntax is <code>ssh username@host</code>] - here, I connect and then
+    run the <code>hostname</code> command just to make sure I'm connected to the
+    right place :) You may be warned that the server's identity cannot be verified
+    -
+    <pre>
+C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>ssh johndoe@www.fortress.com</b>
+johndoe@www.fortress.com's password:
+Last login: Thu Jul 11 17:26:43 2002 from myhost.mydomain.com
+Microsoft Windows 2000 [Version 5.00.2195]
+(C) Copyright 1985-2000 Microsoft Corp.
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>hostname</b>
+fortress
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>exit</b>
+Connection to www.fortress.com closed.
+
+C:\Program&nbsp;Files\NetworkSimplicity\ssh>
+</pre>
+    This confirms that the server is accessible and correctly configured, and
+    that the client tools are installed correctly on the client workstation. </li>
+</ol>
+<h3>Configure the server to allow RSA key-pair authentication</h3>
+<ol>
+  <li>Find the <code>sshd_config</code> file on the server (ours is in C:\Program&nbsp;Files\NetworkSimplicity\ssh), and check the following lines exist:<br>
+    <code><br>
+    Protocol 2,1</code> (default is <code>Protocol 2</code>)<br>
+    <code><br>
+    RSAAuthentication Yes </code>(default is <code>RSAAuthentication no</code>)<br>
+  </li>
+</ol>
+<h3>Create a key pair on the client and export the public key to the server</h3>
+<p>Here we use ssh-keygen.exe to create a 1024-bit RSA key pair. The
+  private key stays on the client machine and must be kept safe - if this key
+  is compromised, the security of the system is compromised. The public key is
+  exported to the server, where it must be appended to the file <code>C:\Program&nbsp;Files\NetworkSimplicity\ssh\.ssh\authorized_keys
+  </code>(Note that on a newly-installed server, this file may be blank or non-existent.)</p>
+<p>The following session transcript demonstrates the entire process, via SSH tools
+  from the client machine.</p>
+<p>First, we run ssh-keygen specifying an RSA key type. <b>NOTE</b>: Supply an
+  EMPTY passphrase, otherwise you'll be asked to type the passphrase whenever
+  you use the key - which is not really what we want. </p>
+<pre>
+C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>ssh-keygen.exe -t rsa</b>
+Generating public/private rsa key pair.
+Enter file in which to save the key (/bin/.ssh/id_rsa): <b>johndoe.key</b>
+johndoe.key already exists.
+Overwrite (y/n)? <b>y</b>
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in <b>johndoe.key</b>.
+Your public key has been saved in johndoe.key.pub.
+The key fingerprint is:
+ec:30:03:39:06:96:9f:a7:15:ed:4a:2e:de:64:bc:14 Dylan Beattie@DYLAN_PC</pre>
+<p>This has created two files - a file called<b> <code>johndoe.key</code> </b>containing
+  your private key, and a file called <code><b>johndoe.key.pub</b></code> containing
+  the public key.</p>
+<p>The private key needs to be moved into the <code>c:\Program&nbsp;Files\networksimplicity\ssh\.ssh:</code></p>
+<code>C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>move johndoe.key .ssh</b></code>
+<p>The public key must first be copied to the corresponding <code>.ssh</code>
+  directory on the server (done here using SFTP):</p>
+<pre>
+C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>sftp johndoe@www.fortress.com</b>
+Connecting to www.fortress.com...
+johndoe@www.fortress.com's password:
+sftp> <b>cd .ssh</b>
+sftp> <b>put johndoe.key.pub</b>
+Uploading johndoe.key.pub to /bin/.ssh/johndoe.key.pub
+sftp> <b>exit</b>
+</pre>
+<p>...and then we connect via SSH and append the contents of the fortress.pub file to the authorized_keys file in the .ssh directory.</p>
+<pre>
+
+C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>ssh johndoe@www.fortress.com</b>
+johndoe@www.fortress.com's password:
+Last login: Thu Jul 11 17:27:55 2002 from myhost.mydomain.com
+Microsoft Windows 2000 [Version 5.00.2195]
+(C) Copyright 1985-2000 Microsoft Corp.
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh><b>cd .ssh</b>
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh\.ssh><b>dir</b>
+ Volume in drive C is SYSTEM
+ Volume Serial Number is 403A-24CD
+
+ Directory of C:\Program&nbsp;Files\NetworkSimplicity\ssh\.ssh
+
+07/11/2002  05:40p      &gt;DIR&lt;          .
+07/11/2002  05:40p      &gt;DIR&lt;          ..
+07/11/2002  04:56p                 232 authorized_keys
+07/11/2002  05:40p                  23 environment
+07/11/2002  05:40p                 232 johndoe.key.pub
+07/11/2002  04:56p                 232 test.pub
+03/27/2002  03:25p                  58 rc
+               5 File(s)            777 bytes
+               2 Dir(s)   1,376,125,952 bytes free
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh\.ssh><b>type johndoe.key.pub >> authorized_keys</b>
+
+(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh\.ssh><b>exit</b>
+Connection to www.fortress.com closed.
+
+C:\Program&nbsp;Files\NetworkSimplicity\ssh>
+</pre>
+<p>That's it. We're now ready to test our RSA authentication.</p>
+<h3>Test the RSA Authentication</h3>
+<p>We can now connect by specifying the filename of our private key on the command
+  line, rather than supplying a password as part of the connection process. This
+  means that <b>anyone who has your private key can assume your identity and compromise
+  your server.</b> So be careful with it.</p>
+<p>To establish an SSH connection using RSA authentication, specify the location
+  of the private key file with the -i option.</p>
+<pre>C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;<b>ssh -i .ssh\johndoe.key johndoe@www.fortress.com</b>
+Last login: Thu Jul 11 17:40:15 2002 from myhost.mydomain.com
+Microsoft Windows 2000 [Version 5.00.2195]
+(C) Copyright 1985-2000 Microsoft Corp.</pre>
+<pre>(fortress) C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;<b>exit</b>
+Connection to www.fortress.com closed.</pre>
+<pre>C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;</pre>
+<p>To establish a Secure FTP connection (SFTP) using RSA authentication, use the
+  -oIdentityFile option:</p>
+<pre>C:\Program&nbsp;Files\NetworkSimplicity\ssh&gt;<b>sftp -oIdentityFile=.ssh\johndoe.key johndoe@www.fortress.com</b>
+   Connecting to www.fortress.com...
+   sftp&gt;
+</pre>
+<p>And there you have it - a secure FTP connection created without specifying
+  a password.</p>
+<h3>Creating a batch SFTP script</h3>
+<p>Using the <code>-b</code> switch, <code>sftp </code>can run a sequence of commands
+  from a batch file rather than as an interactive session. Here, we're going to
+  write a batch script that will connect, upload a set of files from <code>C:\EXPORT\</code>
+  on the local machine (our workstation) to <code>W:\ftproot\upload\</code> on
+  our server. This also demonstrates something called <b>CygDrive</b> notation
+  - Cygnus' (and OpenSSH's) way of accessing Windows drive letters in a Unix-style
+  environment. </p>
+<p>First, create the file <code>c:\export\nightly_upload.ftp</code> (or whatever
+  you want to call it) - which should look something like:</p>
+<pre>put /cygdrive/c/export/prices.csv /cygdrive/w/ftproot/upload/prices.csv
+put /cygdrive/c/export/offers.csv /cygdrive/w/ftproot/upload/offers.csv
+put /cygdrive/c/export/accounts.csv /cygdrive/w/ftproot/upload/accounts.csv
+</pre>
+<p>Note how we're using <code>/cygdrive/c/</code> to denote drive <code>C:\ </code>on
+  the local machine, and <code>/cygdrive/w/</code> to denote drive <code>W:\ </code>on
+  the remote machine.</p>
+<p>Then create the Windows batch file that will call SFTP with the appropriate
+  arguments - note the <code>PROGRA~1</code> shorthand for <code>Program&nbsp;Files</code>
+  to get around potential problems with pathnames containing spaces. The contents
+  of <code>upload.bat</code> look like this - and should be all on one line:</p>
+<pre>c:\progra~1\networksimplicity\ssh\sftp.exe -oIdentityFile=c:\progra~1\networksimplicity\ssh\.ssh\johndoe.key -b c:\export\nightly_upload.ftp johndoe@www.fortress.com</pre>
+<p>Note that we're using fully-qualified path names throughout - advanced users,
+  feel free to use the 'Start in Folder...' feature of the Task Scheduler or other
+  means to make this look a bit more elegant, but this syntax is most reliable.
+</p>
+<p>Finally, use the Windows Task Scheduler to run <code>upload.bat</code> at 21:00
+  every night (or whenever), and you're in business. </p>
+  <hr>
+<h2>Links &amp; Acknowledgements</h2>
+<p>OpenSSH for Windows: <a href="http://www.networksimplicity.com/openssh/">http://www.networksimplicity.com/openssh/</a></p>
+<hr />
+<p class="small_print">Documentation copyright &copy; Dylan Beattie 2002 except where indicated.</p>
+<p class="small_print">Permission is granted to copy, distribute and/or modify this documentation under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts.</p>
+
+</body>
+</html>

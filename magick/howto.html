@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>PerlMagick Windows 2000 HowTo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../default.css" type="text/css">
+<link rel="home" href="/magick/">
+<meta name="keywords" content="ImageMagick PerlMagick Magick IIS Windows 2000">
+<meta name="description" content="A quick-start guide for installing PerlMagick on Windows 2000 systems">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td bgcolor="#000066">
+      <div align="right"><font color="#FFFFFF"><b><font size="3">Windows 2000
+        PerlMagick Web Server How-to</font></b></font></div>
+    </td>
+  </tr>
+</table>
+  <p>Part of <a href="http://www.dylanbeattie.net/magick/">Dylan's Collection of PerlMagick Stuff</a></p>
+<p>June 2013: This article is also online in <a href="http://science.webhostinggeeks.com/perlmagick">Serbo-Croatian</a> - thanks to Anja Skrba for the translation!</p> 
+  <hr />
+<p align="left"><a href="http://www.imagemagick.org/"><img src="magick_logo.png" width="120" height="124" align="right" border="0"></a>This
+  document describes the installation and configuration of ActivePerl, ImageMagick
+  and PerlMagick under Microsoft's IIS5 web server, part of the Windows 2000 Server
+  and Advanced Server operating systems. After following these instructions, you
+  should have a system capable of dynamically creating and manipulating images
+  and sending them directly to a remote users' web browser or storing them on
+  the server's local filesystem.</p>
+<p align="left">ActivePerl is the leading Windows version of the popular Perl
+  scripting/programming language. For more information see</p>
+<ul>
+  <li><a href="http://www.perl.org/">http://www.perl.org/</a></li>
+  <li><a href="http://www.activestate.com/">http://www.activestate.com/</a></li>
+</ul>
+<p>ImageMagick is an open-source image manipulation library available for most
+  operating systems and platforms. For more information see <a href="http://www.imagemagick.org/">http://www.imagemagick.org/</a></p>
+<p>PerlMagick is an object-oriented Perl interface to ImageMagick, allowing Perl
+  scripts to create and manipulate images. For more information see <a href="http://www.imagemagick.org/www/perl.html">http://www.imagemagick.org/www/perl.html</a></p>
+<hr>
+<h4>Prerequisites</h4>
+<h5>Windows 2000 and IIS</h5>
+<p>You should already have a working installation of Windows 2000 Server or Advanced
+  Server, with IIS installed and configured. IIS configuration is beyond the scope
+  of this document, and I won't go into any more detail than is necessary.</p>
+<p><b>Not running Windows 2000?</b></p>
+<p>Notes on installing PerlMagick under other versions of Windows (95, 98, Me,
+  NT or XP) are available <a href="other_os.html">here</a>. These notes are generally
+  contributed by other users - I haven't tested any of them personally. </p>
+<h5>Note on Versions</h5>
+<p>In my experience, PerlMagick is *extremely* sensitive to version differences.
+  PerlMagick requires two components - the PerlMagick module itself, and the ImageMagick
+  binaries (.DLLs). Version inconsistencies between these two packages almost
+  invariably crash - for instance, PerlMagick 5.2.5 will not work with ImageMagick
+  5.2.6. </p>
+<p>These instructions are based on a complete install of ImageMagick 5.4.4 using
+  ActiveState ActivePerl build 631. I've also included instructions for rolling
+  your own modules from other versions of the source code.</p>
+<h4>The Really Easy Way</h4>
+<p>This doesn't include any ImageMagick command line tools, just the Perl module
+  and required binaries.</p>
+<h5>Ingredients</h5>
+<ul>
+  <li>ActivePerl: <a href="http://www.activestate.com/Products/ActivePerl/Download.html">http://www.activestate.com/Products/ActivePerl/Download.html</a></li>
+  <li>Latest full PPM package - available from the <a href="downloads.html">download
+    page </a></li>
+  </ul>
+<h5>Instructions</h5>
+<ol>
+  <li>Install ActivePerl. Following all the defaults works for me. To check if
+    it's installed and working, save the following as hello.pl in a directory
+    on your web server - here we're using /cgi-bin/. Ensure the directory has
+    <b>execute</b> permissions under IIS.
+    <pre>#!/bin/perl
+print (&quot;Content-type:text/html\r\n\r\n&quot;);
+print (&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;&quot;);</pre>
+    <p>Pointing a browser at http://myserver/cgi-bin/hello.pl should display something
+      like:</p>
+    <h1>Hello World!</h1>
+    <p>If it doesn't, your Perl/IIS configuration isn't working properly - go
+      hassle the IIS gurus and come back when it's working :)<br>
+      From here on in, we <b>assume you've installed Perl in c:\perl</b>. If you've
+      installed it elsewhere, replace c:\perl\ with whatever your path is in the
+      following instructions - it's been highlighted in <font color="#FF0000">red</font>
+      throughout these examples.</p>
+  </li>
+  <li>
+    <p>Download the latest full PPM package from the <a href="downloads.html">downloads</a>
+      page. Unzip it into c:\temp. <b>Make sure you expand the folders inside
+      the ZIP file - the -d option if you're using unzip.exe or the 'Use folder
+      names' option in WinZip.</b> You should now have a folder c:\temp\x86 with
+      a file called Image-Magick.tar.gz in it.</p>
+  </li>
+  <li>Do this:
+    <pre>C:\temp&gt;ppm install Image-Magick.ppd<br>Installing package 'Image-Magick.ppd'...<br>Installing C:\Perl\site\lib\auto\Image\Magick\colors.mgk<br>-- removed lots of lines similar to the above ---<br>Installing C:\Perl\site\lib\auto\Image\Magick\Magick.lib<br>Installing C:\Perl\site\lib\Image\Magick.pm<br>Writing C:\Perl\site\lib\auto\Image\Magick\.packlist<br>
+C:\temp&gt;</pre>
+    If you see the above, it means it's worked. If you get:
+    <pre>
+C:\temp>ppm install Image-Magick.ppd
+'ppm' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\temp></pre>
+    it means your installation of ActivePerl isn't configured properly - you need
+    to make sure that the folder containing ppm.bat (usually <font color="#FF0000">c:\perl</font>\bin)
+    is in your system path:</li>
+  <li>You now need to set two environment variables - either from the command
+    line, or by right-clicking 'My Computer', Properties, Advanced, Environment
+    Variables:
+    <ol>
+      <li>set MAGICK_HOME=<font color="#FF0000">c:\perl\</font>site\lib\auto\Image\Magick</li>
+      <li>add <font color="#FF0000">c:\perl\</font>site\lib\auto\Image\Magick
+        to your system path.</li>
+    </ol>
+  </li>
+  <li>Restart the computer. It seems IIS won't acknowledge the modified environment
+    variables unless it's rebooted - just restarting IIS isn't sufficient.</li>
+</ol>
+<h5>Testing</h5>
+<p>Save the file <a href="imagedemo1.pl.txt">imagedemo1.pl</a> into the /cgi-bin/ directory
+  we discussed earlier. Now point your browser at http://myserver/cgi-bin/imagedemo1.pl
+  If you see the following:</p>
+<p><img src="imagetest.gif" width="180" height="30"></p>
+<p>then PerlMagick is installed OK. If you get anything else, you have a problem.
+  Generally a 'broken image' icon indicates that Perl is working fine and PerlMagick
+  is having difficulties, while an HTTP 500 error means either there's an error
+  in the Perl script or a problem with your ActivePerl installation. See 'Troubleshooting'
+  below for more info, or refer to my <a href="debug.html">page of PerlMagick
+  debugging tips.</a></p>
+<hr>
+<h4>The Hard Way</h4>
+<p>This allows you to roll your own PPM package - useful for deploying on remote
+  servers which don't have Visual C++ installed.</p>
+<ul>
+  <li>ActivePerl build 618 or later: <a href="http://www.activestate.com/Products/ActivePerl/Download.html">http://www.activestate.com/Products/ActivePerl/Download.html</a></li>
+  <li>ImageMagick source code for Win32: <a href="http://www.imagemagick.org/www/archives.html">http://www.imagemagick.org/www/archives.html</a>
+  </li>
+  <li>zip, unzip, tar and gzip for Windows: <a href="tools.zip">here</a> or from
+    <a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>
+    and PKZIP from <a href="http://www.pkware.com/">http://www.pkware.com/</a></li>
+  <li>Microsoft Visual C++ 6.0. In theory, it's possible to compile ImageMagick
+    using GCC tools, but I haven't tried it and I don't intend to. Please let
+    me know if you manage to do this :)</li>
+</ul>
+<h4>Instructions</h4>
+<ol>
+  <li>
+    <p>Make sure ActivePerl is installed and configured - you should be able to
+      do this:</p>
+    <pre>C:\&gt;perl -e &quot;print 'Hello World!';&quot;
+Hello World!
+C:\&gt; </pre>
+    <p>If you get a 'not recognised yada yada yada' message, then your path isn't
+      set up properly - refer to the instructions above. Ignore the bit about
+      web servers unless your build workstation is also your web server. </p>
+  </li>
+  <li>
+    <p>Make sure zip.exe, unzip.exe, tar.exe and gzip.exe are in your search path
+      - the easiest way to do this is to copy them to c:\windows\system32 (or
+      wherever your copy of format.com resides - that's where Windows keeps the
+      command-line DOS utilities)</p>
+  </li>
+  <li>
+    <p>Unzip the ImageMagick source tree to a local drive. The source tree includes
+      full path information so just unzipping it to C:\ should give you a full
+      source tree under C:\ImageMagick-5.4.0\ or whatever.</p>
+  </li>
+  <li>
+    <p>Build ImageMagick according to the instructions, which you'll find in \ImageMagick-5.4.0\www\install.html
+      (or wherever you put it.) <b>If you hold an LZW license from Unisys and
+      want to enable LZW compression, you should edit the 'magick_config.h' file
+      and uncomment the #define HazLZW line. </b>Make sure you set the project
+      configuration to <i>All - Win32 Release</i> (Build -&gt; Set Active Configuration
+      in VC++) This will put all the DLLs (along with the command-line tools such
+      as convert.exe) in ImageMagick-5.4.0\VisualMagick\bin. These DLLs need to
+      be present in the /perl/bin directory on the PerlMagick system - it's worth
+      taking a ZIP snapshot of the DLLs for future deployments.</p>
+  </li>
+  <li>
+    <p>From a command prompt, cd to the ImageMagick-5.4.0/PerlMagick directory
+      and do the following:</p>
+    <pre>C:\ImageMagick-5.4.0\PerlMagick&gt;perl makefile.nt
+C:\ImageMagick-5.4.0\PerlMagick&gt;nmake
+C:\ImageMagick-5.4.0\PerlMagick&gt;nmake ppm</pre>
+  </li>
+</ol>
+<p>You should now have a file PerlMagick.zip in the \PerlMagick directory. This
+  contains a PPM (Perl module package) of the Image::Magick module.</p>
+<h4>Deployment</h4>
+<p>(Assuming ActivePerl is installed and running on the target machine - if not,
+  follow the ActivePerl install instructions in the 'Quick Way' section above)</p>
+<ol>
+  <li>Copy or unzip all the DLLs from step (4) into the perl\bin directory on
+    the target machine</li>
+  <li>Create C:\imagemagick (or whatever your system drive is) and move the *.mgk
+    files from the DLL archive into this folder.</li>
+  <li>Extract PerlMagick.zip into c:\temp - make sure you expand it with folder
+    names (-d on pkunzip.exe or 'Use folder names' in WinZip)</li>
+  <li> Do the following:
+    <pre>C:\TEMP&gt;ppm install Image-Magick.ppd
+Retrieving package 'Image-Magick.ppd'...
+Installing D:\perl\site\lib\auto\Image\Magick\Magick.dll
+Installing D:\perl\site\lib\auto\Image\Magick\Magick.lib
+Installing D:\perl\site\lib\auto\Image\Magick\Magick.exp
+Installing D:\perl\site\lib\auto\Image\Magick\Magick.bs
+Installing D:\perl\site\lib\auto\Image\Magick\autosplit.ix
+Installing D:\perl\site\lib\Image\Magick.pm
+Writing D:\perl\site\lib\auto\Image\Magick\.packlist</pre>
+  </li>
+  <li>
+    <pre>C:\TEMP&gt;</pre>
+  </li>
+  <li>That's it - assuming everything's gone OK, your system should now be ready
+    to go.</li>
+</ol>
+<h2>Sample Scripts</h2>
+<p>Once you get into PerlMagick, you'll realise actually installing it was the
+  easy part... :) Here's a couple of simple scripts to get you started - they've
+  got an extra .txt extension to allow you to view the source code straight from
+  your browser; remove the .txt if you're saving them locally to try out.</p>
+<p><a href="imagedemo1.pl.txt">imagedemo1.pl</a> - a simple bevelled button</p>
+<p><a href="imagedemo2.pl.txt">imagedemo2.pl</a> - a bevelled button with colours
+  specified using CGI parameters</p>
+<p><a href="imagedemo3.pl.txt">imagedemo3.pl </a>- as above, with some annotated
+  text specified using CGI parameters</p>
+<p><a href="buttons.html.txt">buttons.html</a> - HTML file showing how to use
+  imagedemo3.pl</p>
+<h3>Further Info / Troubleshooting </h3>
+<p>I've created a page of debugging and troubleshooting tips for PerlMagick scripts
+  <a href="debug.html">here</a> which you may find useful.</p>
+<p>Ron Savage has created a set of hax - small, trivial example scripts - intended
+  to demonstrate the various features of PerlMagick. These are available <a href="http://savage.net.au/Image-Magick.html">here</a>.</p>
+<p>For all ImageMagick/PerlMagick related questions, your first port of call should
+  be the ImageMagick mailing lists at <a href="http://www.imagemagick.org/www/magick-list.html">http://www.imagemagick.org/www/magick-list.html</a>
+  - I read them daily, and so do lots of people who know a lot more about it than
+  I do.</p>
+<p>If you have a specific problem and/or solution relating to the material in
+  this document, send it to me at &lt;<u>imagemagick [at] dylanbeattie [dot] net</u>&gt;
+  and I'll try and incorporate it into future revisions.</p>
+<hr>
+<p align="center">This document may be freely redistributed. It
+  may be edited on the condition that you indicate clearly<br>
+  which bits are original and which are your own amendments
+  - I don't want people emailing me 'cos you screwed up.</p>
+<p align="center"> Copyright (c) 2001 Dylan Beattie &lt;<u>imagemagick [at] dylanbeattie [dot] net</u>&gt; </p>
+<p align="center"><a href="http://www.dylanbeattie.net/magick/">http://www.dylanbeattie.net/magick/</a></p>
+</body>
+</html>

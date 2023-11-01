@@ -1,0 +1,82 @@
+h1 {
+  font-size: 160%;
+}
+h2 {
+  font-size: 140%;
+}
+h3 {
+  font-size: 120%;
+}
+body {
+  font-family: arial, helvetica, sans-serif;
+  max-width: 960px;
+  margin: 32px auto !important;
+  float: none !important;
+}
+
+p,
+dt,
+dd {
+  line-height: 1.6em;
+}
+
+pre,
+code {
+  font-family: Consolas, Andale Mono, courier, monospaced;
+  font-weight: bold;
+  color: #000099;
+}
+
+pre b,
+code b {
+  color: #cc0000;
+}
+
+pre i,
+code i {
+  color: #009900;
+}
+
+.small_print {
+  font-size: xx-small;
+}
+
+a.footnote {
+  vertical-align: super;
+  font-size: xx-small;
+}
+
+p.footnote {
+  font-size: xx-small;
+  text-indent: -20px;
+  margin-left: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 16px;
+}
+
+blockquote {
+  border: 1px solid #000000;
+  background-color: #cccccc;
+  padding: 2px;
+  margin: 10px 0px 10px 0px;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+.sourceCode {
+  font-family: Consolas, Courier, mono;
+  white-space: pre;
+}
+
+.codeHighlight {
+  font-weight: bold;
+  background-color: #ff99cc;
+}

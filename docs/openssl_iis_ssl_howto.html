@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Creating a Self-Signed Certificate using OpenSSL for use with Microsoft Internet Information Services (IIS) 5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Creating a Self-Signed Certificate using OpenSSL for use with Microsoft Internet Information Services (IIS) 5</h1>
+<p>Dylan Beattie, January 2003</p>
+<hr>
+<h2>Overview</h2>
+<p>This document describes how to sign your own SSL certificate requests using the OpenSSL toolkit and use these self-signed certificates to allow HTTPS connections to Microsoft's IIS 5 web server (as supplied with Windows 2000).</p>
+<p>If you know what a self-signed certificate is and understand the concept of a certificate authority, great. If not, this should still work but you'll have no idea what you've acheived when it does :)</p>
+<p><code>Command transcripts are shown in monospaced type, with the bits you type shown in <b>bold</b>. <i>Bits in italics are comments to explain what's going on and what you should be doing.</i></code></p>
+<hr>
+<h2>Disclaimer</h2>
+<p>I'm by no means a security expert, and I'm not an OpenSSL guru. If you find these notes helpful, great - if you don't, there's plenty of more detailed resources out there which <b>will</b> answer your questions if you take the time to read them properly. Contributions and testimonials are welcome; questions will be read and possibly answered but I'm making no guarantees, and please don't rely on this information for anything important. I don't know whether it's the most secure or most effective way of doing this, but it works and that's good enough for me. If it's not good enough for you, don't use it :)</p>
+<p>These instructions were tested using OpenSSL 0.9.6g (v1.0 Final) on Windows 2000 Server running Service Pack 3.</p>
+<hr>
+<h2>Ingredients</h2>
+<ul>
+<li>Windows 2000 running Internet Information Services (IIS)</li>
+<li>The <a href="http://www.shininglightpro.com/products/Win32OpenSSL.html">OpenSSL tools</a> for Windows from <a href="http://www.shininglightpro.com/">Shining Light Productions</a>. This is a Windows port of the popular <a href="http://www.openssl.org/">OpenSSL toolkit</a>.</li>
+</ul>
+<h2>Walkthrough</h2>
+<h3>Install and configure the OpenSSL toolkit</h3>
+<ol>
+<li>Get OpenSSL from the address above, and run the installer, accepting the defaults. These instructions assume OpenSSL is installed in <code>C:\OpenSSL</code>.</li>
+<li>Add <code>C:\OpenSSL\bin</code> to your system path (Control Panel, System, Advanced, Environment Variables, System Variables) - this isn't strictly necessary but it makes things a lot easier.</li>
+<li>Create a working directory - here, we'll use <code>c:\ssl</code> as our working folder.</li>
+<li>Download <a href="openssl.conf">this copy of openssl.conf</a> to your working folder. (<b>Note:</b> I have no idea what most of the options in this file mean. I just hacked it around until it worked...)</li>
+<li>Set up the directory structure and files required by OpenSSL:
+<pre>
+C:\ssl><b>md keys</b>
+
+C:\ssl><b>md requests</b>
+
+C:\ssl><b>md certs</b>
+</pre>
+</li>
+<li>Create the file <code>database.txt</code> - an empty (zero-byte) text file. This can be done using the 'touch' command if you have it (it's a Unix tool not available on Windows by default, but you might have one lying around), or by creating an empty file manually:
+<pre>
+c:\ssl><b>copy con database.txt
+^Z</b>
+
+C:\ssl>
+</pre>
+MS-DOS veterans will recognise this particular invocation. We're copying from CON (the console) to a file called database.txt, and that's a Control-Z end-of-file character on the first line. This should produce a zero-byte file called c:\ssl\database.txt
+</li>
+<li>Create the serial number file serial.txt. This is a plain ASCII file containing the string "01" on the first line, followed by a newline. Again, we can use a little bit of ancient DOS magic:
+<pre>
+C:\ssl><b>copy con serial.txt
+01
+^Z</b>
+
+C:\ssl>
+</pre>
+to achieve the desired effect. (That's keystrokes zero, one, return, control-Z, return)
+</ol>
+<h3>Set up a Certificate Authority (CA)</h3>
+<ol>
+<li>First, we create a 1024-bit private key to use when creating our CA.:
+<pre>
+C:\ssl><b>openssl genrsa -des3 -out keys/ca.key 1024</b>
+Loading 'screen' into random state - done
+warning, not much extra random data, consider using the -rand option
+Generating RSA private key, 1024 bit long modulus
+...........++++++
+..................++++++
+e is 65537 (0x10001)
+Enter PEM pass phrase: <i> - choose a memorable pass phrase to use for this key</i>
+Verifying password - Enter PEM pass phrase: <i> - type your pass phrase again for verification</i>
+</pre>
+The pass phrase will be requested whenever you use this certificate for anything, so make sure you remember it. This will create a file called <code>c:\ssl\keys\ca.key,</code> containing our certificate authority private key.
+</li>
+<li>Next, we create a master certificate based on this key, to use when signing other certificates:
+<pre>
+C:\ssl><b>openssl req -config openssl.conf -new -x509 -days 1001 -key keys/ca.key -out certs/ca.cer</b>
+Using configuration from openssl.conf
+Enter PEM pass phrase: <i> - type your passphrase here.</i>
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) []:GB
+State or Province Name (full name) []:Hampshire
+Locality Name (eg, city) []:Southampton
+Organization Name (eg, company) []:dylanbeattie.net
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your websites domain name) []:ssl.dylanbeattie.net
+Email Address []:ssl@dylanbeattie.net
+
+C:\ssl>
+</pre>
+This will create our CA certificate and store it as c:\ssl\certs\ca.cer</li>
+<li>(optional) Finally, we export our CA certificate in PKCS12 format - this will allow Windows users to import the PKCS12 certificate into their Trusted Root Store, so they don't get warning messages every time they use one of our certificates.
+<strong>From <a href="http://www.openssl.org/support/faq.html#USER12">the OpenSSL FAQ</a>:</strong>
+<blockquote>
+<p>12. How do I install a CA certificate into a browser?</p>
+<p>The usual way is to send the DER encoded certificate to the browser as 
+MIME type application/x-x509-ca-cert, for example by clicking on an 
+appropriate link. On MSIE certain extensions such as .der or .cacert may 
+also work, or you can import the certificate using the certificate 
+import wizard.</p>
+<p>You can convert a certificate to DER form using the command:</p>
+<pre>openssl x509 -in ca.pem -outform DER -out ca.der</pre>
+<p>Occasionally someone<sup>*</sup> suggests using a command such as:</p>
+<pre>openssl pkcs12 -export -out cacert.p12 -in cacert.pem -inkey cakey.pem</pre>
+<p><strong>DO NOT DO THIS!</strong> This command will give away your CAs private key and 
+reduces its security to zero: allowing anyone to forge certificates in 
+whatever name they choose.</p>
+</blockquote>
+<p><small>* Guilty as charged - sorry! This guide originally recommended the insecure method warned about above. Thanks to Baahl for pointing out the error and Marco Fagiolini for the correct method.</small></p>
+
+<!--
+<p><strong>UPDATE (2004-08-08): Apparently doing this includes the private key with the PKCS12 file, which means anyone with the PKCS12 cert can forge certificates from our CA. You should be able to import the ca.cer file directly into your browser instead. I haven't tested this yet, but in the meantime,  be warned. (I already told you I didn't know what I was doing...)</strong> Thanks to Baahl for this heads-up.</p>
+<pre>
+C:\ssl><b>openssl pkcs12 -export -in certs/ca.cer -inkey keys/ca.key -out certs/ca.p12</b>
+Loading 'screen' into random state - done
+Enter PEM pass phrase:
+Enter Export Password: <i> - users will need this password when importing the certificate</i>
+Verifying password - Enter Export Password:
+
+C:\ssl>
+</pre>
+This will create <code>c:\ssl\certs\ca.p12,</code> which can be imported via Internet Options -> Content -> Certificates on most Windows computers.
+-->
+</li>
+</ol>
+<h3>Create an IIS Certificate Request</h3>
+<p>This is described in detail elsewhere on the web - see <a href="http://support.microsoft.com/default.aspx?scid=KB;en-us;q228821">Microsoft Knowledge Base Article Q228821</a>. You should end up with a file called certreq.txt.</p>
+<h3>Sign the Certificate Request</h3>
+<ol>
+<li>Copy the <code>certreq.txt</code> file into c:\ssl\requests</li>
+<li>Sign the request
+<pre>
+C:\ssl><b>openssl ca -policy policy_anything -config openssl.conf -cert certs/ca.cer -in requests/certreq.txt -keyfile keys/ca.key -days 360 -out certs/iis.cer</b>
+Using configuration from openssl.conf
+Loading 'screen' into random state - done
+Enter PEM pass phrase:
+Check that the request matches the signature
+Signature ok
+The Subjects Distinguished Name is as follows
+commonName            :PRINTABLE:'myCommonName'
+organizationalUnitName:PRINTABLE:'myOrganisationalUnit'
+organizationName      :PRINTABLE:'myOrganisation'
+localityName          :PRINTABLE:'myLocality'
+stateOrProvinceName   :PRINTABLE:'myProvince'
+countryName           :PRINTABLE:'GB'
+Certificate is to be certified until Feb  2 01:13:14 2004 GMT (360 days)
+Sign the certificate? [y/n]:y
+
+
+1 out of 1 certificate requests certified, commit? [y/n]y
+Write out database with 1 new entries
+Data Base Updated
+
+C:\ssl>
+</pre>
+Let's just take a look at those command-line options in a bit more detail:
+<ul>
+<li><code>-policy policy_anything</code> - specifies that we're using the 'policy_anything' policy from our <code>openssl.conf</code> file. This is a relaxed policy in which the name, country, etc. in the certificate don't need to match those used by the certification authority. Use <code>-policy policy_match</code> for a more restrictive CA.</li>
+<li><code>-config openssl.conf</code> - specifies we're reading our configuration from <code>openssl.conf</code> in the current directory.</li>
+<li><code>-cert certs/ca.cer</code> - specifies we're using our CA master certificate to sign the request.</li>
+<li><code>-in requests/certreq.txt</code> - the certificate request we're signing.</li>
+<li><code>-keyfile keys/ca.key</code> - the private key for our CA master certificate, which proves we're allowed to use it.</li>
+<li><code>-days 360</code> - the time until the certficate will expire</li>
+<li><code>-out certs/iis.cer</code> - the file in which to place our newly-signed certificate</li>
+</ul>
+</li>
+<li>Convert the signed certificate into x509 format for use with IIS:
+<pre>
+C:\ssl><b>openssl x509 -in certs/iis.cer -out certs/iisx509.cer</b>
+
+C:\ssl>
+</pre>
+This will leave the new certificate in <code>c:\ssl\certs\iisx509.cer</code> - signed, sealed and ready to install</li>
+</ol>
+<h3>Install the new certificate under IIS</h3>
+<p>Again, this is described elsewhere on the web - remember that the <code>iisx509.cer</code> file is our <b>certificate response file</b>, and the instructions in <a href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;228836">Knowledge Base article 228836</a> should make everything clear.</p>
+<hr>
+<h2>Links &amp; Acknowledgements</h2>
+<p>OpenSSL for Windows: <a href="http://www.shininglightpro.com/">http://www.shininglightpro.com/</a></p>
+<hr />
+<p class="small_print">Documentation copyright &copy; Dylan Beattie 2002 except where indicated.</p>
+<p class="small_print">Permission is granted to copy, distribute and/or modify this documentation under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts.</p>
+
+</body>
+</html>

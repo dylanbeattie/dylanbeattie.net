@@ -1,0 +1,10 @@
+<html>
+<body>
+<h1>Dynamic Buttons with PerlMagick</h1>
+<img src="imagedemo3.pl?text=Button1"><br><br>
+<img src="imagedemo3.pl?text=Button2"><br><br>
+<img src="imagedemo3.pl?text=Button3"><br><br>
+<img src="imagedemo3.pl?text=Button4"><br><br>
+</body>
+</html>
+

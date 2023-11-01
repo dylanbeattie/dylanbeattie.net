@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Bare Linefeeds in SMTP Messages Cause &quot;The Connection Was Dropped By The Remote Host&quot; Errors When Using Microsoft IIS 6 SMTP Service</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style type="text/css">
+<!--
+.whatYouType {color: #CC0000}
+.code {font-family: "Courier New", Courier, mono}
+.style3 {color: #000099}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Bare Linefeeds in SMTP Messages Cause &quot;The Connection Was Dropped By The Remote Host&quot; Errors When Using Microsoft IIS 6 SMTP Service</h1>
+<p>Dylan Beattie, July 2005 </p>
+<hr>
+<h2>Overview</h2>
+<p>After upgrading our web server from Windows 2000 Server to Windows 2003 Server, we found that a small number of customers were no longer receiving any e-mail from our site. For each failed message, the Windows Event Log contained the following event:</p>
+<table>
+<tr><th valign="top"><div align="left">Source</div></th><td>smtpsvc</td></tr>
+<tr><th valign="top"><div align="left">Category</div></th><td>none</td></tr>
+<tr><th valign="top"><div align="left">Event ID</div></th><td>4006</td></tr>
+<tr><th valign="top"><div align="left">Description</div></th>
+  <td>Message delivery to the host 'xxx.xxx.xxx.xxx' failed while delivering to the remote domain 'dylanbeattie.net' for the following reason: The connection was dropped by the remote host.</td>
+</tr>
+</table>
+</p>
+<p>Our site is written in JScript ASP, and we're using the CDO libraries to send e-mail messages via an SMTP pickup directory. Manually sending SMTP test messages works fine; smtpdiag.exe doesn't find any problems, DNS is working correctly, and the problem only affects a handful of customers; everyone else can still receive mail as usual.</p>
+<h2>Cause</h2>
+<p>Internet e-mail standards forbid the presence of bare linefeed characters in e-mail messages. See <a href="http://cr.yp.to/docs/smtplf.html">http://cr.yp.to/docs/smtplf.html</a> for more information.</p>
+<p>There are several places in our website code where we send e-mail messages which include bare linefeed characters (ie. we've used <span class="code">\n</span> in the message text, instead of <span class="code">\r\n</span>) </p>
+<p>The SMTP service in IIS 5, which is included with Windows 2000, silently rewrites these linefeed characters. IIS 6, which is part of Windows Server 2003, doesn't rewrite them - it will happily send a bare linefeed character as part of an outgoing e-mail message. Some external e-mail systems will quite happily accept these badly-formed messages, but other systems, including the excellent <a href="http://www.qmail.org/">qmail</a> server,  will refuse to accept these messages. Unfortunately, this  causes bizarre behaviour in the IIS SMTP server.</p>
+<p>In a perfect world, IIS would record the actual response from the remote server in the Windows event log - so, if it had tried (and failed) to send to a qmail server, your event description would be &quot;Message delivery to the host 1.2.3.4 failed while delivering to the remote domain dylanbeattie.net for the following reason: 451: See http://pobox.com/~djb/docs/smtplf.html.&quot; Then IIS would move the malformed message into the Badmail folder, and move onto the next one.</p>
+<p>What it actually does is to <strong>stop delivering any mail to the domain that caused the problem</strong>. Even if subsequent mails don't contain the offending bare linefeed characters, IIS will not attempt to deliver them. Furthermore, restarting the SMTP service doesn't help, because when IIS tries to process the messages that are already in the queue, the first thing it finds is the message containing the bare linefeed, which causes it to flip out again, etc.</p>
+<p>The only way to restore normal mail to the affected domain is to stop the SMTP service, locate the offending message, manually remove it from the Queue folder, and then start the SMTP service again.</p>
+<h2>Resolution</h2>
+<p>Make sure your website code isn't trying to send e-mail messages containing bare linefeeds. In our case, I found a few places where we were doing this sort of thing:<br>
+  <br>
+  <span class="sourceCode">var cdoMessage = Server.CreateObject(&quot;CDO.Message&quot;);<br> 
+  cdoMessage.Configuration = Application(&quot;cdoConfiguration&quot;);<br>
+  cdoMessage.From = &quot;My Web Server &lt;www@mydomain.com&gt;&quot;;<br>
+  cdoMessage.To = &quot;someone@dylanbeattie.not&quot;;<br>
+  cdoMessage.Subject = &quot;Your Online Order Receipt &quot;;<br>
+  cdoMessage.TextBody = &quot;Dear Dylan,</span><span class="codeHighlight">\n</span><span class="sourceCode">Thankyou for ordering from mydomain.com</span><span class="codeHighlight">\n\n</span><span class="sourceCode">Your order details are attached.</span><span class="codeHighlight">\n\n</span><span class="sourceCode">Kind regards</span><span class="codeHighlight">\n\n</span><span class="sourceCode">Mydomain.com.&quot;;<br>
+  cdoMessage.Send()</span><span class="sourceCode">;</span></p>
+<p>Replacing the bare \n's with \r\n (carriage-return, line-feed) appears to have solved the problem. </p>
+<h2>Investigation </h2>
+<p>Tracking down this particular bug required a whole bunch of tricks and tinkering, so for anyone who's interested, here's how I went about finding and fixing the problem. </p>
+<p>First, the usual DNS and connectivity checks. Find a computer which accepts internet e-mail for dylanbeattie.net. We can check this using the nslookup tool, to find something called an MX record for a particular domain. The <span class="whatYouType">bits you type are in red</span>, the <span class="style3">server responses are in blue</span>. </p>
+<pre>C:\&gt;<span class="whatYouType">nslookup</span>
+Default Server: dns1.mydomain.com
+Address: 192.168.0.1</pre>
+<pre>&gt; <span class="whatYouType">set type=MX</span>
+&gt; <span class="whatYouType">dylanbeattie.net</span>
+Server: dns1.mydomain.com
+Address: 192.168.0.1</pre>
+<pre>dylanbeattie.net MX preference = 10, mail exchanger = mail.dylanbeattie.net
+mail.dylanbeattie.net internet address = 123.123.123.123
+&gt;<span class="whatYouType">exit</span></pre>
+<p>What this means is that, to send mail to people at dylanbeattie.net, we need to connect to the computer called mail.dylanbeattie.net, which we can find at the IP address 123.123.123.123.</p>
+<p>If you see something like &quot;<strong>dns1.mydomain.com can't find dylanbeattie.net: Non-existent domain</strong>&quot; it means you're probably trying to send to a fake e-mail address, or an old address which is no longer valid. If you don't get a<strong> Default Server:</strong> message, it means that you haven't set up DNS properly on your web server. </p>
+<h3>2. Make sure that the mail exchanger is awake, and accepting connections</h3>
+<p>For simple tests like this, you can actually send e-mail by connecting manually, using the telnet program, and typing the mail commands yourself. This lets you follow exactly what's going on at every stage of the 'conversation'. The &quot;25&quot; on the end of the telnet command means to connect using port 25 (the standard port for SMTP e-mail connections). Again, the <span class="whatYouType">bits you type are in red</span>, the <span class="style3">server responses are in blue</span>. </p>
+<pre>C:\&gt;<span class="whatYouType">telnet mail.dylanbeattie.net 25</span>
+220 mail.dylanbeattie.net ESMTP<br><span class="whatYouType">EHLO www.mydomain.com</span><br>250-mail.dylanbeattie.net<br>250-PIPELINING<br>250 8BITMIME<br><span class="whatYouType">MAIL FROM:&lt;www@mydomain.com&gt;</span><br>250 ok<br><span class="whatYouType">RCPT TO:&lt;somebody@dylanbeattie.net&gt;</span><br>250 ok<br><span class="whatYouType">DATA</span><br>354 go ahead<br><span class="whatYouType">From: &quot;Web Server&quot; &lt;www@mydomain.com&gt;<br>Sender: &quot;Web Server&quot; &lt;www@mydomain.com&gt;<br>To: &lt;somebody@dylanbeattie.net&gt;<br>Subject: Test message</span></pre>
+<pre><span class="whatYouType">This is a test e-mail message.
+.</span>
+250 ok 1121333197 qp 28184
+<span class="whatYouType">QUIT</span>
+221 ankh.spotmain.com
+</pre>
+<p>OK, so now we know that we can send <strong>some</strong> mail to dylanbeattie.net without problems, which indicates that the problem isn't anything to do with the server or the network, it's to do with particular e-mail messages (or the circumstances in which they're sent). Time to do some digging.</p>
+<h3>3.	Analyse the actual SMTP traffic for one of our offending messages</h3>
+  <p>Next thing I did was to install <del>Ethereal</del> <a href="https://www.wireshark.org/">WireShark</a> and the WinPCap capture driver on our server. Ethereal is a network protocol analyser - it'll gather, dissect and analyse the sequences of commands and responses that make up a network session. WinPCap is a driver that allows Ethereal to capture the actual network traffic going to/from your server, so you can see what's going on in real time.</p>
+<p>What I basically did here was to </p>
+<ol>
+  <li>Log on to our website and create - but don't send - one of the offending mail messages</li>
+  <li>Tell Ethereal to start capturing all traffic.</li>
+  <li>Switch back to my web browser and hit &quot;send&quot; on the web page that actually sends the mail message</li>
+  <li>Wait 30 seconds or so to make sure the SMTP service has had a chance to pick up the message</li>
+  <li>Tell Ethereal to stop capturing, and then filter the results for &quot;tcp.port==25&quot; to show me only the SMTP traffic that was captured above</li>
+</ol>
+<p align="left">Here's the result of the offending trace:</p>
+<p align="center"><img src="ethereal01.gif" width="600" height="457"> </p>
+<p>The clue here is the line (highlighted in orange). We've just sent the contents of our message (&quot;Message Body&quot;). We're expecting the remote server to say &quot;250 OK&quot; which means it's accepted our message and will now scuttle off and deliver it. What we've got in this case is the code 451 (meaning &quot;Requested action aborted: local error in processing&quot;, according to <a href="http://www.faqs.org/rfcs/rfc2821.html">RFC2821</a>, the document which defines the SMTP mail protocol.) Fortunately, the remote server here is running <a href="http://cr.yp.to/qmail.html">qmail</a>, which has helpfully included a link to an explanatory page - and probably saved us a <strong>lot</strong> of tedious digging around and debugging in the process. </p>
+<hr />
+<p class="small_print">Documentation copyright &copy; Dylan Beattie 2005 except where indicated.</p>
+<p class="small_print">Permission is granted to copy, distribute and/or modify this documentation under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts.</p>
+
+</body>
+</html>

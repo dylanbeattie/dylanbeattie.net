@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>PerlMagick Windows NT HowTo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../default.css" type="text/css">
+<meta name="keywords" content="ImageMagick PerlMagick Magick IIS Windows 2000">
+<meta name="description" content="A quick-start guide for installing PerlMagick on Windows 2000 systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td bgcolor="#000066">
+      <div align="right"><font color="#FFFFFF"><b><font size="3">Windows PerlMagick
+        How-to: Non-Win2K Operating Systems</font></b></font></div>
+    </td>
+  </tr>
+</table>
+<p>You probably also want to check out Ron Savage's <a href="http://savage.net.au/Image-Magick/html/im-faq.html">Perl
+  CGI Image::Magick FAQ</a></p>
+<p><b>Windows XP:</b></p>
+<p>According to Michael Chan and several others, these instructions work on Windows
+  XP with no modifications.</p>
+<p><b>Windows NT 4:</b></p>
+<ul>
+  <li>The Image-Magick.ppd file and the corresponding x86 directory both have
+    to be in the C:\ directory, not C:\TEMP, or it fails. (The ppm program, at
+    some point, decides to look for &quot;\.\x86\Image-Magick.tar.gz&quot;, which
+    because of the leading backslash is NOT relative to the &quot;current&quot;
+    directory.)</li>
+  <li>The CORE*.dll files, all of which MUST be placed in C:\perl\bin or the program
+    fails. The IM*.dll files MUST be placed<br>
+    in the C:\imagemagick directory (apparently, whatever the value of %MAGICK_HOME%
+    was set to). It didn't seem to matter where the X*.dll files were placed.</li>
+</ul>
+<p>Thanks to John Freed for these tips.</p>
+<p><b>Windows 98 SE</b></p>
+<ul>
+  <li>Instructions as for Windows 2000, but be sure to put the PATH and MAGICK_HOME
+    settings in your autoexec.bat file so they're re-loaded on boot-up.</li>
+</ul>
+<p>Thanks to Gerhard Petrowitsch for this tip.</p>
+<p><b>Apache</b></p>
+<p>Eelco Weijmans writes:</p>
+<blockquote>
+  <p>&quot;I'd like to add one thing for Win98/Apache users: Besides adding IM
+    to the Path and adding the MAGICK_HOME var, one should really not forget to
+    add the line &quot;PassEnv MAGICK_HOME&quot; to httpd.conf. Took me a while
+    to find this out, and accidently saw it in one of the posts in the mailing
+    list.&quot;</p>
+</blockquote>
+<p>I suspect this applies to all Windows versions of Apache and not just Win98.</p>
+<p><a href="howto.html">Back to PerlMagick installation instructions</a></p>
+<hr>
+<p align="center"> Copyright (c) 2002 Dylan Beattie &#149; <a href="http://www.dylanbeattie.net/magick/">http://www.dylanbeattie.net/magick/</a></p>
+</body>
+</html>

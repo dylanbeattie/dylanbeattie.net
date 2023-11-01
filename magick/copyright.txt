@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>ImageMagick Copyright Notice</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+Copyright (C) 2001 ImageMagick Studio, a non-profit organization dedicated to 
+making software imaging solutions freely available. 
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy 
+  of this software and associated documentation files (&quot;ImageMagick&quot;), 
+  to deal in ImageMagick without restriction, including without limitation the 
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+  sell copies of ImageMagick, and to permit persons to whom the ImageMagick is 
+  furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in 
+  all copies or substantial portions of ImageMagick.</p>
+<p>The software is provided &quot;as is&quot;, without warranty of any kind, express 
+  or implied, including but not limited to the warranties of merchantability, 
+  fitness for a particular purpose and noninfringement. In no event shall ImageMagick 
+  Studio be liable for any claim, damages or other liability, whether in an action 
+  of contract, tort or otherwise, arising from, out of<br>
+  or in connection with ImageMagick or the use or other dealings in ImageMagick.</p>
+<p>Except as contained in this notice, the name of the ImageMagick Studio shall 
+  not be used in advertising or otherwise to promote the sale, use or other dealings 
+  in ImageMagick without prior written authorization from the ImageMagick Studio.</p>
+<p>&nbsp;</p>
+</body>
+</html>

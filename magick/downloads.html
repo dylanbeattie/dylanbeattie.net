@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>ImageMagick Win2K Binaries</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../default.css" type="text/css">
+<link rel="stylesheet" href="../default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td bgcolor="#000066">
+      <div align="right"><font color="#FFFFFF"><b><font size="3">Windows 2000
+        ImageMagick / PerlMagick Binaries</font></b></font></div>
+    </td>
+  </tr>
+</table>
+<br>
+<table width="100%" border="0" cellpadding="5" bordercolor="#FFFFFF" bgcolor="#FFCCCC">
+  <tr>
+    <td><font size="2"><b>NOTE</b>: As of ImageMagick 5.4.8, the official ImageMagick windows installer includes PerlMagick for ActivePerl. Hence I will no longer be providing new binaries of PerlMagick from this site.
+        The official distribution is available from <a href="http://www.imagemagick.org/www/windows.html">http://www.imagemagick.org/www/windows.html</a>
+
+    </font></td>
+  </tr>
+</table>
+<p>This page provides compiled binaries of the <a href="http://www.imagemagick.org/">ImageMagick</a>
+  image processing library for Windows 2000. These packages may also work on Windows
+  NT, 95, 98, Me and XP, but have not been tested on these platforms.</p>
+<p>The files here are provided purely for convenience. I do not undertake to support
+  these files, nor do I promise to answer questions relating to these files. If
+  you're having specific problems - broken downloads, file not found, etc. - then
+  please let me know. For help on installation, see <a href="http://www.dylanbeattie.net/magick/">http://www.dylanbeattie.net/magick/</a>
+  if you haven't already - otherwise direct all queries to the mailing list at
+  magick-users@imagemagick.org</p>
+<p>The files here were built using Microsoft Visual C++ 6.0, following the build
+  instructions included in the standard ImageMagick distribution. The PPM files
+  were compiled according to the <a href="http://www.dylanbeattie.net/magick/">instructions
+  on this site.</a> They are provided merely as a convenience for people who don't
+  have the software, the resources or the time to compile their own packages.
+</p>
+<p>ImageMagick is copyright &copy; 2001 ImageMagick Studio</p>
+<hr>
+<h4>A Word On Versions</h4>
+<p>Many users, particularly those from a pure Windows background, find the ImageMagick
+  packages a little confusing at first. ImageMagick itself is not a program or
+  an application - it's a set of functions for manipulating images that's distributed
+  as a collection of DLLs. A system which has ImageMagick installed means that
+  these DLL packages are present and available for other programs to utilise -
+  if you've ever used software which complains about needing VBRUN300.DLL, then
+  you'll know what this means :) Until you have some software that can call these
+  DLLs, you can't actually *do* anything with ImageMagick.</p>
+<p>Some people use the ImageMagick libraries to develop their own software, but
+  most of us are interested in using them to manipulate image files. To this end,
+  there are a number of different pieces of software (known as <i>interfaces</i>)
+  which provide a mechanism for accessing the functions in the ImageMagick library.</p>
+<p>The most common of these is the command-line tools. This is a set of executables
+  (animate.exe, mogrify.exe, convert.exe, etc.) which you can run from the Windows
+  command line or call from batch files, etc. </p>
+<p>This page also hosts binary distributions of PerlMagick - an interface which
+  allows you to call ImageMagick functions from within Perl scripts. </p>
+<p>If you're running Windows, you've never heard of Perl or APIs or DLLs and you
+  just want to convert your images from one format to another, you want the <a href="download/latest/ImageMagick.zip">ImageMagick
+  (full) </a>distribution.</p>
+<hr>
+<h3>Latest Binaries (currently 5.4.6)</h3>
+<table width="100%" border="0" cellpadding="5" bordercolor="#FFFFFF" bgcolor="#FFCCCC">
+  <tr>
+    <td><font size="2"><b>NOTE</b>: Binaries of 5.4.4 and 5.4.5 downloaded before
+      2002-05-30 have some strange dependency issues. If you're having problems
+      with these binaries (such as needing MSVCR70.DLL), please download fresh
+      copies and try again. This is entirely my fault, so apologies all round.
+      :)</font></td>
+  </tr>
+</table>
+<p>As of version 5.4.5, the distributions below are built with an <b>8-bit quantum
+  depth. </b>If you don't know what this means, don't worry. If you specifically
+  need 16-bit quantum support, binaries are available <a href="download/latest/q16/">here</a>.</p>
+<dl>
+<dt><a href="download/latest/PerlMagick-full.zip">PerlMagick PPM (full)</a></dt>
+  <dd>This includes the Perl module and <b>all</b> supporting ImageMagick files.
+    It is recommended for installation on systems which require only PerlMagick
+    (eg. web servers). <b>This is all you need to install PerlMagick.</b></dd>
+<dt><a href="download/latest/ImageMagick.zip">ImageMagick (full)</a></dt>
+  <dd>This includes the ImageMagick binaries, including the command-line tools
+    (animate.exe, composite.exe, etc.) Get this package if you want to use ImageMagick
+    on a Windows system but don't want to use Perl. <b>This is functionally identical
+    to the official ImageMagick Win2K binary distribution.</b></dd>
+<dt><a href="download/latest/PerlMagick.zip">PerlMagick PPM (module only)</a></dt>
+<dd>This includes only the PPM module. Get this package if you want to add PerlMagick to a system which already has the ImageMagick libraries installed.</dd>
+</dl>
+<hr>
+<h3>Installation Instructions</h3>
+<p>To install PerlMagick, please read the PerlMagick Howto <a href="howto.html">here</a></p>
+<p>To install the ImageMagick (full) package, (including the command-line binaries
+  - animate.exe, convert.exe, mogrify.exe, etc.)</p>
+<ol>
+  <li>Unzip the contents of ImageMagick.zip into a directory on your local filesystem,
+    eg c:\imagemagick.</li>
+  <li>Set the MAGICK_HOME variable to point to this path, and ensure this directory
+    has been added to your system path - this is easiest done by right-clicking
+    'My Computer', Properties, Advanced, Environment Variables...</li>
+</ol>
+<p><b>NOTE</b>: Certain versions of Windows include a built-in utility called
+  'convert.exe' (a disk format conversion tool). If you get an error about 'Must
+  specify a filesystem' when trying to convert images, it means that Windows is
+  finding it's own version of convert.exe before it finds the ImageMagick version.
+  There are three ways around this:</p>
+<ol>
+  <li>Ensure that your ImageMagick directory is *before* your WINNT\system32 directory
+    in your system path</li>
+  <li>Rename the Windows version of convert to something like fsconvert.exe. I
+    always do this, since I convert images on a daily basis but I've never converted
+    a filesystem in my life :)</li>
+  <li>Rename the ImageMagick convert.exe to something like iconvert.exe or imageconvert.exe.
+  </li>
+</ol>
+<hr>
+<h3>Old Binaries</h3>
+<p>Note: The ImageMagick releases use a four-part version number - eg. 5.2.6-3
+  indicates major version 5, minor version 2, release 6, revision 3. Revisions
+  indicate bug-fixes only - ie. 5.4.3-6 does exactly the same things as 5.4.3-1,
+  but with less bugs. I keep one build of each release, but bug-fix releases will
+  replace any earlier version of that release. As of April 2002, all archived
+  binaries will be the latest revision of their version. Older versions - I have
+  no idea which revision they are, so you're on your own :)</p>
+<p><a href="download/">Archived binaries</a></p>
+<hr>
+<p align="center"><font size="1">Page maintained by Dylan
+  Beattie. &lt;<u>imagemagick [at] dylanbeattie [dot] net</u>&gt; <br>
+  Copyright &copy; 2001 dylanbeattie.net. <br>
+  The information contained in this page may be freely distributed and modified<br>
+  subject to the terms of the ImageMagick distribution agreement.</font></p>
+<p>&nbsp;</p>
+</body>
+</html>

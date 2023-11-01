@@ -1,0 +1,74 @@
+<script language="JavaScript" defer>
+/*************************************************************************
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+GNU General Public License: http://www.gnu.org/licenses/gpl.txt
+
+**************************************************************************/
+
+// Dylan's Electric Form Populator
+// JavaScript code to automatically populate all form fields on a Web page.
+
+// Edit this to reflect your own domain for test email registrations.
+// This will be appended to any text field whose name contains the string 'email' (case insensitive)
+var emailDomain = "@yourdomain.com";
+
+// This will be prepended to all text values.
+var prefix = "test_";
+
+
+function complete(element, theTag) {
+	var i;
+	if ((element.type == 'select-one' || element.type == 'select-multiple') &&
+		element.length > 0) {
+			element.selectedIndex = Math.round(Math.random() * element.length);
+			while (element.selectedIndex<= 0) {
+				element.selectedIndex = Math.round(Math.random() * element.length);
+			}
+		} else {
+			if (element.length) {
+				for (i=0; i<element.length;i++) {
+					complete(element, theTag)
+				}
+			} else {
+				if (element.type == 'checkbox' || element.type == 'radio') {
+					element.checked = true;
+				} else if (element.type == 'text' || element.type == 'password') {
+					if (/email/i.test(element.name)) {
+						element.value = (element.value?element.value:theTag + element.name.replace(/[^A-Za-z0-9\.]/g, "_")+emailDomain);
+					} else {
+						element.value = (element.value?element.value:theTag + element.name);
+					}
+				} else if (element.type == 'textarea') {
+					if (! element.value) {
+						element.value = '';
+						for (var i = 1; i <= 4; i++) {
+							element.value += theTag + element.name+" line "+i+"\n";
+						}
+					}
+				}
+			}
+		}
+}
+function populate(theWindow, theTag) {
+	var n, m, theForm, theElement;
+	for (n=0; n < theWindow.document.forms.length; n++) {
+		theForm = theWindow.document.forms[n];
+		for (m = 0; m < theForm.elements.length; m++) {
+			theElement = theForm.elements[m];
+			complete(theElement, theTag);
+		}
+	}
+}
+
+populate(external.menuArguments,prefix);
+</script>

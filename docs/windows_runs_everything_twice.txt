@@ -1,0 +1,42 @@
+I've found out why Windows runs everything in my startup menu twice. I had previously deleted the Startup folder in my user directory (C:\Documents and Settings\<user name>\Start Menu\Programs\Startup) and put program shortcuts in the common directory (C:\Documents and Settings\All Users\Start Menu\Programs\Startup).
+
+There are two pairs of keys in the registry which point to these two folders. When one folder is deleted, the keys which pointed to it are modified to point to the remaining folder. The result is that both pairs of keys point to the same folder and things in it get started twice.
+
+The key pair which should point to the <All Users> directory is:
+HKEY_CURRENT_USER\Software\Microsoft\Windows\Curre ntVersion\Explorer\Shell Folders
+HKEY_CURRENT_USER\Software\Microsoft\Windows\Curre ntVersion\Explorer\User Shell Folders
+
+The key pair which should point to the <user name> directory is:
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Curr entVersion\explorer\User Shell Folders
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Curr entVersion\explorer\Shell Folders
+
+If you look at the keys you'll see other strings which still point to the correct place. I found that the Startup string had changed in the HKEY_CURRENT_USER keys to point to the same folder as in the HKEY_LOCAL_MACHINE. I changed them back and everything works properly now.
+
+Note - you have to recreate the folder C:\Documents and Settings\<user name>\Start Menu\Programs\Startup if you deleted it, or the key will just change back.
+Reply With Quote
+timstyles
+View Public Profile
+Find all posts by timstyles
+hammo1j hammo1j is offline
+Registered User
+Registered Dec 2005
+1 Posts
+	
+  #8  
+Old 11 Dec 2005, 06:59 AM
+Cheers Tim
+
+That was a right pain the double startup.
+
+You've pointed out what the problem is but your instructions are slightly off:
+
+People should go to:
+HKEY_CURRENT_USER\Software\Microsoft\Windows\Curre
+ntVersion\Explorer\User Shell Folders
+
+And change the %ALLUSERSPROFILE% to
+%USERPROFILE% on the entries which will obviously have been modified from this setting.
+
+If you reboot the machine the changes will be automatically propagated to the other directory.
+
+Thanks again though for providing this solution.

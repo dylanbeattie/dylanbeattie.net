@@ -1,0 +1,85 @@
+C:\ImageMagick-5.2.7\PerlMagick>perl Makefile.pl
+Warning: '-L../VisualMagick/lib' changed to '-LC:/ImageMagick-5.2.7/PerlMagick/../VisualMagick/lib'
+Warning: '-L../VisualMagick/bin' changed to '-LC:/ImageMagick-5.2.7/PerlMagick/../VisualMagick/bin'
+Writing Makefile for Image::Magick
+
+C:\ImageMagick-5.2.7\PerlMagick>nmake
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+        cl -c -I.. -I..\xlib\include -O1 -MD -DNDEBUG -DWIN32 -D_CONSOLE -DNO_STRICT -DHAVE_DES_FCRYPT -DPERL_IMPLICIT_CONTEXT -DPERL_IMPLICIT_SYS -DPERL_MSVCR
+=\"5.27\"  -DXS_VERSION=\"5.27\"  -ID:\perl\lib\CORE -D_VISUALC_ -D_WINDOWS Magick.c
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+Magick.c
+Compiling as dll import
+Module compiled as DLL
+Magick.xs(823) : warning C4133: 'function' : incompatible types - from 'struct _PerlIO *' to 'struct _iobuf *'
+Magick.xs(1206) : warning C4133: '=' : incompatible types - from 'struct _PerlIO *' to 'struct _iobuf *'
+Magick.xs(5947) : warning C4133: '=' : incompatible types - from 'struct _PerlIO *' to 'struct _iobuf *'
+Magick.xs(6384) : warning C4133: '=' : incompatible types - from 'struct _PerlIO *' to 'struct _iobuf *'
+"Running Mkbootstrap for Image::Magick ()"
+        D:\perl\bin\Perl.exe -ID:\perl\lib -ID:\perl\lib -MExtUtils::Command -e chmod 644 Magick.bs
+        link -out:blib\arch\auto\Image\Magick\Magick.dll -dll -nologo -nodefaultlib -release  -libpath:"C:\p4view\Apps\ActivePerl\MSI\data\ActivePerl\Perl\lib\
+lib\CORE\perl56.lib C:\ImageMagick-5.2.7\PerlMagick\..\VisualMagick\lib\CORE_RL_magick_.lib "D:\Program Files\Microsoft Visual Studio\VC98\lib\oldnames.lib" "D
+C98\lib\kernel32.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\user32.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\gdi32.lib" "D:\Program
+nspool.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\comdlg32.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\advapi32.lib" "D:\Program Files
+.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\ole32.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\oleaut32.lib" "D:\Program Files\Microsof
+:\Program Files\Microsoft Visual Studio\VC98\lib\uuid.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\wsock32.lib" "D:\Program Files\Microsoft Visual S
+\Microsoft Visual Studio\VC98\lib\winmm.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\version.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib
+Visual Studio\VC98\lib\odbccp32.lib" "D:\Program Files\Microsoft Visual Studio\VC98\lib\msvcrt.lib" -def:Magick.def
+   Creating library blib\arch\auto\Image\Magick\Magick.lib and object blib\arch\auto\Image\Magick\Magick.exp
+        D:\perl\bin\Perl.exe -ID:\perl\lib -ID:\perl\lib -MExtUtils::Command -e chmod 755 blib\arch\auto\Image\Magick\Magick.dll
+        D:\perl\bin\Perl.exe -ID:\perl\lib -ID:\perl\lib -MExtUtils::Command -e cp Magick.bs blib\arch\auto\Image\Magick\Magick.bs
+        D:\perl\bin\Perl.exe -ID:\perl\lib -ID:\perl\lib -MExtUtils::Command -e chmod 644 blib\arch\auto\Image\Magick\Magick.bs
+
+C:\ImageMagick-5.2.7\PerlMagick>nmake ppm
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+        if exist PerlMagick.zip del PerlMagick.zip
+        tar cvf Image-Magick.tar blib
+blib/
+blib/lib/
+blib/lib/Image/
+blib/lib/Image/.exists
+blib/lib/Image/Magick.pm
+blib/lib/auto/
+blib/lib/auto/Image/
+blib/lib/auto/Image/Magick/
+blib/lib/auto/Image/Magick/.exists
+blib/lib/auto/Image/Magick/autosplit.ix
+blib/arch/
+blib/arch/auto/
+blib/arch/auto/Image/
+blib/arch/auto/Image/Magick/
+blib/arch/auto/Image/Magick/.exists
+blib/arch/auto/Image/Magick/Magick.dll
+blib/arch/auto/Image/Magick/Magick.lib
+blib/arch/auto/Image/Magick/Magick.exp
+blib/arch/auto/Image/Magick/Magick.bs
+        gzip --best Image-Magick.tar
+        if exist x86 del x86 /y
+        if exist x86 rd x86
+        md x86
+        copy Image-Magick.tar.gz x86
+        1 file(s) copied.
+        del Image-Magick.tar.gz
+        if exist ppm-readme.txt copy ppm-readme.txt readme
+        zip.exe -rP PerlMagick.zip readme Image-Magick.ppd x86/Image-Magick.tar.gz
+PKZIP(R)  Version 4.00  FAST! Compression Utility for Windows
+Copyright 1989-2000 PKWARE Inc.  All Rights Reserved. Shareware Version
+PKZIP Reg. U.S. Pat. and Tm. Off.  Patent No. 5,051,745
+
+
+Creating .ZIP: PerlMagick.zip
+  Adding File: demo/README  Deflating    ( 2.4%), done.
+  Adding File: Image-Magick.ppd Deflating    (33.5%), done.
+  Adding File: x86/Image-Magick.tar.gz Storing      ( 0.0%), done.
+        del x86\Image-Magick.tar.gz
+        rd x86
+
+C:\ImageMagick-5.2.7\PerlMagick>

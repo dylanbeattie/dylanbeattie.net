@@ -1,0 +1,199 @@
+<html>
+<head>
+<title>ImageMagick Win2K Binaries</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td bgcolor="#000066">
+      <div align="right"><font color="#FFFFFF"><b><font size="3">Debugging Dynamic
+        Image Scripts with PerlMagick</font></b></font></div>
+    </td>
+  </tr>
+</table>
+<p>Part of <a href="/magick/">Dylan's Collection of PerlMagick Stuff</a></p>
+<hr />
+
+<p>I frequently receive mail from people who've installed PerlMagick but can't
+  get it to work properly. This page contains some hints on debugging your PerlMagick
+  scripts and avoiding some of the more common configuration errors. All these
+  examples were tested on Windows 2000 with PerlMagick 5.4.1 but should be relevant
+  to PerlMagick CGI scripts on any platform.</p>
+<p>NOTE: The Perl scripts on this page have been written with the novice in mind.
+  There are terser, more elegant ways to write much of this code, but I didn't
+  want to obfuscate anything - hopefully, it should be clear from reading these
+  scripts exactly what they're doing.</p>
+<ol>
+  <li><b>DLL Locations</b></li>
+  <p>Recent versions of PerlMagick are <b>very</b> twitchy when it comes to the
+    location of the DLLs and MGK files. Depending on operating system, Perl version,
+    ImageMagick version and whether it's running from the console or from a web
+    server, try moving the entire DLL package (basically the contents of the DLLs
+    ZIP) into each of the following locations in turn:</p>
+  <p><b>C:\imagemagick\</b> (this one <b>must</b> be drive C: - d:\imagemagick
+    has never worked in my experience)<br>
+    <b>C:\perl\bin</b> (or wherever your copy of perl.exe lives)<br>
+    <b>C:\perl\site\lib\auto\Image\Magick</b> (or wherever your copies of magick.dll
+    and magick.lib live)</p>
+  <p>In all cases, add the relevant directory to your system path and create/set
+    the MAGICK_HOME variable to point to it. </p>
+  <p>Finally, don't just dump copies all over the place - or if you do, remember
+    where you've put them! I've had one or two situations where scripts were failing
+    <b>because</b> they were finding a second copy of the DLLs in an unexpected
+    location.</p>
+  <p>When I have time, I'm going to do some digging and try and work out what
+    causes these problems and if there's a reliable way around them, but in the
+    meantime I'm afraid it's a case of keep experimenting and let me know what
+    works :)</p>
+  <li><b>Check your <code>binmode</code> settings</b></li>
+  <p>Some users have reported that they have to call
+  <pre>binmode STDOUT;</pre>
+  to put the standard-out port into binary mode, before writing images to STDOUT. See the Perl docs on binmode for more info.</p>
+  <li><b>Use the PerlMagick return values</b></li>
+  <p>All PerlMagick operations return false if successful, and return a non-zero
+    (ie. 'true') error message if any errors occurred. To see these errors, use
+    code like this:
+  <pre>#!/bin/perl</pre>
+  <pre>use Image::Magick;<br>my $image = new Image::Magick();<br>my $last_error;<br>$last_error = $image-&gt;Read(&quot;missing.jpg&quot;);
+if ($last_error) {
+     print ($last_error);
+}
+   </pre>
+<p>If any errors were encountered reading the image, you'll get a result something
+  like: </p>
+<pre>Warning 335: Unable to open file (delegates.mgk) [No such file or directory]</pre>
+  <p>or</p>
+  <pre>Warning 330: Unable to open file (missing.jpg) [No such file or directory]</pre>
+  <p>The warning codes are documented in the <a href="http://www.imagemagick.org/www/perl.html#erro">PerlMagick
+    documentation</a> on the ImageMagick site, although I'm not sure how recent
+    or accurate this documentation is. Read the error messages carefull - the
+    warnings above look similar, but you'll notice the first one is a warning
+    about <b>delegates.mgk</b> - indicating an ImageMagick configuration problem
+    - and the second is <b>missing.jpg</b>, which indicates that PerlMagick is
+    working OK but it can't find the file you've specified. </p>
+  <li><b>Use $DEBUG flags in your code.</b></li>
+  <p>One of the biggest problems with developing PerlMagick scripts that generate
+    dynamic images is that they use the <b>Content-type</b> header to indicate
+    to the browser they're returning an image, rather than text. Consequently,
+    any error messages or warnings are interpreted by the browser to be corruptions
+    in the stream of GIF or JPG data that it's been told to expect, and instead
+    of an image or a nice set of error messages, we get that good old 'broken
+    image' icon. The way around this is to use a debug flag, which you can explicitly
+    set to enable warning messages. The following script is a modified version
+    of the image01.pl test script, which includes a debug flag.</p>
+  <pre>
+#!/usr/local/bin/perl
+
+use Image::Magick;
+
+my $DEBUG = 0; # set $DEBUG=1 to enable error messages
+
+if ($DEBUG) {
+	print ("Content-type: text/html\r\n\r\n"); # Return text so we can read the error messages
+	print ("Debug mode ENABLED");
+} else {
+	print ("Content-type: image/jpeg\r\n\r\n"); # Return the JPEG content header
+}
+
+my $image=Image::Magick->new;
+my $last_error;
+
+$last_error = $image->Set(size=>'30x180');
+if ($DEBUG and $last_error) {
+	print "$last_error\n";
+}
+
+$last_error = $image->Read("gradient:#ff0000-#0000ff");
+if ($DEBUG and $last_error) {
+	print "$last_error\n";
+}
+
+$last_error = $image->Raise('3x3');
+if ($DEBUG and $last_error) {
+	print "$last_error\n";
+}
+
+$last_error = $image->Rotate(-90);
+if ($DEBUG and $last_error) {
+	print "$last_error\n";
+}
+
+binmode STDOUT;
+
+$last_error = $image->Write('jpg:-');
+if ($DEBUG and $last_error) {
+	print "$last_error\n";
+}
+</pre>
+  <p>Running this script with debug mode <b>disabled</b>
+    on my (deliberately crippled) web server produced the normal broken image.
+    When I enabled debug mode, the page displayed the following:</p>
+  <pre>
+Debug mode ENABLED
+
+Warning 335: Unable to open file (delegates.mgk) [No such file or directory]
+Warning 310: no images to mogrify (Raise)
+Warning 310: no images to mogrify (Rotate)
+Warning 310: No images to write
+</pre>
+  <p>The 'Unable to open file (delegates.mgk)' indicates straight-away that it's
+    a PerlMagick configuration problem (the other error messages are consequences
+    of this - if PerlMagick can't find it's configuration files, so it can't initialise
+    the image, which means all subsequent operations will fail 'cos there's no
+    initialised image to apply them to) Sure enough, I'd crippled the server by
+    deleting the contents of the C:\IMAGEMAGICK directory. Restoring these files
+    and running the script again produced this...</p>
+  <pre>
+Debug mode ENABLED ÿØÿà<font color="#FF0000">JFIF</font>HHÿÛC    $.'
+",#(7),01444'9=82<.342ÿÛC 
+2!!22222222222222222222222222222222222222222222222222ÿÀ´
+ÿÄÿÄ.R‘ÑQ!S45Art²a’±ÁðÿÄ
+ÿÄ $Q13q!2±ÁAÿÚ
+?Ól·j¨èDµíc¼-ñ‚H’ø×^+ìz¿ÓøW/š~ÇèìÅæ£´y]"˜Þœm”/E£ÊL3:q¶X¼
+Ta)0OR6ÊŠŒ"Ñå&HÛ(] ê0‹G”¨”OR6ËzŒ"Ñå&!Ô²…Þ|#Ñå&8Ñ=HÛ(]§Â=
+RcŠLêFÙbí>
+èò“2OV6ÊiðG”˜à“:±¶pë´øG£ÊBÇ“âÆØ.»Ta*Ö<†¼h×zŒ"ÑåZÆ€×
+ºñQ„Z<«XÐø$^jp‹G•k6Ã_‚ëÕNhò­bÆØ[â@º÷S„Z<«X±¶áëåO§*Ö$m†¹@ºûUéÃ
+£Êè±#l5 ~ªôáÑåZÄ°Ö ¯õ^œ?´ò­aÆØkfûk¦‚KU,Ï…Ž|±6G7¯™ü~
+àd].Z”ýDø4«W³;çþ‚ñþOÈö¤ûçøŽÀ.}&XJ‚YA* ,%A, •– ÂÂTPJ‚Ya*
+e¨$Ç$£‚õÑ°­°­°º ¶Õ ¶ Õ ¶×DÀz´Ázè‚ØV‚ÙêÖrP}
+4h_“É÷¯åþÌ4[W³;ç?À^EÉùÏôŸaüÿØp}&XJ‚YA* ,%A, —– ÂÂTÊ PIa*
+(%A,Ç$£‚õh-€õÑ°­°^º ¶• ¶• ¶—DÀz´Ázè‚ØV‚ÙêörP}
+4h_“É÷¯åþÉ^‡ŸQÊø!è<'Ä|^kÉ)
+*£×°ùo‡‹Âÿ~çÒ*äìÝ.³(OrôŠ’vn’%Ü½"Åd˜·I2gnôŠ²bÍ$C'·zE
+Ù1f’f™»Ò(VÉ‹4R"Ù=
+»Ò(WK‹4Rg‘™Û½"…t¸³E"yY»Ò,WK‹4Rgš‰í^‘B¾\Y¢‘<ôgjôŒu|¸³EwYEe^N®—h®‹&ƒ
+ÖM‚êÙ1fŠµ“a¯"ud›¥K&Ã×=ê¹;7JÖUé®ZÕOìÕk*ôƒ×#Õ/ìÕk*ôƒU°]PþÍV²ïH=S
+Ó»°V²ïH50]3»K.ôƒØ.•Ý‚µ™zA©•£ñÍ--²jÊi¿6ˆÁ„Ð:æGCþýÌåÇ«·iúýÈóàÿÙ
+</pre>
+  <p>Yes, it looks like total garbage, but it's actually the source stream of
+    a JPEG image - the clue is the JFIF header (highlighted in red) which indicates
+    it's in JPEG File Interchange Format. Now we know that PerlMagick is producing
+    something which appears to be a valid JPEG image, so we turn off the debug
+    mode and run it again and sure enough...</p>
+  <p><img src="image01.jpg" width="180" height="30"></p>
+  <li><b>Be careful with warn()</b></li>
+  <p>Standard Perl practice is to use <b>warn()</b> to indicate non-fatal errors.
+    <b>warn</b> directs messages to <b>stderr</b> (the error stream) rather than
+    <b>stdout</b> (the normal output stream). For console applications, this is
+    fine, but in a CGI script, the <b>stdout</b> stream is the stuff that gets
+    sent to the browser, and messages sent to <b>stderr</b> can end up almost
+    anywhere - error logs, pop-up error messages on the web server's console,
+    /dev/null. If you know how your particular web server works, you can use this
+    to - for example - pipe PerlMagick warnings into the web servers' error log,
+    but for simple debugging purposes I always find it's easier to use <b>print()</b>
+    and send the error messages to <b>stdout</b> where you can see them from your
+    browser.</p>
+</ol>
+<p><a href="index.html">Home</a></p>
+<hr>
+<p align="center"><font size="1">Page maintained by Dylan Beattie. &lt;<u>imagemagick [at] dylanbeattie [dot] net</u>&gt; <br>
+  Copyright &copy; 2001 dylanbeattie.net. <br>
+  The information contained in this page may be freely distributed and modified<br>
+  subject to the terms of the ImageMagick distribution agreement.</font></p>
+<p>&nbsp;</p>
+</body>
+</html>

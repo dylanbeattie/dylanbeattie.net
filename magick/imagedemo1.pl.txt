@@ -1,0 +1,20 @@
+#!/usr/local/bin/perl
+#
+# Make simple beveled button and output to STDOUT in GIF format
+#
+# to embed this image in a web page, use:
+# img src="imagedemo1.pl"
+
+
+use Image::Magick;
+
+print "Content-type: image/gif\r\n\r\n";
+
+$image=Image::Magick->new;
+$image->Set(size=>'30x180');
+$image->Read("gradient:#ff0000-#0000ff");
+$image->Raise('3x3');
+$image->Rotate(-90);
+
+binmode STDOUT;
+$image->Write('gif:-');
