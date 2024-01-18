@@ -52,7 +52,11 @@ One of the things I do before I give a talk is to put my phone in airline mode. 
 
 **Shut it down when you're done**
 
-This is the one that I personally find the most frustrating. I'm still in Slack workspaces for events that took place in 2020, and like the Hotel California, I can sign out any time I like but I can never leave. Whenever I set up Slack on a new device, they're all still listed there. I have Telegram chats and WhatsApp groups and Signal chats for old events. 
+This is the one that I personally find the most frustrating. I'm still in Slack workspaces for events that took place in 2020, and like the Hotel California, I can sign out any time I like but I can never leave. Whenever I set up Slack on a new device, they're all still listed there. I have Telegram chats and WhatsApp groups and Signal chats for old events... and, once in a while, somebody will try to get hold of me via one of those chats. You know if you archive a WhatsApp chat it doesn't tell other people you've archived it... so they have no idea you're not seeing their messages? 
+
+Go on. Delete your old event chats - and I mean delete. Gone. Forever.
+
+Think how much better you'll feel.
 
 **If it was up to me?**
 
