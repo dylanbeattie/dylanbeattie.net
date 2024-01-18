@@ -16,7 +16,7 @@ Last week [Jakub Gutkowski asked on Twitter](https://twitter.com/gutek/status/16
 
 Sounds like a really good opportunity to geek out about guitars for a bit.
 
-![Six Steinberger Spirit headless guitars.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4786ef17-eed2-4250-bac4-64660ba50f36_650x825.jpeg)
+![Six Steinberger Spirit headless guitars.](/images/posts/2023/substack-4786ef17-eed2-4250-bac4-64660ba50f36_650x825.jpeg)
 
 The current Steinberger Spirit guitar line-up. Gotta catch ‘em all… right?
 
@@ -34,7 +34,7 @@ I had no idea any of this was going on; I think I might have seen a Steinberger 
 
 I’ve been a huge fan of Douglas Adams since I first read *The Hitch-Hiker’s Guide to the Galaxy* when I was a kid. I love his writing, I love his fascination with technology and gadgets… and it turned out he was also a huge guitar nerd. I clipped out the column, and it was pinned up above my desk in my bedroom for *years*. That original clipping went missing somewhere among my many undergraduate house moves, but with a bit of help from the lovely folks at [ZZ9 Plural Z Alpha](https://zz9.org/), I managed to track down a copy via the newspapers.com online archive. I’ve reproduced it here:
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc59d2f7-fb17-46e8-8e98-d42b8c8f879c_2939x1242.jpeg)
+![img](/images/posts/2023/substack-dc59d2f7-fb17-46e8-8e98-d42b8c8f879c_2939x1242.jpeg)
 
 “ME AND MY GIZMO No 6: Douglas Adams’s guitar”, *The Guardian*, June 23, 1994
 
@@ -56,7 +56,7 @@ There were only two problems: one, I wasn’t left-handed[1](#footnote-1), and t
 
 Turns out Gibson had started making Steinberger-style guitars again in the early 2000s, under the “Spirit” model name. Now, the Steinberger Spirit is a very, very different beast from the original 1980s guitars. They’re made of wood rather than carbon fibre, they don’t have the transposing tremolo, they don’t have active pickups, and they’re not made in the USA… and they cost a few hundred pounds, rather than several thousand.
 
-![A white Steinberger Spirit headless guitar](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4168c442-d3a6-438b-bd32-4f54ac6ca722_4032x3024.jpeg)
+![A white Steinberger Spirit headless guitar](/images/posts/2023/substack-4168c442-d3a6-438b-bd32-4f54ac6ca722_4032x3024.jpeg)
 
 My white Steinberger Spirit GT-PRO. 
 
@@ -64,7 +64,7 @@ I bought my white Steinberger from [Guitar Guitar](https://www.guitarguitar.co.u
 
 The first few trips I did with this guitar, I took it in the cabin with me, but flying with a guitar — even a tiny travel one — is a bit of a grey area. Technically, it’s not allowed, because it exceeds the cabin baggage allowance. I’ve never been *stopped*, but I’ve also never been explicitly told it’s OK… it was always a case of smile, don’t ask, and hope it works out, and I was never entirely sure what I would do if it *didn’t* work out.[2](#footnote-2)
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F99437490-0ca5-48e7-9d21-3c4b8b021244_4032x3024.jpeg)
+![img](/images/posts/2023/substack-99437490-0ca5-48e7-9d21-3c4b8b021244_4032x3024.jpeg)
 
 These days, it goes in the hold. I have an [Eastpak roller duffel case](https://www.eastpak.com/uk-en/collections/travel-c8354/transit-r-l-black-pEK-0A5BA9-008-OS--1-.html) which is big enough to stash my guitar in the bottom, solid enough to keep it safe in transit, and small enough to check as regular baggage, so most trips the guitar goes in the big case with clothes packed around it, and the aluminium flight case with my mixing desk, wireless gear, etc. shoved in the top.
 
@@ -76,11 +76,11 @@ That one hung on the wall for a long while, until earlier this year, I decided t
 
 
 
-![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed3acbb3-1074-485a-85b6-2c6ea88e41fd_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf526a94-7687-46cc-b23a-fb611def1456_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc4af7d03-2e54-4464-9a36-bbed93fa4ee8_4032x3024.jpeg)
+![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/substack-ed3acbb3-1074-485a-85b6-2c6ea88e41fd_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf526a94-7687-46cc-b23a-fb611def1456_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc4af7d03-2e54-4464-9a36-bbed93fa4ee8_4032x3024.jpeg)
 
-![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78221e59-f13f-47dc-846b-211fb531d35e_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe175319d-0bfc-4115-9e5a-202a0bc67d44_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8886e0d9-3a12-4545-823c-a53ccb38076e_4032x3024.jpeg)
+![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/substack-78221e59-f13f-47dc-846b-211fb531d35e_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe175319d-0bfc-4115-9e5a-202a0bc67d44_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8886e0d9-3a12-4545-823c-a53ccb38076e_4032x3024.jpeg)
 
-![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafa5d582-d0ed-4d6a-a72d-a59cdf813ef8_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76af56f1-d0ee-413e-91e6-ab9e1d78beb8_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa6e31eaf-bd03-4101-99c2-a46c99ba7c64_4032x3024.jpeg)
+![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/substack-afa5d582-d0ed-4d6a-a72d-a59cdf813ef8_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76af56f1-d0ee-413e-91e6-ab9e1d78beb8_4032x3024.jpeg)![An image gallery showing a headless guitar being stripped down, sanded, repainted, and reassembled. By the end, it's blue with black and white stripes, and looks extremely shiny.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa6e31eaf-bd03-4101-99c2-a46c99ba7c64_4032x3024.jpeg)
 
 Overhauling a Steinberger Spirit GT-PRO guitar.
 

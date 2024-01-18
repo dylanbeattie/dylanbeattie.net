@@ -38,11 +38,11 @@ July is delightfully quiet, and that’s just fine. May and June were back-to-ba
 
 
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F08bbb305-ecae-4ed0-b4bd-fb394ec4c80a_3088x2320.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc16ee640-6cab-4a74-88e0-82dec973ab6d_3088x2320.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44ececa4-ab45-4eb2-9029-f1f30a673905_4032x3024.jpeg)
+![img](/images/posts/2023/substack-08bbb305-ecae-4ed0-b4bd-fb394ec4c80a_3088x2320.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc16ee640-6cab-4a74-88e0-82dec973ab6d_3088x2320.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44ececa4-ab45-4eb2-9029-f1f30a673905_4032x3024.jpeg)
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff9e6082d-81fd-42aa-bc37-dc921b3678ee_1200x1600.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb0d3eba-ed65-4479-bb61-62e02d1b8bd3_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54afc19d-f9d7-473d-96cd-11eb3e42ef49_3088x2320.jpeg)
+![img](/images/posts/2023/substack-f9e6082d-81fd-42aa-bc37-dc921b3678ee_1200x1600.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb0d3eba-ed65-4479-bb61-62e02d1b8bd3_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54afc19d-f9d7-473d-96cd-11eb3e42ef49_3088x2320.jpeg)
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8bcaf318-c3ef-40cb-9685-87be041855ad_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1224f410-adc4-4e99-8499-341da5050ec6_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22352e83-e9e2-4cf8-90c8-5c02696a3460_4032x3024.jpeg)
+![img](/images/posts/2023/substack-8bcaf318-c3ef-40cb-9685-87be041855ad_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1224f410-adc4-4e99-8499-341da5050ec6_4032x3024.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22352e83-e9e2-4cf8-90c8-5c02696a3460_4032x3024.jpeg)
 
 Berlin, Hamburg, Bucharest, Stockholm, Oslo, Athens, Rotterdam... I need a vacation.
 

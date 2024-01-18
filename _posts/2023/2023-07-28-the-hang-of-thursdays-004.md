@@ -18,7 +18,7 @@ This event is *huge* — somebody at the speaker dinner last night said there we
 
 The big name on this year’s programme at WADWC is Sir Tim Berners-Lee, inventor of the World Wide Web, whose opening keynote was an engaging riff on the history and future of the open web. Tim’s main research project for the past few years has been [SOLID](https://solidproject.org/), an initiative to add authentication, identity management and standardised data APIs to the web, and he talked about the challenges of decentralising identity, the problems with the data silos that have emerged post web-2.0 — “If you want to share a LinkedIn post with your Twitter followers, you can’t; you have to create a Twitter account to do that” — and the kinds of apps that we could build on top of decentralised identity and authentication.
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff358a4e3-28b6-42eb-a6de-ccd41e123919_4032x3024.jpeg)
+![img](/images/posts/2023/substack-f358a4e3-28b6-42eb-a6de-ccd41e123919_4032x3024.jpeg)
 
 He also talked about AI, which is very much a recurring theme at WADWC this year, and in particular the idea that we should have access to AIs that work for us — “the way your doctor works for you, or your lawyer works for you; they have access to your private data, and you trust them not to share it.”
 
@@ -46,7 +46,7 @@ The afternoon keynote speaker was John Romero, sharing the story of how Id Softw
 
 It’s no exaggeration to say that Doom revolutionised computer gaming. It introduced the world to multiplayer network gaming. It pioneered the free-to-play model by making episode 1 a free download, back in the days of dial-up bulletin board systems. The 3D engine was more sophisticated than anything we’d ever seen before, the music still triggers pangs of nostalgia in an entire generation of gamers — and the word “deathmatch” was created to describe Doom’s competitive multiplayer mode.
 
-![John Romero on stage, in front of a slide showing DOOM: 30 Years of RIP and TEAR. John wears a red and white floral shirt, black jeans, New Rock boots. He looks fabulous. ](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2d165add-9f94-4adf-8c57-196f9ca92492_4032x3024.jpeg)
+![John Romero on stage, in front of a slide showing DOOM: 30 Years of RIP and TEAR. John wears a red and white floral shirt, black jeans, New Rock boots. He looks fabulous. ](/images/posts/2023/substack-2d165add-9f94-4adf-8c57-196f9ca92492_4032x3024.jpeg)
 
 John Romero at WeAreDevelopers World Congress 2023
 
@@ -72,13 +72,13 @@ The challenge, of course, is that AI is easily capable of producing an infinite 
 
 And then there’s my bit — two live sets of developer comedy rock’n’roll. I was playing on the Airstream Stage, a converted Airstream trailer outside next the food trucks and beer tents… which was absolutely fantastic until it started raining about an hour before I was due to go on… but you know what? I’m British. I’ve survived dozens of English summers and five Glastonbury Festivals,  and it takes more than a bit of rain to stop the show. 
 
-![A handwritten set list next to a Zoom G1on guitar pedal. Both are soaked with rain.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37fd5b25-2f4d-47f4-8633-6cb912855bc8_4032x3024.jpeg)
+![A handwritten set list next to a Zoom G1on guitar pedal. Both are soaked with rain.](/images/posts/2023/substack-37fd5b25-2f4d-47f4-8633-6cb912855bc8_4032x3024.jpeg)
 
 I think I figured out where “Wet Wet Wet” got their name.
 
 Thankfully, the audience agreed. Somebody even came up to me afterwards and said “you got our lead developer to sing along — we didn’t think we’d ever see that!”
 
-![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05fe871a-cd94-4950-847f-e7fb9e992485_2048x1536.jpeg)
+![img](/images/posts/2023/substack-05fe871a-cd94-4950-847f-e7fb9e992485_2048x1536.jpeg)
 
 On stage with Hila Fish and Keren Kenzi at WeAreDevelopers World Congress
 

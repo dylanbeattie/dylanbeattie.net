@@ -38,7 +38,7 @@ On a completely unrelated note, my latest hot startup idea is a service where yo
 
 I love parodies, I love stickers, I love rock bands… and I love banging things together to see what happens. Here’s the latest from the bit of my brain that likes to play with Adobe Illustrator:
 
-![A parody of the Guns n' Roses band logo. The words GUNS N  ROSES have been replaced with ONES N ZEROS, the pistols on the original logo are stylised metal digit 1s, and the roses have been replaced with stylised red roses in the shape of a digit 0.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f2c0158-dc5e-4c5a-93fc-2d4270a56510_1920x1080.jpeg)
+![A parody of the Guns n' Roses band logo. The words GUNS N  ROSES have been replaced with ONES N ZEROS, the pistols on the original logo are stylised metal digit 1s, and the roses have been replaced with stylised red roses in the shape of a digit 0.](/images/posts/2023/substack-6f2c0158-dc5e-4c5a-93fc-2d4270a56510_1920x1080.jpeg)
 
 Welcome to the jungle, baby, we’ve got video games.
 
@@ -52,7 +52,7 @@ Want this in your inbox? Sure you do. Then you can read it in your email and it�
 
 **Watching:** Honestly? Not a lot, unless walking on the beach watching juvenile herring gulls counts as watching. They’re very cute, and extremely squeaky.
 
-![A young herring gull, with brown and white plumage, is hassling its parent, a slightly larger bird with white and grey feathers. The parent does not look amused.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc001d238-6891-4a13-99ff-e2f8b3edfcb0_5184x3456.jpeg)
+![A young herring gull, with brown and white plumage, is hassling its parent, a slightly larger bird with white and grey feathers. The parent does not look amused.](/images/posts/2023/substack-c001d238-6891-4a13-99ff-e2f8b3edfcb0_5184x3456.jpeg)
 
 “Mum! Mum! I want chips. Can we get chips? I’m bored. I want a snack! MUM! That man has chips. I’m gonna steal his chips. MUM WATCH THIS… Mum?”
 

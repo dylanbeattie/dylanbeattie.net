@@ -16,7 +16,7 @@ Most of the time.
 
 I got this absolute gem of a screen today, from some event management software I’m integrating with:
 
-![A screenshot from an event management app, showing the form used to cancel an event. There is a single button on the form. It says "Cancel". We don't know what it does.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F444865c0-d962-4ab0-ad09-0c9b76025a90_624x411.png)
+![A screenshot from an event management app, showing the form used to cancel an event. There is a single button on the form. It says "Cancel". We don't know what it does.](/images/posts/2023/substack-444865c0-d962-4ab0-ad09-0c9b76025a90_624x411.png)
 
 No, I’m not going to tell you where it’s from. They’re still figuring a lot of this stuff out, bless ‘em.
 

@@ -12,7 +12,7 @@ typora-root-url: .\..\..
 
 I just joined [Threads](https://www.threads.net/@dylanbeattie). If you’ve not been following the news, Threads is the new social media app from Meta, the company behind Facebook, WhatsApp and Instagram. It’s basically a carbon copy of all the worst bits of Twitter, right up to the capricious billionaire chief executive who’d probably kill their own users if they thought they could sell advertising space on the headstones.
 
-![A graveyard in the cold winter moonlight. headstone reads "IN LOVING MEMORY OF SOCIAL MEDIA 2008-2023. NOT TECHNICALLY DEAD, BUT SURE SMELLS LIKE IT". Cold mist crawls across the frozen ground and the whole thing is hella spooky.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf7d609c-1c60-4d28-b0e5-95e698be2b20_1920x1163.jpeg)
+![A graveyard in the cold winter moonlight. headstone reads "IN LOVING MEMORY OF SOCIAL MEDIA 2008-2023. NOT TECHNICALLY DEAD, BUT SURE SMELLS LIKE IT". Cold mist crawls across the frozen ground and the whole thing is hella spooky.](/images/posts/2023/substack-af7d609c-1c60-4d28-b0e5-95e698be2b20_1920x1163.jpeg)
 
 Not dead, only Thread.Sleep()ing?
 

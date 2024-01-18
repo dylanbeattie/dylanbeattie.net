@@ -28,7 +28,7 @@ This has been around for a few years, but I’d never heard of it until somebody
 
 > “My primary target communities here are Cree communities that are looking for new (and exciting) ways to encourage students (especially in the K-12 grades) to use their heritage language as much as possible, and resist using English as their primary language.”
 
-![A radial computer keyboard, where each key is labelled with glyphs used in the Cree alphabet](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F92d7e97a-d41d-446c-b8b6-20b6797603c7_839x830.jpeg)
+![A radial computer keyboard, where each key is labelled with glyphs used in the Cree alphabet](/images/posts/2023/substack-92d7e97a-d41d-446c-b8b6-20b6797603c7_839x830.jpeg)
 
 Jon Corbett’s design for a keyboard (Creeboard?) based on the Cree star chart, from https://esoteric.codes/blog/jon-corbett
 
@@ -41,7 +41,7 @@ Cree#’s syntax and conventions reflect the visual art and storytelling traditi
 
 For somebody who works with code, web pages and digital media, I print a lot. I use printed notes and schedules when I’m running online workshops, I rely on printed checklists when I’m packing for conference trips and gigs, and I print proofs of my sticker designs and other odd bits of artwork.
 
-![CDN media](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d4bca3e-4b4f-422e-adc1-bc27da88a6e9_1000x1034.jpeg)
+![CDN media](/images/posts/2023/substack-3d4bca3e-4b4f-422e-adc1-bc27da88a6e9_1000x1034.jpeg)
 
 Printers get a bad rap. Sure, you can buy a colour inkjet printer for £50. That’s *ridiculously* cheap. Printers are big and they’re packed with moving parts; you can’t sell a printer for £50 and make a profit. No, a £50 printer is a loss leader. A £50 printer is a way to get you to spend another £50 on cartridges every few months — cartridges that have microchips in them, which [in some cases](https://www.cnet.com/tech/services-and-software/lexmark-invokes-dmca-in-toner-suit/) have been used to store encryption keys so that anybody trying to reverse-engineer them to create compatible low-cost replacements can be prosecuted under the Digital Millennium Copyright Act.
 
@@ -49,7 +49,7 @@ Last month, my printer died. Something something print head won’t align beep b
 
 My new printer’s also a Canon. It’s a [Canon Pixma G6050](https://www.canon.co.uk/printers/pixma-g6050/). It didn’t cost £50; it cost £240. It’s an all-in-one printer, scanner and colour copier; it’s got built-in wired and wireless ethernet; but most important of all: **it doesn’t use cartridges**.
 
-![a photograph of an inkjet printer with four plastic bottles of printer ink.](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f6b4b34-9942-472d-941c-c63154ceae91_2028x1576.jpeg)
+![a photograph of an inkjet printer with four plastic bottles of printer ink.](/images/posts/2023/substack-4f6b4b34-9942-472d-941c-c63154ceae91_2028x1576.jpeg)
 
 If you really want, you can mix all the inks together to make Brown Flavour!
 

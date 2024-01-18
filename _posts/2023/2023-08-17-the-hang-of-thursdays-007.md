@@ -27,7 +27,7 @@ I may have chosen… poorly.
 If you follow any of the .NET content on Twitter, Reddit, Github, or just about any online community with a strong .NET presence, you’ll have caught last week’s drama about Moq.
 
 
-<img src="/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2815a8a-b66a-4b05-b859-cb9ed0a04b59_6000x4000.jpeg" alt="A photograph of a cute otter making a funny face. She has cute little otter paws and does not want you to get angry about NuGet packages." style="zoom:80%;" />
+<img src="/images/posts/2023/substack-a2815a8a-b66a-4b05-b859-cb9ed0a04b59_6000x4000.jpeg" alt="A photograph of a cute otter making a funny face. She has cute little otter paws and does not want you to get angry about NuGet packages." style="zoom:80%;" />
 <figcaption>If you find reading about open source makes you angry, please take a moment to contemplate this otter. Look at her little otter hands! Aaah… isn’t that better?  Photo © Ondrej Chvatal / Shutterstock.</figcaption>
 
 Whatever you think about the specifics of this scenario, it got a lot of people talking about open source funding again — and that’s a good thing, because open source is completely broken. Companies like Meta, Google, Apple — not to mention your bank, your airline, your car, and every single app you have installed on your smartphone — use open source software. It’s a fact of modern software development. But they’re not giving anything back. These companies use open source libraries to create products that turn over hundreds of millions of dollars in revenue, and the developers who create and maintain those libraries are struggling to make ends meet.
