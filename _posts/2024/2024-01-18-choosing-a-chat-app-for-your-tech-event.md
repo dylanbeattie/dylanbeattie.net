@@ -3,7 +3,7 @@ title: "Choosing a Chat App For Your Tech Event"
 layout: post
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2024/choosing-a-chat-app-for-your-tech-event.png
+  og_image: /images/posts/2024/choosing-a-chat-app-for-your-tech-event.jpg
   og_description: "Does your conference need an official chat app - and how do you choose which one to use?"
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2024/
@@ -16,7 +16,7 @@ If you're running a conference or seminar, should you set one up? And if so, whi
 
 Let's get the inevitable out of the way first: even a small community conference is going to attract a few dozen people, and there's no way they're going to agree on which chat app is best. Microsoft Teams is great when all the people in it work for the same company; for guests, even signing in can be a showstopper. For everybody who likes WhatsApp because it's ubiquitous, there's somebody who refuses to install it because they won't use Meta products. For everybody who likes Slack because it's already installed on their company laptop, there's somebody who hates Slack because of its convoluted authentication system *(hi!)*. For everybody who loves Discord because it's where all their friends hang out, there's somebody who can't use it on their laptop because corporate IT think it's only for gamers and crypto.
 
-<img src="/images/posts/2024/image-20240118122057910.png" alt="image-20240118122057910" style="zoom:50%;" title="chat apps: definitely not a total clown show" alt="a woman in clown make-up juggling icons for popular chat systems - WhatsApp, Signal, Discord, Telegram, Slack, Teams" /> />
+<img src="/images/posts/2024/image-20240118122057910.png" alt="image-20240118122057910" style="zoom:50%;" title="chat apps: definitely not a total clown show" alt="a woman in clown make-up juggling icons for popular chat systems - WhatsApp, Signal, Discord, Telegram, Slack, Teams" />
 
 That said, having a chat system for folks participating in your event is an excellent idea. For first-time attendees who don't know anybody, it's a great way to connect with people, find out where people are having drinks or meeting for dinner. It's an easy way for organisers to share updates and last-minute agenda changes.
 
