@@ -1,5 +1,5 @@
 ---
-title: "The Hang of Thursdays #7"
+title: "The Hang of Thursdays #2"
 layout: post
 author: Dylan Beattie
 meta:

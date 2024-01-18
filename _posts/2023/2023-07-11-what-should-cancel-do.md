@@ -1,5 +1,5 @@
 ---
-title: "What's in a (Version) Number?"
+title: "What Should 'Cancel' Do?"
 layout: post
 author: Dylan Beattie
 meta:

@@ -1,5 +1,5 @@
 ---
-title: "What's in a (Version) Number?"
+title: "Travelling with Tiny Guitars"
 layout: post
 author: Dylan Beattie
 meta:
