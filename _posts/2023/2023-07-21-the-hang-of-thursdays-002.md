@@ -26,9 +26,9 @@ Thanks to everybody who came along to our [London .NET User Group](https://www.m
 
 Our first speaker was [Angeliki Patsiavou](https://twitter.com/a_patsiavou?lang=en-GB), who presented a brand new talk about building and enabling cross-functional teams inspired by “The Avengers”, packed with insight and humour — not to mention one of the best slide decks I’ve seen in a while.
 
-![img](/images/posts/2023/substack-f225516e-5b2d-4a2d-9cc1-b97af6d3aa15_6000x3368.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a1d8c87-8f43-4a14-b1b4-919b365eea4b_6000x3368.jpeg)
+![img](/images/posts/2023/substack-f225516e-5b2d-4a2d-9cc1-b97af6d3aa15_6000x3368.jpeg)![img](/images/posts/2023/substack-2a1d8c87-8f43-4a14-b1b4-919b365eea4b_6000x3368.jpeg)
 
-![img](/images/posts/2023/substack-c0fcfc97-9944-40f6-ae23-7d89988681c5_6000x3368.jpeg)![img](/images/posts/2023/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1600c0ea-8fd3-4dcf-8965-7d9078139f13_6000x3368.jpeg)
+![img](/images/posts/2023/substack-c0fcfc97-9944-40f6-ae23-7d89988681c5_6000x3368.jpeg)![img](/images/posts/2023/substack-1600c0ea-8fd3-4dcf-8965-7d9078139f13_6000x3368.jpeg)
 
 London .NET meetup at Codat, July 12 2023
 
