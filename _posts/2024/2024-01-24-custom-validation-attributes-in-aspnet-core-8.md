@@ -37,7 +37,7 @@ You'll need to add two lines of custom JavaScript to your pages - I add these to
 
 ```html
 <script>
-    jQuery.validator.addMethod("must-be-true", (_, element) => element.checked);
+	jQuery.validator.addMethod("must-be-true", (_, element) => element.checked);
 	jQuery.validator.unobtrusive.adapters.addBool("must-be-true");
 </script>
 ```
