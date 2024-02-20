@@ -33,9 +33,7 @@ In terms of portability, I assume the venue will provide HDMI for the presenter'
 
 ### **Camera: Canon EOS M200 + Elgato Camlink**
 
-The camera I use is a Canon EOS M200. It's a mirrorless SLR with clean HDMI out: what this means in practice is you can plug it into an Elgato Camlink, plug that into your laptop, and it shows up as a webcam - albeit a really, *really* good one. The camera runs off a USB power supply so I don't have to worry about running out of battery halfway through a recording.
-
-If I can, I'll bring a proper camera tripod along. If not, I'll bring a SmallRig "magic arm" clamp and find a convenient chair, lamp, window frame or something to clamp it to. 
+The camera I use is a [Canon EOS M200](https://www.canon.co.uk/cameras/eos-m200/). It's a mirrorless SLR with clean HDMI out: what this means in practice is you can plug it into an [Elgato Camlink](https://www.elgato.com/uk/en/p/cam-link-4k), plug that into your laptop, and it shows up as a webcam - albeit a really, *really* good one. The camera runs off a USB power supply so I don't have to worry about running out of battery halfway through a recording.
 
 > Bad news: Canon has [apparently discontinued the M200](https://www.canonrumors.com/canon-eos-m-has-been-quietly-discontinued/), along with the rest of the M series, in favour of the [Canon EOS R](https://www.canon.co.uk/cameras/eos-r/) series.  This makes me sad, because the M200 is a wonderful camera.
 >
@@ -43,17 +41,23 @@ If I can, I'll bring a proper camera tripod along. If not, I'll bring a SmallRig
 >
 > [https://www.elgato.com/uk/en/s/cam-link-camera-check](https://www.elgato.com/uk/en/s/cam-link-camera-check)
 
+If I can, I'll bring a proper camera tripod along. If not, I'll bring a [SmallRig "magic arm" clamp](https://www.amazon.co.uk/Version-SMALLRIG-Magic-Articulating-3-3lb/dp/B076HLBZDX/) and find a convenient chair, lamp, window frame or something to clamp it to. 
+
 ### **Slides: Elgato Game Capture HD60S+**
 
-To capture the speaker's laptop, I use an Elgato Game Capture HD60S+. This works like a Camlink - turns HDMI into a USB video signal - but it has an HDMI output that uses passthrough, so I can plug it in between the speaker's laptop and the venue's projector/screen and then tap a USB feed off the side into my laptop.
+To capture the speaker's laptop, I use an Elgato Game Capture HD60S+ (now superseded by the [Game Capture HD60 X](https://www.elgato.com/uk/en/p/game-capture-hd60-x)) This works like a Camlink - turns HDMI into a USB video signal - but it has an HDMI output that uses passthrough, so I can plug it in between the speaker's laptop and the venue's projector/screen and then tap a USB feed off the side into my laptop.
 
 ### **Audio: Ankerwork M650 Wireless Microphones**
 
-The first time I tried this, I used a RODE shotgun microphone attached to the camera, but the audio quality wasn't great, so I invested in a set of Ankerwork M650 wireless microphones. These are wonderful and amazing and excellent and I can't say enough good things about them, but I'm a big fan of Anker gear, and folks I know who use the RODE Wireless ME or the DJI wireless mics say the same things about their setup; be prepared to spend more than £100 and you can't really go wrong.
+The first time I tried this, I used a RØDE shotgun microphone attached to the camera, but the audio quality wasn't great, so I invested in a set of [AnkerWork M650 wireless microphones](https://uk.ankerwork.com/products/a3320-m650-wireless-microphone). These are wonderful and amazing and excellent and I can't say enough good things about them, but I'm a big fan of Anker gear, and folks I know who use the [RØDE Wireless ME](https://rode.com/en/microphones/wireless/wireless-me) or the [DJI MIC system](https://www.dji.com/uk/mic) say the same things about their setup.
+
+![img](/images/posts/2024/A3320011_TD01_V1_2048x.jpg)
+
+
 
 ### **Recording: Macbook Pro + OBS Studio**
 
-I run all three of these into an M1 Macbook Pro, and then record everything using OBS Studio.
+I run all these devices into an M1 Macbook Pro, and then record everything using OBS Studio.
 
 Set OBS to record MKV format, and enable "automatically remux to MP4" in Settings > Advanced.
 
@@ -115,7 +119,7 @@ OK, you don't need to spend that all in one go. Get a copy of Reincubate Camo an
 
 I wouldn't skimp on microphones, though: as they say in Hollywood, "your ears never blink", and you can probably get away with significantly worse video quality if the audio is up to scratch.
 
-Anyway. That's your lot; good luck with it, and let me know if you found this useful (or if you want to recommend a camera now that Canon has discontinued the M200 😢).
+Anyway. That's your lot; good luck with it, and let me know if you found this useful.
 
 
 
