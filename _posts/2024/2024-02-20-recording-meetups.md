@@ -10,7 +10,7 @@ typora-copy-images-to: ../../images/posts/2024/
 typora-root-url: .\..\..
 ---
 
-For the last few months, I've been recording the talks at the London .NET User Group on video so we can post them on YouTube after the event, and I've had some questions about the setup I use to record them.
+For the last few months, I've been recording the talks at the London .NET User Group on video so we can post them on YouTube after the event. The videos are online at [https://www.youtube.com/@LondonDotNet](https://www.youtube.com/@LondonDotNet), and I've had some questions about the setup I use to record them. Some from interested people looking to do something similar at their own events, some from people who show up early while I'm still setting up and go "wow, what's with all the shiny things?" So here's how it works.
 
 ![dylanbeattie-recording-meetups](/images/posts/2024/dylanbeattie-recording-meetups-1708431475830-8.png)
 
@@ -119,7 +119,22 @@ OK, you don't need to spend that all in one go. Get a copy of Reincubate Camo an
 
 I wouldn't skimp on microphones, though: as they say in Hollywood, "your ears never blink", and you can probably get away with significantly worse video quality if the audio is up to scratch.
 
-Anyway. That's your lot; good luck with it, and let me know if you found this useful.
+Here's two clips I recorded using the old camera-mounted RØDE shotgun mic:
+
+* [Guy Royse: Tracking Aircrafft with Redis and Software-Defined Radio](https://www.youtube.com/watch?v=u2wmcxezm2o) 
+* [Eirik Tsarpalis: What's New in .NET 8](https://www.youtube.com/watch?v=qYrF1Q-PjPs)
+
+and here's some recorded with the AnkerWork mics:
+
+* [Eli Holderness: A Brief History of Data Storage](https://www.youtube.com/watch?v=QS1fx86U_V0)
+* [Martin Costello: What's New in .NET 8](https://www.youtube.com/watch?v=nA2kPF4o3Yc)
+* [Mark Rendle: How JavaScript Happened](https://www.youtube.com/watch?v=E4Vt88bQs64)
+
+So, that's your lot. Good luck with it, and let me know if you found this useful.
+
+
+
+
 
 
 
