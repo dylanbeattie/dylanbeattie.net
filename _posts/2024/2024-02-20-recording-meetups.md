@@ -3,7 +3,7 @@ title: "Recording Meetups"
 layout: post
 author: Dylan Beattie
 meta:
-  og_image: /images/posts/2024/2024-02-20-recording-meetups.png
+  og_image: /images/posts/2024/2024-02-20-recording-meetups.jpg
   og_description: "How I record presentations at the London .NET User Group"
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2024/
