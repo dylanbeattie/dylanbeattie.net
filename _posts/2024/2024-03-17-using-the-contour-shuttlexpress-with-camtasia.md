@@ -3,7 +3,7 @@ title: "Using the Contour ShuttleXpress with Camtasia"
 layout: post
 author: Dylan Beattie
 meta:
-#  og_image: /images/posts/2024/2024-03-17-using-the-contour-shuttlexpress-with-camtasia.jpg
+  og_image: /images/posts/2024/2024-03-17-using-the-contour-shuttlexpress-with-camtasia.jpg
   og_description: "How to set up the Contour ShuttleXpress controller to work with TechSmith's Camtasia video editing application"
   twitter_card: summary_large_image
 typora-copy-images-to: ../../images/posts/2024/
