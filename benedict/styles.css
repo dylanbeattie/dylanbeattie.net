@@ -1,0 +1,94 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div#playback {
+	display: none;
+}
+
+div#playback span {
+	color: #999;
+}
+div#toolbar {
+	display: flex;
+	align-items: center;
+
+}
+div#toolbar button {
+	border: 1px solid #036;
+	width: 36px;
+	height: 36px;
+	overflow: clip;
+	padding: 0;
+	margin: 2px;
+	background: none;
+	color: #fff;
+	display: inline-block;
+}
+div#toolbar label {
+	margin-left: 8px;
+	display: inline-block;
+}
+div#toolbar label#result-label {
+	flex-grow: 1;
+	text-align: right;
+	margin-right: 8px;
+}
+
+div#toolbar button:hover {
+	background-color: #036;
+	cursor: pointer;
+}
+textarea,
+div#playback {
+	outline: 0;
+	background-color: #000;
+	color: #fff;
+	overflow-y: scroll;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	padding: 170px 200px;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.4em;
+	font-size: 80px;
+	text-align: center;
+	z-index: 2;
+	transition: transform 0.5s;
+}
+div#playback::-webkit-scrollbar {
+	display: none;
+}
+
+div#playback {
+	scrollbar-width: none;
+}
+textarea {
+	padding-left: 216px !important;
+}
+
+hr {
+	position: absolute;
+	border: 1px solid #f00;
+	left: 0;
+	right: 0;
+	top: 420px;
+	height: 0px;
+	z-index: 3;
+}
+.hflip {
+	transform: rotateY(180deg);
+}
+
+.vflip {
+	transform: rotateX(180deg);
+}
