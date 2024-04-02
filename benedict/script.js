@@ -1,5 +1,50 @@
-var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+class Prompter {
+	constructor(text) {
+		this.text = text;
+	}
+	#fontSizes = [32, 48, 64, 80, 96, 128, 144, 192];
 
+	#fontSize = 0;
+
+	get fontSizePx() { return `${this.#fontSize}px`; }
+
+	adjustFontSize(offset) {
+		let index = this.#fontSizes.indexOf(parseInt(this.#fontSize));
+		if (index < 0) index = 3;
+		index = Math.min(this.#fontSizes.length - 1, Math.max(index + offset, 0));
+		this.#fontSize = this.#fontSizes[index];
+	}
+}
+
+class View {
+	constructor(container) {
+		this.textarea = container.getElementById("textarea");
+		this.playback = container.getElementById("playback");
+	}
+
+	update(prompter) {
+		[ this.textarea, this.playback ].forEach(el => el.style.fontSize = prompter.fontSizePx);
+	}
+}
+
+class Controller {
+	constructor(dom) {
+		this.model = new Prompter(); ''
+		this.view = new View(dom);
+		dom.querySelector("#bigger-text-button").addEventListener("click", this.increaseFontSize.bind(this));
+		dom.querySelector("#smaller-text-button").addEventListener("click", this.decreaseFontSize.bind(this));
+		dom.querySelector("#start-button").addEventListener("click", this.start.bind(this));
+	}
+	invoke = (fn) => { fn(); this.view.update(this.model); }
+	increaseFontSize = () => this.invoke(() => this.model.adjustFontSize(+1));
+	decreaseFontSize = () => this.invoke(() => this.model.adjustFontSize(-1));
+	start = () => this.invoke(() => this.model.start());
+}
+
+var tp = new Controller(document);
+tp.start();
+/*
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const textarea = document.querySelector("textarea");
 const hr = document.querySelector("hr");
 if (!SpeechRecognition) {
@@ -183,4 +228,4 @@ if (!SpeechRecognition) {
 	reset();
 	updateTextSize();
 	pad();
-}
+}*/
