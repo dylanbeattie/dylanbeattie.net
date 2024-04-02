@@ -171,8 +171,15 @@ if (!SpeechRecognition) {
 		scrollingInterval = window.setInterval(scroll, 1000 / 60);
 	};
 
+
 	recognition.onnomatch = console.log;
-	recognition.onerror = console.log;
+
+	recognition.onerror = error => {
+		console.log(error);
+		recognition.abort();
+		window.setTimeout(() => recognition.start(), 500);
+	}
+
 	reset();
 	updateTextSize();
 	pad();
