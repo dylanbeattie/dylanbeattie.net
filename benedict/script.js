@@ -1,48 +1,3 @@
-class Prompter {
-	constructor(text) {
-		this.text = text;
-	}
-	#fontSizes = [32, 48, 64, 80, 96, 128, 144, 192];
-
-	#fontSize = 0;
-
-	get fontSizePx() { return `${this.#fontSize}px`; }
-
-	adjustFontSize(offset) {
-		let index = this.#fontSizes.indexOf(parseInt(this.#fontSize));
-		if (index < 0) index = 3;
-		index = Math.min(this.#fontSizes.length - 1, Math.max(index + offset, 0));
-		this.#fontSize = this.#fontSizes[index];
-	}
-}
-
-class View {
-	constructor(container) {
-		this.textarea = container.getElementById("textarea");
-		this.playback = container.getElementById("playback");
-	}
-
-	update(prompter) {
-		[ this.textarea, this.playback ].forEach(el => el.style.fontSize = prompter.fontSizePx);
-	}
-}
-
-class Controller {
-	constructor(dom) {
-		this.model = new Prompter(); ''
-		this.view = new View(dom);
-		dom.querySelector("#bigger-text-button").addEventListener("click", this.increaseFontSize.bind(this));
-		dom.querySelector("#smaller-text-button").addEventListener("click", this.decreaseFontSize.bind(this));
-		dom.querySelector("#start-button").addEventListener("click", this.start.bind(this));
-	}
-	invoke = (fn) => { fn(); this.view.update(this.model); }
-	increaseFontSize = () => this.invoke(() => this.model.adjustFontSize(+1));
-	decreaseFontSize = () => this.invoke(() => this.model.adjustFontSize(-1));
-	start = () => this.invoke(() => this.model.start());
-}
-
-var tp = new Controller(document);
-tp.start();
 /*
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const textarea = document.querySelector("textarea");
@@ -51,49 +6,11 @@ if (!SpeechRecognition) {
 	textarea.style.fontSize = "32px";
 	textarea.value = "Sorry, Benedict requires the SpeechRecognition API, which your browser doesn't support. 😢"
 } else {
-	var recognition = new SpeechRecognition();
-	recognition.continuous = true;
-	recognition.lang = 'en-US';
-	recognition.interimResults = true;
-	recognition.maxAlternatives = 1;
 	const playback = document.querySelector("div#playback");
 
 	document.querySelector("#bigger-text-button").addEventListener("click", () => updateTextSize(1));
 	document.querySelector("#smaller-text-button").addEventListener("click", () => updateTextSize(-1));
-	document.querySelector("#reset-button").addEventListener("click", () => reset());
-	document.querySelector("#start-button").addEventListener("click", () => start());
-	document.querySelector("#h-flip-button").addEventListener("click", () => toggle("hflip"));
-	document.querySelector("#v-flip-button").addEventListener("click", () => toggle("vflip"));
-	document.querySelector("#wider-button").addEventListener("click", () => pad(-1));
-	document.querySelector("#narrower-button").addEventListener("click", () => pad(+1));
 
-	const SCROLLBAR_WIDTH = 16;
-
-	function pad(direction = 0) {
-		console.log(direction);
-		var padding =
-			parseInt(window.getComputedStyle(playback).paddingLeft)
-			||
-			parseInt(window.getComputedStyle(textarea).paddingLeft);
-
-		var elementWidth = (playback.getBoundingClientRect().width
-			||
-			textarea.getBoundingClientRect().width);
-		var upperLimit = (elementWidth / 2) - 200;
-		console.log(playback.getBoundingClientRect().width);
-		console.log(padding, upperLimit);
-		var lowerLimit = 0;
-		padding += (direction * 100);
-		padding = Math.min(upperLimit, Math.max(lowerLimit, padding));
-		console.log(padding);
-		textarea.style.paddingLeft = padding + SCROLLBAR_WIDTH + "px";
-		textarea.style.paddingRight = padding + "px";
-		playback.style.paddingLeft = padding + "px";
-		playback.style.paddingRight = padding + "px";
-		hr.style.left = padding + "px";
-		hr.style.right = padding + "px";
-		allowReverseScroll = true;
-	}
 
 	function toggle(className) {
 
@@ -110,21 +27,7 @@ if (!SpeechRecognition) {
 	var fontSizes = ["32px", "48px", "64px", "80px", "96px", "128px", "144px", "192px"];
 
 	function updateTextSize(offset = 0) {
-		var fontSize = window.getComputedStyle(playback).fontSize;
-		var index = fontSizes.indexOf(fontSize);
-		if (index < 0) index = 3;
-		index += offset;
-		if (index < 0) index = 0;
-		if (index >= fontSizes.length) index = fontSizes.length - 1;
-		var size = fontSizes[index];
-		playback.style.fontSize = size;
-		textarea.style.fontSize = size;
-		scrollAdjustmentFactor = parseInt(size) * 1.125;
-		var paddingTop = (380 - (1.3 * parseInt(size)));
-		if (playback.classList.contains("vflip")) paddingTop += 260;
-		playback.style.paddingTop = paddingTop + "px";
-		textarea.style.paddingTop = paddingTop + "px";
-		allowReverseScroll = true;
+
 	}
 
 	let startSearchAtIndex, WINDOW_SIZE, currentHighlight, lookahead, scrollSpeed;
@@ -192,12 +95,7 @@ if (!SpeechRecognition) {
 		}
 	}
 
-	function updatePlaybackContents(position) {
-		let text = textarea.value;
-		let html = `<span>${text.substring(0, position)}</span>${text.substring(position)}\n\n\n\n\n\n\n\n\n\n\n`;
-		html = html.replace(/\n/g, '<br />');
-		playback.innerHTML = html;
-	}
+
 
 	let scrollingInterval;
 
