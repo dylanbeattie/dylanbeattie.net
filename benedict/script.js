@@ -1,54 +1,16 @@
+/*
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
 const textarea = document.querySelector("textarea");
 const hr = document.querySelector("hr");
 if (!SpeechRecognition) {
 	textarea.style.fontSize = "32px";
 	textarea.value = "Sorry, Benedict requires the SpeechRecognition API, which your browser doesn't support. 😢"
 } else {
-	var recognition = new SpeechRecognition();
-	recognition.continuous = true;
-	recognition.lang = 'en-US';
-	recognition.interimResults = true;
-	recognition.maxAlternatives = 1;
 	const playback = document.querySelector("div#playback");
 
 	document.querySelector("#bigger-text-button").addEventListener("click", () => updateTextSize(1));
 	document.querySelector("#smaller-text-button").addEventListener("click", () => updateTextSize(-1));
-	document.querySelector("#reset-button").addEventListener("click", () => reset());
-	document.querySelector("#start-button").addEventListener("click", () => start());
-	document.querySelector("#h-flip-button").addEventListener("click", () => toggle("hflip"));
-	document.querySelector("#v-flip-button").addEventListener("click", () => toggle("vflip"));
-	document.querySelector("#wider-button").addEventListener("click", () => pad(-1));
-	document.querySelector("#narrower-button").addEventListener("click", () => pad(+1));
 
-	const SCROLLBAR_WIDTH = 16;
-
-	function pad(direction = 0) {
-		console.log(direction);
-		var padding =
-			parseInt(window.getComputedStyle(playback).paddingLeft)
-			||
-			parseInt(window.getComputedStyle(textarea).paddingLeft);
-
-		var elementWidth = (playback.getBoundingClientRect().width
-			||
-			textarea.getBoundingClientRect().width);
-		var upperLimit = (elementWidth / 2) - 200;
-		console.log(playback.getBoundingClientRect().width);
-		console.log(padding, upperLimit);
-		var lowerLimit = 0;
-		padding += (direction * 100);
-		padding = Math.min(upperLimit, Math.max(lowerLimit, padding));
-		console.log(padding);
-		textarea.style.paddingLeft = padding + SCROLLBAR_WIDTH + "px";
-		textarea.style.paddingRight = padding + "px";
-		playback.style.paddingLeft = padding + "px";
-		playback.style.paddingRight = padding + "px";
-		hr.style.left = padding + "px";
-		hr.style.right = padding + "px";
-		allowReverseScroll = true;
-	}
 
 	function toggle(className) {
 
@@ -65,21 +27,7 @@ if (!SpeechRecognition) {
 	var fontSizes = ["32px", "48px", "64px", "80px", "96px", "128px", "144px", "192px"];
 
 	function updateTextSize(offset = 0) {
-		var fontSize = window.getComputedStyle(playback).fontSize;
-		var index = fontSizes.indexOf(fontSize);
-		if (index < 0) index = 3;
-		index += offset;
-		if (index < 0) index = 0;
-		if (index >= fontSizes.length) index = fontSizes.length - 1;
-		var size = fontSizes[index];
-		playback.style.fontSize = size;
-		textarea.style.fontSize = size;
-		scrollAdjustmentFactor = parseInt(size) * 1.125;
-		var paddingTop = (380 - (1.3 * parseInt(size)));
-		if (playback.classList.contains("vflip")) paddingTop += 260;
-		playback.style.paddingTop = paddingTop + "px";
-		textarea.style.paddingTop = paddingTop + "px";
-		allowReverseScroll = true;
+
 	}
 
 	let startSearchAtIndex, WINDOW_SIZE, currentHighlight, lookahead, scrollSpeed;
@@ -147,12 +95,7 @@ if (!SpeechRecognition) {
 		}
 	}
 
-	function updatePlaybackContents(position) {
-		let text = textarea.value;
-		let html = `<span>${text.substring(0, position)}</span>${text.substring(position)}\n\n\n\n\n\n\n\n\n\n\n`;
-		html = html.replace(/\n/g, '<br />');
-		playback.innerHTML = html;
-	}
+
 
 	let scrollingInterval;
 
@@ -183,4 +126,4 @@ if (!SpeechRecognition) {
 	reset();
 	updateTextSize();
 	pad();
-}
+}*/

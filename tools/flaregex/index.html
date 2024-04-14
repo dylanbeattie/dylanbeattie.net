@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Flaregex</title>
+	<style>
+		input, ol {	font-family: Consolas; font-size: 120%; }
+		ol { margin-left: 4em; }
+	</style>
+</head>
+
+<body>
+	Regex: <input type="text" id="regex" value="hello.*" />
+	Count: <input type="text" id="count" />
+	<hr />
+	<ol></ol>
+	<script type="module">
+		import { WORDLIST } from './wordlist.js';
+		let count = NaN;
+		var regexInput = document.querySelector("input#regex");
+		var countInput = document.querySelector("input#count");
+		var ol = document.querySelector("ol");
+		regexInput.addEventListener("keyup", search);
+		countInput.addEventListener("keyup", search);
+		function search() {
+			if (regexInput.value.length > 2) {
+				var rx = new RegExp(regexInput.value);
+				var words = WORDLIST.filter(w => rx.test(w));
+				if (count = parseInt(countInput.value)) {
+					words = words.filter(w => w.length == count);
+				}
+				words = words.slice(0, 1000);
+				var items = '<li>' + words.join('</li><li>') + '</li>';
+				ol.innerHTML = items;
+			}
+		}
+		search();
+	</script>
+</body>
+
+</html>

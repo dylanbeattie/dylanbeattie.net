@@ -10,11 +10,17 @@ body {
 
 div#playback {
 	display: none;
+	background-color: #00f;
 }
 
-div#playback span {
-	color: #999;
+div#playback span.match {
+	color: #f0f;
 }
+
+div#playback span.guess {
+	color: #0ff;
+}
+
 div#toolbar {
 	display: flex;
 	align-items: center;
@@ -46,6 +52,15 @@ div#toolbar button:hover {
 	background-color: #036;
 	cursor: pointer;
 }
+div#prompter {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: transform 0.5s;
+}
+
 textarea,
 div#playback {
 	outline: 0;
@@ -58,14 +73,12 @@ div#playback {
 	right: 0;
 	bottom: 0;
 	box-sizing: border-box;
-	padding: 170px 400px;
 	width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.4em;
 	font-size: 64px;
 	text-align: center;
 	z-index: 2;
-	transition: transform 0.5s;
 }
 
 textarea {
@@ -79,13 +92,9 @@ div#playback {
 	scrollbar-width: none;
 }
 
-textarea {
-	padding-left: 416px !important;
-}
-
 hr {
 	position: absolute;
-	border: 1px solid #f00;
+	border: 2px solid #f00;
 	left: 0;
 	right: 0;
 	top: 420px;
