@@ -1,10 +1,42 @@
-# - title: digit 2022 
+- title: NDC Oslo
+  date: 9 - 14 June 2024
+  url: https://ndcoslo.com/
+  city: Oslo, Norway
+  country: "no"
+
+- title: Copenhagen Developers Festival
+  date: 26 - 30 August 2024
+  url: https://cphdevfest.com/
+  city: Copenhagen, Denmark
+  country: dk
+
+- title: KanDDDinsky
+  date: 28-30 October 2024
+  url: https://kandddinsky.de/
+  city: Berlin, Germany
+  country: de
+
+- title: NDC Porto
+  date: 14-18 October 2024
+  url: https://ndcporto.com/
+  city: Porto, Portugal
+  country: pt
+
+- title: Build Stuff
+  date: 13-15 November 2024
+  url: https://www.buildstuff.events/
+  city: Vilnius, Lithuania
+  country: lt
+
+
+
+# - title: digit 2022
 #   date: 22 April 2022
 #   url: https://www.digit.dev/dylan-beattie
 #   city: Tartu, Estonia
 #   country: ee
 
-# - title: NDC Porto 
+# - title: NDC Porto
 #   date: 25-29 April 2022
 #   url: https://ndcporto.com/speakers/dylan-beattie
 #   city: Porto, Portugal
@@ -129,7 +161,7 @@
 #  city: Stockholm, Sweden
 #  country: se
 
-#- title: Swetugg 
+#- title: Swetugg
 #  date: 8-9 February 2023
 #  url: https://swetugg.se/sthlm-2023/speakers/dylan-beattie
 #  city: Stockholm, Sweden
@@ -152,8 +184,8 @@
 #  url: https://www.meetup.com/london-net-user-group/events/293168072/
 #  city: London, UK
 #  country: gb
-#  
-#- title: NDC Oslo 
+#
+#- title: NDC Oslo
 #  date: 22-25 May 2023
 #  url: https://ndcoslo.com/
 #  city: Oslo, Norway
@@ -164,13 +196,13 @@
 #  url: https://devsum.se/
 #  city: Oslo, Norway
 #  country: "se"
-# 
+#
 #- title: CityJS
 #  date: 30 May 2023
 #  url: https://greece.cityjsconf.org/
 #  city: Athens, Greece
 #  country: gr
-#  
+#
 #- title: GOTO Amsterdam
 #  date: 26-29 June 2023
 #  url: https://gotoams.nl/2023
@@ -182,78 +214,78 @@
 #  url: https://codegarden.umbraco.com/
 #  city: Odense, Denmark
 #  country: dk
-#  
+#
 #- title: Copenhagen Developers Festival
 #  date: 28 August - 1 September 2023
 #  url: https://cphdevfest.com/
 #  city: Copenhagen, Denmark
 #  country: dk
-  
-- title: Digit
-  date: 21 September 2023
-  url: https://digit.dev/
-  city: Tartu, Estonia
-  country: ee
- 
-- title: DrivUn
-  date: 27 September 2023
-  url: https://drivun.co/
-  city: Amsterdam, Netherlands
-  country: nl
 
-- title: Birmingham .NET User Group
-  date: 11 October 2023
-  url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
-  city: Birmingham, UK
-  country: gb
-  
-- title: NDC Porto
-  date: 16-20 October 2023
-  url: https://ndcporto.com/
-  city: Porto, Portugal
-  country: pt
-  
-- title: CodeCamp Iasi
-  date: 31 October - 2 November 2023
-  url: https://codecamp.ro/conferences/codecamp_iasi/
-  city: Iasi, Romania
-  country: ro
+# - title: Digit
+#   date: 21 September 2023
+#   url: https://digit.dev/
+#   city: Tartu, Estonia
+#   country: ee
 
-- title: XPand 2023
-  date: 4-5 November 2020
-  url: https://xpandconf.com/
-  city: Dead Sea, Jordan
-  country: jo
- 
-- title: BuildStuff
-  date: 15-17 November 2023
-  url: https://buildstuff.events/
-  city: Vilnius, Lithuania
-  country: lt
+# - title: DrivUn
+#   date: 27 September 2023
+#   url: https://drivun.co/
+#   city: Amsterdam, Netherlands
+#   country: nl
 
-- title: YOW! Melbourne
-  date: 30 November - 1 December 2023
-  url: https://yowcon.com/melbourne-2023
-  city: Melbourne, Australia
-  country: au
+# - title: Birmingham .NET User Group
+#   date: 11 October 2023
+#   url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
+#   city: Birmingham, UK
+#   country: gb
 
-- title: YOW! Brisbane
-  date: 4-5 December 2023
-  url: https://yowcon.com/brisbane-2023
-  city: Brisbane, Australia
-  country: au
+# - title: NDC Porto
+#   date: 16-20 October 2023
+#   url: https://ndcporto.com/
+#   city: Porto, Portugal
+#   country: pt
 
-- title: YOW! Sydney
-  date: 7 - 8 December 2023
-  url: https://yowcon.com/sydney-2023
-  city: Sydney, Australia
-  country: au
-  
-- title: NDC London
-  date: 29 January - 2 February 2024
-  url: https://ndclondon.com/
-  city: London, UK
-  country: gb
+# - title: CodeCamp Iasi
+#   date: 31 October - 2 November 2023
+#   url: https://codecamp.ro/conferences/codecamp_iasi/
+#   city: Iasi, Romania
+#   country: ro
+
+# - title: XPand 2023
+#   date: 4-5 November 2020
+#   url: https://xpandconf.com/
+#   city: Dead Sea, Jordan
+#   country: jo
+
+# - title: BuildStuff
+#   date: 15-17 November 2023
+#   url: https://buildstuff.events/
+#   city: Vilnius, Lithuania
+#   country: lt
+
+# - title: YOW! Melbourne
+#   date: 30 November - 1 December 2023
+#   url: https://yowcon.com/melbourne-2023
+#   city: Melbourne, Australia
+#   country: au
+
+# - title: YOW! Brisbane
+#   date: 4-5 December 2023
+#   url: https://yowcon.com/brisbane-2023
+#   city: Brisbane, Australia
+#   country: au
+
+# - title: YOW! Sydney
+#   date: 7 - 8 December 2023
+#   url: https://yowcon.com/sydney-2023
+#   city: Sydney, Australia
+#   country: au
+
+# - title: NDC London
+#   date: 29 January - 2 February 2024
+#   url: https://ndclondon.com/
+#   city: London, UK
+#   country: gb
 
 # - title: From Keyboard to Keynote (Workshop)
 #   date: 21-22 September 2020
@@ -285,10 +317,10 @@
 #   city: Online
 #   country: internet
 
-# - title: Innovative TechTalks 
+# - title: Innovative TechTalks
 #   date: 6 October 2020
 #   url: https://www.meetup.com/Maxcode-Software-Development-Meetup-Group/events/273315756/
-#   city: Online 
+#   city: Online
 #   country: internet
 
 # - title: GOTO Copenhagen
@@ -325,185 +357,185 @@
 # #  url: https://devconf.pl/
 # #  city: Kraków, Poland
 # #  country: pl
-# 
+#
 # # - title: Half a Day of .NET
 # #   date: 3 Oct
 # #   url: https://cnug.dk/events/half-a-day-of-dot-net/
 # #   city: Copenhagen, Denmark
 # #   country: dk
-# 
+#
 # # - title: DUUGFest 2019
 # #   date: 11 Oct
 # #   url: https://www.df19.nl/
 # #   city: Utrecht, Netherlands
 # #   country: nl
-# 
+#
 # # - title: KanDDDinsky
 # #   date: 17-18 Oct
 # #   url: https://kandddinsky.de/
 # #   city: Berlin, Germany
 # #   country: de
-# 
+#
 # # - title: Droidcon London 2019
 # #   date: 24-25 Oct
 # #   url: https://uk.droidcon.com/
 # #   city: London, UK
 # #   country: gb
-#   
+#
 # # - title: DDD East Midlands
 # #   date: 26 Oct
 # #   url: https://dddeastmidlands.com
 # #   city: Nottingham, UK
 # #   country: gb
-# 
+#
 # # - title: Hack Manchester
 # #   date: 27 Oct
 # #   url: https://www.hac100.com/event/HM2019/
 # #   city: Manchester, UK
 # #   country: gb
-# 
+#
 # # - title: ApexVox
 # #   date: 2 Nov
 # #   url: http://apexvox.net/
 # #   city: Cluj-Napoca, Romania
 # #   country: ro
-# 
+#
 # # - title: BuildStuff
 # #   date: 13-15 Nov
 # #   url: https://buildstuff.lt/
 # #   city: Vilnius, Lithuania
 # #   country: lt
-#   
+#
 # # - title: BuildStuff
 # #   date: 18-19 Nov
 # #   url: https://buildstuff.com.ua/
 # #   city: Kyiv, Ukraine
 # #   country: ua
-# 
+#
 # # - title: HalfStack
 # #   date: 22 Nov
 # #   url: https://halfstackconf.com/london/
 # #   city: London, UK
 # #   country: gb
-#   
+#
 # # - title: Xamarin UG
 # #   date: 26 Nov
 # #   url: https://www.meetup.com/Birmingham-DotNet-And-Xamarin-User-Group/events/263557251/
 # #   city: Birmingham, UK
 # #   country: gb
-# 
+#
 # # - title: NDC Meetup in Porto
 # #   date: 7 January 2020
 # #   url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-porto-tickets-85068182223
 # #   city: Porto, Portugal
 # #   country: pt
-# 
+#
 # # - title: NDC Meetup in Lisbon
 # #   date: 8 January 2020
 # #   url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-lisbon-tickets-85618592515
 # #   city: Lisbon, Portugal
 # #   country: pt
-# 
-# # - title: NDC London 
+#
+# # - title: NDC London
 # #   date: 27-31 January 2020
 # #   url: https://ndc-london.com/
 # #   city: London, UK
 # #   country: gb
-# 
+#
 # - title: .NeXt Generation
 #   date: 26 February 2020
 #   url: https://www.meetup.com/NeXt-Gen/events/268328855/
 #   city: London, UK
 #   country: gb
-# 
+#
 # - title: Copenhagen .NET User Group
 #   date: 2 March 2020
 #   url: https://www.meetup.com/Copenhagen-Net-User-Group/events/268797049/
 #   city: Copenhagen, Denmark
 #   country: dk
-#   
+#
 # - title: GOTO Oslo
 #   date: 3-5 March 2020
 #   url: https://goto-oslo.com/
 #   city: Copenhagen / Oslo
 #   country: "no"
-# 
+#
 # - title: Fusion Tech Meetup
 #   date: 12 March 2020
 #   url: https://www.meetup.com/Fusion-Technology-Meetup-Birmingham/
 #   city: Birmingham, UK
 #   country: gb
-#   
+#
 # - title: NDC Copenhagen
 #   date: 1-3 April 2020
 #   url: https://ndccopenhagen.com/
 #   city: Copenhagen, Denmark
 #   country: dk
-# 
-# - title: DotNext 
+#
+# - title: DotNext
 #   date: 6-7 April 2020
 #   url: https://dotnext-piter.ru/en/
 #   city: Saint-Petersburg, Russia
 #   country: ru
-#   
+#
 # - title: .NET fwdays'20
 #   date: 11 April 2020
 #   url: https://fwdays.com/en/event/dotnet-fwdays-2020
 #   city: Kyiv, Ukraine
 #   country: ua
-# 
-# 
+#
+#
 # - title: NDC Porto
 #   date: 21-24 April 2020
 #   url: https://ndcporto.com/
 #   city: Porto, Portugal
 #   country: pt
-#   
+#
 # - title: Devoxx UK
 #   date: 13-15 May 2020
 #   url: https://www.devoxx.co.uk/
 #   city: London, UK
 #   country: gb
-# 
+#
 # - title: Bucharest Tech Week
 #   date: 22 May 2020
 #   url: https://techweek.ro/
 #   city: Bucharest, Romania
 #   country: ro
-# 
-# - title: DevSum 
+#
+# - title: DevSum
 #   date: 28-29 May 2020
 #   url: https://www.devsum.se/
 #   city: Stockholm, Sweden
 #   country: se
-# 
+#
 # - title: Techorama
 #   date: 2-4 June 2020
 #   url: https://techorama.be/
 #   city: Antwerp, Belgium
 #   country: be
-# 
+#
 # - title: NDC Oslo
 #   date: 8-12 June 2020
 #   url: https://ndcoslo.com/
 #   city: Oslo, Norway
 #   country: "no"
-# 
+#
 # - title: NDC Melbourne
 #   date: 27-30 July 2020
 #   url: https://ndcmelbourne.com/
 #   city: Melbourne, Australia
 #   country: au
-# 
+#
 # - title: NDC Minnesota
 #   date: 8-11 September 2020
 #   url: https://ndcminnesota.com/
 #   city: Minnesota, USA
 #   country: us
-# 
+#
 # - title: NDC Sydney
 #   date: 12-16 October 2020
 #   url: https://ndcsydney.com/
 #   city: Sydney, Australia
 #   country: au
-# 
+#
