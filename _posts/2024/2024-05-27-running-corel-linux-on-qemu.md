@@ -93,6 +93,8 @@ Log in a root with a blank password. *(Don't ask. It was the early 2000s. Things
 
 Now we need to configure X11 so that it won't try to use various accelerated hardware features that don't work in QEMU.
 
+> This bit comes from Ethan Gates' [Corel Linux in QEMU](https://forum.eaasi.cloud/t/corel-linux-in-qemu/64) post on forums.eeasi.cloud -- thank you Ethan! -- and that post was in turn inspired by Hayden Barnes' post [The one in which I kind of get Corel Linux 1.2 to work 21 years later](https://boxofcables.dev/corel-linux-1-2/) - thank you Hayden!
+
 Use vim to edit `/etc/X11/XF86config`. Find the section called "Device", add three lines:
 
 ```
