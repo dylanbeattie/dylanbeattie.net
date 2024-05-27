@@ -12,7 +12,7 @@ typora-root-url: .\..\..
 
 In my latest YouTube video, I talk about Corel Linux, which I think is one of the most interesting "what if?" scenarios in the history of mainstream computing, and show some clips of Corel Linux actually running. It's not easy getting a 25-year-old Linux distro to boot on a modern PC - but here's how I did it.
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jgR5c6CcB_w?si=YqJ7MCkju2cvo4IW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jgR5c6CcB_w?si=YqJ7MCkju2cvo4IW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Install QEMU
 
