@@ -1,3 +1,13 @@
+- filename: dylanbeattie_2024.jpg
+  caption: 2024
+  credit: Dylan Beattie
+  credit_url: https://dylanbeattie.net/
+
+- filename: dylanbeattie_line_art.jpg
+  caption: Guitar Pick Portrait 2024
+  credit: Dylan Beattie
+  credit_url: https://dylanbeattie.net/
+
 - filename: dylanbeattie_kcdc_2019_2.jpg
   caption: KCDC 2019
   credit: Tiffany Buckley
@@ -18,12 +28,12 @@
   credit: Dylan Beattie
   credit_url: https://dylanbeattie.net/
 
-- filename: dylanbeattie_dotnext_moscow_2017.jpg
-  caption: DotNext Moscow 2017
-  credit: DotNext / JUG.ru
-  credit_url: https://dotnext.ru/en/
+# - filename: dylanbeattie_dotnext_moscow_2017.jpg
+#   caption: DotNext Moscow 2017
+#   credit: DotNext / JUG.ru
+#   credit_url: https://dotnext.ru/en/
 
-- filename: dylanbeattie_fullstack_london_2015.jpg
-  caption: FullStack London 2015
-  credit: Ed Telling 
-  credit_url: https://www.edtelling.com/
+# - filename: dylanbeattie_fullstack_london_2015.jpg
+#   caption: FullStack London 2015
+#   credit: Ed Telling
+#   credit_url: https://www.edtelling.com/

@@ -1,34 +1,150 @@
+- title: London .NET User Group
+  isodate: 2024-06-27 12:00:00
+  date: 27 June 2024
+  url: https://www.meetup.com/london-net-user-group/events/301013919/
+  city: London, UK
+  country: gb
+
+- title: London .NET User Group
+  isodate: 2024-07-16 12:00:00
+  date: 16 July 2024
+  url: https://www.meetup.com/london-net-user-group/events/301851133/
+  city: London, UK
+  country: gb
+
 - title: NDC Oslo
+  isodate: 2024-06-14 12:00:00
   date: 9 - 14 June 2024
   url: https://ndcoslo.com/
   city: Oslo, Norway
   country: "no"
 
 - title: Copenhagen Developers Festival
+  isodate: 2024-08-30 12:00:00
   date: 26 - 30 August 2024
   url: https://cphdevfest.com/
   city: Copenhagen, Denmark
   country: dk
 
-- title: KanDDDinsky
-  date: 28-30 October 2024
-  url: https://kandddinsky.de/
-  city: Berlin, Germany
-  country: de
-
 - title: NDC Porto
+  isodate: 2024-10-18 12:00:00
   date: 14-18 October 2024
   url: https://ndcporto.com/
   city: Porto, Portugal
   country: pt
 
+- title: KanDDDinsky
+  isodate: 2024-10-30 12:00:00
+  date: 28-30 October 2024
+  url: https://kandddinsky.de/
+  city: Berlin, Germany
+  country: de
+
 - title: Build Stuff
+  isodate: 2024-11-15 12:00:00
   date: 13-15 November 2024
   url: https://www.buildstuff.events/
   city: Vilnius, Lithuania
   country: lt
 
+- title: DDD South West 2023
+  isodate: 2024-03-22 12:00:00
+  date: 23 March 2023
+  url: https://dddsouthwest.com/
+  city: Bristol, UK
+  country: gb
 
+- title: XPand 2024
+  isodate: 2024-05-14 12:00:00
+  date: 13-14 May 2024
+  url: https://xpandconf.com/
+  city: Dead Sea, Jordan
+  country: jo
+
+- title: Beauty in Code
+  isodate: 2024-03-02 12:00:00
+  date: 2 March 2024
+  url: https://beautyincode.se/
+  city: Malmö, Sweden
+  country: se
+
+- title: NDC London
+  isodate: 2024-02-02 12:00:00
+  date: 29 January - 2 February 2024
+  url: https://ndc-london.com/
+  city: London, UK
+  country: gb
+
+
+- title: Copenhagen Developers Festival
+  isodate: 2023-09-01 12:00:00
+  date: 28 August - 1 September 2023
+  url: https://cphdevfest.com/
+  city: Copenhagen, Denmark
+  country: dk
+
+- title: Digit
+  isodate: 2023-09-21 12:00:00
+  date: 21 September 2023
+  url: https://digit.dev/
+  city: Tartu, Estonia
+  country: ee
+
+- title: DrivUn
+  isodate: 2023-09-27 12:00:00
+  date: 27 September 2023
+  url: https://drivun.co/
+  city: Amsterdam, Netherlands
+  country: nl
+
+- title: Birmingham .NET User Group
+  isodate: 2023-10-11 12:00:00
+  date: 11 October 2023
+  url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
+  city: Birmingham, UK
+  country: gb
+
+- title: NDC Porto
+  isodate: 2023-10-20 12:00:00
+  date: 16-20 October 2023
+  url: https://ndcporto.com/
+  city: Porto, Portugal
+  country: pt
+
+- title: CodeCamp Iasi
+  isodate: 2023-11-02 12:00:00
+  date: 31 October - 2 November 2023
+  url: https://codecamp.ro/conferences/codecamp_iasi/
+  city: Iasi, Romania
+  country: ro
+
+- title: BuildStuff
+  isodate: 2023-11-17 12:00:00
+  date: 15-17 November 2023
+  url: https://buildstuff.events/
+  city: Vilnius, Lithuania
+  country: lt
+
+- title: YOW! Melbourne
+  isodate: 2023-12-01 12:00:00
+  date: 30 November - 1 December 2023
+  url: https://yowcon.com/melbourne-2023
+  city: Melbourne, Australia
+  country: au
+
+- title: YOW! Brisbane
+  isodate: 2023-12-05 12:00:00
+  date: 4-5 December 2023
+  url: https://yowcon.com/brisbane-2023
+  city: Brisbane, Australia
+  country: au
+
+- title: YOW! Sydney
+  isodate: 2023-12-08 12:00:00
+  date: 7 - 8 December 2023
+  url: https://yowcon.com/sydney-2023
+  city: Sydney, Australia
+  country: au
 
 # - title: digit 2022
 #   date: 22 April 2022
@@ -167,12 +283,11 @@
 #  city: Stockholm, Sweden
 #  country: se
 
-#- title: Beauty in Code
-#  date: 4 March 2023
-#  url: https://beautyincode.se/
-#  city: Malmö, Sweden
-#  country: se
-
+# - title: Beauty in Code
+#   date: 4 March 2023
+#   url: https://beautyincode.se/
+#   city: Malmö, Sweden
+#   country: se
 #- title: CodeCamp Festival
 #  date: 4 May 2023
 #  url: https://codecamp.ro/codecamp_festival-2023/
@@ -250,12 +365,6 @@
 #   url: https://codecamp.ro/conferences/codecamp_iasi/
 #   city: Iasi, Romania
 #   country: ro
-
-# - title: XPand 2023
-#   date: 4-5 November 2020
-#   url: https://xpandconf.com/
-#   city: Dead Sea, Jordan
-#   country: jo
 
 # - title: BuildStuff
 #   date: 15-17 November 2023

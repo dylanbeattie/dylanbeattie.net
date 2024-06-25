@@ -2,62 +2,55 @@
   word_count: 50
   char_count: 271
   content: |
-    Dylan Beattie is a consultant, software developer and international 
-    keynote speaker. He's been building web applications since the 1990s, 
-    and works primarily on Microsoft .NET, HTTP APIs, UX design, and 
+    Dylan Beattie is a consultant, software developer and international
+    keynote speaker. He's been building web applications since the 1990s,
+    and works primarily on Microsoft .NET, HTTP APIs, UX design, and
     distributed systems.
 
-    Dylan lives and works in London and when he's not writing code 
+    Dylan lives and works in London and when he's not writing code
     he plays guitar and writes songs.
 
 - title: 100_word_bio
   word_count: 100
   char_count: 600
   content: |
-    Dylan Beattie is a consultant, software developer and international 
-    keynote speaker. He's the director of [Ursatile](https://ursatile.com),
-    an independent consultancy based in London that specialises in helping 
-    organisations bridge the knowledge gap between software development and 
-    business strategy. Dylan has been building data-driven web applications since
-    the 1990s; he's managed teams, taught workshops, and worked on 
-    everything from tiny standalone websites to complex distributed systems. 
+    Dylan Beattie is a consultant, software developer and international
+    keynote speaker. He's has been building data-driven web applications since
+    the 1990s; he's managed teams, taught workshops, and worked on
+    everything from tiny standalone websites to complex distributed systems.
     He's a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699), and
     he regularly speaks at conferences and user groups all over the world.
 
-    Dylan is the creator of the [Rockstar](https://codewithrockstar.com) programming 
-    language, and he's performed his software-themed parodies of classic rock songs 
-    all over the world as [Dylan Beattie and the Linebreakers](https://dylanbeattie.net/music). 
-    He's online at [dylanbeattie.net](https://dylanbeattie.net/) and on Twitter 
+    Dylan is the creator of the [Rockstar](https://codewithrockstar.com) programming
+    language, the director of [Ursatile](https://ursatile.com), and the founder
+    of [The Linebreakers](https://dylanbeattie.net/music), the world's greatest tech comedy party rock band.
+    He's online at [dylanbeattie.net](https://dylanbeattie.net/) and on Twitter
     as [@dylanbeattie](https://twitter.com/dylanbeattie/).
 
 - title: 250_word_bio
   word_count: 250
   char_count: 1600
   content: |
-    Dylan Beattie is a consultant, software developer and international 
-    keynote speaker. He's the director of [Ursatile](https://ursatile.com),
-    an independent consultancy based in London that specialises in helping 
-    organisations bridge the knowledge gap between software development and 
-    business strategy. Dylan has been building data-driven web applications since the 1990s; 
-    he's managed development teams, designed
-    large-scale distributed systems, taught workshops on Microsoft .NET and HTTP API development,
-    and presented keynote talks at software conferences on four continents. 
+    Dylan Beattie is a consultant, software developer and international
+    keynote speaker. Dylan has been building data-driven web applications since the 1990s;
+    he's managed development teams, designed large-scale distributed systems, taught workshops
+     on Microsoft .NET and HTTP API development, and presented keynote talks at software conferences on four continents.
 
-    Before founding Ursatile, Dylan was CTO at Skills Matter in London 
-    until they closed down in 2019. Prior to that 
-    he was webmaster, IT Manager, and eventually systems architect at [Spotlight](https://www.spotlight.com),
+    Before founding Ursatile, Dylan was CTO at Skills Matter in London
+    until they closed down in 2019. Prior to that  he was webmaster, IT Manager, and
+    eventually systems architect at [Spotlight](https://www.spotlight.com),
     where his first-hand experience of watching an organisation and its codebase
-    evolve over more than a decade provided him with a unique insight into how 
-    everything from web standards and API design to Conway's Law and recruitment 
-    ends up influencing a company’s code and culture. 
+    evolve over more than a decade provided him with a unique insight into how
+    everything from web standards and API design to Conway's Law and recruitment
+    ends up influencing a company’s code and culture.
 
-    Dylan grew up in southern Africa, moving to the UK with his family when he was nine. 
-    He's a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699) and 
+    Dylan grew up in southern Africa, moving to the UK with his family when he was nine.
+    He's a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699) and
     holds a degree in Computer Science from the University of Southampton. He's the creator of
     [Rockstar](https://codewithrockstar.com), a programming language designed for
     creating computer programs that are also songs, and he's performed his software-themed
-    parodies of classic rock songs all over the world as [Dylan Beattie and the Linebreakers](https://dylanbeattie.net/music).
-    He's into skiing, scuba diving, Lego, cats, travel and photography. You'll find him 
-    online at [dylanbeattie.net](https://dylanbeattie.net/) and on Twitter 
-    as [@dylanbeattie](https://twitter.com/dylanbeattie/), and offline at meetups and 
+    parodies of classic rock songs all over the world with [The Linebreakers](https://dylanbeattie.net/music).
+    He's into skiing, scuba diving, Lego, cats, travel and photography. You'll find him
+    online at [dylanbeattie.net](https://dylanbeattie.net/) and on Twitter
+    as [@dylanbeattie](https://twitter.com/dylanbeattie/), and offline at meetups and
     rock bars all over the world, wearing a big black hat.
