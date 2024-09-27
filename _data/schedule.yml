@@ -70,47 +70,23 @@
   url: https://beautyincode.se/
   city: Malmö, Sweden
   country: se
-- isodate: 2024-02-02 12:00:00
-  title: NDC London
-  date: 29 January - 2 February 2024
-  url: https://ndc-london.com/
-  city: London, UK
-  country: gb
 - isodate: 2024-01-29 12:00:00
   title: NDC London
   date: 29 January - 2 February 2024
   url: https://ndclondon.com/
   city: London, UK
   country: gb
-- isodate: 2023-12-08 12:00:00
-  title: YOW! Sydney
-  date: 7 - 8 December 2023
-  url: https://yowcon.com/sydney-2023
-  city: Sydney, Australia
-  country: au
 - isodate: 2023-12-07 12:00:00
   title: YOW! Sydney
   date: 7 - 8 December 2023
   url: https://yowcon.com/sydney-2023
   city: Sydney, Australia
   country: au
-- isodate: 2023-12-05 12:00:00
-  title: YOW! Brisbane
-  date: 4-5 December 2023
-  url: https://yowcon.com/brisbane-2023
-  city: Brisbane, Australia
-  country: au
 - isodate: 2023-12-04 12:00:00
   title: YOW! Brisbane
   date: 4-5 December 2023
   url: https://yowcon.com/brisbane-2023
   city: Brisbane, Australia
-  country: au
-- isodate: 2023-12-01 12:00:00
-  title: YOW! Melbourne
-  date: 30 November - 1 December 2023
-  url: https://yowcon.com/melbourne-2023
-  city: Melbourne, Australia
   country: au
 - isodate: 2023-11-30 12:00:00
   title: YOW! Melbourne
@@ -184,12 +160,9 @@
   url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
   city: Birmingham, UK
   country: gb
-- isodate: 2023-10-11 12:00:00
-  title: Birmingham .NET User Group
-  date: 11 October
-- isodate: 2023-10-03 12:00:00
+- isodate: 2018-10-03 12:00:00
   title: Half a Day of .NET
-  date: 3 October 2023
+  date: 3 October 2018
   url: https://cnug.dk/events/half-a-day-of-dot-net/
   city: Copenhagen, Denmark
   country: dk
@@ -412,14 +385,8 @@
   title: BuildStuff
   date: 13-15 November 2020
   url: https://buildstuff.lt/
-  city: Vilnius, Lithuania
-  country: lt
-- isodate: 2020-11-11 12:00:00
-  title: BuildStuff
-  date: 11-15 November 2020
-  url: https://buildstuff.events/
-  city: Vilnius
-  country: lt
+  city: Online
+  country: internet
 - isodate: 2020-11-09 12:00:00
   title: GOTO Copenhagen
   date: 9-11 November 2020
@@ -444,36 +411,24 @@
   url: https://www.meetup.com/Maxcode-Software-Development-Meetup-Group/events/273315756/
   city: Online
   country: internet
-- isodate: 2020-09-26 12:00:00
-  title: How to Run Remote Workshops
-  date: 26, 28, 29, 30 September 2020
-  url: https://ursatile.com/workshops/how-to-run-remote-workshops.html
-  city: Online
-  country: internet
-- isodate: 2020-09-21 12:00:00
-  title: From Keyboard to Keynote (Workshop)
-  date: 21-22 September 2020
-  url: https://www.buildstuff.events/from-keyboard-to-keynote
-  city: Online
-  country: internet
 - isodate: 2020-09-08 12:00:00
   title: NDC Minnesota
   date: 8-11 September 2020
   url: https://ndcminnesota.com/
-  city: Minnesota, USA
-  country: us
+  city: Online
+  country: internet
 - isodate: 2020-07-27 12:00:00
   title: NDC Melbourne
   date: 27-30 July 2020
   url: https://ndcmelbourne.com/
-  city: Melbourne, Australia
-  country: au
+  city: Online
+  country: internet
 - isodate: 2020-06-08 12:00:00
   title: NDC Oslo
   date: 8-12 June 2020
   url: https://ndcoslo.com/
-  city: Oslo, Norway
-  country: "no"
+  city: Online
+  country: internet
 - isodate: 2020-06-02 12:00:00
   title: Techorama
   date: 2-4 June 2020
@@ -490,38 +445,32 @@
   title: Bucharest Tech Week
   date: 22 May 2020
   url: https://techweek.ro/
-  city: Bucharest, Romania
-  country: ro
-- isodate: 2020-05-13 12:00:00
-  title: Devoxx UK
-  date: 13-15 May 2020
-  url: https://www.devoxx.co.uk/
-  city: London, UK
-  country: gb
+  city: Online
+  country: internet
 - isodate: 2020-04-21 12:00:00
   title: NDC Porto
   date: 21-24 April 2020
   url: https://ndcporto.com/
-  city: Porto, Portugal
-  country: pt
+  city: Online
+  country: internet
 - isodate: 2020-04-11 12:00:00
   title: .NET fwdays'20
   date: 11 April 2020
   url: https://fwdays.com/en/event/dotnet-fwdays-2020
-  city: Kyiv, Ukraine
-  country: ua
+  city: Online
+  country: internet
 - isodate: 2020-04-06 12:00:00
   title: DotNext
   date: 6-7 April 2020
   url: https://dotnext-piter.ru/en/
-  city: Saint-Petersburg, Russia
-  country: ru
+  city: Online
+  country: internet
 - isodate: 2020-04-01 12:00:00
   title: NDC Copenhagen
   date: 1-3 April 2020
   url: https://ndccopenhagen.com/
-  city: Copenhagen, Denmark
-  country: dk
+  city: Online
+  country: internet
 - isodate: 2020-03-12 12:00:00
   title: Fusion Tech Meetup
   date: 12 March 2020

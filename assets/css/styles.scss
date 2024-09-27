@@ -492,3 +492,18 @@ section#booking-now {
 code {
   tab-size: 2;
 }
+
+ol.past-events {
+  font-size: 0.875em;
+  margin: 0;
+  padding: 0;
+  li {
+    border-top: 1px solid #999;
+    list-style: none;
+    list-style-position: inside;
+    img {
+      float: left;
+      margin-right: 16px;
+    }
+  }
+}

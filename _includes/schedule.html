@@ -11,16 +11,7 @@
 		{{e.date}}<br />{{ e.city }}
 	</p>
 	{% endfor %}
-	<h4>Where I've Been:</h4>
-	{% assign past_events = (site.data.schedule | where_exp: 'event', 'event.isodate < site.time' | sort: 'isodate' ) %}
-		{% for e in past_events reversed %}
-		<p class="flag-{{ e.country }}">
-		{% if e.url %}
-		<a href="{{ e.url }}">{{ e.title}}</a><br />
-		{% else %}
-		<a>{{ e.title}}</a><br />
-		{% endif %}
-		{{e.date}}<br />{{ e.city }}
-		</p>
-		{% endfor %}
+  <a href="past-events.html">
+    past events
+  </a>
 </div>

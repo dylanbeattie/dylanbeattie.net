@@ -1,0 +1,20 @@
+---
+layout: right-sidebar
+title: past events
+permalink: /past-events
+---
+<h4>Past Events</h4>
+<ol class="past-events">
+  {% assign past_events = site.data.schedule | where_exp: 'event', 'event.isodate < site.time' | sort: 'isodate' %}
+  {% for e in past_events reversed %}
+  <li>
+    <img src="/assets/css/images/flags/flat/48/{{ e.country }}.png" />
+    {% if e.url %}
+    <a href="{{ e.url }}">{{ e.title}}</a>
+    {% else %}
+    <a>{{ e.title}}</a>
+    {% endif %}
+    <br />{{e.date}}, {{ e.city }}
+    </li>
+    {% endfor %}
+</ol>
