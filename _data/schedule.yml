@@ -3,549 +3,549 @@
   date: 13-15 November 2024
   url: https://www.buildstuff.events/
   city: Vilnius, Lithuania
-  country: lt
+  country: "LT"
 - isodate: 2024-10-30 12:00:00
   title: KanDDDinsky
   date: 28-30 October 2024
   url: https://kandddinsky.de/
   city: Berlin, Germany
-  country: de
+  country: "DE"
 - isodate: 2024-10-18 12:00:00
   title: NDC Porto
   date: 14-18 October 2024
   url: https://ndcporto.com/
   city: Porto, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2024-10-10 19:00:00
   title: Shropshire Devs
   date: 10 October 2024
   url: https://www.eventbrite.co.uk/e/how-to-be-a-rockstar-developer-with-dylan-beattie-tickets-999347002787
   city: Telford, UK
-  country: gb
+  country: "GB"
 - isodate: 2024-09-19 19:00:00
   title: SI-SE Fachgruppe
   date: 19 September 2024
   url: https://www.si-se.ch/
   city: Zurich, Switzerland
-  country: ch
+  country: "CH"
 - isodate: 2024-08-30 12:00:00
   title: Copenhagen Developers Festival
   date: 26 - 30 August 2024
   url: https://cphdevfest.com/
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2024-07-16 12:00:00
   title: London .NET User Group
   date: 16 July 2024
   url: https://www.meetup.com/london-net-user-group/events/301851133/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2024-06-27 12:00:00
   title: London .NET User Group
   date: 27 June 2024
   url: https://www.meetup.com/london-net-user-group/events/301013919/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2024-06-14 12:00:00
   title: NDC Oslo
   date: 9 - 14 June 2024
   url: https://ndcoslo.com/
   city: Oslo, Norway
-  country: "no"
+  country: "NO"
 - isodate: 2024-05-14 12:00:00
   title: XPand 2024
   date: 13-14 May 2024
   url: https://xpandconf.com/
   city: Dead Sea, Jordan
-  country: jo
+  country: "JO"
 - isodate: 2024-03-22 12:00:00
   title: DDD South West 2023
   date: 23 March 2023
   url: https://dddsouthwest.com/
   city: Bristol, UK
-  country: gb
+  country: "GB"
 - isodate: 2024-03-02 12:00:00
   title: Beauty in Code
   date: 2 March 2024
   url: https://beautyincode.se/
   city: Malmö, Sweden
-  country: se
+  country: "SE"
 - isodate: 2024-01-29 12:00:00
   title: NDC London
   date: 29 January - 2 February 2024
   url: https://ndclondon.com/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2023-12-07 12:00:00
   title: YOW! Sydney
   date: 7 - 8 December 2023
   url: https://yowcon.com/sydney-2023
   city: Sydney, Australia
-  country: au
+  country: "AU"
 - isodate: 2023-12-04 12:00:00
   title: YOW! Brisbane
   date: 4-5 December 2023
   url: https://yowcon.com/brisbane-2023
   city: Brisbane, Australia
-  country: au
+  country: "AU"
 - isodate: 2023-11-30 12:00:00
   title: YOW! Melbourne
   date: 30 November - 1 December 2023
   url: https://yowcon.com/melbourne-2023
   city: Melbourne, Australia
-  country: au
+  country: "AU"
 - isodate: 2023-11-26 12:00:00
   title: Xamarin UG
   date: 26 November 2023
   url: https://www.meetup.com/Birmingham-DotNet-And-Xamarin-User-Group/events/263557251/
   city: Birmingham, UK
-  country: gb
+  country: "GB"
 - isodate: 2023-11-22 12:00:00
   title: HalfStack
   date: 22 November 2023
   url: https://halfstackconf.com/london/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2023-11-18 12:00:00
   title: BuildStuff
   date: 18-19 November 2023
   url: https://buildstuff.com.ua/
   city: Kyiv, Ukraine
-  country: ua
+  country: "UA"
 - isodate: 2023-11-17 12:00:00
   title: BuildStuff
   date: 15-17 November 2023
   url: https://buildstuff.events/
   city: Vilnius, Lithuania
-  country: lt
+  country: "LT"
 - isodate: 2023-11-15 12:00:00
   title: BuildStuff
   date: 15-17 November 2023
   url: https://buildstuff.events/
   city: Vilnius, Lithuania
-  country: lt
+  country: "LT"
 - isodate: 2023-11-02 12:00:00
   title: CodeCamp Iasi
   date: 31 October - 2 November 2023
   url: https://codecamp.ro/conferences/codecamp_iasi/
   city: Iasi, Romania
-  country: ro
+  country: "RO"
 - isodate: 2023-10-31 12:00:00
   title: CodeCamp Iasi
   date: 31 October - 2 November 2023
   url: https://codecamp.ro/conferences/codecamp_iasi/
   city: Iasi, Romania
-  country: ro
+  country: "RO"
 - isodate: 2023-10-20 12:00:00
   title: NDC Porto
   date: 16-20 October 2023
   url: https://ndcporto.com/
   city: Porto, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2023-10-17 12:00:00
   title: KanDDDinsky
   date: 17-18 October 2023
   url: https://kandddinsky.de/
   city: Berlin, Germany
-  country: de
+  country: "DE"
 - isodate: 2023-10-16 12:00:00
   title: NDC Porto
   date: 16-20 October 2023
   url: https://ndcporto.com/
   city: Porto, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2023-10-11 12:00:00
   title: Birmingham .NET User Group
   date: 11 October 2023
   url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/293566551/
   city: Birmingham, UK
-  country: gb
+  country: "GB"
 - isodate: 2018-10-03 12:00:00
   title: Half a Day of .NET
   date: 3 October 2018
   url: https://cnug.dk/events/half-a-day-of-dot-net/
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2023-09-27 12:00:00
   title: DrivUn
   date: 27 September 2023
   url: https://drivun.co/
   city: Amsterdam, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2023-09-26 12:00:00
   title: DevConf
   date: 26-27 September 2023
   url: https://devconf.pl/
   city: Kraków, Poland
-  country: pl
+  country: "PL"
 - isodate: 2023-09-21 12:00:00
   title: Digit
   date: 21 September 2023
   url: https://digit.dev/
   city: Tartu, Estonia
-  country: ee
+  country: "EE"
 - isodate: 2023-09-01 12:00:00
   title: Copenhagen Developers Festival
   date: 28 August - 1 September 2023
   url: https://cphdevfest.com/
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2023-08-28 12:00:00
   title: Copenhagen Developers Festival
   date: 28 August - 1 September 2023
   url: https://cphdevfest.com/
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2023-06-26 12:00:00
   title: GOTO Amsterdam
   date: 26-29 June 2023
   url: https://gotoams.nl/2023
   city: Amsterdam, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2023-06-14 12:00:00
   title: Codegarden
   date: 14-16 June 2023
   url: https://codegarden.umbraco.com/
   city: Odense, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2023-05-30 12:00:00
   title: CityJS
   date: 30 May 2023
   url: https://greece.cityjsconf.org/
   city: Athens, Greece
-  country: gr
+  country: "GR"
 - isodate: 2023-05-25 12:00:00
   title: DevSum
   date: 25-26 May 2023
   url: https://devsum.se/
   city: Oslo, Norway
-  country: se
+  country: "SE"
 - isodate: 2023-05-22 12:00:00
   title: NDC Oslo
   date: 22-25 May 2023
   url: https://ndcoslo.com/
   city: Oslo, Norway
-  country: "no"
+  country: "NO"
 - isodate: 2023-05-18 12:00:00
   title: London .NET
   date: 18 May 2023
   url: https://www.meetup.com/london-net-user-group/events/293168072/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2023-05-04 12:00:00
   title: CodeCamp Festival
   date: 4 May 2023
   url: https://codecamp.ro/codecamp_festival-2023/
   city: Bucharest, Romania
-  country: ro
+  country: "RO"
 - isodate: 2023-03-04 12:00:00
   title: Beauty in Code
   date: 4 March 2023
   url: https://beautyincode.se/
   city: Malmö, Sweden
-  country: se
+  country: "SE"
 - isodate: 2023-02-08 12:00:00
   title: Swetugg
   date: 8-9 February 2023
   url: https://swetugg.se/sthlm-2023/speakers/dylan-beattie
   city: Stockholm, Sweden
-  country: se
+  country: "SE"
 - isodate: 2023-02-06 12:00:00
   title: JFokus
   date: 6-8 February 2023
   url: https://www.jfokus.se/speakers/14022
   city: Stockholm, Sweden
-  country: se
+  country: "SE"
 - isodate: 2023-01-23 12:00:00
   title: NDC London
   date: 23-27 January 2023
   url: https://ndclondon.com/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-12-03 12:00:00
   title: DDD North
   date: 3 December 2022
   url: https://www.dddnorth.co.uk/
   city: Hull, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-11-29 12:00:00
   title: YOW! London
   date: 29-30 November 2022
   url: https://yowlondon.com/2022
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-11-15 12:00:00
   title: Modern Frontends Live
   date: 15-18 November 2022
   url: https://www.modernfrontends.live/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-11-09 12:00:00
   title: BuildStuff
   date: 9-11 November 2022
   url: https://www.buildstuff.events
   city: Vilnius, Lithuania
-  country: lt
+  country: "LT"
 - isodate: 2022-10-12 12:00:00
   title: Devoxx
   date: 12-14 October 2022
   url: https://devoxx.be/
   city: Antwerp, Belgium
-  country: be
+  country: "BE"
 - isodate: 2022-10-10 12:00:00
   title: Techorama NL
   date: 10-12 October 2022
   url: https://www.techorama.nl/
   city: Utrecht, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2022-09-26 12:00:00
   title: NDC Oslo
   date: 26-30 September 2022
   url: https://ndcoslo.com/
   city: Oslo, Norway
-  country: "no"
+  country: "NO"
 - isodate: 2022-09-15 12:00:00
   title: EuroBSDCon
   date: 15-18 September 2022
   url: https://2022.eurobsdcon.org
   city: Vienna, Austria
-  country: at
+  country: "AT"
 - isodate: 2022-08-31 12:00:00
   title: DevConf 2022
   date: 31 August - 2 September 2022
   url: https://devconf.pl
   city: Łódź, Poland
-  country: pl
+  country: "PL"
 - isodate: 2022-07-25 12:00:00
   title: FullStack eXchange
   date: 25-28 July 2022
   url: https://skillsmatter.com/conferences/13770-fullstack-exchange-2022
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-06-30 12:00:00
   title: Azure Lowlands
   date: 30 June 2022
   url: https://azurelowlands.com
   city: Utrecht, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2022-06-23 12:00:00
   title: Tweakers Summit
   date: 23 June 2022
   url: https://tweakers.net/partners/devsummit2022/
   city: Utrecht, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2022-05-30 12:00:00
   title: NDC Copenhagen
   date: 30 May - 2 June 2022
   url: https://ndccopenhagen.com/speakers/dylan-beattie
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2022-05-27 12:00:00
   title: CityJS
   date: 27 May 2022
   url: https://greece.cityjsconf.org
   city: Athens, Greece
-  country: gr
+  country: "GR"
 - isodate: 2022-05-21 12:00:00
   title: ITKonekt TBC
   date: 21 May 2022
   city: Belgrade, Serbia
-  country: rs
+  country: "RS"
 - isodate: 2022-05-19 12:00:00
   title: CodeCamp Festival
   date: 19 May 2022
   url: https://codecamp.ro/the-festival/
   city: Bucharest, Romania
-  country: ro
+  country: "RO"
 - isodate: 2022-05-09 12:00:00
   title: NDC London
   date: 9-13 May 2022
   url: https://ndclondon.com/speakers/dylan-beattie
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2022-05-03 12:00:00
   title: JFokus
   date: 3-4 May 2022
   url: https://www.jfokus.se/speakers/13586
   city: Stockholm, Sweden
-  country: se
+  country: "SE"
 - isodate: 2022-04-25 12:00:00
   title: NDC Porto
   date: 25-29 April 2022
   url: https://ndcporto.com/speakers/dylan-beattie
   city: Porto, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2022-04-22 12:00:00
   title: digit 2022
   date: 22 April 2022
   url: https://www.digit.dev/dylan-beattie
   city: Tartu, Estonia
-  country: ee
+  country: "EE"
 - isodate: 2020-11-13 12:00:00
   title: BuildStuff
   date: 13-15 November 2020
   url: https://buildstuff.lt/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-11-09 12:00:00
   title: GOTO Copenhagen
   date: 9-11 November 2020
   url: https://gotocph.com/
   city: Copenhagen
-  country: dk
+  country: "DK"
 - isodate: 2020-10-20 12:00:00
   title: Brighton Web Dev Meetup
   date: 20 October 2020
   url: https://www.meetup.com/Brighton-Web-Development-Meetup/events/272954184/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-10-12 12:00:00
   title: NDC Sydney
   date: 12-16 October 2020
   url: https://ndcsydney.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-10-06 12:00:00
   title: Innovative TechTalks
   date: 6 October 2020
   url: https://www.meetup.com/Maxcode-Software-Development-Meetup-Group/events/273315756/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-09-08 12:00:00
   title: NDC Minnesota
   date: 8-11 September 2020
   url: https://ndcminnesota.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-07-27 12:00:00
   title: NDC Melbourne
   date: 27-30 July 2020
   url: https://ndcmelbourne.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-06-08 12:00:00
   title: NDC Oslo
   date: 8-12 June 2020
   url: https://ndcoslo.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-06-02 12:00:00
   title: Techorama
   date: 2-4 June 2020
   url: https://techorama.be/
   city: Antwerp, Belgium
-  country: be
+  country: "BE"
 - isodate: 2020-05-28 12:00:00
   title: DevSum
   date: 28-29 May 2020
   url: https://www.devsum.se/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-05-22 12:00:00
   title: Bucharest Tech Week
   date: 22 May 2020
   url: https://techweek.ro/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-04-21 12:00:00
   title: NDC Porto
   date: 21-24 April 2020
   url: https://ndcporto.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-04-11 12:00:00
   title: .NET fwdays'20
   date: 11 April 2020
   url: https://fwdays.com/en/event/dotnet-fwdays-2020
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-04-06 12:00:00
   title: DotNext
   date: 6-7 April 2020
   url: https://dotnext-piter.ru/en/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-04-01 12:00:00
   title: NDC Copenhagen
   date: 1-3 April 2020
   url: https://ndccopenhagen.com/
   city: Online
-  country: internet
+  country: "internet"
 - isodate: 2020-03-12 12:00:00
   title: Fusion Tech Meetup
   date: 12 March 2020
   url: https://www.meetup.com/Fusion-Technology-Meetup-Birmingham/
   city: Birmingham, UK
-  country: gb
+  country: "GB"
 - isodate: 2020-03-03 12:00:00
   title: GOTO Oslo
   date: 3-5 March 2020
   url: https://goto-oslo.com/
   city: Copenhagen / Oslo
-  country: "no"
+  country: "NO"
 - isodate: 2020-03-02 12:00:00
   title: Copenhagen .NET User Group
   date: 2 March 2020
   url: https://www.meetup.com/Copenhagen-Net-User-Group/events/268797049/
   city: Copenhagen, Denmark
-  country: dk
+  country: "DK"
 - isodate: 2020-02-26 12:00:00
   title: .NeXt Generation
   date: 26 February 2020
   url: https://www.meetup.com/NeXt-Gen/events/268328855/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2020-01-27 12:00:00
   title: NDC London
   date: 27-31 January 2020
   url: https://ndc-london.com/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2020-01-08 12:00:00
   title: NDC Meetup in Lisbon
   date: 8 January 2020
   url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-lisbon-tickets-85618592515
   city: Lisbon, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2020-01-07 12:00:00
   title: NDC Meetup in Porto
   date: 7 January 2020
   url: https://www.eventbrite.co.uk/e/ndc-meetup-with-dylan-beattie-farfetch-porto-tickets-85068182223
   city: Porto, Portugal
-  country: pt
+  country: "PT"
 - isodate: 2019-11-02 12:00:00
   title: ApexVox
   date: 2 November 2019
   url: http://apexvox.net/
   city: Cluj-Napoca, Romania
-  country: ro
+  country: "RO"
 - isodate: 2019-10-27 12:00:00
   title: Hack Manchester
   date: 27 October 2019
   url: https://www.hac100.com/event/HM2019/
   city: Manchester, UK
-  country: gb
+  country: "GB"
 - isodate: 2019-10-26 12:00:00
   title: DDD East Midlands
   date: 26 October 2019
   url: https://dddeastmidlands.com
   city: Nottingham, UK
-  country: gb
+  country: "GB"
 - isodate: 2019-10-24 12:00:00
   title: Droidcon London 2019
   date: 24-25 October 2019
   url: https://uk.droidcon.com/
   city: London, UK
-  country: gb
+  country: "GB"
 - isodate: 2019-10-11 12:00:00
   title: DUUGFest 2019
   date: 11 October 2019
   url: https://www.df19.nl/
   city: Utrecht, Netherlands
-  country: nl
+  country: "NL"
 - isodate: 2018-09-11 12:00:00
   title: ProgNET
   date: 11-13 September 2018
   url: https://prognet.io/
   city: London, UK
-  country: gb
+  country: "GB"
