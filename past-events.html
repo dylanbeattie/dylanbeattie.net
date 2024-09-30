@@ -14,7 +14,8 @@ permalink: /past-events
     {% else %}
     <a>{{ e.title}}</a>
     {% endif %}
-    <br />{{e.date}}, {{ e.city }}
+    <br />{{e.date}}<br />
+    {{ e.city }}
     </li>
     {% endfor %}
 </ol>
