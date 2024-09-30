@@ -1,32 +1,42 @@
-- filename: dylanbeattie_2024.jpg
-  caption: 2024
-  credit: Dylan Beattie
-  credit_url: https://dylanbeattie.net/
+- filename: dylanbeattie_202408_hat.jpg
+  caption: Copenhagen Developers Festival 2024
+  credit: Ard Jongsma
+  credit_url: https://stillwords.com/
+
+- filename: dylanbeattie_202408.jpg
+  caption: Copenhagen Developers Festival 2024
+  credit: Ard Jongsma
+  credit_url: https://stillwords.com/
+
+# - filename: dylanbeattie_2024.jpg
+#   caption: 2024
+#   credit: Dylan Beattie
+#   credit_url: https://dylanbeattie.net/
 
 - filename: dylanbeattie_line_art.jpg
   caption: Guitar Pick Portrait 2024
   credit: Dylan Beattie
   credit_url: https://dylanbeattie.net/
 
-- filename: dylanbeattie_kcdc_2019_2.jpg
-  caption: KCDC 2019
-  credit: Tiffany Buckley
-  credit_url: https://tiffanybuckley.com/
+# - filename: dylanbeattie_kcdc_2019_2.jpg
+#   caption: KCDC 2019
+#   credit: Tiffany Buckley
+#   credit_url: https://tiffanybuckley.com/
 
-- filename: dylanbeattie_kcdc_2019.jpg
-  caption: KCDC 2019
-  credit: Tiffany Buckley
-  credit_url: https://tiffanybuckley.com/
+# - filename: dylanbeattie_kcdc_2019.jpg
+#   caption: KCDC 2019
+#   credit: Tiffany Buckley
+#   credit_url: https://tiffanybuckley.com/
 
 - filename: dylanbeattie_by_reverentgeek.jpg
   caption: Dylan Beattie by @reverentgeek
   credit: David Neal (@reverentgeek)
   credit_url: https://reverentgeek.com/
 
-- filename: dylanbeattie_sydney_2016.jpg
-  caption: Sydney 2016
-  credit: Dylan Beattie
-  credit_url: https://dylanbeattie.net/
+# - filename: dylanbeattie_sydney_2016.jpg
+#   caption: Sydney 2016
+#   credit: Dylan Beattie
+#   credit_url: https://dylanbeattie.net/
 
 # - filename: dylanbeattie_dotnext_moscow_2017.jpg
 #   caption: DotNext Moscow 2017
