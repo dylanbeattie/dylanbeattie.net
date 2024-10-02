@@ -14,7 +14,7 @@ $countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwea
 	TW, TZ, UA, UG, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW, WWW;
 
 @each $country in $countries {
-	.flag-#{to-lower-case($country)} {
+	.flag-#{$country}, .flag-#{to-lower-case($country)} {
 		background-image: url(images/flags/flat/48/#{$country}.png);
 	}
 	ul.presented-at li.flag-#{to-lower-case($country)} {
