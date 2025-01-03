@@ -1,3 +1,21 @@
+- isodate: 2025-01-27 12:00:00
+  title: NDC London
+  date: 27-31 January 2025
+  url: https://ndclondon.com/
+  city: London, UK
+  country: "GB"
+- isodate: 2025-01-15 12:00:00
+  title: Notts Techfast
+  date: 15 January 2025 (AT 7am!)
+  url: https://www.meetup.com/notts-techfast/events/305396972/
+  city: Nottingham, UK
+  country: "GB"
+- isodate: 2025-01-08 12:00:00
+  title: Birmingham .NET
+  date: 8 January 2025
+  url: https://www.meetup.com/birmingham-dotnet-and-xamarin-user-group/events/303368003/
+  city: Birmingham, UK
+  country: "GB"
 - isodate: 2024-11-15 12:00:00
   title: Build Stuff
   date: 13-15 November 2024
