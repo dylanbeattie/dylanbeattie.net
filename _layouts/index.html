@@ -7,96 +7,119 @@
 <html>
 
 <head>
-	{% include head.html %}
+  {% include head.html %}
 </head>
 
 <body class="is-preload">
-	<div id="page-wrapper">
+  <div id="page-wrapper">
 
-		<!-- Header -->
-		<div id="header">
-			{% include header.html %}
-			<!-- Logo -->
-		</div>
-		<!-- what's happening -->
-		<!--
+    <!-- Header -->
+    <div id="header">
+      {% include header.html %}
+      <!-- Logo -->
+    </div>
+    <!-- what's happening -->
+    <!--
 		<section id="booking-now">
 			<h3>On Sale Now: “From Keyboard to Keynote”</h3>
 			<p>My live online workshop all about public speaking. Learn how to create
 			and deliver great technical talks.</p>
-			<p>1-2 September, 14:00-18:00 BST, online. &pound;165 - &pound;225. &bull; 
+			<p>1-2 September, 14:00-18:00 BST, online. &pound;165 - &pound;225. &bull;
 				<a href="https://ursatile.com/workshops/from-keyboard-to-keynote.html">More details and booking</a>
 			</p>
 		</section>
 		-->
-		<!-- Banner -->
-		<section id="banner">
-			<header>
-				<h2>Hi there. <em>I'm Dylan.</em></h2>
-			</header>
-			<cite id="banner-photo-credit">On stage with the Linebreakers, NDC Oslo 2019. Photo: <a href="https://twitter.com/henriksen">Glenn Henriksen</a></cite>
-		</section>
+    <!-- Banner -->
+    <section id="banner">
+      <header>
+        <h2>Hi there! <em>I'm Dylan.</em></h2>
+      </header>
+      <cite id="banner-photo-credit">On stage with the Linebreakers, NDC Oslo 2019. Photo: <a
+          href="https://twitter.com/henriksen">Glenn Henriksen</a></cite>
+    </section>
 
 
-		<!-- Gigantic Heading -->
-		<section class="wrapper homepage-blurb">
-			<div class="container">
-				{% include me_blurb.html %}
-			</div>
-		</section>
+    <!-- Gigantic Heading -->
+    <section class="wrapper homepage-blurb">
+      <div class="container">
+        {% include me_blurb.html %}
+      </div>
+    </section>
 
-		<!-- Posts -->
-		<section class="wrapper style1">
-			<div class="container">
-				<div class="row">
-					<section class="col-6 col-12-narrower">
-						<div class="box post">
-							<a href="#" class="image left"><img src="images/homepage-01-about-me.jpg" 
-								alt="Studio headshot of Dylan Beattie in front of a yellow background."
-								title="Dylan Beattie at KCDC 2019. Photograph by Tiffany Buckley / https://tiffanybuckley.com/" /></a>
-							<div class="inner">
-								<h3><a href="/about">About Me</a></h3>
-								<p>Who I am and what I do, plus speaker bios and photographs to use
-									if you'd like details for your event website.
-								</p>
-							</div>
-						</div>
-					</section>
-					<section class="col-6 col-12-narrower">
-						<div class="box post">
-							<a href="/speaking" class="image left"><img src="images/homepage-02-speaking.jpg" alt="" /></a>
-							<div class="inner">
-								<h3><a href="/speaking">Speaking</a></h3>
-								<p>I speak at technology conferences, meetups and community events all over the world.</p>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="row">
-					<section class="col-6 col-12-narrower">
-						<div class="box post">
-							<a href="/projects" class="image left"><img src="images/homepage-03-projects.jpg" alt="" /></a>
-							<div class="inner">
-								<h3><a href="/projects">Projects</a></h3>
-								<p>Tech things I've done, including the Rockstar programming language.</p>
-							</div>
-						</div>
-					</section>
-					<section class="col-6 col-12-narrower">
-						<div class="box post">
-							<a href="/music" class="image left"><img src="images/homepage-04-music.jpg" alt="" /></a>
-							<div class="inner">
-								<h3><a href="/music">Musical Parodies</a></h3>
-								<p>I write and perform musical parodies of classic songs. You'll find some of them here.</p>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</section>
+    <!-- Posts -->
+    <section class="wrapper style1">
+      <div class="container">
+        <div class="row">
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="#" class="image left"><img src="images/homepage/about.jpg"
+                  alt="A photograph of Dylan Beattie, a bearded white man wearing a big stupid cowboy hat and grinning."
+                  title="Dylan Beattie at KCDC 2019. Photograph by Tiffany Buckley / https://tiffanybuckley.com/" /></a>
+              <div class="inner">
+                <h3><a href="/about">About Me</a></h3>
+                <p>Who I am and what I do, plus speaker bios and photographs to use
+                  if you'd like details for your event website.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="/speaking" class="image left"><img src="images/homepage/speaking.jpg"
+                  alt="Dylan Beattie on stage looking important and waving a PowerPoint clicker around." /></a>
+              <div class="inner">
+                <h3><a href="/speaking">Speaking</a></h3>
+                <p>I speak at technology conferences, meetups and community events all over the world.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="/projects" class="image left"><img src="images/homepage/workshops.jpg" alt="" /></a>
+              <div class="inner">
+                <h3><a href="/workshops">Workshops</a></h3>
+                <p>Want to write better code, design better systems, or give awesome presentations? Check out my workshops.</p>
+              </div>
+            </div>
+          </section>
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="/music" class="image left"><img src="images/homepage/music.jpg" alt="" /></a>
+              <div class="inner">
+                <h3><a href="/music">Music</a></h3>
+                <p>All your favourite tech parody rock'n'roll hits: Highway to HTML, You Give REST a Bad Name, Enter
+                  Stallman, and more...</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="/projects" class="image left"><img src="images/homepage/rockstar.jpg" alt="" /></a>
+              <div class="inner">
+                <h3><a href="/projects">Rockstar</a></h3>
+                <p>“To really confuse recruiters, somebody should make a programming language called Rockstar.”</p>
+              </div>
+            </div>
+          </section>
+          <section class="col-6 col-12-narrower">
+            <div class="box post">
+              <a href="/music" class="image left"><img src="images/homepage/techbugsrockroll.jpg" alt="" /></a>
+              <div class="inner">
+                <h3><a href="/music">Tech, Bugs &amp; Rock‘n’Roll</a></h3>
+                <p>I host a livestream podcast with <a href="https://bsky.app/profile/rendle.dev">Rendle</a>, every Thursday at 4pm UK time.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
 
-		<!-- CTA -->
-		<!--
+    <!-- CTA -->
+    <!--
 
 		<section id="cta" class="wrapper style3">
 			<div class="container">
@@ -107,13 +130,13 @@
 			</div>
 		</section>
 -->
-		<!-- Footer -->
-		<div id="footer">
-			{% include footer.html %}
-		</div>
+    <!-- Footer -->
+    <div id="footer">
+      {% include footer.html %}
+    </div>
 
-	</div>
-	{% include scripts.html %}
+  </div>
+  {% include scripts.html %}
 </body>
 
 </html>

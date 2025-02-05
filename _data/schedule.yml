@@ -1,3 +1,63 @@
+- isodate: 2025-06-30 12:00:00
+  title: Code Europe
+  date: 30 June - 1 July 2025
+  url: https://www.codeeurope.pl/en/
+  city: Kraków, Poland
+  country: "PL"
+- isodate: 2025-06-18 12:00:00
+  title: Codegarden
+  date: 18-20 June 2025
+  url: https://codegarden.umbraco.com/
+  city: Odense, Denmark
+  country: "DK"
+- isodate: 2025-06-11 12:00:00
+  title: DevSum
+  date: 11-13 June 2025
+  url: https://www.devsum.se/
+  city: Stockholm, Sweden
+  country: "SE"
+- isodate: 2025-05-29 12:00:00
+  title: Craft Conference
+  date: 29-30 May 2025
+  url: https://craft-conf.com/2025
+  city: Budapest, Hungary
+  country: "HU"
+- isodate: 2025-05-26 12:00:00
+  title: Techorama
+  date: 26-28 May 2025
+  url:  https://techorama.be/
+  city: Antwerp, Belgium
+  country: "BE"
+- isodate: 2025-05-19 12:00:00
+  title: NDC Oslo
+  date: 19-23 May 2025
+  url: https://ndcoslo.com/
+  city: Oslo, Norway
+  country: "NO"
+- isodate: 2025-05-14 12:00:00
+  title: Geecon
+  date: 14 May 2025
+  url: https://2025.geecon.org/speakers/
+  city: Kraków, Poland
+  country: "PL"
+- isodate: 2025-05-06 12:00:00
+  title: London .NET
+  date: 6 May 2025
+  url: https://ldnug.org/
+  city: London, UK
+  country: "GB"
+- isodate: 2025-03-25 12:00:00
+  title: "execu(ut)"
+  date: 25 March 2025
+  url: https://execut.nl/
+  city: Utrecht, Netherlands
+  country: "NL"
+- isodate: 2025-02-22 12:00:00
+  title: DDD North
+  date: 22 February 2025
+  url: https://www.dddnorth.co.uk/
+  city: Hull, UK
+  country: "GB"
 - isodate: 2025-01-27 12:00:00
   title: NDC London
   date: 27-31 January 2025

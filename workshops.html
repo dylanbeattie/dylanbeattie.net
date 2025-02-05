@@ -3,23 +3,37 @@ layout: right-sidebar
 title: workshops
 permalink: /workshops
 ---
+
+{% assign workshops = site.workshops
+| where: "published", true
+| sort: "sequence" %}
+
 <article>
-  <h2>Workshops and Training</h2>
-  <div class="panel">
-    <a href="https://urs.tl/dbnw/">
-      <img class="banner" src="/images/ursatile-banner-800px.png" alt="Ursatile banner"
-        title="Online training from Ursatile" />
-    </a>
-    <p>As of July 2020, I'll be running all my online workshops and training courses through
-      <a href="https://urs.tl/dbnw/">Ursatile</a>, my online training company. Check out
-      <a href="https://urs.tl/dbnw/">ursatile.com</a> or <a href="https://twitter.com/ursatile">follow @ursatile</a>
-      on Twitter for workshop dates, details and booking links
-    </p>
-  </div>
+  <h2>Workshops and Courses</h2>
   <p>I've been running classroom training for software professionals since 2016. Drawing on over
     15 years' experience designing large-scale software applications, running software development
     teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs,
     I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
     to the Microsoft .NET platform, and I run workshops aimed at helping
     software professionals improve their communication and presentation skills.</p>
+    <p><strong>Interested in booking a workshop? Email <a href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> and let’s talk.</strong></p>
+  <ul>
+    {% for workshop in workshops %}
+    <li>
+      <a href="#{{ workshop.slug }}">{{ workshop.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% for workshop in workshops %}
+  <section class="workshop-info">
+    <h4 id="{{workshop.slug}}"><a href="{{workshop.url}}">{{ workshop.title }}</a></h4>
+    <p>{{ workshop.summary }}</p>
+    <ul>
+      {% for bullet in workshop.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{workshop.url}}">More details...</a></p>
+  </section>
+  {% endfor %}
 </article>

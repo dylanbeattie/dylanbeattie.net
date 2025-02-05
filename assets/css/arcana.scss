@@ -7,7 +7,6 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import url("fontawesome-all.min.css");
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 
 /*
@@ -165,7 +164,7 @@
 		color: inherit;
 		font-weight: 600;
 		line-height: 1.75em;
-		
+
 
 		a {
 			color: inherit;
@@ -178,7 +177,7 @@
 		}
 	}
 
-	h1 { 
+	h1 {
 		margin-bottom: 1em;
 		font-size: 1.4em;
 	}
@@ -195,7 +194,7 @@
 		margin-bottom: 0.5em;
 	}
 
-	h4 { 
+	h4 {
 		margin-bottom: 0em;
 	}
 
@@ -458,7 +457,7 @@
 
 		&.brands {
 			&:before {
-				font-family: 'Font Awesome 5 Brands';
+				font-family: 'Font Awesome 6 Brands';
 			}
 		}
 
@@ -533,6 +532,7 @@
 			a, span {
 				font-size: 2em;
 				border: 0;
+        text-decoration: none;
 			}
 		}
 	}
@@ -995,7 +995,7 @@
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
-			
+
 			}
 		}
 

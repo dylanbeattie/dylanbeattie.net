@@ -508,3 +508,21 @@ ol.past-events {
     }
   }
 }
+
+section.workshop-info {
+  h4 {
+    background-color:  _palette(accent, bg);
+    color:   _palette(accent, fg);
+    padding: 8px;
+  }
+  p {
+    padding-left: 16px;
+  }
+  ul {
+    padding-left: 48px;
+  }
+  border-left: 2px solid  _palette(accent, bg);
+  border-bottom: 2px solid _palette(accent,bg);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
