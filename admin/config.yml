@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: dylanbeattie/dylanbeattie.net # Path to your GitHub repository
-  branch: main
+  branch: master
   base_url: https://sveltia-cms-auth.dylanbeattie.workers.dev
 
 
