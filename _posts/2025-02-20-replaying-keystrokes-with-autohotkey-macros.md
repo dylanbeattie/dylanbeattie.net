@@ -19,12 +19,11 @@ Here's the latest version of the script I'm using for this.
 
 Finally, you've got to use physical keys. Don't ask me why. I tried remapping some of the buttons on my StreamDeck to simulate F13-F16; didn't work -- I guess AutoHotkey's hooking into the keyboard events at a lower level than StreamDeck's injecting them? But I reprogrammed the "playstation keys" on my [Keychron K5](https://www.keychron.com/products/keychron-k5-max-qmk-via-wireless-custom-mechanical-keyboard) to be F13-F16 and it that works just fine.
 
-![A Keychron K5 mechanical keyboard showing the extended function key cluster labelled as \"PlayStation keys\"](/images/posts/keychron-k5-playstation-keys.png)
+![A Keychron K5 mechanical keyboard showing the extended function key cluster labelled as \\"PlayStation keys\\"](/images/posts/keychron-k5-playstation-keys.png)
 
-```autohotkey
+```
 #Requires AutoHotkey v2.0
 FileEncoding "UTF-8"
-
 
 ~^s:: {
     if WinActive("autohotkey") {
