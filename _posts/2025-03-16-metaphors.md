@@ -4,7 +4,7 @@ title: Metaphors
 date: 2025-03-16T10:34:00
 author: Dylan Beattie
 ---
-Back in 2020 when we all had a lot more time on our hands, I would occasionally hang out on [/r/WritingPrompts](https://www.reddit.com/r/WritingPrompts/). I stumbled across [this old post](https://www.reddit.com/r/WritingPrompts/comments/ha5eqs/comment/fv16xj3/) today and figured I'd post it here. You know. For posterity.
+Back in 2020, when we all had a lot more time on our hands, I would occasionally hang out on [/r/WritingPrompts](https://www.reddit.com/r/WritingPrompts/). I stumbled across [this old post](https://www.reddit.com/r/WritingPrompts/comments/ha5eqs/comment/fv16xj3/) today and figured I'd post it here. You know. For posterity.
 
 > **_Writing Prompt:_** _You're on a space ship with a bunch of your crewmates. You're the only human, and apparently metaphors are a strictly human behavior. You've learned to cope with this, but today you've decided to speak in only figures of speech as a prank on the others._
 
