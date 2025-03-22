@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An Interactive CSS Flexbox Playground
-date: 2025-03-22T18:03:00
+date: 2025-03-22T18:20:00
 author: Dylan Beattie
 ---
 CSS flexbox is fantastic... but it's also incredibly complicated. A flex container has half-a-dozen different CSS rules which control how content will flex and flow within the container, and figuring out the exact combination that you'll need to implement a particular design can be a lengthy and error-prone process.
