@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root {
+  --section-color-h: 287;
+  --section-color-s: 37%;
+  --section-color-l: 54%;
+  --section-color: hsl(
+    var(--section-color-h),
+    var(--section-color-s),
+    var(--section-color-l)
+  );
+
+  --section-shadow-color: hsl(
+    var(--section-color-h),
+    var(--section-color-s),
+    calc(var(--section-color-l) - 20%)
+  );
+
+  --specific-element-color: hsl(110deg 73% 54%);
+
+  --element-color: #f7941f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--section-color);
+    margin-bottom: 8px;
+}
+article {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+}
+html {
+  font-family: Comic Neue;
+}
+h4 {
+  margin: 0 0 8px 0;
+  border-bottom: 1px solid var(--section-color);
+}
+form {
+  padding: 4px;
+}
+
+section {
+  background-color: var(--section-color);
+  padding: 8px;
+  border-radius: 4px;
+  & div {
+    background-color: var(--element-color);
+    padding: 4px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: 4px 4px var(--section-shadow-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & div#specific {
+    background-color: var(--specific-element-color);
+  }
+
+  display: flex;
+  align-items: flex-start;
+  transition: flex-direction 1s;
+  transition: align-items 1s;
+}
+fieldset {
+  padding: 0;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 8em 1fr;
+  border: 0;
+  & label {
+    & input[type="radio"] {
+      appearance: none;
+      background-color: #fff;
+      margin: 0 4px 0 0;
+      font: inherit;
+      color: currentColor;
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid var(--section-color);
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+    }
+    & input[type="radio"]::before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em var(--section-color);
+    }
+    & input[type="radio"]:checked::before {
+      transform: scale(1);
+    }
+    background-color: var(--section-color);
+    color: #fff;
+    margin: 4px;
+    padding: 4px 12px 4px 4px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+}
