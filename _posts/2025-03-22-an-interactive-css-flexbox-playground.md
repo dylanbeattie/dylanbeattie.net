@@ -24,4 +24,4 @@ then on Thursday 27th March, I'm running an online session with Tech Cornwall. 1
 
 [https://techcornwall.co.uk/training/modern-fundamentals-of-web-application-development-masterclass/](https://techcornwall.co.uk/training/modern-fundamentals-of-web-application-development-masterclass/)
 
-Hopefully see you a few of you there!
+Hopefully see you a few of you there.
