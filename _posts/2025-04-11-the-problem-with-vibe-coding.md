@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Problem with "Vibe Coding"
-date: 2025-04-11T12:11:00
+date: 2025-04-11T18:03:00
 author: Dylan Beattie
 ---
 The whole "vibe coding" thing is another reminder that quite a lot of people working in tech don't understand the difference between programs and products. 
