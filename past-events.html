@@ -3,20 +3,19 @@ layout: right-sidebar
 title: past events
 permalink: /past-events
 ---
-<h4>Past Events</h4>
-<ol class="past-events">
+  <h2>Past Events</h2>
+  <p>Yes, I go to a lot of places and do a lot of talks.</p>
+  <hr />
+  <ol class="event-list">
   {% assign past_events = site.data.schedule | where_exp: 'event', 'event.isodate < site.time' | sort: 'isodate' %}
   {% for e in past_events reversed %}
-  <li>
-    <img src="/assets/css/images/flags/flat/48/{{ e.country }}.png" />
+    <li class="flag-{{ e.country }}">
     {% if e.url %}
     <a href="{{ e.url }}">{{ e.title}}</a>
     {% else %}
     <a>{{ e.title}}</a>
     {% endif %}
-    <br />{{e.date}}<br />
-    {{ e.city }}
-    {{ e.isodate }}
+    <br />{{e.date}}, {{ e.city }}
     </li>
     {% endfor %}
 </ol>

@@ -1,9 +1,12 @@
-- home: 
+- home:
   text: home
   href: /
 - about:
   text: about me
   href: /about
+- talks:
+  text: events
+  href: /events
 - talks:
   text: talks
   href: /talks

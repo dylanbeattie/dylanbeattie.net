@@ -1,0 +1,26 @@
+---
+layout: right-sidebar
+title: events
+permalink: /events
+---
+<h2>Events</h2>
+<p>Conferences, meetups, user groups, community events. Want me to
+  come &amp; speak at your event? <a href="/contact">Get in touch</a>
+  and I'll try to make it happen.
+</p>
+<hr />
+<ol class="event-list">
+  {% assign past_events = site.data.schedule | where_exp: 'event', 'event.isodate >= site.time' | sort: 'isodate' %}
+  {% for e in past_events %}
+  <li class="flag-{{ e.country }}">
+    {% if e.url %}
+    <a href="{{ e.url }}">{{ e.title}}</a>
+    {% else %}
+    <a>{{ e.title}}</a>
+    {% endif %}
+    <br />{{e.date}}, {{ e.city }}
+    </li>
+    {% endfor %}
+</ol>
+<hr />
+<a href="/past-events">past events</a>

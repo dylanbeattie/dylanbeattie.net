@@ -493,36 +493,118 @@ code {
   tab-size: 2;
 }
 
-ol.past-events {
+ol.event-list {
   font-size: 0.875em;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   li {
-    clear: both;
-    border-top: 1px solid #999;
     list-style: none;
     list-style-position: inside;
-    img {
-      float: left;
-      margin-right: 16px;
+    background-repeat: no-repeat;
+    padding: 8px 8px 8px 54px;
+    background-position: left center;
+    line-height: 1.2em;
+    a {
+      font-weight: bold;
     }
   }
 }
 
 section.workshop-info {
   h4 {
-    background-color:  _palette(accent, bg);
-    color:   _palette(accent, fg);
+    background-color: _palette(accent, bg);
+    color: _palette(accent, fg);
     padding: 8px;
   }
+
   p {
     padding-left: 16px;
   }
+
   ul {
     padding-left: 48px;
   }
-  border-left: 2px solid  _palette(accent, bg);
-  border-bottom: 2px solid _palette(accent,bg);
+
+  border-left: 2px solid _palette(accent, bg);
+  border-bottom: 2px solid _palette(accent, bg);
   margin-bottom: 16px;
   padding-bottom: 16px;
+}
+
+ul#events-banner {
+  list-style: none;
+  margin: 0px;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+  li {
+    padding: 8px;
+    a {
+      border-radius: 8px;
+      color: #fff !important;
+      text-decoration: none;
+      font-size: 82.5%;
+      padding: 8px 8px 8px 64px;
+      &:hover {
+        background-color: #000;
+      }
+      display: block;
+      background-repeat: no-repeat;
+      background-position: left 8px center;
+      line-height: 1.4em;
+    }
+  }
+}
+
+.flag-calendar {
+  background-image: url(/assets/images/icons/calendar-48px-flat.png);
+}
+
+#dometrain-banner {
+  // background: #008DAB;
+  // background: linear-gradient(168deg, rgba(0, 141, 171, 1) 0%, rgba(129, 146, 44, 1) 49%, rgba(111, 67, 2, 1) 100%);
+  background: #006699;
+  background: linear-gradient(170deg, rgba(0, 102, 153, 1) 47%, rgba(0, 50, 76, 1) 100%);
+  font-family: Poppins, sans-serif !important;
+  padding: 0 0 12px 0;
+  div {
+    font-family: Poppins, sans-serif !important;
+    color: #fff;
+    h4 {
+      font-family: Poppins, sans-serif !important;
+      font-size: 160%;
+      margin: -8px 0;
+      span {
+        font-weight: 100;
+        font-size: 80%;
+      }
+    }
+    p {
+      margin: 2px 0;
+    }
+    em {
+      display: block;
+      font-size: 60%;
+    }
+    a {
+      font-size: 80%;
+      font-family: Poppins, sans-serif !important;
+      color: #fff;
+      text-decoration: none;
+      text-align: left;
+      display: block;
+      margin-bottom: -6px;
+    }
+    background: rgba(0,0,0,0.5);
+    background-image: url(/assets/images/dometrain-logo.png);
+    background-size: 160px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    padding: 10px;
+    width: 60%;
+    margin: 0px auto;
+  }
 }

@@ -38,13 +38,34 @@
           href="https://twitter.com/henriksen">Glenn Henriksen</a></cite>
     </section>
 
-
     <!-- Gigantic Heading -->
     <section class="wrapper homepage-blurb">
       <div class="container">
         {% include me_blurb.html %}
       </div>
     </section>
+
+    <ul id="events-banner" class="row gtr-50">
+      {% assign today = site.time | date: "%Y-%m-%d" %}
+      {% assign upcoming_events = site.data.schedule | where_exp: "event", "event.isodate > site.time" | sort: "isodate"
+      | slice: 0, 5 %}
+      {% for event in upcoming_events %}
+      <li class="col-2 col-4-normal col-6-mobile col-12-mobilep">
+        <a href="{{ event.url }}" class="flag-{{event.country}}">
+          <strong>{{ event.title }}</strong><br />
+          {{ event.date }}<br />
+          {{ event.city }}
+        </a>
+      </li>
+      {% endfor %}
+      <li class="col-2 col-4-normal col-6-mobile col-12-mobilep">
+        <a href="/events" class="flag-calendar">
+        <strong>More...</strong><br />
+          See all<br />
+          upcoming events
+        </a>
+      </li>
+    </ul>
 
     <!-- Posts -->
     <section class="wrapper style1">
@@ -80,7 +101,8 @@
               <a href="/workshops" class="image left"><img src="images/homepage/workshops.jpg" alt="" /></a>
               <div class="inner">
                 <h3><a href="/workshops">Workshops</a></h3>
-                <p>Want to write better code, design better systems, or give awesome presentations? Check out my workshops.</p>
+                <p>Want to write better code, design better systems, or give awesome presentations? Check out my
+                  workshops.</p>
               </div>
             </div>
           </section>
@@ -98,7 +120,8 @@
         <div class="row">
           <section class="col-6 col-12-narrower">
             <div class="box post">
-              <a href="https://codewithrockstar.com/" class="image left"><img src="images/homepage/rockstar.jpg" alt="" /></a>
+              <a href="https://codewithrockstar.com/" class="image left"><img src="images/homepage/rockstar.jpg"
+                  alt="" /></a>
               <div class="inner">
                 <h3><a href="https://codewithrockstar.com/">Rockstar</a></h3>
                 <p>“To really confuse recruiters, somebody should make a programming language called Rockstar.”</p>
@@ -107,10 +130,12 @@
           </section>
           <section class="col-6 col-12-narrower">
             <div class="box post">
-              <a href="https://www.youtube.com/@TechBugsRockRoll" class="image left"><img src="images/homepage/techbugsrockroll.jpg" alt="" /></a>
+              <a href="https://www.youtube.com/@TechBugsRockRoll" class="image left"><img
+                  src="images/homepage/techbugsrockroll.jpg" alt="" /></a>
               <div class="inner">
                 <h3><a href="https://www.youtube.com/@TechBugsRockRoll">Tech, Bugs &amp; Rock‘n’Roll</a></h3>
-                <p>I host a livestream podcast with <a href="https://bsky.app/profile/rendle.dev">Rendle</a>, every Thursday at 4pm UK time.</p>
+                <p>I host a livestream podcast with <a href="https://bsky.app/profile/rendle.dev">Rendle</a>, every
+                  Thursday at 4pm UK time.</p>
               </div>
             </div>
           </section>
