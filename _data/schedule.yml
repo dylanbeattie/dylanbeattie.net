@@ -43,7 +43,13 @@
 - isodate: 2025-05-06 12:00:00
   title: London .NET
   date: 6 May 2025
-  url: https://ldnug.org/
+  url: https://www.meetup.com/london-net-user-group/events/307180317/
+  city: London, UK
+  country: "GB"
+- isodate: 2025-04-22 12:00:00
+  title: London .NET
+  date: 22 April 2025
+  url: https://www.meetup.com/london-net-user-group/events/306661882/
   city: London, UK
   country: "GB"
 - isodate: 2025-03-25 12:00:00
