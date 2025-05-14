@@ -10,4 +10,4 @@ Last month I published my first video course on Dometrain, "[Sending Email with 
 
 I didn't set out to make a 9-hour course about sending email with .NET - I figured the course would run to 3, maybe 4 hours. But once I'd covered all the underlying standards like SMTP and MIME, modern .NET libraries like MailKit and MimeKit, tools like Mailpit, Mailtrap, ngrok, the chaos of HTML email standards and the tools like MJML that exist to work with it, how to set up all the various DNS records, SPF, DKIM, DMARC, troubleshooting, logging, sending mail from background services... there's a lot to talk about.
 
-The course is "[Sending Email with .NET: From Zero to Hero](https://urs.tl/email-zh-website)", you can buy it at dometrain.com, and it's 40% off at the moment. Check it out.
+The course is "[Sending Email with .NET: From Zero to Hero](https://urs.tl/email-zh-website)", you can buy it at dometrain.com, and it's 40% off at the moment. Check it out. I think it's awesome.
