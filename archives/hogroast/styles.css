@@ -1,0 +1,64 @@
+h1 {
+	font-family: Times New Roman, Times, Serif;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	padding: 10px;
+}
+
+h2 {
+	font-family: Times New Roman, Times, Serif;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.episodelink {
+	font-family: Times New Roman, Times, Serif;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: small;
+	color: #0000ff;
+	
+}
+
+.preamble {
+	font-family: Times New Roman, Times, Serif;
+	text-align: center;
+	font-style: italic;
+}
+	
+
+body, td {
+	font-family: arial, helvetica, sans-serif;
+	font-size: x-small;
+}
+
+.datetime {
+	font-weight: bold;
+	text-align: right;
+	background-color: #CCCCCC;
+	border: 1px #000000 solid;
+	padding: 5px;
+	margin: 2px;
+}
+dl {
+	text-align: center;
+	font-family: Times New Roman, Times, Serif;
+	font-style: italic;
+}
+
+dt {
+	text-align: center;
+	font-weight: bold;
+}
+
+dd {
+	margin-left, margin-right, margin-top: 2px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
