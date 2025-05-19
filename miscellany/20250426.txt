@@ -1,0 +1,52 @@
+ hello Dylan
+
+You don't know me, I'm a retired technical systems administrator from Uppsala University, who happens to be fan of your NDC talks and have over the past few months compiled what's becoming a decent list of software issues suitable for you to make really angry talks about including one urgent what I would call a zero-day operational disaster-in-the-making, for lack of a better term; you won't believeit until you have seen it with your own eyes. My problem is one of reproduceability, which should be resolved as soon as I get to install and read the bash source code myself.
+
+1. Don't do what I mean, teach me to code instead.
+   about a seriously ill-conceived DWIM misfeature in bash(1) that has yet to blow up in everyone's face.
+
+2. Your e_mail address is not a password, and don't you dare treating mine as one or you'll be very sorry that you did.
+
+3. Title TBD
+
+I'll put #2 and #3 aside until we are done with the important one.
+
+Talk#1 Don't do what I mean, teach me to code instead
+
+FYI: I have put myself under a no-trading restraint due to the
+stock market implications this one will have when it's eventually
+revealed to the world in order not to be accused of insider trading.
+While I'm in no way your legal advisor, I'm sure you will agree
+with me, when you consider what I have actually learned.
+
+here is the deal: i was busy reconfiguring my user login configuration when I made an accidental error in my new .login file where
+I wrote something like:
+
+KEYS="${HOME}.xmodmap"
+
+xmodmap ${KEYS}
+
+after saving the file I immediately tested it from a command prompt it worked just fine, so I closed my laptop and went to bed.
+
+Next morning I was seated in my wheelchair in front of my laptop,
+started it and logged in, muchto my surprise i got an error saying
+/home/andersa.xmodmap didn't exist. i thought what the ???? it worked fine yesterday when i tested it what has happened? I checked my .login file in emacs, sure enough I saw that I had forgotten the
+'/' path element delimiter and added it in orderto make a
+successful run and get my keyboard working according to my custom
+design. SO I called up my ChatGPT session to ask it for advice, but simultaneously realized it must be some kind of DWIM effect, but
+what on Earth were the bash developers smoking when they decided this would be a good idea to put in active code without so much as
+a README warning. I haven't confirmed myself there is no warning, but I trust ChatGPT there isn't one. You probably know better than both me and ChatGPT if this is documented behaviour, and if it is I want
+to apologize for wasting your time telling me about it, but I figured the stakes are so high I don't want to risk leaving this unreported merely because I'm ignorant of such a potential warning. You be my judge: was that a correct decision of mine?
+
+I feel it's as if we were back in fall 1999, and noone but me is aware of the so called Y2K bug waiting to hit us on New Year's Eve. When announced, that would perhaps impact the stock markets even more than Trump's random import tariffs have done recently, don't you think?
+
+i simply don't dare guess how many million lines of improperly tested code may now be sitting on servers world-wide, and how much money could be at stake, are we talking about millions or billions of USD in unclaimed damages for unreliable code, this is where I began thinking about insider trading implications for myself.
+
+What remains for me to do is to install the bash source code myself and begin searching for the smoking gun, actual code implementing this reckless DWIM behaviour, I*m not familiar with bash internals  and I can't allow the world to have to wait for me to do that work alone even if i'm hopeful for the assistance of ChatGPT (which right now is a nuisance to me, I can't use it at all because of a weired pop-up).
+
+So; I leave it to you to decide whether to contact the bash developers in advance or simply make a talk out of this, post it on YouTube and other channels of yours, where you duly roast the bash developers over an open flame for letting this happen. I'm not asking for monetary compensation, but I would be happy to be credited by name if this is indeed news to you.
+
+Feel free to quote selected parts of this message in your talk if
+you think that makes for a good effect.
+
+Please get back to me as soon as possible to let me know whether you will make something of this or you would advise me to send it somewhere else. 
