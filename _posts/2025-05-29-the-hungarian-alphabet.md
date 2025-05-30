@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Hungarian Alphabet
-date: 2025-05-30T00:31:00
+date: 2025-09-30T00:31:00
 author: Dylan Beattie
 ---
 I like alphabets. And typography, and fonts, and text encoding systems, and just about everything to do with getting the written word into some sort of computer system and seeing if it comes out the other end with its bits intact. This week I've been at the Craft conference in Budapest, where I've been talking about plain text and text encodings; it's a talk I love doing because every place I do it, I use it as an opportunity to learn about the idiosyncrasies of a new culture, language or alphabet... and my word, Hungarian didn't disappoint.
