@@ -6,7 +6,7 @@ author: Dylan Beattie
 ---
 I like alphabets. And typography, and fonts, and text encoding systems, and just about everything to do with getting the written word into some sort of computer system and seeing if it comes out the other end with its bits intact. This week I've been at the Craft conference in Budapest, where I've been talking about plain text and text encodings; it's a talk I love doing because every place I do it, I use it as an opportunity to learn about the idiosyncrasies of a new culture, language or alphabet... and my word, Hungarian didn't disappoint.
 
-When this talk works, when it lands right where it want it to, there's a point about 20 minutes in where I ask the audience "this all makes total sense, right?" And the 60-70% of the audience who grew up nearby, for whom the language or orthography I'm talking about is the one they learned in kindergarten, they put their hands up and smile. And the other 30%-40% are just sat there going "i'm sorry what the actual fuck are you talking about?"
+When this talk works, when it lands right where it want it to, there's a point about 20 minutes in where I ask the audience "this all makes total sense, right?" And the 70% of the audience who grew up nearby, for whom the language or orthography I'm talking about is the one they learned in kindergarten, they put their hands up and smile. And the other 30% are just sat there going "i'm sorry what the actual fuck are you talking about?"
 
 The Hungarian alphabet has 44 letters, because in 1984, the Hungarian government decided that it has 44 letters, and quite frankly if anybody's allowed to be in charge of this kind of thing, it's probably them - so 44 letters it is:
 <table border="1">
@@ -24,6 +24,8 @@ The Hungarian alphabet has 44 letters, because in 1984, the Hungarian government
   </tr>
 </table>
 
-"But hang on", you exclaim, "'dzs' isn't a letter, it's three letters!"... well, welcome to the *dzsungel*, baby. We've got digraphs and trigraphs.
+"But hang on", you exclaim, "'dzs' isn't a letter, it's three letters!"... well, welcome to the _dzsungel_, baby. We've got digraphs and trigraphs.
 
-English has sounds that can't be represented by a single letter. th, sh, ch, maybe zh if you're feeling fancy. We don't consider those letters in their own right. Hungarian also has sounds that can't be represented by a single letter, but are instead represented by *digraphs* - cs, dz, gy, ly, ny, sz, ty, zs - and one trigraph, the aforementioned dzs. And those are letters, because the Hungarian government says they're letters.
+English has sounds that can't be represented by a single letter – th, sh, ch, maybe zh if you're feeling fancy – but English orthography doesn’t consider those letters in their own right. Hungarian also has sounds that can't be represented by a single letter, but are instead represented by _digraphs_ - cs, dz, gy, ly, ny, sz, ty, zs - and one trigraph, the aforementioned dzs. And those are letters, because the Hungarian government said they're letters in 1984.
+
+About a decade later, the Unicode consortium rocks up with their rather excellent mission statement:
