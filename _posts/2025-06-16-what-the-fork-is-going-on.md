@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What The Fork Is Going On?
-date: 2025-06-16T17:49:00
+date: 2025-06-16T16:58:00
 author: Dylan Beattie
 ---
 I got two emails recently that have weighed heavily on my mind.
