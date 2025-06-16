@@ -563,7 +563,9 @@ ul#events-banner {
   background-image: url(/assets/images/icons/calendar-48px-flat.png);
 }
 
-#dometrain-banner {
+a#dometrain-banner {
+  text-decoration: none;
+  display: block;
   // background: #008DAB;
   // background: linear-gradient(168deg, rgba(0, 141, 171, 1) 0%, rgba(129, 146, 44, 1) 49%, rgba(111, 67, 2, 1) 100%);
   background: #006699;

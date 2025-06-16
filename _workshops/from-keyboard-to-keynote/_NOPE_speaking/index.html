@@ -1,0 +1,39 @@
+---
+layout: right-sidebar
+title: speaking
+# permalink: /speaking
+opengraph: 
+  description: Dylan Beattie's conference taks and workshops about software development.
+  image: /speaking/summary_large_image.jpg
+redirect_from: "/p/speaking.html"
+---
+<article>
+  <h1>Speaking</h1>
+  <p>I've been speaking at conferences and user groups since 2008. I have given talks at conferences all over the world,
+    from high-level keynotes aimed at a wide audience to deep-dive technical talks about REST APIs and hypermedia.</p>
+  <p>If you'd like to invite me to speak at your conference or meetup, please drop me an email to <a
+      href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> and let's chat.</p>
+  <h3 id="contents">Current Talks</h3>
+  <p>Here are the talks and topics that I'm currently doing at conferences and meetups. If you're interested in 
+    inviting me to speak about something else, get in touch.</p>
+    {% assign years = site.talks | map: 'year' | uniq | sort | reverse %}
+    {% for year in years %}
+    <h3>{{ year }}</h3>
+    <ul>
+      {% assign talks = site.talks | where: 'year', year %}
+      {% for talk in talks %}
+      <li><a href="#{{ talk.slug }}">{{ talk.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  {% assign talks = site.talks  | sort: 'year' | reverse %}
+  {% for talk in talks %}
+  <hr />
+  <section>
+    <h3 id="{{ talk.slug }}">{{ talk.title }}</h3>
+    <p>{{ talk.description | markdownify }}</p>
+    <p><a href="#contents">back to top</a></p>
+    </p>
+  </section>
+  {% endfor %}
+</article>
