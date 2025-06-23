@@ -1,5 +1,6 @@
 ---
 title: "Dylan's Advent of Cool Nerd Things Day 2: WinDirStat"
+date: 2020-12-02T12:00:00
 layout: advent2020
 author: Dylan Beattie
 meta:

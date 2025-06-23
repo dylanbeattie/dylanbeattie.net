@@ -1,5 +1,6 @@
 ---
 title: "Choosing a Chat App For Your Tech Event"
+date: 2024-01-18T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

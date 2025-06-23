@@ -1,5 +1,6 @@
 ---
 title: "Dylan's Advent of Cool Nerd Things Day 3: Reincubate Camo"
+date: 2020-12-03T12:00:00
 layout: advent2020
 author: Dylan Beattie
 meta:

@@ -1,5 +1,6 @@
 ---
 title: "Piedroit: A Raspberry Pi-powered USB Footpedal (Part 1)"
+date: 2020-05-17T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

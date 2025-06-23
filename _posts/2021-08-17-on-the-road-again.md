@@ -1,5 +1,6 @@
 ---
 title: "On The Road Again"
+date: 2021-08-17T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

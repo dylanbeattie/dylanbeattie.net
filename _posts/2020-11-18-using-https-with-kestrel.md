@@ -1,5 +1,6 @@
 ---
 title: Using HTTPS with Kestrel in .NET Core
+date: 2020-11-18T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

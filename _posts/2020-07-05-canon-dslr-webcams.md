@@ -1,5 +1,6 @@
 ---
 title: "Using Canon DSLR Cameras as Webcams"
+date: 2020-07-05T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

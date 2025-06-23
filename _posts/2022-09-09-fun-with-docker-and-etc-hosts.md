@@ -1,5 +1,6 @@
 ---
 title: "Fun with Docker and /etc/hosts"
+date: 2022-09-09T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

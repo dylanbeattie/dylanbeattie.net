@@ -1,5 +1,6 @@
 ---
 title: "The Road To Guitaraoke, Part 1: Vamp, Chordino, ImageSharp, and ffmpeg"
+date: 2022-09-19T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Speaking and Playing at GOTO Oslo 2020
+date: 2020-01-17T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

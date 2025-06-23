@@ -1,5 +1,6 @@
 ---
 title: Windows Defender detects Trojan:Script/Wacatac.B!ml in a zipped .NET 9 AOT binary
+date: 2024-12-09T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

@@ -1,5 +1,6 @@
 ---
 title: "Running Jekyll on WSL2"
+date: 2020-05-19T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

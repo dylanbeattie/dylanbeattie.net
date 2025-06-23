@@ -1,5 +1,6 @@
 ---
 title: Publishing Talks
+date: 2019-10-06T12:00:00
 layout: post
 author: Dylan Beattie
 ---

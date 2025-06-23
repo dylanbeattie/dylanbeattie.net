@@ -1,5 +1,6 @@
 ---
 title: Better Meetings with Agenda Defender
+date: 2019-12-02T12:00:00
 layout: post
 author: Dylan Beattie
 ---

@@ -1,5 +1,6 @@
 ---
 title: Solving Advent of Code in Amstrad LOGO
+date: 2020-12-14T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

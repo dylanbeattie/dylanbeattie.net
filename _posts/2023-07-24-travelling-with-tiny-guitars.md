@@ -1,5 +1,6 @@
 ---
 title: "Travelling with Tiny Guitars"
+date: 2023-07-24T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

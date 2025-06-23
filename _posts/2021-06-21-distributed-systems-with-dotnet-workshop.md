@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Distributed Systems with .NET: A Live Online Workshop with fwdays"
+date: 2021-06-21T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

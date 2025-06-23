@@ -1,5 +1,6 @@
 ---
 title: "Fixing 'Version conflict detected for Microsoft.CodeAnalysis.Common'"
+date: 2024-01-17T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

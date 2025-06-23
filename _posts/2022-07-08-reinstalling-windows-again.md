@@ -1,5 +1,6 @@
 ---
 title: "Reinstalling Windows (again)"
+date: 2022-07-08T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

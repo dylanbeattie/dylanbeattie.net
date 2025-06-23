@@ -1,5 +1,6 @@
 ---
 title: Whatever Happened to "Don't Be Evil"?	
+date: 2020-09-01T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

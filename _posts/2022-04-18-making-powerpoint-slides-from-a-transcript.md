@@ -1,5 +1,6 @@
 ---
 title: "A VBA macro for storyboarding PowerPoint slide decks"
+date: 2022-04-18T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

@@ -1,5 +1,6 @@
 ---
 title: "Database already exists when running EF Core migrations"
+date: 2022-02-01T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

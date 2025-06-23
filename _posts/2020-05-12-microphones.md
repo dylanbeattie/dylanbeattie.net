@@ -1,5 +1,6 @@
 ---
 title: "Microphone Tips for Remote Presentations"
+date: 2020-05-12T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

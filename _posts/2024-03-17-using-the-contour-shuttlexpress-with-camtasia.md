@@ -1,5 +1,6 @@
 ---
 title: "Using the Contour ShuttleXpress with Camtasia"
+date: 2024-03-17T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

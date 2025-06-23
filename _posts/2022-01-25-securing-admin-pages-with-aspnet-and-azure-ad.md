@@ -1,5 +1,6 @@
 ---
 title: "Securing Admin Pages with ASP.NET and Azure AD"
+date: 2022-01-25T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

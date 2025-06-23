@@ -1,5 +1,6 @@
 ---
 title: "The ONYX BOOX Note Air: Android 10.0 on an E-Ink Tablet"
+date: 2021-06-11T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

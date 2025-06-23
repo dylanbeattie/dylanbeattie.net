@@ -1,5 +1,6 @@
 ---
 title: "“The Art of Code” Workshops with fwdays to support Ukraine"
+date: 2022-04-02T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

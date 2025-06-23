@@ -1,5 +1,6 @@
 ---
 title: "Running Corel Linux on QEMU"
+date: 2024-05-27T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

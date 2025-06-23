@@ -1,5 +1,6 @@
 ---
 title: Where's the YouTube Video?
+date: 2020-08-26T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

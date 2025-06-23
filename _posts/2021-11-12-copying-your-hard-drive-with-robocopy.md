@@ -1,5 +1,6 @@
 ---
 title: "Copying Your Hard Drive With Robocopy"
+date: 2021-11-12T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

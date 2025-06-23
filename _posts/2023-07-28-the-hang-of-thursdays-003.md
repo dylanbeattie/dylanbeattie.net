@@ -1,5 +1,6 @@
 ---
 title: "The Hang of Thursdays #3"
+date: 2023-07-28T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

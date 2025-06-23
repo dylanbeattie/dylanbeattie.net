@@ -1,5 +1,6 @@
 ---
 title: About That Meetup.com Announcement
+date: 2019-10-15T12:00:00
 layout: post
 author: Dylan Beattie
 ---

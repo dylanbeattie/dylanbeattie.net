@@ -1,5 +1,6 @@
 ---
 title: "Workshop: Introduction to Distributed Systems with .NET"
+date: 2020-07-07T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

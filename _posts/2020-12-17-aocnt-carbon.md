@@ -1,5 +1,6 @@
 ---
 title: "Dylan's Advent of Cool Nerd Things Day 17: Carbon"
+date: 2020-12-17T12:00:00
 layout: advent2020
 author: Dylan Beattie
 meta:

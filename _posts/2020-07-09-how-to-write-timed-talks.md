@@ -1,5 +1,6 @@
 ---
 title: "How I Write Timed Talks"
+date: 2020-07-09T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

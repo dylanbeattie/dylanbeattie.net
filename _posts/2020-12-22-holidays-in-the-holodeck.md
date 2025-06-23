@@ -1,5 +1,6 @@
 ---
 title: Holidays in the Holodeck
+date: 2020-12-22T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

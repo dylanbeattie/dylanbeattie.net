@@ -1,5 +1,6 @@
 ---
 title: "Stay In, Rock Out: I'm Playing Live Online!"
+date: 2020-07-02T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

@@ -1,5 +1,6 @@
 ---
 title: "Java Criminally Underhyped? Not Back in 1997."
+date: 2021-07-01T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

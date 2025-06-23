@@ -1,5 +1,6 @@
 ---
 title: Spark - a tiny standalone HTTP server
+date: 2020-11-24T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

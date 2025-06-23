@@ -1,5 +1,6 @@
 ---
 title: "Online Presentation Tips"
+date: 2020-05-01T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

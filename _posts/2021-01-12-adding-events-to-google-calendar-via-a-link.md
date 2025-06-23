@@ -1,5 +1,6 @@
 ---
 title: "Adding Events to a Google Calendar via a Link"
+date: 2021-01-12T12:00:00
 layout: post
 author: Dylan Beattie
 meta:

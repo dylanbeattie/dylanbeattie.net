@@ -1,5 +1,6 @@
 ---
 title: "Dylan's Advent of Cool Nerd Things Day 12: Open Hardware Monitor"
+date: 2020-12-12T12:00:00
 layout: advent2020
 author: Dylan Beattie
 meta:

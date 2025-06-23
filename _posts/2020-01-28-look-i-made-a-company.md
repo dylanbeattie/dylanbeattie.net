@@ -1,5 +1,6 @@
 ---
 title: Look! I Made a Company!
+date: 2020-01-28T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

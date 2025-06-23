@@ -1,5 +1,6 @@
 ---
 title: Migrating from Blogger to GitHub Pages 
+date: 2019-08-14T12:00:00
 ---
 
 So, you might have noticed I've done a bit of decorating... welcome to the 2019 incarnation of dylanbeattie.net. If you're interested in how I migrated ten years' worth of blog posts onto a Jekyll site hosted on GitHub Pages, read on. If you're not, there's funny videos over on [/music](/music) that you might enjoy.

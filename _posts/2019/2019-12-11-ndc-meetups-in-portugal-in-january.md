@@ -1,5 +1,6 @@
 ---
 title: NDC Meetups in Portugal in January
+date: 2019-12-11T12:00:00
 layout: post
 author: Dylan Beattie
 meta: 

@@ -1,5 +1,6 @@
 ---
 title: "The Hang of Thursdays #5"
+date: 2023-08-03T12:00:00
 layout: post
 author: Dylan Beattie
 meta:
