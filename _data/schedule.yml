@@ -1,3 +1,33 @@
+- isodate: 2025-10-27 12:00:00
+  title: NDC Porto
+  date: 20-25 October 2025
+  city: Porto, Portugal
+  country: "PT"
+  url: https://ndcporto.com/
+- isodate: 2025-10-27 12:00:00
+  title: Tweakers Developer Summit
+  date: 28 October 2025
+  city: Utrecht, Netherlands
+  country: "NL"
+  url: https://tweakers.net/
+- isodate: 2025-10-27 12:00:00
+  title: Techorama
+  date: 27-29 October 2025
+  city: Utrecht, Netherlands
+  country: "NL"
+  url: https://techorama.nl/
+- isodate: 2025-09-25 12:00:00
+  title: Scotsoft 2025
+  date: 25 September 2025
+  city: Edinburgh, Scotland
+  country: "scotland"
+  url: https://www.scotlandis.com/scotsoft-2025/
+- isodate: 2025-09-08 12:00:00
+  title: NDC Copenhagen
+  date: 8-12 September 2025
+  url: https://ndccopenhagen.com/
+  city: Copenhagen, Denmark
+  country: "DK"
 - isodate: 2025-06-30 12:00:00
   title: Code Europe
   date: 30 June - 1 July 2025

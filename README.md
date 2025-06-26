@@ -89,11 +89,11 @@ It's not *quite* perfect – an HTTP `301 Moved Permanently` would strictly spea
 You see that little sidebar there, with all the events I'm speaking at and the flags in it of the countries I'm gonna be visiting? The flag images are from [GoSquared](https://github.com/gosquared/flags), and available under an MIT license. To display them in the schedule, I've used a [SASS list](https://sass-lang.com/documentation/values/lists) to generate CSS rules for each flag in the set:
 
 ``` scss
-/* _flags.scss: generate .flag-xx CSS classes for elements with flag backgrounds */
+/* flags.scss: generate .flag-xx CSS classes for elements with flag backgrounds */
 
-$countries: _abkhazia, _basque-country, _british-antarctic-territory, _commonwealth, 
-  _england, _gosquared, _kosovo, _mars, _nagorno-karabakh, _nato, _northern-cyprus, 
-  _olympics, _red-cross, _scotland, _somaliland, _south-ossetia, _united-nations, _wales, 
+$countries: abkhazia, basque-country, british-antarctic-territory, commonwealth, 
+  england, gosquared, kosovo, mars, nagorno-karabakh, nato, northern-cyprus, 
+  olympics, red-cross, scotland, somaliland, south-ossetia, united-nations, wales, 
   AD, AE, AF, AG, AI, AL, AM, AN, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, 
   BG, BH, BI, BJ, BL, BM, BN, BO, BR, BS, BT, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, 
   CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, EH, ER, 
