@@ -1,6 +1,6 @@
 ---
 slug: no-such-thing-as-plain-text
-year: 2020
+year: 2025
 title: "There's No Such Thing As Plain Text"
 description: |
   Software is complicated. Machine learning, microservice architectures, message queues... every few months there's another revolutionary idea to consider, another framework to learn. And underneath so many of these amazing ideas and abstractions is text. When you work in software, you spend your life working with text. Some of those text files are source code, some are configuration files, some of them are documentation. Editors, revision control systems, programming languages - everything from C# and HTML to Git and VS Code is based on the idea that we're working with "plain text" files. But... what if I told you there's no such thing?
