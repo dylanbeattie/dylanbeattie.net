@@ -610,3 +610,41 @@ a#dometrain-banner {
     margin: 0px auto;
   }
 }
+
+blockquote.testimonial {
+  max-width: 480px;
+  position: relative;
+  padding: 15px;
+  text-align: center;
+  margin: 16px auto 32px auto;
+  color: #fff;
+  background: #006699;
+  border-radius: 10px;
+  border: 0px;
+  background: linear-gradient(top, #006699, rgb(0, 73, 107));
+}
+
+/* creates triangle */
+blockquote.testimonial:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -16px;
+  right: 50px;
+  width: 0;
+  border-width: 32px 0px 0 32px;
+  border-style: solid;
+  border-color: #006699 transparent;
+}
+
+div.promo {
+  background: #006699;
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+  font-size: 140%;
+  margin: 16px 0;
+  a {
+    color: #fff;
+  }
+}

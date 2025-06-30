@@ -1,2 +1,4 @@
-# url: the base hostname & protocol for your site, e.g. http://example.com
-url: https://f954779de210.ngrok.io
+# start with 
+name: dylanbeattie.net [DEBUG]
+debug: true
+url: https://2cf453381368.ngrok.app
