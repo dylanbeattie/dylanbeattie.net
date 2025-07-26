@@ -1,9 +1,14 @@
 ---
 layout: post
-title: Naming Things is Hard. Renaming Things is Harder.
+title: Naming Things is Hard... Renaming Things is Harder
 date: 2025-07-26T15:49:00
 author: Dylan Beattie
 typora-root-url: ./../
+meta:
+  og_description: "In which Dylan tries to rename a camera and ends up writing an awk script."
+  og_image: /images/posts/naming-things-is-hard-renaming-things-is-harder.jpg
+  twitter_card: summary
+
 ---
 You know those little things that you just sort of ignore, over over and over again, until finally one day the planets align and you're like "No! I'm not putting up with this any more! There *must* be a way to fix it!"
 
