@@ -5,12 +5,11 @@ date: 2025-07-26T15:49:00
 author: Dylan Beattie
 typora-root-url: ./../
 meta:
-  og_description: "In which Dylan tries to rename a camera and ends up writing an awk script."
+  og_description: In which Dylan tries to rename a camera and ends up writing an awk script.
   og_image: /images/posts/naming-things-is-hard-renaming-things-is-harder.jpg
   twitter_card: summary
-
 ---
-You know those little things that you just sort of ignore, over over and over again, until finally one day the planets align and you're like "No! I'm not putting up with this any more! There *must* be a way to fix it!"
+You know those little things that you just sort of ignore, over over and over again, until finally one day the planets align and you're like "No! I'm not putting up with this any more! There _must_ be a way to fix it!"
 
 ![canon-eos-m200](images/canon-eos-m200.jpg)
 
@@ -24,12 +23,12 @@ The problem is that when I go to fire up the EOS utility, it asks me to pick whi
 
 <img src="images/obs-studio-duplicate-cam-link-names.png" class="block">
 
-Well, this morning I had that fateful nerd thought... *“I should fix this. How hard can it be?”* Well, grab your razor and strap in, friends... we're going yak shaving!
+Well, this morning I had that fateful nerd thought... _“I should fix this. How hard can it be?”_ Well, grab your razor and strap in, friends... we're going yak shaving!
 Now, most of the time, if you want to rename a thing in Windows, you right-click it, and choose "Rename", and give it a new name.
 
 ![](images/windows-device-manager-with-duplicate-device-names.png#block)
 
-That doesn't work in Device Manager. I mean, sure, rename a file, but why would *anybody* ever need to rename a *camera?*
+That doesn't work in Device Manager. I mean, sure, rename a file, but why would _anybody_ ever need to rename a _camera?_
 OK, no big deal. Those names have got to come from somewhere. Probably the registry. So I fire up regedit, Ctrl-F, "Cam Link 4K", hit "Find Next":
 
 ![](images/regedit-search-cam-link-4k.png#block)
@@ -69,7 +68,6 @@ I now have a 540Mb text file full of bits of Windows registry. It looks like thi
 "FileSize"=hex(b):70,34,01,00,00,00,00,00
 "StatusFlags"=dword:00000112
 @="termkbd.inf"
-
 ```
 
 Each chunk is in this format:
@@ -83,8 +81,8 @@ Each chunk is in this format:
 
 So I want to find every chunk that contains any entry whose value contains `"Cam Link 4K"` or `"Canon EOS M200"`, and then extract:
 
-* The first row of that chunk, which is the path to the registry key I need to edit
-* The entry itself
+- The first row of that chunk, which is the path to the registry key I need to edit
+- The entry itself
 
 Then --- in theory --- I've got a handful of registry entries in a file, which I can edit in VS Code or something, import it into regedit, and presto! rename all the things.
 
@@ -96,9 +94,9 @@ Yeah... VS Code won't do that.
 
 TextPad wouldn't do it either... 
 
-<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:tr4fmad7fpxeyaw26ky4esys/app.bsky.feed.post/3luubl42orc2h" data-bluesky-cid="bafyreidacemb5flajbdozv2ac7ga4vuh4zgk2es4t6jo5wbgzm6oow6qcu" data-bluesky-embed-color-mode="system"><p lang="en">But it&#x27;s OK. We solved this problem. We solved it BEFORE I WAS BORN. The beardy wizard people who created Unix knew all about editing files that wouldn&#x27;t fit in memory, because they built Unix for computers that had an ENTIRE MEGABYTE of RAM... which you had to share with the rest of the university.</p>&mdash; Dylan Beattie (<a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys?ref_src=embed">@dylanbeatt.ie</a>) <a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys/post/3luubl42orc2h?ref_src=embed">26 July 2025 at 10:42</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:tr4fmad7fpxeyaw26ky4esys/app.bsky.feed.post/3luubl42orc2h" data-bluesky-cid="bafyreidacemb5flajbdozv2ac7ga4vuh4zgk2es4t6jo5wbgzm6oow6qcu" data-bluesky-embed-color-mode="system"><p lang="en">But it&#x27;s OK. We solved this problem. We solved it BEFORE I WAS BORN. The beardy wizard people who created Unix knew all about editing files that wouldn&#x27;t fit in memory, because they built Unix for computers that had an ENTIRE MEGABYTE of RAM... which you had to share with the rest of the university.</p>&mdash; Dylan Beattie (<a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys?ref\_src=embed">@dylanbeatt.ie</a>) <a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys/post/3luubl42orc2h?ref\_src=embed">26 July 2025 at 10:42</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
-Yep, this is a job for awk. You probably don't know what awk is. Awk is a stream-based editing utility originally created for Unix. So I asked Copilot to write me an awk script. *(what, you think I can remember how to write awk? University was a long time ago, friends...)*
+Yep, this is a job for awk. You probably don't know what awk is. Awk is a stream-based editing utility originally created for Unix. So I asked Copilot to write me an awk script. _(what, you think I can remember how to write awk? University was a long time ago, friends...)_
 
 ```awk
 BEGIN {
@@ -120,9 +118,9 @@ BEGIN {
 }
 ```
 
-Yeah, that's what awk looks like. Remember, this is the language that Larry Wall looked at, went “well, golly,I can do better than *that*”, and... invented Perl.
+Yeah, that's what awk looks like. Remember, this is the language that Larry Wall looked at, went “well, golly,I can do better than _that_”, and... invented Perl.
 
-Of course, it didn't work. Me & my little electric copilot buddy had missed two rather significant details... first, the `RS` record separator? We're trawling a file created by Windows regedit. It's using `\r\n`, not `\n`. Easy fix; change `RS = "\r?\n\r?\n" `*(and look, now it'll work cross-platform if I ever need to awk the Windows registry on macOS!)*
+Of course, it didn't work. Me & my little electric copilot buddy had missed two rather significant details... first, the `RS` record separator? We're trawling a file created by Windows regedit. It's using `\r\n`, not `\n`. Easy fix; change \`RS = "\\r?\\n\\r?\\n" \`_(and look, now it'll work cross-platform if I ever need to awk the Windows registry on macOS!)_
 
 Still doesn't work... because the Windows Registry Editor's Export feature creates text files that are encoded as `UTF16-LE`, and `awk` don't do `UTF16`. So I use VS Code to save the registry file as `UTF-8`, and off we go...
 
@@ -136,11 +134,11 @@ gawk -f filter.awk registry.txt > devices.txt
 
 &quot;Cam Link 4K&quot; appears 60 times - and the exact entry &quot;FriendlyName&quot;=&quot;Cam Link 4K&quot; accounts for 41 of those... crikey.
 
-That&#x27;s a lot of times.</p>&mdash; Dylan Beattie (<a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys?ref_src=embed">@dylanbeatt.ie</a>) <a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys/post/3luudsqop7c2h?ref_src=embed">26 July 2025 at 11:22</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+That&#x27;s a lot of times.</p>&mdash; Dylan Beattie (<a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys?ref\_src=embed">@dylanbeatt.ie</a>) <a href="https://bsky.app/profile/did:plc:tr4fmad7fpxeyaw26ky4esys/post/3luudsqop7c2h?ref\_src=embed">26 July 2025 at 11:22</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
 OK, let's figure out which one goes where.
 
-> I am assuming at this point that nothing in Windows is stupid enough to actually open, connect, etc. devices based on a field called `FriendlyName`. If I'm wrong, things are about to extremely hilarious indeed.
+> I am assuming at this point that nothing in Windows is stupid enough to actually open, connect, etc. devices based on a field called `FriendlyName`. If I'm wrong, things are about to get extremely hilarious indeed.
 
 So I use Textpad's really handy "sequence replace" feature, that'll let you use a regex to find something and then include an incrementing sequence number in the replacement expression:
 
@@ -209,5 +207,4 @@ I see you, Chris.
 
 I see you, and I salute you. 🫡
 
-Oh, and Microsoft: if we could get right-click, Rename... in the Device Manager? That'd be, like, just *swell.*
-
+Oh, and Microsoft: if we could get right-click, Rename... in the Device Manager? That'd be, like, just _swell._
