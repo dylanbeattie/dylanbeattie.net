@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		ol {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 8px;
+			margin: 0;
+			padding: 0;
+
+			li {
+				list-style-position: inside;
+				padding: 8px;
+				width: 100%;
+				box-sizing: border-box;
+				font-family: monospace;
+				color: white;
+				font-size: 0.8em;
+				border-radius: 4px;
+				float: left;
+				background-color: red;
+			}
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<h1>A Kind Of Blue</h1>
+	<p>239 (!) different ways to write the same shade of blue using modern CSS.
+	</p>
+	<h3>...what?</h3>
+	<p>OK, here's how it happens:</p>
+	<ul>
+		<li>Nine different ways to specify a color: named colors, hex codes, <code>rgb()</code>, <code>hsl()</code>, <code>hwb()</code>, <code>lab()</code>, <code>lch()</code>, <code>oklab()</code> and <code>oklch()</code></li>
+		<li>Four different hex codes (<code>#00f, #00ff, #0000ff, #0000ffff)</code></li>
+		<li>RGB values can be decimals (0-255) or percentages (0%-100%)</li>
+		<li>Anything with a <em>hue</em> component - so <code>hsl()</code>, <code>hwb()</code>, <code>lab()</code>, <code>lch()</code>, <code>oklab()</code> and <code>oklch()</code>?
+			 Hue is an angle. Angles in CSS can be degrees with no unit, degrees, radians, gradians, or turns.</li>
+		<li>lab and oklab take axis values which can be decimals or percentages</li>
+		<li>Color functions all have two different ways to specify opacity: <code>/ 1.0</code> and <code>/ 100%</code></li>
+	</ul>
+	<p>This is ONLY the <b>modern syntax</b>. Legacy syntax <code>(r,g,b)</code>, and aliases <code>rgba()</code> and <code>hsla()</code>
+		also still work, which probably adds another few dozen ways to say "the box is blue" that work in all modern browsers.
+	 </p>
+	<ol id="colors"></ol>
+	<script>
+		var ol = document.getElementById("colors");
+		fetch('blues.css')
+			.then(response => response.text())
+			.then(css => {
+				const lines = css.split('\n')
+					.filter(s => /color/.test(s))
+					.filter(s => !/\/\//.test(s))
+					.map(s => s.trim());
+				lines.forEach(line => {
+					if (/,/.test(line)) return;
+					var tokens = [line];
+					if (/\);/.test(line)) {
+						tokens.push(line.replace(");", ' / 1.0);'));
+						tokens.push(line.replace(");", ' / 100%);'));
+					}
+					tokens.forEach(css => {
+						const li = document.createElement('li');
+						li.style.cssText = "background-" + css;
+						li.innerHTML = css;
+						ol.appendChild(li);
+					});
+				});
+			})
+			.catch(error => console.error('Error:', error));
+	</script>
+</body>
+</html>
