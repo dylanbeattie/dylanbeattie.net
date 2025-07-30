@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS Has 239 Different Ways To Make Something Blue
-date: 2025-07-30T09:29:00
+date: 2025-07-30T09:15:00
 author: Dylan Beattie
 meta:
   og_description: Modern CSS has 239 different ways to make something blue. No, really.
