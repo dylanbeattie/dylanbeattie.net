@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS Has 239 Different Ways To Make Something Blue
-date: 2025-07-30T09:29:00
+date: 2025-07-30T09:15:00
 author: Dylan Beattie
 ---
 I'm making a new video course for Dometrain at the moment, and it's all about CSS - one of the three pillars of the open web, along with HTML and JavaScript. I love CSS, I've been working with it literally since it was invented, but I absolutely understand why so many developers don't enjoy working with it.
