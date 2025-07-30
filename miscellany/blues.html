@@ -12,16 +12,40 @@
     }
 
     ol {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 8px;
       margin: 0;
       padding: 0;
 
+      @media (max-width: 600px) {
+        li {
+          width: 100%;
+        }
+      }
+      @media (min-width: 600px) {
+        li {
+          width: calc(50% - 4px);
+        }
+      }
+
+      @media (min-width: 900px) {
+        li {
+          width: calc(33% - 4px);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        li {
+          width: calc(25% - 8px);
+        }
+      }
+
+
       li {
         list-style-position: inside;
         padding: 8px;
-        width: 100%;
         box-sizing: border-box;
         font-family: monospace;
         color: white;
@@ -44,7 +68,8 @@
     <li>Nine different ways to specify a color: named colors, hex codes,
       <code>rgb()</code>, <code>hsl()</code>, <code>hwb()</code>,
       <code>lab()</code>, <code>lch()</code>, <code>oklab()</code> and
-      <code>oklch()</code></li>
+      <code>oklch()</code>
+    </li>
     <li>Four different hex codes (<code>#00f, #00ff, #0000ff, #0000ffff)</code>
     </li>
     <li>RGB values can be decimals (0-255) or percentages (0%-100%)</li>
@@ -52,10 +77,12 @@
       <code>hwb()</code>, <code>lab()</code>, <code>lch()</code>,
       <code>oklab()</code> and <code>oklch()</code>?
       Hue is an angle. Angles in CSS can be degrees with no unit, degrees,
-      radians, gradians, or turns.</li>
+      radians, gradians, or turns.
+    </li>
     <li>lab and oklab take axis values which can be decimals or percentages</li>
     <li>Color functions all have two different ways to specify opacity:
-      <code>/ 1.0</code> and <code>/ 100%</code></li>
+      <code>/ 1.0</code> and <code>/ 100%</code>
+    </li>
   </ul>
   <p>This is ONLY the <b>modern syntax</b>. Legacy syntax <code>(r,g,b)</code>,
     and aliases <code>rgba()</code> and <code>hsla()</code>
