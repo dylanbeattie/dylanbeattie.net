@@ -7,7 +7,6 @@ meta:
   og_description: Modern CSS has 239 different ways to make something blue. No, really.
   og_image: /images/posts/css-has-239-ways-to-make-something-blue.jpg
   twitter_card: summary
-
 ---
 I'm making a new video course for Dometrain at the moment, and it's all about CSS - one of the three pillars of the open web, along with HTML and JavaScript. I love CSS, I've been working with it literally since it was invented, but I absolutely understand why so many developers don't enjoy working with it.
 
