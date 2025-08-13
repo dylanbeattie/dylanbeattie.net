@@ -1,10 +1,11 @@
 :root {
-    --fg-color: #fff;
-    --bg-color: #903;
+  --fg-color: #fff;
+  --bg-color: #903;
 }
 
 body {
-    color: var(--fg-color);
-    background-color: var(--bg-color);
+  color: var(--fg-color);
+  background-color: var(--bg-color);
 }
+
 
