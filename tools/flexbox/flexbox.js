@@ -111,8 +111,11 @@ document.querySelectorAll("input[name=content]").forEach(element => {
         });
         break;
       default:
-        let wordCount = Math.floor(Math.random() * 20) + 1;
-        div.innerHTML = makeRandomText(wordCount);
+        document.querySelectorAll("section > div").forEach(div => {
+          let wordCount = Math.floor(Math.pow(Math.random() * 5, 2)) + 1;
+          console.log(wordCount);
+          div.innerHTML = makeRandomText(wordCount);
+        });
         break;
     }
   });
@@ -134,6 +137,7 @@ function makeRandomText(wordCount) {
     }
     words.push(word);
   }
+  return words.join(' ');
 }
 
 function html(tagName, attributes, innerText) {
