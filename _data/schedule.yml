@@ -1,3 +1,15 @@
+- isodate: 2025-12-03 12:00:00
+  title: BuildStuff
+  date: 3-5 December 2025
+  city: Vilnius, Lithuania
+  country: "LT"
+  url: https://buildstuff.events/
+- isodate: 2025-11-05 12:00:00
+  title: Øredev
+  date: 5-7 November 2025
+  city: Malmö, Sweden
+  country: "SE"
+  url: https://oredev.org/
 - isodate: 2025-10-27 12:00:00
   title: Tweakers Developer Summit
   date: 28 October 2025
@@ -16,6 +28,17 @@
   city: Porto, Portugal
   country: "PT"
   url: https://ndcporto.com/
+- isodate: 2025-10-13 12:00:00
+  title: Azure Developer Summit
+  date: 13-16 October 2025
+  city: Lisbon, Portugal
+  country: "PT"
+- isodate: 2025-10-09 12:00:00
+  title: Zabbix Summit
+  date: 9-10 October 2025
+  city: Riga, Latvia
+  country: "LV"
+  url: https://www.zabbix.com/events/zabbix_summit_2025  
 - isodate: 2025-09-25 12:00:00
   title: Scotsoft 2025
   date: 25 September 2025
