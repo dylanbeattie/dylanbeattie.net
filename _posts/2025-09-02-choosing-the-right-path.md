@@ -4,11 +4,17 @@ title: Choosing the Right Path
 date: 2025-09-02T08:56:00
 author: Dylan Beattie
 ---
-Somebody pinged me on LinkedIn earlier today with a question:
+[Srijan Singh](https://www.linkedin.com/in/srijan-dev/) pinged me on LinkedIn earlier today with a question:
 
 > I’m in my early career as a backend dev at IBM, and something I often wonder about is choosing the right path: whether to stick with a big company and learn deeply, or test myself in a startup environment (remote vs in-person adds to the mix too). Since you’ve navigated such diverse experiences, I’d love to hear how you’d approach that decision early on.
 
-Well, let's start with the obvious answer, which is how I _did_ approach that decision early on... I was lucky enough that I didn't really have to think about it. I loved working with computers, writing code and building websites, and if I was getting paid money to do that I was happy. I got my first graduate role in 2000, via one of my housemates who was working as a recruiter; three years later one of our clients, Spotlight, asked me to work for them full-time; fifteen years after that, I got head-hunted by Skills Matter to become their CTO; they went bankrupt in 2019, I set up my own company, [Ursatile](https://ursatile.com/), and I've been independent ever since.
+I quite enjoy getting these kinds of questions, but as [Scott Hanselman wrote way back in 2010](https://www.hanselman.com/blog/do-they-deserve-the-gift-of-your-keystrokes):
+
+> _&#160;If you email someone one on one, you're reaching that one person. If you blog about it, you get the message out on the web itself and your keystrokes travel farther and reach more people. Assuming you want your message to reach as many people as possible, blog it. You only have so many hours in the day._
+
+So here's my answer to Srijan's question, as a blog post.
+
+Let's start with the simple answer, which is how I _did_ approach that decision early on... I didn't, really. I was lucky enough that I didn't really have to think about it. I loved working with computers, writing code, and building websites, and if I was getting paid money to do that I was happy. I landed my first graduate role in 2000, via one of my housemates who was working as a recruiter; three years later one of our clients, Spotlight, asked me to work for them full-time; fifteen years after that, I got head-hunted by Skills Matter to become their CTO; they went bankrupt in 2019, I set up my own company, [Ursatile](https://ursatile.com/), and I've been independent ever since. To put this another way: I've had exactly two job interviews in my life, and one of those was to stack shelves in a grocery store when I was sixteen years old.
 
 That probably doesn't help, right? 😆
 
