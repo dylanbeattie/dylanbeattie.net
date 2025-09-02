@@ -38,7 +38,13 @@
   date: 9-10 October 2025
   city: Riga, Latvia
   country: "LV"
-  url: https://www.zabbix.com/events/zabbix_summit_2025  
+  url: https://www.zabbix.com/events/zabbix_summit_2025
+- isodate: 2025-10-03 12:00:00
+  title: Fronteers "Dark Mode"
+  date: 3 October 2025
+  city: Dordrecht, Netherlands
+  country: "NL"
+  url: https://fronteersconf.org/
 - isodate: 2025-09-25 12:00:00
   title: Scotsoft 2025
   date: 25 September 2025
