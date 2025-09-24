@@ -1,3 +1,9 @@
+- isodate: 2026-01-26 12:00:00
+  title: NDC London
+  date: 26-30 January 2026
+  city: London, UK
+  country: "GB"
+  url: https://ndclondon.com/
 - isodate: 2025-12-03 12:00:00
   title: BuildStuff
   date: 3-5 December 2025
@@ -33,6 +39,7 @@
   date: 13-16 October 2025
   city: Lisbon, Portugal
   country: "PT"
+  url: https://azuredevsummit.com/
 - isodate: 2025-10-09 12:00:00
   title: Zabbix Summit
   date: 9-10 October 2025
