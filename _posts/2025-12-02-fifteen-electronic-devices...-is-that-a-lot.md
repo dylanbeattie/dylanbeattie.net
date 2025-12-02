@@ -4,7 +4,7 @@ title: Fifteen Electronic Devices... Is That A LOT?
 date: 2025-12-02T13:35:00
 author: Dylan Beattie
 ---
-Every airline's cabin baggage regulations are subtly different. 10kg plus a personal item. 10kg INCLUDING a personal item. 8kg plus a personal item. 8kg, plus a personal item of up to 2kg. 8kg plus a laptop, umbrella, walking cane OR a personal item up to 2kg. 23kg as long as it'll fit in the overhead locker _(go British Airways!)&#32;_
+Every airline's cabin baggage regulations are subtly different. 10kg plus a personal item. 10kg INCLUDING a personal item. 8kg plus a personal item. 8kg, plus a personal item of up to 2kg. 8kg plus a laptop, umbrella, walking cane OR a personal item up to 2kg. 23kg as long as it'll fit in the overhead locker _(go British Airways!)_
 
 For a long while LOT, Poland's national airline, would let you travel with "up to five dogs, cats, or ferrets, unless they are for commercial purposes", which is wonderful because the collective noun for ferrets in English is "business", as in "a business of ferrets", so technically on LOT you could take a business of ferrets with you, but not a business ferret. Alas, this particular wording has disappeared in a recent update to their website, but I did notice a new regulation that passengers are allowed a maximum of fifteen personal electronic devices (PEDs), defined as anything containing a lithium-ion battery. You know, the ones that are in literally every single device which exists these days but which very occasionally go on fire so airlines are understandably a bit flummoxed about exactly what to do about them.
 
