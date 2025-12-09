@@ -12,7 +12,7 @@ Before we get into the specifics, there are two things to bear in mind.
 
 One: ask yourself why you want to do this. What does "the next level" mean for you? Are you looking to promote your consultancy, or your training courses, or your software products? Do you want to become a professional speaker and actually get paid to give talks? Are you doing it 'cos you want to go places and meet people? Figure out what "success" looks like for you.
 
-Two: be realistic about how much work is involved. It took me \*seven years\* to go from my first user group lightning talk, back 2008, to my first international conference. If you think you can hack together some code, write a talk about it, stick it on Sessionize and three months later you're on your way to a major international event like NDC or Yow! or Devoxx... well, no. That's not how this works. Strap in; it's a long ride.
+Two: be realistic about how much work is involved. It took me _seven years_ to go from my first user group lightning talk, back 2008, to my first international conference. If you think you can hack together some code, write a talk about it, stick it on Sessionize and three months later you're on your way to a major international event like NDC or Yow! or Devoxx... well, no. That's not how this works. Strap in; it's a long ride.
 
 ### Year 1: Get Good
 
@@ -22,7 +22,7 @@ If you can't find user groups, look on Meetup.com. Yes, it's a horrible platform
 
 ### Year 2: Get Seen
 
-After user groups and meetups come the community conferences. Typically small, one-day events, with a few tracks, and usually free (or very cheap) to attend. For me, these were [the DDD events](https://en.wikipedia.org/wiki/Developer!\_Developer!\_Developer!#External\_links) \*(that's DDD as in Developers! Developers! Developers!, not to be confused with DDD as in Domain Driven Design)\* - a series of one-day free developer events around the UK, organised by volunteers, usually on a Saturday so people don't have to take time off work. They bring in a good crowd, they're a great way to get to know other presenters and people who are involved in tech events, and you'll almost certainly meet a few people who are on the programme committees for the bigger conferences.
+After user groups and meetups come the community conferences. Typically small, one-day events, with a few tracks, and usually free (or very cheap) to attend. For me, these were [the DDD events](https://en.wikipedia.org/wiki/Developer!\_Developer!\_Developer!#External\_links) _(that's DDD as in Developers! Developers! Developers!, not to be confused with DDD as in Domain Driven Design),&#32;_a series of one-day free developer events around the UK, organised by volunteers, usually on a Saturday so people don't have to take time off work. They bring in a good crowd, they're a great way to get to know other presenters and people who are involved in tech events, and you'll almost certainly meet a few people who are on the programme committees for the bigger conferences.
 
 Events like this are your chance to get noticed. Turn up the day before, join the pre-conference dinner and drinks, introduce yourself. Yeah, it's awkward when you don't know anybody. There will be other people there who don't know anybody and will appreciate you making the effort. Enjoy yourself, but don't end up doing tequila shots in a karaoke bar at 3am. Not now. You're there to give a talk, remember?
 
