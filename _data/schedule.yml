@@ -1,3 +1,33 @@
+- isodate: 2026-05-21 12:00:00
+  title: CodeCamp
+  date: 21 May 2026
+  city: Timisoara, Romania
+  country: "RO"
+  url: https://codecamp.ro/
+- isodate: 2026-05-05 12:00:00
+  title: NDC Toronto
+  date: 5-8 May 2026
+  city: Toronto, Canada
+  country: "CA"
+  url: https://ndctoronto.com/
+- isodate: 2026-03-07 12:00:00
+  title: Beauty in Code
+  date: 7 March 2026
+  city: Malmö, Sweden
+  country: "SE"
+  url: https://beautyincode.se/
+- isodate: 2026-02-04 12:00:00
+  title: Swetugg
+  date: 3-4 February 2026
+  city: Stockholm, Sweden
+  country: "SE"
+  url: https://www.swetugg.se/stockholm/2026/sessions/algorithms-demystified
+- isodate: 2026-02-03 12:00:00
+  title: JFokus
+  date: 3 February 2026
+  city: Stockholm, Sweden
+  country: "SE"
+  url: https://www.jfokus.se/speakers.html?showid=15249
 - isodate: 2026-01-26 12:00:00
   title: NDC London
   date: 26-30 January 2026
