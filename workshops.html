@@ -9,31 +9,57 @@ permalink: /workshops
 | sort: "sequence" %}
 
 <article>
-  <h2>Workshops and Courses</h2>
-  <p>I've been running classroom training for software professionals since 2016. Drawing on over
-    15 years' experience designing large-scale software applications, running software development
-    teams, and speaking at meetups and conferences, I've taught developers to build hypermedia APIs,
-    I've run a fast-track 'introduction to .NET Core' course aimed at developers looking to switch
-    to the Microsoft .NET platform, and I run workshops aimed at helping
-    software professionals improve their communication and presentation skills.</p>
-    <p><strong>Interested in booking a workshop? Email <a href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> and let’s talk.</strong></p>
-  <ul>
+	<h2>Workshops and Masterclasses</h2>
+	<p>I've been running classroom training for software professionals since 2016.
+		Drawing on over
+		15 years' experience designing large-scale software applications, running
+		software development
+		teams, and speaking at meetups and conferences, I've taught developers to
+		build hypermedia APIs,
+		I've run a fast-track 'introduction to .NET Core' course aimed at developers
+		looking to switch
+		to the Microsoft .NET platform, and I run workshops aimed at helping
+		software professionals improve their communication and presentation skills.
+	</p>
+	<p><strong>Interested in booking a workshop? Email <a
+				href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> and
+			let’s talk.</strong></p>
+	<!-- <ul>
     {% for workshop in workshops %}
     <li>
       <a href="#{{ workshop.slug }}">{{ workshop.title }}</a>
     </li>
     {% endfor %}
-  </ul>
-  {% for workshop in workshops %}
-  <section class="workshop-info">
-    <h4 id="{{workshop.slug}}"><a href="{{workshop.url}}">{{ workshop.title }}</a></h4>
-    <p>{{ workshop.summary }}</p>
-    <ul>
-      {% for bullet in workshop.bullets %}
-      <li>{{ bullet }}</li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{workshop.url}}">More details...</a></p>
-  </section>
-  {% endfor %}
+  </ul> -->
+</article>
+<article class="workshop-list">
+	{% for workshop in workshops %}
+	<section class="workshop-info">
+		<h4 id="{{workshop.slug}}"><a href="{{workshop.url}}">{{ workshop.title
+				}}</a></h4>
+		<p>{{ workshop.summary }}</p>
+		<ul>
+			{% for bullet in workshop.bullets %}
+			<li>{{ bullet }}</li>
+			{% endfor %}
+		</ul>
+		<p><a href="{{workshop.url}}">More details...</a></p>
+		{% if workshop.dates %}
+		{% assign upcoming_dates = workshop.dates | where_exp: "date", "date.isodate
+		>= site.time" | sort: "isodate" %}
+		{% for next_date in upcoming_dates %}
+		<div class="workshop-date">
+			<div>
+				<strong>{{ next_date.date }}</strong><br>
+				{{ next_date.time }}<br>
+				{{ next_date.venue }}<br>
+				{{ next_date.cost }}
+      </div>
+			{% if next_date.url %}<a href="{{ next_date.url }}" class="book-now">Book
+				now</a>{% endif %}
+		</div>
+		{% endfor %}
+		{% endif %}
+	</section>
+	{% endfor %}
 </article>

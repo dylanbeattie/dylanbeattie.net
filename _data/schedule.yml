@@ -508,11 +508,6 @@
   url: https://greece.cityjsconf.org
   city: Athens, Greece
   country: "GR"
-- isodate: 2022-05-21 12:00:00
-  title: ITKonekt TBC
-  date: 21 May 2022
-  city: Belgrade, Serbia
-  country: "RS"
 - isodate: 2022-05-19 12:00:00
   title: CodeCamp Festival
   date: 19 May 2022
@@ -819,3 +814,26 @@
   url: https://prognet.io/
   city: London, UK
   country: "GB"
+- isodate: 2017-11-12 12:00:00
+  title: DotNext
+  date: 12-13 November 2017
+  city: Moscow, Russia
+  country: "RU"
+- isodate: 2017-05-23 12:00:00
+  title: Sela Developer Practice
+  date: 23-25 May 2017
+  city: Tel Aviv, Israel
+  country: "IL"
+- isodate: 2017-05-19 12:00:00
+  title: DotNext
+  date: 19-20 May 2017
+  city: St Petersburg, Russia
+  country: "RU"
+
+- isodate: 2016-11-05 12:00:00
+  title: Tampere Goes Agile
+  date: 5 November 2016
+  city: Tampere, Finland
+  country: "FI"
+
+

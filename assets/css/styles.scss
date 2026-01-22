@@ -14,49 +14,44 @@
 @import "flags";
 @import "syntax";
 
-@include breakpoints(
-  (
-    wide: (
-      11281px,
-      11680px,
+@include breakpoints((wide: (1281px,
+      1680px,
     ),
-    normal: (
-      981px,
-      11280px,
+    normal: (921px,
+      1280px,
     ),
-    narrow: (
-      841px,
-      980px,
+    narrow: (841px,
+      920px,
     ),
-    narrower: (
-      737px,
+    narrower: (737px,
       840px,
     ),
-    mobile: (
-      481px,
+    mobile: (481px,
       736px,
     ),
-    mobilep: (
-      null,
+    mobilep: (null,
       480px,
     ),
-  )
-);
+  ));
 
 article {
   h1 {
     font-size: 120%;
     margin-bottom: 0.5em;
   }
+
   text-align: justify;
+
   cite {
     font-size: 0.8em;
     font-style: italic;
+
     &.byline {
       display: block;
       margin: 0.5em 0;
     }
   }
+
   blockquote {
     cite {
       display: block;
@@ -64,12 +59,14 @@ article {
       margin: 0.5em 0;
     }
   }
+
   hr {
     border-width: 1px 0 0 0;
     border-style: solid;
     border-color: _palette(accent, bg);
     margin: 20px 0;
   }
+
   div.panel {
     text-align: center;
     font-weight: bold;
@@ -90,21 +87,28 @@ article {
   img {
     max-width: 100%;
   }
+
   padding-bottom: 32px;
   border-bottom: 1px solid _palette(accent, bg);
   margin-bottom: 32px;
+
   table {
     font-size: 80%;
     border: 1px solid #000;
     border-collapse: collapse;
-    tr td, tr th {
+
+    tr td,
+    tr th {
       border: 1px solid #000;
       padding: 8px;
+
       code {
         font-family: monospace;
       }
+
       text-align: left;
     }
+
     tr th {
       font-weight: bold;
       background-color: lighten(_palette(fg-light), 25);
@@ -116,6 +120,7 @@ article {
   float: right;
   font-size: 0.8em;
   font-weight: normal;
+
   a {
     background-color: #ccc;
     padding: 2px;
@@ -130,15 +135,18 @@ div#sidebar {
       margin-top: 16px;
     }
   }
+
   section#about-me {
     img {
       border-radius: 10px;
       width: 100%;
     }
   }
+
   a {
     border: 0;
   }
+
   section#schedule {
     small {
       display: block;
@@ -147,6 +155,7 @@ div#sidebar {
       text-align: justify;
     }
   }
+
   div.schedule {
     p {
       font-size: 12px;
@@ -159,9 +168,11 @@ div#sidebar {
       line-height: 1.4em;
       position: relative;
       border-bottom: 1px solid #999;
+
       a {
         font-weight: bold;
         font-size: 14px;
+
         img {
           position: absolute;
           left: 0;
@@ -171,6 +182,7 @@ div#sidebar {
       }
     }
   }
+
   p {
     line-height: 1.6em;
     font-size: 0.8em;
@@ -187,12 +199,14 @@ div#sidebar {
       padding: 10px 0;
       border-top: 1px solid #000;
       height: 110px;
+
       img {
         width: 160px;
         height: 90px;
         float: left;
         margin-right: 10px;
       }
+
       p {
         font-size: 0.875em;
         line-height: 1.2em !important;
@@ -214,28 +228,33 @@ ul.archives {
     padding-top: 0.5em;
   }
 
-  & > li {
+  &>li {
     margin: 0;
     padding: 0;
-    & > ul {
+
+    &>ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
+
       h3 {
         font-size: 1em;
         margin: 0px;
         padding: 0px;
       }
 
-      & > li {
+      &>li {
         margin: 0;
         padding: 0;
-        & > ul {
+
+        &>ul {
           list-style-position: inside;
           list-style-type: disc;
           margin-bottom: 0;
-          & > li {
+
+          &>li {
             padding: 0;
+
             a {
               border: 0;
             }
@@ -248,10 +267,12 @@ ul.archives {
 
 div#mugshots {
   font-size: 0.8em;
+
   figure {
     a {
       text-decoration: none;
       border: 0;
+
       img {
         width: 100%;
         border-radius: 5px;
@@ -259,6 +280,7 @@ div#mugshots {
       }
     }
   }
+
   figcaption,
   cite {
     display: block;
@@ -272,6 +294,7 @@ div#video-player {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
+
   iframe {
     position: absolute;
     top: 0;
@@ -285,19 +308,23 @@ article ul.playlist {
   margin: 0;
   padding: 0;
   text-align: center;
+
   li {
     display: inline-block;
     text-align: center;
     font-size: 0.8em;
     line-height: 1.4em;
     height: 200px;
+
     a {
       border: 0px !important;
+
       strong {
         display: block;
         height: 60px;
       }
     }
+
     img {
       width: 224px;
       height: 126px;
@@ -305,8 +332,10 @@ article ul.playlist {
     }
   }
 }
+
 section#banner {
   position: relative;
+
   cite#banner-photo-credit {
     font-family: "Roboto", sans-serif;
     line-height: 10px;
@@ -318,6 +347,7 @@ section#banner {
     position: absolute;
     left: 0px;
     bottom: 0px;
+
     a {
       border: 0;
       color: #fff;
@@ -337,12 +367,13 @@ div.highlight {
     padding: 5px;
     line-height: 1.4em;
   }
+
   border: 1px solid #ccc;
   overflow-x: auto;
   margin: 8px 0;
 }
 
-p > code {
+p>code {
   border: 1px solid #ddd;
   background-color: #eee;
   font-family: Consolas, courier, monospace;
@@ -357,10 +388,12 @@ article {
       font-weight: bold;
       margin: 8px;
     }
+
     dd {
       margin-left: 16px;
     }
   }
+
   // img {
   //   border: 1px solid #000;
   //   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
@@ -381,23 +414,28 @@ article {
   //   }
   // }
 
-  iframe#youtube, iframe.youtube {
+  iframe#youtube,
+  iframe.youtube {
     width: 640px;
     height: 360px;
+
     @include breakpoint("<=mobile") {
       width: 100%;
       height: auto;
     }
   }
+
   img.screenshot {
     width: 100%;
     border: 0;
     box-shadow: none;
   }
+
   .twitter-tweet {
     display: block;
     margin: 10px auto;
   }
+
   h4 {
     margin-bottom: 16px;
   }
@@ -416,20 +454,25 @@ table.grid {
   font-size: 80%;
   border: 1px solid #999;
   border-collapse: collapse;
+
   tr:nth-child(even) {
     background-color: #eee;
   }
+
   tr {
+
     td,
     th {
       padding: 8px;
       border: 1px solid #999;
     }
+
     td:nth-child(4) {
       text-align: right;
     }
   }
 }
+
 a.book_now {
   float: right;
   padding: 16px;
@@ -447,6 +490,7 @@ dl.crossword-solutions {
   dt {
     font-weight: normal;
     margin-left: 2em;
+
     span.clue-number {
       display: inline-block;
       width: 2em;
@@ -454,18 +498,23 @@ dl.crossword-solutions {
       font-weight: bold;
     }
   }
+
   dd {
     span.clue-answer {
       font-weight: bold;
+
       &.trump {
         color: #c33;
       }
+
       &.biden {
         color: #33f;
       }
     }
+
     margin-left: 4em;
   }
+
   u {
     background-color: #ff9;
   }
@@ -478,14 +527,17 @@ section#booking-now {
   background-color: #006699;
   background-image: url(images/bg01.png);
   color: #fff;
+
   h3 {
     font-weight: 600;
     letter-spacing: -0.025em;
     margin: 0.2em 0;
   }
+
   a {
     color: #fff;
   }
+
   p {
     margin: 0.2em 0;
   }
@@ -502,6 +554,7 @@ ol.event-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+
   li {
     list-style: none;
     list-style-position: inside;
@@ -509,9 +562,21 @@ ol.event-list {
     padding: 8px 8px 8px 54px;
     background-position: left center;
     line-height: 1.2em;
+
     a {
       font-weight: bold;
     }
+  }
+}
+
+article.workshop-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2em;
+
+  @include breakpoint('<=normal') {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -520,10 +585,18 @@ section.workshop-info {
     background-color: _palette(accent, bg);
     color: _palette(accent, fg);
     padding: 8px;
+
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
   }
 
   p {
     padding-left: 16px;
+    &:last-child {
+      padding-bottom: 16px;
+    }
   }
 
   ul {
@@ -533,7 +606,37 @@ section.workshop-info {
   border-left: 2px solid _palette(accent, bg);
   border-bottom: 2px solid _palette(accent, bg);
   margin-bottom: 16px;
-  padding-bottom: 16px;
+
+  div.workshop-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px 0 16px 16px;
+    border-top: 2px solid _palette(accent, bg);
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: bold;
+      background: _palette(accent, bg);
+      color: _palette(accent, fg);
+      padding: 8px;
+
+      &::after {
+        content: '🡆';
+        font-size: 2em;
+      }
+
+      border-radius: 8px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: oklch(from _palette(accent, bg) calc(l - 0.1) c h);
+      }
+    }
+  }
 }
 
 ul#events-banner {
@@ -542,17 +645,21 @@ ul#events-banner {
   padding: 0;
   background-color: #333;
   color: #fff;
+
   li {
     padding: 8px;
+
     a {
       border-radius: 8px;
       color: #fff !important;
       text-decoration: none;
       font-size: 82.5%;
       padding: 8px 8px 8px 64px;
+
       &:hover {
         background-color: #000;
       }
+
       display: block;
       background-repeat: no-repeat;
       background-position: left 8px center;
@@ -574,25 +681,31 @@ a#dometrain-banner {
   background: linear-gradient(170deg, rgba(0, 102, 153, 1) 47%, rgba(0, 50, 76, 1) 100%);
   font-family: Poppins, sans-serif !important;
   padding: 0 0 12px 0;
+
   div {
     font-family: Poppins, sans-serif !important;
     color: #fff;
+
     h4 {
       font-family: Poppins, sans-serif !important;
       font-size: 160%;
       margin: -8px 0;
+
       span {
         font-weight: 100;
         font-size: 80%;
       }
     }
+
     p {
       margin: 2px 0;
     }
+
     em {
       display: block;
       font-size: 60%;
     }
+
     a {
       font-size: 80%;
       font-family: Poppins, sans-serif !important;
@@ -602,7 +715,8 @@ a#dometrain-banner {
       display: block;
       margin-bottom: -6px;
     }
-    background: rgba(0,0,0,0.5);
+
+    background: rgba(0, 0, 0, 0.5);
     background-image: url(/assets/images/dometrain-logo.png);
     background-size: 160px;
     background-repeat: no-repeat;
@@ -629,7 +743,8 @@ blockquote.testimonial {
 /* creates triangle */
 blockquote.testimonial:after {
   content: "";
-  display: block; /* reduce the damage in FF3.0 */
+  display: block;
+  /* reduce the damage in FF3.0 */
   position: absolute;
   bottom: -16px;
   right: 50px;
@@ -646,6 +761,7 @@ div.promo {
   color: #fff;
   font-size: 140%;
   margin: 16px 0;
+
   a {
     color: #fff;
   }

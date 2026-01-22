@@ -12,16 +12,23 @@ meta:
   og:
     image: /images/workshops/from-keyboard-to-keynote.jpg
 bullets:
-  - Creating a talk -- ideas, structure and content
+  - "Creating a talk: ideas, structure and content"
   - Building confidence with effective rehearsals
-  - Using slides, live demos, animation and multimedia
-  - Presenting online
+  - Using slides, animation, and multimedia
+  - Live demos and presenting code 
 testimonials:
   - I loved Dylan's energy and passion. I also took away loads of practical ways to improve my speaking skills.
   - I've done speaker training type things in the past so the material was not really new, but Dylan's way of presenting it is just SO MUCH better than previous training sessions.
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really engaging, and the participation element was enough to practice but not too much to feel overwhelmed
 dates:
+  - isodate: 2026-03-24 14:00:00
+    date: 24 & 25 March 2025
+    time: 14:00-17:30 UTC (2 half-days)
+    venue: Online (Zoom)
+    cost: £245 / £295
+    url: https://eventbrite.com/
+  
 ---
 
 <strong>{{ page.summary }}</strong>

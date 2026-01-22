@@ -3,7 +3,7 @@ layout: workshop
 title: Introduction to Distributed Systems with C# and .NET
 category: dotnet
 sequence: 2
-published: true
+published: false
 
 summary: "A hands-on workshop with Dylan Beattie, covering HTTP, REST, GraphQL, gRPC, RabbitMQ, and SignalR: what they do, why you would use them, and how they all work with C# and .NET."
 length: 2 days

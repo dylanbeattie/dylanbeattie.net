@@ -2,7 +2,7 @@
 layout: workshop
 title: Vanilla JavaScript Web Components
 category: web
-published: true
+published: false
 sequence: 3
 summary:
     An in-depth hands-on workshop about building interactive web components using modern JavaScript. No frameworks, no libraries; learn how to create fast, responsive user experiences, built with 100% native code.

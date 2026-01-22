@@ -2,7 +2,7 @@
 layout: workshop
 title: Building Static Websites with Jekyll and GitHub Pages
 category: web
-published: true
+published: false
 sequence: 4
 summary: |
     A one-day workshop that covers everything you need to know to build static websites using Jekyll, 

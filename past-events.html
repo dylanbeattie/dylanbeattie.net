@@ -5,6 +5,17 @@ permalink: /past-events
 ---
   <h2>Past Events</h2>
   <p>Yes, I go to a lot of places and do a lot of talks.</p>
+  {% assign countries = "" | split: "" %}
+  {% for event in site.data.schedule %}
+    {% unless countries contains event.country %}
+      {% assign countries = countries | push: event.country %}
+    {% endunless %}
+  {% endfor %}
+  <div class="country-flags">
+    {% for country in countries %}
+      <img src="/assets/css/images/flags/flat/48/{{ country }}.png" alt="{{ country }}" title="{{ country }}" />
+    {% endfor %}
+  </div>
   {% assign year = site.time | date: "%Y" %}
   {% assign count = 0 %}
   <hr />

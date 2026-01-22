@@ -2,7 +2,7 @@
 layout: workshop
 title: Real World REST with C# and .NET
 category: dotnet
-published: true
+published: false
 sequence: 5
 length: 2 days
 

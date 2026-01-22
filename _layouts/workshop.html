@@ -8,7 +8,31 @@ layout: default
 			<div class="col-9 col-12-narrower">
 				<div id="content">
 					<article class="{{ page.css-class }}">
-						<h1>{{ page.title }} </h1>
+						<h1>Workshops &raquo; {{ page.title }} </h1>
+
+						{% if page.dates %}
+						{% assign upcoming_dates = page.dates | where_exp: "date",
+						"date.isodate
+						>= site.time" | sort: "isodate" %}
+						{% if upcoming_dates %}
+						<section class="workshop-info">
+							{% for next_date in upcoming_dates %}
+							<div class="workshop-date">
+								<div>
+									<strong>{{ next_date.date }}</strong><br>
+									{{ next_date.time }}<br>
+									{{ next_date.venue }}<br>
+									{{ next_date.cost }}
+								</div>
+								{% if next_date.url %}<a href="{{ next_date.url }}"
+									class="book-now">Book
+									now</a>{% endif %}
+							</div>
+							{% endfor %}
+							{% endif %}
+						</section>
+						{% endif %}
+
 						{{ content }}
 					</article>
 				</div>
