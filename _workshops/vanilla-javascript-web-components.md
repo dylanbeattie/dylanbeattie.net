@@ -131,7 +131,7 @@ Attendees will need a laptop running a modern web browser (Chrome, Firefox or Mi
 
 [Dylan Beattie](https://dylanbeattie.net/about) created his first web page in 1992. With nearly 25 years' experience as a professional developer, he's worked on everything from static websites to distributed microservice architectures. Dylan is a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5002699) and the creator of the [Rockstar](https://codewithrockstar.com) esoteric programming language, and he's presented talks about technology and software development at conferences and events all over the world.
 
-Dylan's been building web applications using JavaScript since the late 1990s. His public JavaScript projects include [iPuzzler](https://dylanbeattie.github.io/ipuzzler/), an web component for publishing crossword puzzles on the web, and [Satriani](https://github.com/RockstarLang/rockstar/tree/master/satriani), a JavaScript interpreter for Rockstar. Dylan is online at [https://dylanbeattie.net/](https://dylanbeattie.net/) and on Twitter as [@dylanbeattie](https://twitter.com/dylanbeattie).
+Dylan's been building web applications using JavaScript since the late 1990s. His public JavaScript projects include [iPuzzler](https://dylanbeattie.github.io/ipuzzler/), an web component for publishing crossword puzzles on the web, and [Satriani](https://github.com/RockstarLang/rockstar/tree/master/satriani), a JavaScript interpreter for Rockstar. Dylan is online at [https://dylanbeattie.net/](https://dylanbeattie.net/) and on BlueSky as [@dylanbeatt.ie](https://bsky.app/profile/dylanbeatt.ie).
 
 
 

@@ -8,7 +8,7 @@ layout: default
 			<div class="col-9 col-12-narrower">
 				<div id="content">
 					<article class="{{ page.css-class }}">
-						<h1>Workshops &raquo; {{ page.title }} </h1>
+						<h1><a href="/workshops">Workshops</a> &raquo; {{ page.title }} </h1>
 
 						{% if page.dates %}
 						{% assign upcoming_dates = page.dates | where_exp: "date",
@@ -26,7 +26,10 @@ layout: default
 								</div>
 								{% if next_date.url %}<a href="{{ next_date.url }}"
 									class="book-now">Book
-									now</a>{% endif %}
+									now</a>
+                  {% else %}
+                  <a class="book-now">On Sale Soon!</a>
+                  {% endif %}
 							</div>
 							{% endfor %}
 							{% endif %}

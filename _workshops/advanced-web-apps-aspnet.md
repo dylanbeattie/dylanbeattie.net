@@ -1,6 +1,6 @@
 ---
 layout: workshop
-title: "Advanced Web Apps with ASP.NET 10"
+title: "Advanced Web Applications with ASP.NET Core 10"
 category: web
 published: true
 sequence: 1
@@ -16,8 +16,7 @@ length: 4 x half-days
 meta:
     description: "Learn to create powerful, responsive web applications using the advanced features of Microsoft's flagship development platform: from asynchronous programming patterns like channels and callbacks, to cutting-edge frontend technologies like Razor Components, Blazor, and SCSS. Explore advanced testing strategies for ASP.NET applications, and add observability into your .NET apps using OpenTelemetry and ASP.NET Aspire."
     keywords: dotnet, efcore, nodatime, css-grid, aspdotnet, dotnet mvc, fullstack, web
-    og:
-        image: /images/workshops/modern-webdev-with-dotnet.png
+    og_image: /images/workshops/aspnet-20260317.jpg
 
 testimonials_title: "Here’s what attendees have said about Dylan Beattie's .NET workshops:"
 testimonials:
@@ -32,55 +31,8 @@ dates:
     date: 17-20 March 2026
     time: 14:00-17:30 UTC (4 half-days)
     venue: Online (Zoom)
-    cost: £325 / £475
-    url: https://eventbrite.com/
-  - isodate: 2026-03-28 12:00:00
-    date: 28-29 March 2026
-    time: 09:00-17:00 UTC
-    venue: NDC Santiago
-    cost: $2100 / $2500
-    url: https://ndcsantiago.com/
-# dates:
-#  - isodate: 20240610
-#    date: 10-11 June 2024
-#    time: 09:00-16:00 CET (Norway)
-#    venue: NDC Oslo 2024
-#    cost: 15,490 NOK
-#    href: https://ndcoslo.com/tickets
-
-# dates:
-#  - isodate: 20240610
-#    date: 10-11 June 2024
-#    time: 09:00-16:00 CET (Norway)
-#    venue: NDC Oslo 2024
-#    cost: 15,490 NOK
-#    href: https://ndcoslo.com/tickets
-
-# -   isodate: 20241026
-#     date: 26 & 27 October 2021
-#     time: 10:00-17:00 EEST (Bucharest)
-#     venue: Online
-#     partner: Hosted by Codecamp RO
-#     partner_logo: codecamp.png
-#     cost: 580 EUR
-#     href: https://codecamp.ro/masterclasses/pure-javascript-web-components/
-
-#    -   isodate: 20210417
-#        date: 17 & 18 April 2021
-#        time: 11:00-15:00 EET
-#        venue: Online
-#        partner: Hosted by fwdays Ukraine
-#        partner_logo: fwdays.png
-#        # cost: 3900 UAH
-#        href: https://fwdays.com/en/event/pure-javascript-web-components
-#    -   isodate: 20210427
-#        date: 27 & 28 April 2021
-#        time: 09:30-17:30 BST
-#        venue: Online
-#        partner: Hosted by Fusion Workshops
-#        partner_logo: fusion.png
-#        # cost: £300 - £600 + VAT
-#        href: https://www.eventbrite.co.uk/e/pure-javascript-web-components-online-workshop-tickets-141301232791
+    cost: £375 / £475
+    url: https://www.eventbrite.com/e/1981392797194?aff=oddtdtcreator
 ---
 
 <strong>{{ page.summary }}</strong>
