@@ -28,8 +28,9 @@ testimonials:
 
 dates:
   - isodate: 2026-03-17 14:00:00
+    time: 14:00-17:30 UTC
+    duration: 4 half-days
     date: 17-20 March 2026
-    time: 14:00-17:30 UTC (4 half-days)
     venue: Online (Zoom)
     cost: £375 / £475
     url: https://www.eventbrite.com/e/1981392797194?aff=oddtdtcreator
@@ -58,9 +59,7 @@ We'll use asynchronous patterns and channels to build lightning-fast web apps wh
 
 This is a hands-on, interactive workshop: we'll be sharing code throughout using GitHub and VS LiveShare, you'll go home with a fully working copy of the sample application, and all the workshop code is published under the MIT license so you can use it for whatever you like.
 
-Application code is all built on .NET 10 using C# 14, so we can use new C# language features like primary constructors and collection expressions.
-
-You'll also get to learn about many of my favourite developer tools like zoxide, oh-my-posh, MailTrap, Papercut, Postman, and ngrok: they're not specific to .NET, but they do make building and testing .NET applications a lot easier.
+Application code is all built on .NET 10 using C# 14, so we can use all the latest C# language features, and you'll also get to learn about many of my favourite developer tools like zoxide, oh-my-posh, MailTrap, Papercut, Postman, and ngrok: they're not specific to .NET, but they do make building and testing .NET applications a lot easier.
 
 ### Testimonials
 

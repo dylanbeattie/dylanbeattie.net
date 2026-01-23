@@ -12,7 +12,6 @@ bullets:
     - File-based apps - no more .csproj
     - Native AoT and WASM Support
     - And much more...
-length: 2 x half-days
 meta:
     description: ".NET 10 and C# 14, released in November 2025, introduce .NET developers to a host of new language features, 
     patterns, workflows and capabilities. In this hands-on workshop, we'll learn what they are, why they were added, and how
@@ -32,6 +31,7 @@ dates:
   - isodate: 2026-05-20 09:00:00
     date: 20 May 2026
     time: 09:00-17:00
+    duration: 1 day
     venue: CodeCamp Timisoara, Romania
     cost: TBC
 #    url: https://registration.socio.events/e/codecampintimisoara2026

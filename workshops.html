@@ -8,7 +8,7 @@ permalink: /workshops
 | where: "published", true
 | sort: "sequence" %}
 
-<article>
+<article style="margin-bottom: 16px; padding-bottom: 0; border-width: 0;">
 	<h2>Workshops and Masterclasses</h2>
 	<p>I've been running classroom training for software professionals since 2016.
 		Drawing on over
@@ -52,6 +52,7 @@ permalink: /workshops
 			<div>
 				<strong>{{ next_date.date }}</strong><br>
 				{{ next_date.time }}<br>
+        {{ next_date.duration }}<br>
 				{{ next_date.venue }}<br>
 				{{ next_date.cost }}
       </div>

@@ -27,7 +27,8 @@ testimonials:
 dates:
   - isodate: 2026-03-24 14:00:00
     date: 24 & 25 March 2025
-    time: 14:00-17:30 UTC (2 half-days)
+    time: 14:00-17:30 UTC
+    duration: 2 half-days
     venue: Online (Zoom)
     cost: £245 / £295
     url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649

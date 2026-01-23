@@ -581,10 +581,33 @@ article.workshop-list {
 }
 
 section.workshop-info {
+  border: 2px solid _palette(accent, bg);
+  border-radius: 8px;
+  position: relative;
+  > p, > ul, > div {
+    margin: 16px;
+  }
+  ul {
+    margin: 8px 0 8px 32px;
+    padding: 0;
+    list-style-position: outside;
+    list-style-type: square;
+    li {
+      padding-left: 0;
+      text-align: left;
+      &::marker {
+        color: _palette(accent, bg);
+      }
+    }
+  }
+
+
   h4 {
     background-color: _palette(accent, bg);
     color: _palette(accent, fg);
-    padding: 8px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    text-align: left;
 
     a:hover {
       color: #fff;
@@ -592,29 +615,17 @@ section.workshop-info {
     }
   }
 
-  p {
-    padding-left: 16px;
-    &:last-child {
-      padding-bottom: 16px;
-    }
-  }
-
-  ul {
-    padding-left: 48px;
-  }
-
-  border-left: 2px solid _palette(accent, bg);
-  border-bottom: 2px solid _palette(accent, bg);
-  margin-bottom: 16px;
-
   div.workshop-date {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 16px 0 16px 16px;
-    border-top: 2px solid _palette(accent, bg);
+    &:not(:first-child) {
+      padding: 8px 0 0 0;
+      border-top: 2px solid _palette(accent, bg);
+    }
 
     a {
+      flex-basis: 8em;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -625,8 +636,8 @@ section.workshop-info {
       padding: 8px;
 
       &::after {
-        content: '🡆';
-        font-size: 2em;
+        content: '▶\FE0E';
+        font-size: 1.4em;
       }
 
       border-radius: 8px;
