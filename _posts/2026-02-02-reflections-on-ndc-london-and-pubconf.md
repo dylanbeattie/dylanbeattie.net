@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reflections on NDC London and PubConf
-date: 2026-02-02T18:33:00
+date: 2026-02-02T16:30:00
 author: Dylan Beattie
 ---
 NDC London was the first really big conference I ever went to - as a paying attendee, way back in 2014 (or was it 2013?), when I was trying to figure out ASP.NET MVC and jQuery and how to get all my team’s code out of Subversion and into this new Git thing everybody was talking about. 
