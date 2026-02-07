@@ -41,9 +41,37 @@ dates:
 
 Since .NET 5, Microsoft has shipped a new release of .NET and C# every year, adding a steady stream of features and capabilities to the world's most powerful development platform (yeah, I said it!)
 
-With .NET 10 and C# 14 in 2025, we've got a host of new C# language features to play with - from "extension everything", a new syntax for adding extension properties, methods, static members and even user-defined operators to existing classes, to new features supporting native compilation and AOT for smaller binaries and faster deployments, to file-based apps that let you run .cs files directly, and much more.
+With .NET 10 and C# 14 in 2025, we've got a host of new C# language features to play with - from "extension everything", a new syntax for adding extension properties, methods, static members and even user-defined operators to existing classes, to new features supporting native compilation and AOT for smaller binaries and faster deployments, to file-based apps that let you run .cs files directly. ASP.NET Core adds new support for validating minimal APIs, new OpenAPI features, and server-side events, and EF Core 10 has better tooling for AI workflows with vector embeddings, support for complex types and JSON columns, and new LINQ optimisations to improve query performance.
 
 This workshop is aimed at experienced .NET developers who want to get hands-on with everything that's new and shiny in .NET 10. We'll be sharing code throughout using GitHub and VS LiveShare, you'll go home with a fully working copy of the sample application, and all the workshop code is published under the MIT license so you can use it for whatever you like.
+
+### Module 1: What's New in C#
+
+* Extensions everywhere: blocks, static extensions, extension operators
+* The `field` keyword
+* Partial constructors
+* Compound assignments and null-conditionals
+* User-defined operators - define your own `+=` and `++` operators
+
+### Module 2: Tooling and Deployment
+
+* Creating native executables with Native AoT
+* Using file-based apps - no more .csproj files
+* Building Docker images with native .NET
+* Deploy to the web with .NET WASM and JS interop
+
+### Module 3: What's New in ASP.NET Core 10
+
+* Validation patterns for minimal APIs
+* Interactive APIs with OpenAPI 3.1 support
+* JSON PATCH support for HTTP APIs
+* HTTP streaming with server-sent events (SSE)
+
+### Module 4: What's new in EF Core 10
+
+* Complex types
+* Embeddings, vector search and `VECTOR_DISTANCE()`
+* Mapping objects to JSON columns
 
 ### Testimonials
 
