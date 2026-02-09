@@ -32,7 +32,7 @@ dates:
     date: 20 May 2026
     time: 09:00-17:00
     duration: 1 day
-    venue: CodeCamp Timisoara, Romania
+    venue: Codecamp Timisoara, Romania
     cost: TBC
 #    url: https://registration.socio.events/e/codecampintimisoara2026
 ---
