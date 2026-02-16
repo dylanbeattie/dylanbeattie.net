@@ -9,7 +9,7 @@ redirect_from: "/kb2kn"
 summary: An interactive workshop for developers and technology professionals who are interested in public speaking. Learn how to create and deliver great technical talks and presentations.
 meta:
   og_description: "Learn to create & present great tech talks in this live online workshop led by Dylan Beattie."
-  og_image: /images/workshops/kb2kn-2026.jpg
+  og_image: /images/workshops/kb2kn-20260324.jpg
   twitter_card: summary_large_image
   keywords: public speaking, speaker training, slides, powerpoint, keynote, presentations, cfp, conferences, tech talks, meetups
   og:
