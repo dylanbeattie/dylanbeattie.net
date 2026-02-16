@@ -26,14 +26,14 @@ testimonials:
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really great organization and preparation. It shows that you have experience with this kind of workshops.
 
-dates:
-  - isodate: 2026-03-17 14:00:00
-    time: 14:00-17:30 UTC
-    duration: 4 half-days
-    date: 17-20 March 2026
-    venue: Online (Zoom)
-    cost: £375 / £475
-    url: https://www.eventbrite.com/e/1981392797194?aff=oddtdtcreator
+#dates:
+#  - isodate: 2026-03-17 14:00:00
+#    time: 14:00-17:30 UTC
+#    duration: 4 half-days
+#    date: 17-20 March 2026
+#    venue: Online (Zoom)
+#    cost: £375 / £475
+#    url: https://www.eventbrite.com/e/1981392797194?aff=oddtdtcreator
 ---
 
 <strong>{{ page.summary }}</strong>
