@@ -1,21 +1,22 @@
 ---
 layout: workshop
-title: Introduction to Distributed Systems with C# and .NET
+title: Building Distributed Systems with .NET 10
 category: dotnet
 sequence: 2
-published: false
+published: true
 
-summary: "A hands-on workshop with Dylan Beattie, covering HTTP, REST, GraphQL, gRPC, RabbitMQ, and SignalR: what they do, why you would use them, and how they all work with C# and .NET."
+summary: "A hands-on workshop with Dylan Beattie, covering HTTP, REST, GraphQL, gRPC, RabbitMQ, SignalR, and Aspire: what they do, why you would use them, and how they all work with the latest versions of C# and .NET."
 length: 2 days
 bullets:
   - What is a "distributed system" - and why does it matter?
-  - Building HTTP APIs using ASP.NET Core
+  - Decoupling workloads using queues and channels
+  - Working with HTTP APIs in ASP.NET Core
   - Working with message queues and RabbitMQ
   - Support SPAs and mobile devices using GraphQL
   - High-performance remote procedure calls with gRPC
   - Realtime browser communication with SignalR
 meta:
-  description: "A hands-on workshop with Dylan Beattie, covering HTTP, REST, GraphQL, gRPC, RabbitMQ, and SignalR: what they do, why you would use them, and how they all work with C# and .NET Core."
+  description: "A hands-on workshop with Dylan Beattie, covering HTTP, REST, GraphQL, gRPC, RabbitMQ, SignalR, and Aspire: what they do, why you would use them, and how they all work with the latest versions of C# and .NET."
   keywords: training, architecture, dotnet, c#, .net, rabbitmq, rest, http, graphql, grpc, signalr
   og:
     image: /images/workshops/intro-to-distributed-systems-dotnet.png
@@ -28,52 +29,58 @@ dates:
 ---
 <strong>{{ page.summary }}</strong>
 
-Once upon a time, software was simple. You built a website, connected it to a database, and you were done. Then customers started asking for APIs, mobile apps, notification emails, realtime chat... Today, cloud hosting lets us build "elastic" systems -- websites that automatically scale up to handle demand, using message queues and publish/subscribe patterns to handle spikes in traffic and workload without impacting your end users.
+Most software starts out pretty simple: front end, back end, maybe a database, and you're. Then the client wants an API, a mobile app, notification emails, realtime chat; cloud gives you elastic hosting, apps that dynamically scale based on workload and traffic, and if you're just starting out with distributed systems design, the possibilities can be overwhelming. APIs, message queueing, REST, GraphQL, gRPC... what should you choose, how does it work, how do you get started? 
 
-If you're just starting out with distributed systems design, the possibilities can be overwhelming. APIs, message queueing, REST, GraphQL, gRPC... what should you choose, how does it work, how do you get started? 
+This workshop gives you a hands-on introduction to the most important messaging patterns used in modern application development. Using C# and .NET, we'll build a series of small example apps and services, wire them together using these patterns, and discuss how - and why - you'd apply the same patterns in your own applications.
 
-This workshop gives you a hands-on introduction to the most important messaging patterns used in modern application development. Using C# and .NET, we'll build a series of small example apps and services, wire them together using these patterns, and discuss how -- and when -- you'd apply the same patterns in your own applications.
 ## Course Structure and Contents
 
 ### Introduction
+
 * What are “distributed systems”?
 * Monoliths and microservices
 * Common integration patterns
 * Principles of distributed architecture
 
-### HTTP, REST and Hypermedia 
+### HTTP, REST and Hypermedia
+
 * Designing HTTP APIs
 * Understanding REST
 * Working with HTTP APIs: testing and tooling
 * Interactive documentation with OpenAPI and Swagger
 
 ### Message queues and pub/sub
+
 * Principles of message queues
-* Message queueing in .NET with RabbitMQ and EasyNetQ
+* In-process queues using .NET channels
+* Distributed queues with RabbitMQ and EasyNetQ
 * Queueing strategies and error handling
 
 ### Protocol Buffers and gRPC
+
 * Introduction to Protocol Buffers
 * Contract-first development using protocol definitions
 * Cross-platform gRPC
 
-### GraphQL in ASP.NET
-* Introduction to GraphQL
-* Graph types, queries and schemas
-* GraphQL in context: the "backends for frontends" pattern
-
 ### Connecting to the Web
+
 * Integrating browsers with distributed systems
 * Protocols for realtime communication
 * Working with SignalR
+
+### Observability and Aspire
+
+* Adding instrumentation to your distributed apps
+* Principles of observability: spans, traces, metrics and logs
+* Distributed development with Aspire
 
 ## Target Audience and Prerequisites
 
 This workshop is aimed at developers with some experience writing applications using C# and Microsoft .NET.
 
-The workshop can be run in person or online. Attendees will be writing and running .NET code during the workshop, so will need a computer running Windows, macOS or Linux, and the Microsoft .NET 8 or 9 SDK from https://dotnet.microsoft.com/download.
+The workshop can be run in person or online. Attendees will be writing and running .NET code during the workshop, so will need a computer running Windows, macOS or Linux, and the Microsoft .NET 10  SDK from https://dotnet.microsoft.com/download.
 
-The sample application and examples used during the workshop all run on .NET 8, and are tested on Linux, macOS and Windows.
+The sample application and examples used during the workshop all run on .NET 10, and are tested on Linux, macOS and Windows.
 
 The ideal class size for this workshop is between 10–25 people. If you’d like to run it for a smaller or a larger group, please get in touch and let’s chat.
 

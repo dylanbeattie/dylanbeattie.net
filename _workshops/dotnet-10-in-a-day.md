@@ -33,8 +33,8 @@ dates:
     time: 09:00-17:00
     duration: 1 day
     venue: Codecamp Timisoara, Romania
-    cost: TBC
-#    url: https://registration.socio.events/e/codecampintimisoara2026
+    cost: €490 + VAT
+    url: https://codecamp.ro/masterclasses/net-10-in-a-day-timisoara-2026/
 ---
 
 <strong>{{ page.summary }}</strong>

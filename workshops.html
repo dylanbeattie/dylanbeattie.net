@@ -21,8 +21,8 @@ permalink: /workshops
 		to the Microsoft .NET platform, and I run workshops aimed at helping
 		software professionals improve their communication and presentation skills.
 	</p>
-	<p><strong>Interested in booking a workshop? Email <a
-				href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a> and
+	<p><strong>Interested in booking a workshop? Email <a href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a>
+			and
 			let’s talk.</strong></p>
 	<!-- <ul>
     {% for workshop in workshops %}
@@ -52,14 +52,22 @@ permalink: /workshops
 			<div>
 				<strong>{{ next_date.date }}</strong><br>
 				{{ next_date.time }}<br>
-        {{ next_date.duration }}<br>
+				{{ next_date.duration }}<br>
 				{{ next_date.venue }}<br>
 				{{ next_date.cost }}
-      </div>
+			</div>
 			{% if next_date.url %}<a href="{{ next_date.url }}" class="book-now">Book
 				now</a>{% endif %}
 		</div>
 		{% endfor %}
+		{% else %}
+		<div class="workshop-date">
+			<div>
+				<strong>No upcoming dates</strong><br>
+				Want to book this course?
+			</div>
+			<a class="book-now" href="mailto:dylan@dylanbeattie.net">Get in touch</a>
+		</div>
 		{% endif %}
 	</section>
 	{% endfor %}
