@@ -29,7 +29,7 @@ dates:
 ---
 <strong>{{ page.summary }}</strong>
 
-Most software starts out pretty simple: front end, back end, maybe a database, and you're. Then the client wants an API, a mobile app, notification emails, realtime chat; cloud gives you elastic hosting, apps that dynamically scale based on workload and traffic, and if you're just starting out with distributed systems design, the possibilities can be overwhelming. APIs, message queueing, REST, GraphQL, gRPC... what should you choose, how does it work, how do you get started? 
+Most software starts out pretty simple: front end, back end, maybe a database, and you're done. Then the client wants an API, a mobile app, notification emails, realtime chat; cloud gives you elastic hosting, apps that dynamically scale based on workload and traffic, and if you're just starting out with distributed systems design, the possibilities can be overwhelming. APIs, message queueing, REST, GraphQL, gRPC... what should you choose, how does it work, how do you get started?
 
 This workshop gives you a hands-on introduction to the most important messaging patterns used in modern application development. Using C# and .NET, we'll build a series of small example apps and services, wire them together using these patterns, and discuss how - and why - you'd apply the same patterns in your own applications.
 
