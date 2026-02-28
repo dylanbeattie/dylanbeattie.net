@@ -48,7 +48,7 @@ I'll leave you with a call to action. At the end of the day, Bruce Lawson - one 
 
 They need your help. If you're building web apps, or mobile apps, or any kind of software that targets Apple mobile devices, and you'd like to see a more robust transparency mechanism than "Apple promises to be nice if you ask nicely", get involved. Go here, tell them what you're working on, tell them why things like forcing Apple to allow browser engines other than Webkit on their iOS devices would be a Good Thing:
 
-[https://www.gov.uk/government/calls-for-evidence/proposed-commitments-from-apple-and-google-app-certainty-and-interoperable-access](https://www.gov.uk/government/calls-for-evidence/proposed-commitments-from-apple-and-google-app-certainty-and-interoperable-access)
+👉🏼 [https://www.gov.uk/government/calls-for-evidence/proposed-commitments-from-apple-and-google-app-certainty-and-interoperable-access](https://www.gov.uk/government/calls-for-evidence/proposed-commitments-from-apple-and-google-app-certainty-and-interoperable-access)
 
 And that's it for now. I'll see y'all on [https://twitch.tv/dylanbeattie](https://twitch.tv/dylanbeattie) on Monday afternoon, where I'll be beating Claude Code with a length of pipe until it stops lying to me, and then I'll be in Malmo on Saturday for [Beauty in Code 2026](https://beautyincode.se/), but right now I'm going to go and drink a very loud pint. 
 
