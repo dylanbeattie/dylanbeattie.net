@@ -42,7 +42,7 @@ And then Cassie Evans closed out the day in style live-coding (or rather, live-u
 
 By the time we head out, the sky's cleared and the setting winter sun is catching the curves and contours of the concrete and it's all so beautiful the only thing to do is go and reflect on it all over a nice glass of something, and so now I'm writing this in the corner of one of those post-event pubs where the acoustics are so bad everybody's shouting at everybody else because nobody can hear anybody anyway.
 
-If AI really is going to replace software development with a 24/7 diet of botslop and existential dread, somebody forgot to tell the web folks. State of the Web 2026 was a celebration of code, craft, open standards, collaboration and transparency, and not a ralph loop in sight.
+If AI really is going to replace software development with a 24/7 diet of botslop and existential dread, somebody forgot to tell the web folks. State of the Browser 2026 was a celebration of code, craft, open standards, collaboration and transparency, and not a ralph loop in sight.
 
 I'll leave you with a call to action. At the end of the day, Bruce Lawson - one of the genuinely excellent people who is working tirelessly to keep the web open and transparent and joyful - pointed us to an ongoing UK government inquiry about requiring Apple and Google to provide better interoperability and access to key features of those vendors' mobile devices and operating systems.
 
