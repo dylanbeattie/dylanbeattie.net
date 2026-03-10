@@ -4,7 +4,7 @@ title: Learning Claude Code, Part 1
 date: 2026-03-10T12:30:00
 author: Dylan Beattie
 ---
-I've been doing a series of live streams with Emmz Rendle over the last few weeks, getting up and running with Claude Code and using AI agents to write software. It's been really interesting, but it's also up to 15 hours of video and still running, and, well, quite a lot of it is us just chatting about stuff while Claude sits there grinding away on various little tasks... a bit like "Deal or No Deal", the bits that actually matter are relatively few and far between. So, in these posts I'm going to summarize the highlights of each video - what did we do, did it work, what did I learn along the way.
+I've been doing a series of live streams with [Emmz Rendle](https://rendle.dev/) over the last few weeks, getting up and running with Claude Code and using AI agents to write software. It's been really interesting, but it's also up to 15 hours of video and still running, and, well, quite a lot of it is us just chatting about stuff while Claude sits there grinding away on various little tasks... a bit like "Deal or No Deal", the bits that actually matter are relatively few and far between. So, in these posts I'm going to summarize the highlights of each video - what did we do, did it work, what did I learn along the way.
 
 So in part 1, this is getting started with Claude, starting from literally zero - setting up a plan, installing it, figuring out how to use it, and building my first Claude-Coded app.
 
