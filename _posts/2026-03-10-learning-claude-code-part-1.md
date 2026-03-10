@@ -29,12 +29,19 @@ Choose a model - type `/model` at the Claude prompt, it asks which model you wan
 The rest of this session, we're just working with Claude in a very unstructured, conversational way:
 
 > **Dylan**: please create a new app
+> 
 > **Claude**: What kind of app would you like to create? _(followed by a list of options - web app, API, full stack, CLI tool, or type something. We choose "web app")_
+> 
 > **Claude**: What's the purpose of the web app? Describe what it should do and any specific features you have in mind.
+> 
 > **Dylan**: I want to display a conference agenda based on information pulled from Sessionize's JSON endpoint
+> 
 > **Claude**: Do you have a Sessionize API endpoint or event ID?
+> 
 > **Dylan**: _(pastes in a URL)_
+> 
 > **Claude**: Which tech stack to you prefer? _(followed by options - Plain HTML/CSS/JS, React, Vue, or something else)_ 
+> 
 > **Dylan**: asp.net core 
 
 [57.22](https://youtu.be/TQfvEJ8f9oQ?t=3442) - `dotnet run` and there it is; an ASP.NET Core web app that displays a session grid based on a Sessionize JSON endpoint. (This is what is technically known as a "holy crap I can't believe that worked" moment.)
