@@ -32,7 +32,7 @@ dates:
     time: 14:00-17:30 UTC 
     duration: 2 half-days
     venue: Online (Zoom)
-    cost: £245 / £295
+    cost: £295
     url: https://www.eventbrite.com/e/1981391121181?aff=oddtdtcreator
 ---
 
