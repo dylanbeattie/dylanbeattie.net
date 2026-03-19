@@ -16,7 +16,7 @@ length: 4 x half-days
 meta:
     description: "Learn to create powerful, responsive web applications using the advanced features of Microsoft's flagship development platform: from asynchronous programming patterns like channels and callbacks, to cutting-edge frontend technologies like Razor Components, Blazor, and SCSS. Explore advanced testing strategies for ASP.NET applications, and add observability into your .NET apps using OpenTelemetry and ASP.NET Aspire."
     keywords: dotnet, efcore, nodatime, css-grid, aspdotnet, dotnet mvc, fullstack, web
-    og_image: /images/workshops/aspnet-20260317.jpg
+    og_image: /images/workshops/aspnet-20260414.jpg
 
 testimonials_title: "Here’s what attendees have said about Dylan Beattie's .NET workshops:"
 testimonials:
@@ -26,14 +26,14 @@ testimonials:
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really great organization and preparation. It shows that you have experience with this kind of workshops.
 
-#dates:
-#  - isodate: 2026-03-17 14:00:00
-#    time: 14:00-17:30 UTC
-#    duration: 4 half-days
-#    date: 17-20 March 2026
-#    venue: Online (Zoom)
-#    cost: £375 / £475
-#    url: https://www.eventbrite.com/e/1981392797194?aff=oddtdtcreator
+dates:
+  - isodate: 2026-04-14 14:00:00
+    time: 14:00-18:00 UTC
+    duration: 4 half-days
+    date: 14-17 April 2026
+    venue: Online (Zoom)
+    cost: £375
+    url: https://www.eventbrite.com/e/advanced-web-applications-with-aspnet-core-10-tickets-1981392797194
 ---
 
 <strong>{{ page.summary }}</strong>
