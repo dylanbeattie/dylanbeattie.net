@@ -23,7 +23,7 @@
 # Github won't allow it to be pushed in plaintext so it's base64 encoded.
 # THIS IS FINE. You can't do anything evil with this token.
 
-giscus_token_base64: "Z2l0aHViX3BhdF8xMUFBQVo1UVEwb09MeTRkdjNWZGsyX21sSlNPeEdKdXZ6NTZsVUxEem9EamhyS1AwRGNidGVmWURBbVZkZXhkUFk2R1dCR1NSRWZ6WlJVNlNO"
+giscus_token: "11AAAZ5QQ0oOLy4dv3Vdk2_mlJSOxGJuvz56lULDzoDjhrKP0DcbtefYDAmVdexdPY6GWBGSREfzZRU6SN"
 
 title: dylanbeattie.net
 email: dylan@dylanbeattie.net
