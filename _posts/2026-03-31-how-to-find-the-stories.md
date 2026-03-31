@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Find the Stories
-date: 2026-03-31T16:05:00
+date: 2026-03-31T15:05:00
 author: Dylan Beattie
 ---
 One of the folks who joined my presenter workshop last week (which was awesome, by the way!) emailed me this morning with a follow-up question:
@@ -34,7 +34,7 @@ The second story happened in 2024, en route from Hungary to Lithuania. I'd been 
 
 No big deal. I've got an Apple Airtag tracker in it. When we landed in Vilnius three hours later, I could see my luggage was still at Munich airport, so I filled out all the forms and whatnot, told them where I was staying; no problem. Next day after breakfast, I checked Apple's "Find My" app... and there was my luggage, somewhere in Bavaria, in the middle of the forest, miles away from anywhere.
 
-![A screenshot of Apple's \"Find my Device\" showing Dylan's Luggage in the Steigerwald Nature Park in Germany.](/images/posts/IMG_6537.PNG)
+![A screenshot of Apple's \\"Find my Device\\" showing Dylan's Luggage in the Steigerwald Nature Park in Germany.](/images/posts/IMG_6537.PNG)
 
 Apple's "find my device" network basically turns every iPhone on the planet into a node in a huge geolocation network, so I'm guessing what happened is an iPhone on board the plane could see my luggage's tag, and it was connected to the inflight wifi (or a cell tower) just long enough to register a location as the plane was flying over that particular spot. (Yes, I know the Steigerwald Nature Park is not actually on the way from Munich to Vilnius. No, I don't know either.)
 
