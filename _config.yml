@@ -19,11 +19,7 @@
 # This key is read-only and only grants access to public data, so it is safe to include in a
 # public repository. It is used to fetch comment previews for the Giscus commenting system
 # on the /blog page
-
-# Github won't allow it to be pushed in plaintext so it's base64 encoded.
-# THIS IS FINE. You can't do anything evil with this token.
-
-giscus_token: "11AAAZ5QQ0oOLy4dv3Vdk2_mlJSOxGJuvz56lULDzoDjhrKP0DcbtefYDAmVdexdPY6GWBGSREfzZRU6SN"
+giscus_token_base64: "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"
 
 title: dylanbeattie.net
 email: dylan@dylanbeattie.net
