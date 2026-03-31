@@ -4,12 +4,30 @@
   city: Copenhagen, Denmark
   country: "DK"
   url: https://ndccopenhagen.com/
+- isodate: 2026-05-28 12:00:00
+  title: NN1 Dev Club
+  date: 28 May 2026
+  city: Northampton, UK
+  url: https://nn1.dev/events/12/
+  country: "GB"
 - isodate: 2026-05-21 12:00:00
   title: Codecamp
   date: 21 May 2026
   city: Timisoara, Romania
   country: "RO"
   url: https://codecamp.ro/
+- isodate: 2026-05-14 12:00:00
+  title: Geecon
+  date: 14-15 May 2026
+  url: https://2026.geecon.org/speakers/info.html?id=1078
+  city: Kraków, Poland
+  country: "PL"
+- isodate: 2026-05-11 12:00:00
+  title: Techorama
+  date: 11-13 May 2026
+  url: https://techorama.be/
+  city: Antwerp, Belgium
+  country: "BE"
 - isodate: 2026-05-05 12:00:00
   title: NDC Toronto
   date: 5-8 May 2026
