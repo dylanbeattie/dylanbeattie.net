@@ -65,4 +65,3 @@ Things I learned in this session:
 - Unlike a chatbot, Claude Code doesn't just reply to you; it can actually do stuff. Create files, run commands, retrieve content from URLs, connect to the network.
     - It's worth noting that, although it prompted me for permission before doing all this, I was running it on my main workstation just like I do any other developer tool and trusting that it wasn't going to do anything sinister. A more security-conscious user might have run Claude Code inside a virtual machine until they had a better idea what it was actually doing.
 - It can accept input in the form of screenshots (except you've got to use Alt-V to paste, not Ctrl-V? Don't ask me why. I don't know.) as well as text prompts.
-\`\`\`
