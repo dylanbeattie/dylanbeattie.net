@@ -14,6 +14,19 @@ og_description: Blog posts and articles by Dylan Beattie.
     &bull;
     <a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
   {{ post.content }}
+  {% assign post_path = post.url | remove_first: "/" | remove: ".html" %}
+  {% assign post_comments = site.data.comments_preview | where: "pathname", post_path | first %}
+  {% if post_comments and post_comments.count > 0 %}
+  <div class="comment-preview">
+    <p><a href="{{ post.url }}#giscus-comments">{{ post_comments.count }} comment{% if post_comments.count != 1 %}s{% endif %} &mdash; read or join the discussion</a></p>
+    {% for c in post_comments.comments limit:2 %}
+    <blockquote>
+      {{ c.excerpt }}<br>
+      &mdash; <strong>{{ c.author }}</strong>{% if c.created_at %}, {{ c.created_at | date: "%d %b %Y" }}{% endif %}
+    </blockquote>
+    {% endfor %}
+  </div>
+  {% endif %}
   <cite>"{{ post.title }}" was posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
     &bull;
     <a href="{{ site.url }}{{ post.url }}">permalink</a></cite>

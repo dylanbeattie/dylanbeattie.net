@@ -1,0 +1,30 @@
+name: Fetch Comment Previews
+
+on:
+  discussion_comment:
+    types: [created, edited, deleted]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  # hourly fallback
+
+permissions:
+  contents: write
+  discussions: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch discussions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/fetch_comments.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/comments_preview.yml
+          git diff --staged --quiet || (git commit -m "Update comment previews" && git push)
