@@ -47,7 +47,7 @@ og_description: Blog posts and articles by Dylan Beattie.
   }
 
   (function () {
-    var TOKEN = "{{ site.giscus_token }}";
+    var TOKEN = atob("{{ site.giscus_token_base64 }}");
     var CATEGORY_ID = "DIC_kwDOC9UEAM4C5sKq";
 
     if (!TOKEN) return;

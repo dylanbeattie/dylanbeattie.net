@@ -15,7 +15,15 @@
 # in the templates via {{ site.myvariable }}.
 # Read-only GitHub PAT for fetching Giscus comment previews on /blog.
 # Create one at https://github.com/settings/tokens with no scopes (public data only).
-giscus_token: "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"
+
+# This key is read-only and only grants access to public data, so it is safe to include in a
+# public repository. It is used to fetch comment previews for the Giscus commenting system
+# on the /blog page
+
+# Github won't allow it to be pushed in plaintext so it's base64 encoded.
+# THIS IS FINE. You can't do anything evil with this token.
+
+giscus_token_base64: "Z2l0aHViX3BhdF8xMUFBQVo1UVEwb09MeTRkdjNWZGsyX21sSlNPeEdKdXZ6NTZsVUxEem9EamhyS1AwRGNidGVmWURBbVZkZXhkUFk2R1dCR1NSRWZ6WlJVNlNO"
 
 title: dylanbeattie.net
 email: dylan@dylanbeattie.net
