@@ -16,11 +16,6 @@
 # Read-only GitHub PAT for fetching Giscus comment previews on /blog.
 # Create one at https://github.com/settings/tokens with no scopes (public data only).
 
-# This key is read-only and only grants access to public data, so it is safe to include in a
-# public repository. It is used to fetch comment previews for the Giscus commenting system
-# on the /blog page
-giscus_token_base64: "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"
-
 title: dylanbeattie.net
 email: dylan@dylanbeattie.net
 description: >- # this means to ignore newlines until "baseurl:"
@@ -38,6 +33,7 @@ markdown: kramdown
 highlighter: rouge
 
 theme: minima
+
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
