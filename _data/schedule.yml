@@ -587,16 +587,6 @@
   date: 17 August 2021
   city: Porto
   country: "PT"
-- isodate: 2021-08-17 12:00:00
-  title: SaltPay Meetup
-  date: 17 August 2021
-  city: Porto
-  country: "PT"
-- isodate: 2021-08-07 12:00:00
-  title: ".NET fwdays"
-  date: 7 August 2021
-  city: online
-  country: "internet"
 - isodate: 2021-08-07 12:00:00
   title: ".NET fwdays"
   date: 7 August 2021
@@ -675,7 +665,7 @@
   date: 9-11 November 2020
   url: https://gotocph.com/
   city: Copenhagen
-  country: "DK"
+  country: "internet"
 - isodate: 2020-10-20 12:00:00
   title: Brighton Web Dev Meetup
   date: 20 October 2020
@@ -826,23 +816,246 @@
   url: https://www.df19.nl/
   city: Utrecht, Netherlands
   country: "NL"
-- isodate: 2018-10-03 12:00:00
+- isodate: 2019-10-03 12:00:00
   title: Half a Day of .NET
   date: 3 October 2018
   url: https://cnug.dk/events/half-a-day-of-dot-net/
   city: Copenhagen, Denmark
   country: "DK"
+- isodate: 2019-09-26 12:00:00
+  title: DevConf
+  date: 26-27 September 2019
+  city: Kraków, Poland
+  country: "PL"
+- isodate: 2019-09-11 12:00:00
+  title: ProgNET 2019
+  date: 11-13 September 2019
+  city: London, England
+  country: "GB"
+- isodate: 2019-07-17 12:00:00
+  title: KCDC
+  date: 17-19 July 2019
+  city: Kansas City, MO, USA
+  country: "US"
+- isodate: 2019-07-10 12:00:00
+  title: FullStack London
+  date: 10-12 July 2019
+  city: London, England
+  country: "GB"
+- isodate: 2019-06-17 12:00:00
+  title: NDC Oslo 2019
+  date: 17-21 June 2019
+  city: Oslo, Norway
+  country: "NO"
+- isodate: 2019-06-18 12:00:00
+  title: Oslo Software Architecture Meetup
+  date: 18 June 2019
+  url: https://www.meetup.com/Oslo-Software-Architecture/events/262001802
+  city: Oslo, Norway
+  country: "NO"
+- isodate: 2019-06-08 12:00:00
+  title: .NET Summit
+  date: 8 June 2019
+  city: Minsk, Belarus
+  country: "BY"
+- isodate: 2019-05-23 12:00:00
+  title: DevSum
+  date: 23-24 May 2019
+  city: Stockholm, Sweden
+  country: "SE"
+- isodate: 2019-05-20 12:00:00
+  title: Techorama
+  date: 20-22 May 2019
+  city: Antwerp, Belgium
+  country: "BE"
+- isodate: 2019-05-15 12:00:00
+  title: DotNext Piter
+  date: 15-17 May 2019
+  city: St. Petersburg, Russia
+  country: "RU"
+- isodate: 2019-05-01 12:00:00
+  title: BeyondTech
+  date: 1-2 May 2019
+  city: London, UK
+  country: "GB"
+- isodate: 2019-04-13 12:00:00
+  title: ".NET fwdays"
+  date: 13 April 2019
+  city: Kyiv, Ukraine
+  country: "UA"
+  url: https://fwdays.com/en/event/dotnet-fwdays-2019
+- isodate: 2019-03-28 12:00:00
+  title: CodeFest
+  date: 28-30 March 2019
+  city: Novosibirsk, Russia
+  country: "RU"
+  url: https://codefest.ru/
+- isodate: 2019-02-28 12:00:00
+  title: NDC Porto
+  date: 28 February - 1 March 2019
+  city: Porto, Portugal
+  country: "PT"
+  url: https://ndcporto.com/
+- isodate: 2019-02-07 12:00:00
+  title: Swetugg
+  date: 7-8 February 2019
+  city: Stockholm, Sweden
+  country: "SE"
+  url: https://www.swetugg.se/
+- isodate: 2019-01-30 12:00:00
+  title: NDC London
+  date: 30 January - 1 February 2019
+  city: London, UK
+  country: "GB"
+  url: https://ndclondon.com/
+- isodate: 2018-12-01 12:00:00
+  title: DevTernity
+  date: 1 December 2018
+  city: Riga, Latvia
+  country: "LV"
+  url: https://devternity.com/
+- isodate: 2018-11-22 12:00:00
+  title: DotNext
+  date: 22-23 November 2018
+  city: Moscow, Russia
+  country: "RU"
+  url: https://dotnext-piter.ru/
+- isodate: 2018-11-14 12:00:00
+  title: BuildStuff
+  date: 14-16 November 2018
+  city: Vilnius, Lithuania
+  country: "LT"
+  url: https://buildstuff.events/
+- isodate: 2018-10-26 12:00:00
+  title: .NET Fest
+  date: 26-27 October 2018
+  city: Kyiv, Ukraine
+  country: "UA"
+- isodate: 2018-10-13 12:00:00
+  title: LeetSpeak
+  date: 13 October 2018
+  city: Malmö, Sweden
+  country: "SE"
+- isodate: 2018-10-08 12:00:00
+  title: Tech Nottingham
+  date: 8 October 2018
+  city: Nottingham, UK
+  country: "GB"
+- isodate: 2018-09-27 12:00:00
+  title: ScotSoft
+  date: 27 September 2018
+  city: Edinburgh, Scotland
+  country: "scotland"
+- isodate: 2018-09-19 12:00:00
+  title: NDC Sydney
+  date: 19-21 September 2018
+  city: Sydney, Australia
+  country: "AU"
+  url: https://ndcsydney.com/
 - isodate: 2018-09-11 12:00:00
   title: ProgNET
   date: 11-13 September 2018
   url: https://prognet.io/
   city: London, UK
   country: "GB"
+- isodate: 2018-07-11 12:00:00
+  title: FullStack
+  date: 11-13 July 2018
+  city: London, UK
+  country: "GB"
+- isodate: 2018-06-13 12:00:00
+  title: NDC Oslo
+  date: 13-15 June 2018
+  city: Oslo, Norway
+  country: "NO"
+  url: https://ndcoslo.com/
+- isodate: 2018-06-05 12:00:00
+  title: .NET Sheffield
+  date: 5 June 2018
+  city: Sheffield, UK
+  country: "GB"
+- isodate: 2018-05-31 12:00:00
+  title: DevSum
+  date: 31 May - 1 June 2018
+  city: Stockholm, Sweden
+  country: "SE"
+- isodate: 2018-05-29 12:00:00
+  title: DevDays Riga
+  date: 29 May 2018
+  city: Riga, Latvia
+  country: "LV"
+- isodate: 2018-05-09 12:00:00
+  title: NDC Minnesota
+  date: 9-11 May 2018
+  city: Minneapolis, Minnesota
+  country: "US"
+  url: https://ndcminnesota.com/
+- isodate: 2018-04-22 12:00:00
+  title: DotNext
+  date: 22-23 April 2018
+  city: St Petersburg, Russia
+  country: "RU"
+  url: https://dotnext-piter.ru/
+- isodate: 2018-03-31 12:00:00
+  title: CodeFest
+  date: 31 March - 1 April 2018
+  city: Novosibirsk, Russia
+  country: "RU"
+  url: https://codefest.ru/
+- isodate: 2018-03-14 12:00:00
+  title: NDC Mini Copenhagen
+  date: 14-16 March 2018
+  city: Copenhagen, Denmark
+  country: "DK"
+  url: https://ndccopenhagen.com/
+- isodate: 2018-01-17 12:00:00
+  title: NDC London
+  date: 17-19 January 2018
+  city: London, UK
+  country: "GB"
+  url: https://ndclondon.com/
+- isodate: 2017-11-29 12:00:00
+  title: Hull Devs
+  date: 29 November 2017
+  city: Hull, UK
+  country: "GB"
+- isodate: 2017-11-15 12:00:00
+  title: BuildStuff
+  date: 15-17 November 2017
+  city: Vilnius, Lithuania
+  country: "LT"
+  url: https://buildstuff.events/
 - isodate: 2017-11-12 12:00:00
   title: DotNext
   date: 12-13 November 2017
   city: Moscow, Russia
   country: "RU"
+- isodate: 2017-10-28 12:00:00
+  title: "Get.NET"
+  date: 28 October 2017
+  city: Gdansk, Poland
+  country: "PL"
+- isodate: 2017-09-23 12:00:00
+  title: ".NET Summit"
+  date: 23 September 2017
+  city: Minsk, Belarus
+  country: "BY"
+- isodate: 2017-09-13 12:00:00
+  title: ProgNET
+  date: 13-15 September 2017
+  city: London, UK
+  country: "GB"
+- isodate: 2017-07-12 12:00:00
+  title: FullStack
+  date: 12-14 July 2017
+  city: London, UK
+  country: "GB"
+- isodate: 2017-06-14 12:00:00
+  title: NDC Oslo
+  date: 14-16 June 2017
+  city: Oslo, Norway
+  country: "NO"
+  url: https://ndcoslo.com/
 - isodate: 2017-05-23 12:00:00
   title: Sela Developer Practice
   date: 23-25 May 2017
@@ -853,11 +1066,101 @@
   date: 19-20 May 2017
   city: St Petersburg, Russia
   country: "RU"
-
+- isodate: 2017-04-28 12:00:00
+  title: BuildStuff
+  date: 28-30 April 2017
+  city: Mallorca, Spain
+  country: "ES"
+  url: https://buildstuff.events/
+- isodate: 2017-02-22 12:00:00
+  title: NDC Mini Copenhagen
+  date: 22-24 February 2017
+  city: Copenhagen, Denmark
+  country: "DK"
+  url: https://ndccopenhagen.com/
+- isodate: 2017-01-18 12:00:00
+  title: NDC London
+  date: 18-20 January 2017
+  city: London, UK
+  country: "GB"
+  url: https://ndclondon.com/
+- isodate: 2017-11-21 12:00:00
+  title: BuildStuff
+  date: 21-22 November 2016
+  city: Kyiv, Ukraine
+  country: "UA"
+- isodate: 2017-11-16 12:00:00
+  url: https://buildstuff.events/
+  title: BuildStuff
+  date: 16-18 November 2016
+  city: Vilnius, Lithuania
+  country: "LT"
+  url: https://buildstuff.events/
+- isodate: 2016-11-09 12:00:00
+  title: Øredev
+  date: 9-11 November 2016
+  city: Malmö, Sweden
+  country: "SE"
+  url: https://oredev.org/
 - isodate: 2016-11-05 12:00:00
   title: Tampere Goes Agile
   date: 5 November 2016
   city: Tampere, Finland
   country: "FI"
 
+- isodate: 2016-08-03 12:00:00
+  title: NDC Sydney
+  date: 3-5 August 2016
+  city: Sydney, Australia
+  country: "AU"
+  url: https://ndcsydney.com/
+- isodate: 2016-07-13 12:00:00
+  title: FullStack
+  date: 13-15 July 2016
+  city: London, UK
+  country: "GB"
+  url: https://skillsmatter.com/conferences/7993-fullstack-2016
+- isodate: 2016-07-08 12:00:00
+  title: BuildStuff
+  date: 8-9 July 2016
+  city: Odesa, Ukraine
+  country: "UA"
+  url: https://www.buildstuff.events
+- isodate: 2016-06-22 12:00:00
+  title: ProgNET
+  date: 22-24 June 2016
+  city: London, UK
+  country: "GB"
+- isodate: 2016-06-08 12:00:00
+  title: NDC Oslo
+  date: 8-10 June 2016
+  city: Oslo, Norway
+  country: "NO"
+  url: https://ndcoslo.com/
+- isodate: 2016-05-26 12:00:00
+  title: CNUG
+  date: 26 May 2016
+  city: Copenhagen, Denmark
+  country: "DK"
+- isodate: 2016-01-13 12:00:00
+  title: NDC London
+  date: 13-15 January 2016
+  city: London, UK
+  country: "GB"
+- isodate: 2015-11-23 12:00:00
+  title: BuildStuff
+  date: 23-24 November 2015
+  city: Kyiv, Ukraine
+  country: "UA"
+- isodate: 2015-11-18 12:00:00
+  title: BuildStuff
+  date: 18-20 November 2015
+  city: Vilnius, Lithuania
+  country: "LT"
+- isodate: 2015-06-17 12:00:00
+  title: NDC Oslo
+  date: 17-19 June 2015
+  city: Oslo, Norway
+  country: "NO"
+  url: https://ndcoslo.com/
 
