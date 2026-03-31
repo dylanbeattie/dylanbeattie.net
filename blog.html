@@ -21,6 +21,31 @@ og_description: Blog posts and articles by Dylan Beattie.
 
 {% endfor %}
 <script>
+
+  function formatCommentTime(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+
+    var now = new Date();
+    var diffMs = now - d;
+    var diffSec = Math.floor(diffMs / 1000);
+    var diffMin = Math.floor(diffSec / 60);
+    var diffHr = Math.floor(diffMin / 60);
+    var diffDay = Math.floor(diffHr / 24);
+
+    if (diffSec < 60) return diffSec <= 1 ? 'just now' : diffSec + ' seconds ago';
+    if (diffMin < 60) return diffMin === 1 ? '1 minute ago' : diffMin + ' minutes ago';
+    if (diffHr < 24) return diffHr === 1 ? '1 hour ago' : diffHr + ' hours ago';
+    if (diffDay === 1) return 'yesterday';
+    if (diffDay <= 7) return diffDay + ' days ago';
+
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    return y + '-' + m + '-' + day;
+  }
+
   (function () {
     var TOKEN = "{{ site.giscus_token }}";
     var CATEGORY_ID = "DIC_kwDOC9UEAM4C5sKq";
@@ -35,7 +60,7 @@ og_description: Blog posts and articles by Dylan Beattie.
       '        title',
       '        comments(first: 3) {',
       '          totalCount',
-      '          nodes { author { login } bodyText }',
+      '          nodes { author { login } bodyText createdAt }',
       '        }',
       '      }',
       '    }',
@@ -73,15 +98,20 @@ og_description: Blog posts and articles by Dylan Beattie.
 
           for (var k = 0; k < Math.min(2, comments.length); k++) {
             var c = comments[k];
+
             var author = c.author ? c.author.login : 'anonymous';
+            var when = formatCommentTime(c.createdAt);
+
             var text = c.bodyText.replace(/\s+/g, ' ').trim();
             var excerpt = text.length > 157 ? text.slice(0, 157) + '\u2026' : text;
 
             var bq = document.createElement('blockquote');
             var strong = document.createElement('strong');
-            strong.textContent = author;
+            strong.textContent = author + (when ? ', ' + when + '' : '');
+            bq.appendChild(document.createTextNode(excerpt));
+            bq.appendChild(document.createElement('br'));
+            bq.appendChild(document.createTextNode(' — '));
             bq.appendChild(strong);
-            bq.appendChild(document.createTextNode(': ' + excerpt));
             div.appendChild(bq);
           }
 
