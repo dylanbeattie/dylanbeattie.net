@@ -3,19 +3,97 @@ layout: right-sidebar
 title: blog
 permalink: /blog/
 meta:
-    og_description: Blog posts and articles by Dylan Beattie.
+og_description: Blog posts and articles by Dylan Beattie.
 ---
-<p>Here's my five latest blog posts - or you can browse <a href="/blog/archives">a complete archive of all my posts since 2008</a>.</p>
+<p>Here's my five latest blog posts - or you can browse <a href="/blog/archives">a complete archive of all my posts
+    since 2008</a>.</p>
 {% for post in site.posts limit:5 %}
-<article>
-	<h1><a href="{{ site.url }}{{ post.url }}"></a>{{ post.title }}</a></h1>
-	<cite class="byline">Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
-	&bull;
-	<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
-	{{ post.content }}
-	<cite>"{{ post.title }}" was posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
-		&bull;
-		<a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
+<article data-post-url="{{ post.url }}">
+  <h1><a href="{{ site.url }}{{ post.url }}"></a>{{ post.title }}</a></h1>
+  <cite class="byline">Posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
+    &bull;
+    <a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
+  {{ post.content }}
+  <cite>"{{ post.title }}" was posted by <strong>{{ post.author }}</strong> on {{ post.date | date_to_long_string }}
+    &bull;
+    <a href="{{ site.url }}{{ post.url }}">permalink</a></cite>
 </article>
 
 {% endfor %}
+<script>
+  (function () {
+    var TOKEN = "{{ site.giscus_token }}";
+    var CATEGORY_ID = "DIC_kwDOC9UEAM4C5sKq";
+
+    if (!TOKEN) return;
+
+    var query = [
+      '{',
+      '  repository(owner: "dylanbeattie", name: "dylanbeattie.net") {',
+      '    discussions(first: 100, categoryId: "' + CATEGORY_ID + '", orderBy: {field: UPDATED_AT, direction: DESC}) {',
+      '      nodes {',
+      '        title',
+      '        comments(first: 3) {',
+      '          totalCount',
+      '          nodes { author { login } bodyText }',
+      '        }',
+      '      }',
+      '    }',
+      '  }',
+      '}'
+    ].join('\n');
+
+    fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: { 'Authorization': 'bearer ' + TOKEN, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: query })
+    }).then(r => r.json())
+      .then(function (data) {
+        var nodes = data.data.repository.discussions.nodes;
+        var commentsForUrl = {};
+        for (var i = 0; i < nodes.length; i++) commentsForUrl[`/${nodes[i].title}.html`] = nodes[i];
+        var articles = document.querySelectorAll('article[data-post-url]');
+        for (var j = 0; j < articles.length; j++) {
+          var article = articles[j];
+          var url = article.getAttribute('data-post-url');
+          var discussion = commentsForUrl[url];
+          if (!discussion || discussion.comments.totalCount === 0) continue;
+          var count = discussion.comments.totalCount;
+          var comments = discussion.comments.nodes;
+
+          var div = document.createElement('div');
+          div.className = 'comment-preview';
+
+          var p = document.createElement('p');
+          var a = document.createElement('a');
+          a.href = url + '#giscus-comments';
+          a.textContent = count + (count === 1 ? ' comment' : ' comments') + ' \u2014 read or join the discussion';
+          p.appendChild(a);
+          div.appendChild(p);
+
+          for (var k = 0; k < Math.min(2, comments.length); k++) {
+            var c = comments[k];
+            var author = c.author ? c.author.login : 'anonymous';
+            var text = c.bodyText.replace(/\s+/g, ' ').trim();
+            var excerpt = text.length > 157 ? text.slice(0, 157) + '\u2026' : text;
+
+            var bq = document.createElement('blockquote');
+            var strong = document.createElement('strong');
+            strong.textContent = author;
+            bq.appendChild(strong);
+            bq.appendChild(document.createTextNode(': ' + excerpt));
+            div.appendChild(bq);
+          }
+
+          var cites = article.querySelectorAll('cite');
+          var lastCite = cites[cites.length - 1];
+          if (lastCite) {
+            article.insertBefore(div, lastCite);
+          } else {
+            article.appendChild(div);
+          }
+        }
+      })
+      .catch(function (e) { console.error(e); }); // fail silently — comments are a nice-to-have
+  })();
+</script>

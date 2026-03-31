@@ -14,6 +14,7 @@ layout: default
 							<a href="{{ site.url }}{{ page.url }}">permalink</a></cite>
 						{{ content }}
 					</article>
+					{% if page.comments != false %}{% include comments.html %}{% endif %}
 				</div>
 			</div>
 			<div class="col-3 col-12-narrower">
