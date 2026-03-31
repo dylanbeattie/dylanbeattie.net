@@ -23,7 +23,7 @@ The first one happened in Riga, Latvia, back in May 2018. I'd been at DevDays, a
 So I get a Yandex Taxi. It works exactly like Uber, except a minute into the ride my phone pings. I've just paid Yandex Taxi thirteen cents. A minute later it pings again - 52 cents. 62 cents. 9 cents. 10 cents. 34 cents. Ping, ping, ping, ping, ping...  all the way to the terminal.
 
 <div style="display: flex; align-items: center; justify-content: center;">
-<img src="/images/posts/IMG\_0115.PNG" style="margin: 10px auto; max-height: 640px;" alt="A screenshot of the Monzo app showing a series of very low-value payments to Yandex Taxi"></div>
+<img src="/images/posts/IMG_0115.PNG" style="margin: 10px auto; max-height: 640px;" alt="A screenshot of the Monzo app showing a series of very low-value payments to Yandex Taxi"></div>
 
 Weird, huh? But not actually a problem... just weird. 
 
@@ -36,7 +36,7 @@ The second story happened in 2024, en route from Hungary to Lithuania. I'd been 
 No big deal. I've got an Apple Airtag tracker in it. When we landed in Vilnius three hours later, I could see my luggage was still at Munich airport, so I filled out all the forms and whatnot, told them where I was staying; no problem. Next day after breakfast, I checked Apple's "Find My" app... and there was my luggage, somewhere in Bavaria, in the middle of the forest, miles away from anywhere.
 
 <div style="display: flex; align-items: center; justify-content: center;">
-<img src="/images/posts/IMG\_6537.PNG" style="margin: 10px auto; max-height: 640px;" alt="A screenshot of Apple's 'Find my Device' app showing Dylan's Luggage in the Steigerwald Nature Park in Germany.">
+<img src="/images/posts/IMG_6537.PNG" style="margin: 10px auto; max-height: 640px;" alt="A screenshot of Apple's 'Find my Device' app showing Dylan's Luggage in the Steigerwald Nature Park in Germany.">
 </div>
 
 Apple's "find my device" network basically turns every iPhone on the planet into a node in a huge geolocation network, so I'm guessing what happened is an iPhone on board the plane could see my luggage's tag, and it was connected to the inflight wifi (or a cell tower) just long enough to register a location as the plane was flying over that particular spot. (Yes, I know the Steigerwald Nature Park is not actually on the way from Munich to Vilnius. No, I don't know either.)
