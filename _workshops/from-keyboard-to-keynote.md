@@ -25,8 +25,8 @@ testimonials:
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really engaging, and the participation element was enough to practice but not too much to feel overwhelmed
 dates:
-  - isodate: 2026-06-22 14:00:00
-    date: 23 & 24 June 2025
+  - isodate: 2026-06-22 13:00:00Z
+    date: 23 & 24 June 2026
     time: 09:00-12:30 New Zealand Time
     duration: 2 half-days
     venue: Online (Zoom)
@@ -41,16 +41,17 @@ dates:
   #   url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649
   
 ---
-
-<a href="https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649">
-<img src="/images/workshops/kb2kn-20260622.jpg" style="width: 100%;" />
-</a>
+{% assign next_url = page.dates[0].url %}
+{% if next_url %}
+<a href="{{ next_url }}"><img src="{{page.meta.og_image}}" style="width: 100%;" /></a>
+{% endif %}
 <p>Speaking in front of an audience, whether in person or online, can be daunting - but it doesn't have to be.</p>
+{% if next_url %}
 <div class="promo">
     <h4>Early Bird tickets only &pound;245! Book before 25 February and save &pound;50!</h4>
-    <p><a href="https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649">Book now at EventBrite</a></p>
+    <p><a href="{{ next_url }}">Book now at EventBrite</a></p>
 </div>
-
+{% endif %}
 <p>I've delivered keynote presentations at conferences all over the world: NDC, JFokus, BuildStuff, DotNext, YOW!, and many more. In this 2-part workshop, I'll teach you everything I know about how to create and deliver great presentations for technical audiences, whether you're speaking at industry conferences, doing a talk at your local meetup group, or just sharing ideas with your own team.</p>
 <blockquote class="testimonial">
       “I loved Dylan's energy and passion. I also took away loads of practical ways to improve my speaking skills.”
@@ -79,21 +80,19 @@ dates:
 <h2>Format and Logistics</h2>
 <ul>
 <li>Workshops are run online, using Zoom. <strong>This is an interactive workshop. Be ready to turn on your camera and unmute your mic!</strong></li>
-<li>Sessions run from 14:00-18:00 UK time (UTC+1)</li>
 </ul>
+{% if next_url %}
 <h2>How to Book</h2>
 <ul>
-    <li>Tickets are on sale now via EventBrite: <a href="https://www.eventbrite.com/e/1446904523379">https://www.eventbrite.com/e/1446904523379</a></li>
+    <li>Tickets are on sale now via EventBrite: <a href="{{ next_url }}">{{ next_url }}</a></li>
     <li>When you sign up, you'll receive joining instructions and a calendar invitation</li>
     <li>Any questions? Any problems? Drop me an email - <a href="mailto:dylan@dylanbeattie.net">dylan@dylanbeattie.net</a></li>
 </ul>
-
+{% endif %}
 <h2>Target Audience and Prerequisites</h2>
 <p>This workshop is suitable for anybody who is looking to begin public speaking, or to improve their presentation technique.</p>
 <p>Around 25% of the workshop is specifically focused on presenting software code and technology; the rest of the workshop is applicable to presentations on any topic and to any kind of audience.</p>
 <p>Attendees will need access to a presentation tool. I recommend Microsoft PowerPoint – most examples are presented in PowerPoint, and the course includes some specific discussion around using PowerPoint for creating animation effects and slide transitions – but for the attendee presentations element of the workshop, Keynote or a web-based solution will work just fine.</p>
 <h3>About the Trainer</h3>
 <p>Dylan Beattie created his first web page in 1992. With over 25 years’ experience as a professional developer, he’s worked on everything from static websites to distributed microservice architectures. Dylan is a Microsoft MVP and the creator of the Rockstar esoteric programming language, and he’s presented talks about technology and software development at conferences and events all over the world.</p>
-<p>Dylan has been speaking at technology events and meetups for over 10 years, and recordings of his presentations have been watched online by over five million people. Since 2020, Dylan has worked as an independent consultant, teacher and speaker. He’s online at https://dylanbeattie.net/ and on Twitter as @dylanbeattie.</p>
-
-
+<p>Dylan has been speaking at technology events and meetups for over 10 years, and recordings of his presentations have been watched online by over five million people. Since 2020, Dylan has worked as an independent consultant, teacher and speaker. He’s online at <a href="https://dylanbeattie.net/">dylanbeattie.net</a> and on BlueSky as <a href="https://bsky.app/profile/dylanbeatt.ie">@dylanbeatt.ie</a>.</p>
