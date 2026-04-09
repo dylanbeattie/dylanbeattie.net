@@ -44,9 +44,11 @@ permalink: /workshops
 			{% endfor %}
 		</ul>
 		<p><a href="{{workshop.url}}">More details...</a></p>
+    {% assign upcoming_dates = nil %}
 		{% if workshop.dates %}
-		{% assign upcoming_dates = workshop.dates | where_exp: "date", "date.isodate
-		>= site.time" | sort: "isodate" %}
+		{% assign upcoming_dates = workshop.dates | where_exp: "date", "date.isodate >= site.time" | sort: "isodate" %}
+    {% endif %}
+    {% if upcoming_dates %}
 		{% for next_date in upcoming_dates %}
 		<div class="workshop-date">
 			<div>
@@ -66,7 +68,7 @@ permalink: /workshops
 				<strong>No upcoming dates</strong><br>
 				Want to book this course?
 			</div>
-			<a class="book-now" href="mailto:dylan@dylanbeattie.net">Get in touch</a>
+			<a class="book-now" href="mailto:dylan@dylanbeattie.net?subject=Workshop%20Booking%20Inquiry%20-%20{{ workshop.title | url_encode }}">Get in touch</a>
 		</div>
 		{% endif %}
 	</section>
