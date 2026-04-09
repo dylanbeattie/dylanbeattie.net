@@ -38,7 +38,7 @@ When I start working on an unfamiliar codebase now, the first thing I do is look
 
 If all I see are two dozen .NET projects with namespaces like `MyCompany.Data.TableMapper`? That's a bad day. It's going to be uphill all the way.
 
-If I see a list of familiar services, names like AutoMapper, IdentityServer, NServiceBus, MassTransit? That's a good day. I know those projects. I've used them, I trust them, I know where to find the docs. 
+If I see a list of familiar services, names like AutoMapper, IdentityServer, NServiceBus, MassTransit? That's a good day. I know those projects. I've used them, I trust them, I know where to find the docs.
 
 If it turns out there are paid support contracts & maintenance agreements for those dependencies? That's a _great_ day. It means **somebody else knows what's going on, they're getting paid to care about my problems, and they're ready to help if I need it** - and I get to focus on the special sauce.
 
