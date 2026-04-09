@@ -9,7 +9,7 @@ redirect_from: "/kb2kn"
 summary: An interactive workshop for developers and technology professionals who are interested in public speaking. Learn how to create and deliver great technical talks and presentations.
 meta:
   og_description: "Learn to create & present great tech talks in this live online workshop led by Dylan Beattie."
-  og_image: /images/workshops/kb2kn-20260324.jpg
+  og_image: /images/workshops/kb2kn-20260622.jpg
   twitter_card: summary_large_image
   keywords: public speaking, speaker training, slides, powerpoint, keynote, presentations, cfp, conferences, tech talks, meetups
   og:
@@ -25,18 +25,25 @@ testimonials:
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really engaging, and the participation element was enough to practice but not too much to feel overwhelmed
 dates:
-  - isodate: 2026-03-24 14:00:00
-    date: 24 & 25 March 2025
-    time: 14:00-17:30 UTC
+  - isodate: 2026-06-22 14:00:00
+    date: 23 & 24 June 2025
+    time: 09:00-12:30 New Zealand Time
     duration: 2 half-days
     venue: Online (Zoom)
     cost: £245 / £295
-    url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649
+    url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1987043570810
+  # - isodate: 2026-03-24 14:00:00
+  #   date: 24 & 25 March 2025
+  #   time: 14:00-17:30 UTC
+  #   duration: 2 half-days
+  #   venue: Online (Zoom)
+  #   cost: £245 / £295
+  #   url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649
   
 ---
 
 <a href="https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1981374226649">
-<img src="/images/workshops/kb2kn-20260324.jpg" style="width: 100%;" />
+<img src="/images/workshops/kb2kn-20260622.jpg" style="width: 100%;" />
 </a>
 <p>Speaking in front of an audience, whether in person or online, can be daunting - but it doesn't have to be.</p>
 <div class="promo">
