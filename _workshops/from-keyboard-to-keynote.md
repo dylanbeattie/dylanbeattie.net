@@ -72,7 +72,7 @@ dates:
     <li>Video and multimedia</li>
 </ul>
 <blockquote class="testimonial">
-      “I've done speaker training type things in the past so the material was not really new, but Dylan's way of presenting it is just SO MUCH better than previous training sessions.”
+      “I've done speaker training type things in the past, but Dylan's way of presenting it is just SO MUCH better than previous training sessions.”
 </blockquote>
 
 <p>During each session, you'll prepare and deliver a short presentation of your own, on a topic of your choice - anything goes; it doesn't have to be related to tech. I'll collate feedback from the group and share this with you along with my own notes and suggestions.</p>
