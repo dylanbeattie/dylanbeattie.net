@@ -30,7 +30,7 @@ dates:
     time: 09:00-12:30 New Zealand Time
     duration: 2 half-days
     venue: Online (Zoom)
-    cost: £245 / £295
+    cost: £275
     url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1987043570810
   # - isodate: 2026-03-24 14:00:00
   #   date: 24 & 25 March 2025
