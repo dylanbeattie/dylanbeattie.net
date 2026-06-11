@@ -1,3 +1,49 @@
+- isodate: 2026-10-07 12:00:00
+  title: Zabbix Summmit 2026
+  date: 7-9 October 2026
+  url: https://www.zabbix.com/events/zabbix_summit_2026
+  city: Riga, Latvia
+  country: "LV"
+
+- isodate: 2026-11-17 12:00:00
+  title: Software Architecture Gathering
+  date: 17-18 November 2026
+  url: https://www.software-architecture-gathering.com/
+  city: Berlin, Germany
+  country: "DE"
+
+- isodate: 2026-11-20 12:00:00
+  title: VoxxedDays Thessaloniki
+  date: 20-21 November 2026
+  url: https://voxxeddays.com/thessaloniki/
+  city: Thessaloniki, Greece
+  country: "GR"
+- isodate: 2026-09-14 12:00:00
+  title: NDC Oslo
+  date: 14-18 September 2026
+  url: https://ndcoslo.com/
+  city: Oslo, Norway
+  country: "NO"
+
+- isodate: 2026-07-17 12:00:00
+  title: EMF Camp
+  date: 17-19 July 2026
+  url: https://www.emfcamp.org/
+  city: Eastnor, UK
+  country: "GB"
+- isodate: 2026-06-25 12:00:00
+  title: London .NET User Group
+  date: 25 June 2026
+  city: London, UK
+  country: "GB"
+  url: https://ldnug.org/
+
+- isodate: 2026-06-11 12:00:00
+  title: Infi Con
+  date: 11 June 2026
+  url: https://con.infi.nl/
+  city: Utrecht, Netherlands
+  country: "NL"
 - isodate: 2026-06-01 12:00:00
   title: NDC Copenhagen
   date: 1-4 June 2026
@@ -10,12 +56,17 @@
   city: Northampton, UK
   url: https://nn1.dev/events/12/
   country: "GB"
-- isodate: 2026-05-21 12:00:00
-  title: Codecamp
-  date: 21 May 2026
-  city: Timisoara, Romania
-  country: "RO"
-  url: https://codecamp.ro/
+- isodate: 2026-05-27 12:00:00
+  title: Brighton Web Dev Meetup
+  date: 27 May 2026
+  city: Brighton, UK
+  country: "GB"
+# - isodate: 2026-05-21 12:00:00
+#   title: Codecamp
+#   date: 21 May 2026
+#   city: Timisoara, Romania
+#   country: "RO"
+#   url: https://codecamp.ro/
 - isodate: 2026-05-14 12:00:00
   title: Geecon
   date: 14-15 May 2026
