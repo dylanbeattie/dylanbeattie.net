@@ -4,8 +4,8 @@ on:
   discussion_comment:
     types: [created, edited, deleted]
   workflow_dispatch:
-  schedule:
-    - cron: '0 * * * *'  # hourly fallback
+# schedule:
+#   - cron: '0 * * * *'  # hourly fallback
 
 permissions:
   contents: write
