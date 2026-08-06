@@ -26,12 +26,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true 
-          cache-version: 0 
+          bundler-cache: true
+          cache-version: 0
       - name: Setup Pages
         uses: actions/configure-pages@v5
         id: pages
-        
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
@@ -48,4 +48,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-				uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4
