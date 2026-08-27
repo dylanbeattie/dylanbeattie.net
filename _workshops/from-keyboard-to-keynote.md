@@ -25,13 +25,13 @@ testimonials:
   - I really enjoyed the humour and that Dylan showed personality throughout the workshop.
   - Really engaging, and the participation element was enough to practice but not too much to feel overwhelmed
 dates:
-  - isodate: 2026-06-22 13:00:00Z
-    date: 23 & 24 June 2026
-    time: 09:00-12:30 New Zealand Time
-    duration: 2 half-days
-    venue: Online (Zoom)
-    cost: £275
-    url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1987043570810
+#  - isodate: 2026-06-22 13:00:00Z
+#    date: 23 & 24 June 2026
+#    time: 09:00-12:30 New Zealand Time
+#    duration: 2 half-days
+#    venue: Online (Zoom)
+#    cost: £275
+#    url: https://www.eventbrite.com/e/from-keyboard-to-keynote-crafting-great-technical-talks-tickets-1987043570810
   # - isodate: 2026-03-24 14:00:00
   #   date: 24 & 25 March 2025
   #   time: 14:00-17:30 UTC
