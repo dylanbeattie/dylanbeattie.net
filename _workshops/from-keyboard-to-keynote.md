@@ -77,10 +77,12 @@ dates:
 
 <p>During each session, you'll prepare and deliver a short presentation of your own, on a topic of your choice - anything goes; it doesn't have to be related to tech. I'll collate feedback from the group and share this with you along with my own notes and suggestions.</p>
 
+<!--
 <h2>Format and Logistics</h2>
 <ul>
 <li>Workshops are run online, using Zoom. <strong>This is an interactive workshop. Be ready to turn on your camera and unmute your mic!</strong></li>
 </ul>
+-->
 {% if next_url %}
 <h2>How to Book</h2>
 <ul>
