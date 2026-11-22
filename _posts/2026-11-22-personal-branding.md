@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Personal Branding
-date: 2026-11-22T17:35:00
+date: 2026-11-22T15:50:00
 author: Dylan Beattie
 ---
 I’ve been playing international conference pinball the last two weeks - Prague for Update Conf, then the direct train to Berlin (A+++ would train again!) for Software Architecture Gathering, and then straight to Thessaloniki for the tenth anniversary of VoxxedDays. It’s been great fun, in that relentless way that conference travel often is - early mornings, late nights, lots of social interaction, lots of low-level logistics like finding places to eat and making sure you’re in the right room at the right time with the right slide deck ready to go. And now I have one of those slightly odd days where hotel checkout is 11:00 and my flight home doesn’t leave until 22:05 and so I spend the day as a sort of very temporary vagabond, sightseeing and drinking coffee and generally chilling out without actually having anywhere to be or anything to do. 
