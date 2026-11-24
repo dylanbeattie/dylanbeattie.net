@@ -2,74 +2,78 @@
 <html>
 
 <head>
-	<title>Flaregex</title>
-	<style>
-		input, ol {	font-family: Consolas; font-size: 120%; }
-		ol { margin-left: 4em; }
-	</style>
+  <title>Flaregex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    form {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.25em;
+
+      label {
+        flex: none;
+        font-weight: bold;
+      }
+
+      input {
+        min-width: 0;
+        border-radius: 4px;
+        border: 1px solid #000;
+        padding: 0.5rem;
+      }
+
+      #regex {
+        flex: 1 1 auto;
+      }
+
+      #count {
+        flex: 0 0 2em;
+      }
+    }
+    div#loading {
+      padding: 1em;
+    }
+
+    input,
+    ol {
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 120%;
+
+      @media(width < 600px) {
+        font-size: 150%;
+      }
+    }
+
+    ol {
+      li::marker {
+        font-size: 0.6em;
+        font-family: sans-serif;
+        padding-right: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	Regex: <input type="text" id="regex" value="hello.*" />
-	Count: <input type="text" id="count" />
-	<hr />
-	<ol></ol>
-	<script type="module">
+  <form>
+    <label for="regex">Regex:</label>
+    <input type="text" autocorrect="off" autocapitalize="none" spellcheck="false" autocomplete="off" id="regex"
+      value="hello.*" />
+    <label for="count">Count:</label>
+    <input type="text" autocorrect="off" autocapitalize="none" spellcheck="false" autocomplete="off" id="count" />
+  </form>
+  <marquee id="loading">Loading word list...</marquee>
+  <ol></ol>
 
-String.prototype.replaceAt=function(index, char) {
-    var a = this.split("");
-    a[index] = char;
-    return a.join("");
-}
+  <script src="module.js" type="module">
 
-		import { WORDLIST } from './wordlist.js';
-		let count = NaN;
-		var regexInput = document.querySelector("input#regex");
-		var countInput = document.querySelector("input#count");
-		var ol = document.querySelector("ol");
-		regexInput.addEventListener("change", search);
-		countInput.addEventListener("change", search);
-		function search() {
-			var pattern = regexInput.value;
-			var progit = "";
-			var alts = {};
-			var adjust = 0;
-			for(var i = 0; i < pattern.length; i++) {
-				progit += pattern[i];
-				if (pattern[i] >= 'A' && pattern[i] <= 'Z') {
-					alts[i - adjust] = [ pattern[i].toLowerCase(), pattern[i+1].toLowerCase() ];
-					adjust++;
-					i++;
-				}
-			}
-			if (progit != pattern) {
-				var rx = new RegExp(progit, "i");
-				console.log("pattern: " + progit);
-				var wimble = WORDLIST.filter(w => rx.test(w)).slice(0,1000000);
-				for(var alt of Object.keys(alts)) progit = progit.replaceAt(alt, alts[alt][1]);
-				rx = new RegExp(progit, "i");
-				var womble = WORDLIST.filter(w => rx.test(w)).slice(0,1000000);
-				var words = new Array();
-				for(var word of wimble) {
-					var walt = word;
-				 	for(var alt of Object.keys(alts)) walt = walt.replace(alts[alt][0], alts[alt][1]);
-					if (womble.includes(walt)) words.push(word + " / " + walt);
-				}
-				var items = '<li>' + words.join('</li><li>') + '</li>';
-				ol.innerHTML = items;
-			} else if (regexInput.value.length > 2) {
-				var rx = new RegExp(regexInput.value);
-				var words = WORDLIST.filter(w => rx.test(w));
-				if (count = parseInt(countInput.value)) {
-					words = words.filter(w => w.length == count);
-				}
-				words = words.slice(0, 1000);
-				var items = '<li>' + words.join('</li><li>') + '</li>';
-				ol.innerHTML = items;
-			}
-		}
-		search();
-	</script>
+  </script>
 </body>
 
 </html>
